@@ -5,7 +5,7 @@
 <mapper namespace="com.ezen.royal.mapper.Guide">
 
 	<!-- exam -->
-	<select id="getAll" resultType="com.ezen.springrest.dto.GuideDTO">
+	<select id="getAll" resultType="com.ezen.royal.dto.GuideDTO">
 		select * from fruits
 	</select>
 
