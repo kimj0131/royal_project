@@ -37,5 +37,8 @@ public class HomeController {
 	public void sol() {
 		
 	}
-	
+	@GetMapping("/test/bin")
+	public void bin() {
+		
+	}
 }
