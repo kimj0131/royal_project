@@ -4,9 +4,9 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>HomePage</title>
+<title>경복궁 내부 건축물</title>
 </head>
 <body>
- <h1>Hello</h1>
+
 </body>
 </html>
