@@ -13,6 +13,11 @@ import lombok.extern.log4j.Log4j;
 @Controller
 public class HomeController {
 	
+	@GetMapping("/royal")
+	public String royal() {
+		return "royal";
+	}
+	
 	
 	@RequestMapping(value = "/")
 	public String home(Locale locale, Model model) {
