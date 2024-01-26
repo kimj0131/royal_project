@@ -12,5 +12,6 @@ uri="http://java.sun.com/jsp/jstl/core" prefix="c" %> <%@ page session="false" %
 		<button onclick="location.href = './test/bang'">혜미</button>
 		<button onclick="location.href = './test/sol'">진솔</button>
 		<button onclick="location.href = './test/bin">빈</button>
+		<button onclick="location.href = './test/ho">호</button>
 	</body>
 </html>

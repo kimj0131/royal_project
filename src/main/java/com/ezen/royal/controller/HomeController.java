@@ -41,4 +41,8 @@ public class HomeController {
 	public void bin() {
 		
 	}
+	@GetMapping("/test/ho")
+	public void hodong() {
+		
+	}
 }
