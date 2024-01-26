@@ -8,7 +8,9 @@
 </head>
 <body>
 
-	<div>로그인, 카테고리, 네비바는 있다는 가정하에 진행</div>
+	<jsp:include page="../layout/header.jsp"/>
+	<jsp:include page="../layout/navibar.jsp"/>
+	
 	<div>경복궁 메인 img</div>
 	<div>
 		<div>사진</div>
@@ -26,5 +28,6 @@
 		<div>사진</div>
 		<div><button>해설*행사 예약</button></div>
 	</div>
+	<jsp:include page="../layout/footer.jsp"/>
 </body>
 </html>
