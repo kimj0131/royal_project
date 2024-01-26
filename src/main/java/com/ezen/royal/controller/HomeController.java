@@ -13,7 +13,6 @@ import lombok.extern.log4j.Log4j;
 @Controller
 public class HomeController {
 	
-	
 	@RequestMapping(value = "/")
 	public String home(Locale locale, Model model) {
 		log.info("Welcome home! The client locale is.");
@@ -43,6 +42,10 @@ public class HomeController {
 	}
 	@GetMapping("/test/ho")
 	public void hodong() {
+		
+	}
+	@GetMapping("/test/min")
+	public void min() {
 		
 	}
 }
