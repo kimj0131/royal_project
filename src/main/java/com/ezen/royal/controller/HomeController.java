@@ -45,4 +45,8 @@ public class HomeController {
 	public void hodong() {
 		
 	}
+	@GetMapping("/test/min")
+	public void min() {
+		
+	}
 }
