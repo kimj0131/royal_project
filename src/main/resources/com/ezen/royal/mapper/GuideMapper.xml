@@ -2,7 +2,7 @@
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.ezen.royal.mapper.Guide">
+<mapper namespace="com.ezen.royal.mapper.GuideMapper">
 
 	<!-- exam -->
 	<select id="getAll" resultType="com.ezen.royal.dto.GuideDTO">

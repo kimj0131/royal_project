@@ -4,7 +4,7 @@ import java.util.List;
 
 import com.ezen.royal.dto.GuideDTO;
 
-public interface Guide {
+public interface GuideMapper {
 
 	List<GuideDTO> getAll();
 	
