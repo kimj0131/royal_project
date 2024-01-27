@@ -8,6 +8,6 @@ inputBtn.addEventListener("click", (e) => {
 			console.log(xmlData);
 		}
 	});
-	xhttp.open("GET", "https://www.heritage.go.kr/heri/gungDetail/gogungListOpenApi.do");
+	xhttp.open("POST", "/royal/manager/database/insert");
 	xhttp.send();
 });

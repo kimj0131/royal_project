@@ -14,14 +14,14 @@ import lombok.extern.log4j.Log4j;
 
 @Log4j
 @Controller
-public class GogungListOpenApiDataController {
+public class OpenApiDataController {
 
-	@GetMapping("royalEx/database/input")
+	@GetMapping("manager/database/openApi")
 	public void inputData() {
 		
 	}
 	
-	@PostMapping("royalEx/database/insert")
+	@PostMapping("manager/database/insert")
 	public ResponseEntity<RoyalInnerDTO> insertData(@RequestBody RoyalInnerDTO dto) {
 		System.out.println("check");
 		log.info("info : " + dto);
