@@ -1,16 +1,10 @@
 package com.ezen.royal.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.MediaType;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import com.ezen.royal.dto.RoyalInnerDTO;
 import com.ezen.royal.service.OpenApiService;
 
 import lombok.extern.log4j.Log4j;
@@ -18,31 +12,36 @@ import lombok.extern.log4j.Log4j;
 @Log4j
 @Controller
 public class OpenApiDataController {
-	
+
 	@Autowired
 	OpenApiService openApiService;
-	
 
 	@GetMapping("manager/database/inner/openApi")
 	public void inputData() {
-		
+
 	}
-	
+
 	@GetMapping("manager/database/inner/insert")
-	public String innerInsert(Model model) {
-		
-		String result = openApiService.cheakTable();
-		
-		System.out.println(result);
-		
-		return "manager/database/inner/openApi";
+	public String innerInsert(RedirectAttributes attributes) {
+
+		String chkResult = openApiService.cheakTableEmpty();
+
+		if (chkResult.equals("TRUE")) {
+			int insertResult = openApiService.insertApiDataList();
+			if (insertResult > 0) {
+				attributes.addAttribute("result", "insertComplete");
+				return "redirect:/manager/database/inner/openApi";
+			} else {
+				attributes.addAttribute("result", "insertFail");
+				log.error("Api Data Insert Fail..");
+				return "redirect:/manager/database/inner/openApi";
+			}
+		} else {
+			attributes.addAttribute("result", "alreadyExists");
+			log.error("Data already exists in the table..");
+			return "redirect:/manager/database/inner/openApi";
+		}
+
 	}
 	
-	@PostMapping("manager/database/inner/insert")
-	public ResponseEntity<RoyalInnerDTO> insertData(@RequestBody RoyalInnerDTO dto) {
-		System.out.println("check");
-		log.info("info : " + dto);
-		
-		return ResponseEntity.status(HttpStatus.OK).contentType(MediaType.APPLICATION_JSON).body(dto);
-	}
 }

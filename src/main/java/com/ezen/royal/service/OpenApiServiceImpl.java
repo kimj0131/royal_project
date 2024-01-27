@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.ezen.royal.mapper.RoyalInnerMapper;
+import com.ezen.royal.util.XMLdataParseForApi;
 
 @Service
 public class OpenApiServiceImpl implements OpenApiService{
@@ -12,10 +13,15 @@ public class OpenApiServiceImpl implements OpenApiService{
 	RoyalInnerMapper innerMapper;
 
 	@Override
-	public String cheakTable() {
-//		model.addAttribute("chkResult", innerMapper.cheakTable());
+	public String cheakTableEmpty() {
+		return innerMapper.cheakTableEmpty();
+	}
+	
+	@Override
+	public int insertApiDataList() {
+		XMLdataParseForApi parseApi = new XMLdataParseForApi();
 		
-		return innerMapper.cheakTable();
+		return innerMapper.insertDataAll(parseApi.getParseDataList());
 	}
 	
 }

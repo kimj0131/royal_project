@@ -1,17 +1,18 @@
 package com.ezen.royal.mapper;
 
+import java.util.List;
+
+import com.ezen.royal.dto.RoyalInnerDTO;
+
 public interface RoyalInnerMapper {
 	
 	// 테이블이 비어있는지 확인
-	String cheakTable();
+	String cheakTableEmpty();
 	
-	// (하나씩? 전부? 정보를 더 찾아보고 적용)
 	// 테이블이 비어있으면 api에서 데이터를 insert한다 
-	int insertData();
-	int insertDataAll();
+	int insertDataAll(List<RoyalInnerDTO> list);
 		
 	// api에서 데이터를 업데이트 한다
-	int updateData();
-	int updateDataall();
+	int updateDataAll();
 	
 }

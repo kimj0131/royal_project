@@ -4,8 +4,31 @@
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.ezen.royal.mapper.RoyalInnerMapper">
 
-	<select id="cheakTable" resultType="String">
-		SELECT CASE WHEN EXISTS (SELECT * FROM royal_inner) THEN 'FALSE' ELSE 'TRUE' END AS IS_EMPTY FROM DUAL
+	<select id="cheakTableEmpty" resultType="String">
+		SELECT CASE WHEN EXISTS
+		(SELECT * FROM royal_inner) THEN 'FALSE' ELSE 'TRUE' END AS IS_EMPTY
+		FROM DUAL
 	</select>
 
+	<insert id="insertDataAll" parameterType="java.util.List">
+		INSERT INTO royal_inner
+		(
+		royal_inner_id
+		, royal_id
+		, royal_inner_name
+		, royal_inner_detail
+		, royal_inner_imgpath
+		)
+		SELECT royal_inner_seq.nextval, A.* FROM(
+			<foreach item="item" collection="list" separator="UNION ALL" >
+			SELECT 
+				#{item.royal_id} as royal_id,
+				#{item.royal_inner_name} as royal_inner_name,
+				#{item.royal_inner_detail} as royal_inner_detail,
+				#{item.royal_inner_imgpath} as royal_inner_imgpath
+			FROM dual
+			</foreach>
+		) A
+	</insert>
+	
 </mapper>
