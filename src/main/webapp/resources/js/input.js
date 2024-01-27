@@ -8,6 +8,6 @@ inputBtn.addEventListener("click", (e) => {
 			console.log(xmlData);
 		}
 	});
-	xhttp.open("POST", "/royal/manager/database/insert");
+	xhttp.open("GET", "/royal/manager/database/inner/insert");
 	xhttp.send();
 });

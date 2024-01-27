@@ -2,7 +2,16 @@ package com.ezen.royal.mapper;
 
 public interface RoyalInnerMapper {
 	
-	// 테이블에 데이터가 있는지 확인하고 개수를 확인
-	int cheakDataList();
-
+	// 테이블이 비어있는지 확인
+	String cheakDataList();
+	
+	// (하나씩? 전부? 정보를 더 찾아보고 적용)
+	// 테이블이 비어있으면 api에서 데이터를 insert한다 
+	int insertData();
+	int insertDataAll();
+		
+	// api에서 데이터를 업데이트 한다
+	int updateData();
+	int updateDataall();
+	
 }
