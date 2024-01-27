@@ -30,8 +30,8 @@ public class OpenApiTest {
 			DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
 			Document doc = dBuilder.parse("https://www.heritage.go.kr/heri/gungDetail/gogungListOpenApi.do");
 
-			// 제일 첫번째 태그
-			doc.getDocumentElement().normalize();
+//			// 제일 첫번째 태그
+//			doc.getDocumentElement().normalize();
 
 			// 파싱할 tag
 			NodeList nList = doc.getElementsByTagName("list");

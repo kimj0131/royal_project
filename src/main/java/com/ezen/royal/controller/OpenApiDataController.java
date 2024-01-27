@@ -31,7 +31,9 @@ public class OpenApiDataController {
 	@GetMapping("manager/database/inner/insert")
 	public String innerInsert(Model model) {
 		
-		openApiService.cheakTable(model);
+		String result = openApiService.cheakTable();
+		
+		System.out.println(result);
 		
 		return "manager/database/inner/openApi";
 	}
