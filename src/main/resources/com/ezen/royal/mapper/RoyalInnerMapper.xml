@@ -19,16 +19,60 @@
 		, royal_inner_detail
 		, royal_inner_imgpath
 		)
-		SELECT royal_inner_seq.nextval, A.* FROM(
-			<foreach item="item" collection="list" separator="UNION ALL" >
-			SELECT 
-				#{item.royal_id} as royal_id,
-				#{item.royal_inner_name} as royal_inner_name,
-				#{item.royal_inner_detail} as royal_inner_detail,
-				#{item.royal_inner_imgpath} as royal_inner_imgpath
+		SELECT
+		royal_inner_seq.nextval, A.* FROM(
+		<foreach item="item" collection="list" separator="UNION ALL">
+			SELECT
+			#{item.royal_id} as royal_id,
+			#{item.royal_inner_name} as royal_inner_name,
+			#{item.royal_inner_detail} as royal_inner_detail,
+			#{item.royal_inner_imgpath} as royal_inner_imgpath
 			FROM dual
-			</foreach>
+		</foreach>
 		) A
 	</insert>
-	
+
+	<update id="upsertDataAll" parameterType="java.util.List">
+        MERGE INTO royal_inner A USING (
+			<foreach collection="list" item="item" open="" close="" index="index" separator="UNION">
+				SELECT
+					#{item.royal_inner_id} as royal_inner_id,
+					#{item.royal_id} as royal_id,
+					#{item.royal_inner_name} as royal_inner_name,
+					#{item.royal_inner_detail} as royal_inner_detail,
+					#{item.royal_inner_imgpath} as royal_inner_imgpath
+				FROM DUAL
+			</foreach>
+		) B
+		ON (A.royal_inner_id = B.royal_inner_id)
+		WHEN MATCHED THEN
+		UPDATE
+			SET
+				A.royal_id = B.royal_id,
+				A.royal_inner_name = B.royal_inner_name,
+				A.royal_inner_detail = B.royal_inner_detail,
+				A.royal_inner_imgpath = B.royal_inner_imgpath
+		WHEN NOT MATCHED THEN
+		INSERT (
+			royal_inner_id,
+			royal_id,
+			royal_inner_name,
+			royal_inner_detail,
+			royal_inner_imgpath
+		)
+		VALUES (
+			B.royal_inner_id,
+			B.royal_id,
+			B.royal_inner_name,
+			B.royal_inner_detail,
+			B.royal_inner_imgpath
+		)
+	</update>
+
+
+
+
+
+
+
 </mapper>

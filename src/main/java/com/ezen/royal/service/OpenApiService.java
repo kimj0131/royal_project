@@ -8,4 +8,6 @@ public interface OpenApiService {
 	// 테이블에 테이터를 넣는 메서드
 	int insertApiDataList();
 	
+	// 데이터가 있으면 update 없으면 insert하는 메서드
+	int upsertApiDataList();
 }

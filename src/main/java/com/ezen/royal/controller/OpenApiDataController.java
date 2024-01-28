@@ -24,6 +24,20 @@ public class OpenApiDataController {
 	@GetMapping("manager/database/inner/insert")
 	public String innerInsert(RedirectAttributes attributes) {
 
+		// upsert 방식
+		int upsertResult = openApiService.upsertApiDataList();
+		
+		if (upsertResult > 0) {
+			attributes.addAttribute("result", "upsertComplete");
+			return "redirect:/manager/database/inner/openApi";
+		} else {
+			attributes.addAttribute("result", "upsertFail");
+			log.error("Api Data Insert Fail..");
+			return "redirect:/manager/database/inner/openApi";
+		}
+		
+		/* 
+		// insert 방식
 		String chkResult = openApiService.cheakTableEmpty();
 
 		if (chkResult.equals("TRUE")) {
@@ -41,6 +55,7 @@ public class OpenApiDataController {
 			log.error("Data already exists in the table..");
 			return "redirect:/manager/database/inner/openApi";
 		}
+		*/
 
 	}
 	

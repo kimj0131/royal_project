@@ -52,6 +52,9 @@ public class XMLdataParseForApi {
 				
 				RoyalInnerDTO innerDTO = new RoyalInnerDTO();
 				
+				// royal_inner_seq.nextval을 사용하지 않을경우 api의 serial_number를 받아 쓴다
+				innerDTO.setRoyal_inner_id(Integer.parseInt(getTagValue("serial_number", eElement)));
+				
 				innerDTO.setRoyal_id(Integer.parseInt(getTagValue("gung_number", eElement)));
 				innerDTO.setRoyal_inner_name(getTagValue("contents_kor", eElement));
 				innerDTO.setRoyal_inner_detail(getTagValue("explanation_kor", eElement));

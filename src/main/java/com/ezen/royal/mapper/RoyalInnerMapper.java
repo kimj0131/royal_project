@@ -15,4 +15,7 @@ public interface RoyalInnerMapper {
 	// api에서 데이터를 업데이트 한다
 	int updateDataAll();
 	
+	// 데이터가 있으면 update 없으면 insert한다
+	int upsertDataAll(List<RoyalInnerDTO> list);
+	
 }

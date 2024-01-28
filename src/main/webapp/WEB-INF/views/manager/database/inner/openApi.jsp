@@ -23,6 +23,20 @@ uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 				location.href = "/royal/manager/database/inner/openApi";
 			</script>
 		</c:when>
+		
+		<c:when test="${param.result eq 'upsertComplete'}">
+			<script type="text/javascript">
+				alert("데이터를 갱신했습니다.");
+				location.href = "/royal/manager/database/inner/openApi";
+			</script>
+		</c:when>
+		<c:when test="${param.result eq 'upsertFail'}">
+			<script type="text/javascript">
+				alert("테이블에 데이터를 갱신하는데 실패했습니다.");
+				location.href = "/royal/manager/database/inner/openApi";
+			</script>
+		</c:when>
+		
 	</c:choose>
 	<head>
 		<meta charset="UTF-8" />
