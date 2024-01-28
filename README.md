@@ -17,11 +17,11 @@
 > * 
 
 ## mission
-> * 공공 API 연계 갱신주기 설정
 > * 
 
 ## done
 > * 공공 API 연계
+> * Spring scheduler로 공공 API 갱신주기 설정
 > * 
 
 
