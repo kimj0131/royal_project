@@ -22,7 +22,7 @@
 		<img src="" alt="이미지" />
 	</div>
 	<div style="margin:10px">
-		<img src="/userViews/reservation/commentary" alt="이미지" />
+		<img src="" alt="이미지" />
 		<a href="/royal/palace/royalInfo">관람안내</a>
 	</div>
 	<div style="margin:10px">

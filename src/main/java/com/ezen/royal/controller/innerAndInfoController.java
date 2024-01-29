@@ -11,12 +11,13 @@ import lombok.extern.log4j.Log4j;
 @RequestMapping("/palace")
 public class innerAndInfoController {
 	
-	@GetMapping("/royalInner")
+	@GetMapping("/royalInner") // 내부 건축물 
+	
 	public String inner() {
 		return "/userViews/royal_intro/royal_Inner_view";
 	}
 	
-	@GetMapping("/royalInfo")
+	@GetMapping("/royalInfo") // 관람안내
 	public String info() {
 		return "/userViews/royal_intro/guide_view";
 	}

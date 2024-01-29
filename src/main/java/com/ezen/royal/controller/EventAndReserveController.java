@@ -11,17 +11,13 @@ import lombok.extern.log4j.Log4j;
 @RequestMapping("/palace")
 public class EventAndReserveController {
 	
-	@GetMapping("/event")
+	@GetMapping("/event") // 행사
 	public String event() {
 		return "/userViews/reservation/event";
 	}
 	
-	@GetMapping("/commentary")
-	public String commentary() {
-		return "/userViews/reservation/commentary";
-	}
 	
-	@GetMapping("/reservation")
+	@GetMapping("/reservation") // 통합예약
 	public String reservation() {
 		return "/userViews/reservation/reservation";
 	}

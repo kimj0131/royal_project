@@ -22,22 +22,22 @@ import lombok.extern.log4j.Log4j;
 @RequestMapping("/main")
 public class RoyalMainController {
 
-	@GetMapping("/")
+	@GetMapping("/") // 커버페이지로 이동
 	public String coverPage() {
 		return "/userViews/main/coverPage";
 	}
 
-	@GetMapping("/home")
+	@GetMapping("/home") // 메인페이지로 이동
 	public String main() {
 		return "/userViews/main/main";
 	}
 	
-	@GetMapping("/login")
+	@GetMapping("/login") // 로그인 페이지
 	public String userLogin() {
 		return "/userViews/login/userLogin";
 	}
 	
-	@GetMapping("/teamInfo")
+	@GetMapping("/teamInfo") // 팀 소개
 	public String teamInfo() {
 		return "/userViews/teamInfo/projectInfomation";
 	}

@@ -22,7 +22,7 @@
 			공지사항 <a href="">전체보러가기</a>
 			<div>리스트1,2,3</div>
 		</div>
-		<div>알림판(행사)</div>
+		<div><a href= "/royal/palace/event">알림판(행사)</a></div> <!-- 행사 가는 링크 달기 -->
 	</div>
 	<jsp:include page="../../layout/footer.jsp" />
 
