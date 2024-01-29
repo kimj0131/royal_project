@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>덕수궁 내부 건축물</title>
 </head>
 <body>
 	<div class="sub_con_wrap pt0" id="sub_con_wrap">

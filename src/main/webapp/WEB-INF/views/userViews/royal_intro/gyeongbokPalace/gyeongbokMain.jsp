@@ -15,10 +15,10 @@
 	
 	<div style="margin:10px">
 		<img src="" alt="이미지" />
-		<a href="/royal/index/gb/history">경복궁소개, 역사</a>
+		<a href="/royal/palace/gyeongbokhistory">경복궁 소개, 역사</a>
 	</div>
 	<div style="margin:10px">
-		<a href="/royal/index/gb/inner">경복궁 내부 건축물</a>
+		<a href="">경복궁 내부 건축물</a>
 		<img src="" alt="이미지" />
 	</div>
 	<div style="margin:10px">

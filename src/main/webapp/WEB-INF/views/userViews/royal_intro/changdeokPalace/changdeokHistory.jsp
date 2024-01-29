@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>창덕궁 히스토리</title>
 </head>
 <body>
 		<div>
