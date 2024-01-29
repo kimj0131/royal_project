@@ -11,16 +11,7 @@ import lombok.extern.log4j.Log4j;
 @RequestMapping("/palace")
 public class DeoksuController {
 	
-/////////////경복궁
-	@GetMapping("/gyeongbokmain")
-	public String gyeongbok() {
-		return "/userViews/royal_intro/gyeongbokPalace/gyeongbokMain";
-	}
-	
-	@GetMapping("/gyeongbokhistory")
-	public String gyeongbokHistory() {
-		return "/userViews/royal_intro/gyeongbokPalace/gyeonbokHistory";
-	}
+
 /////////////덕수궁
 	@GetMapping("/deoksumain")
 	public String deoksu() {
@@ -31,24 +22,5 @@ public class DeoksuController {
 	public String deoksuHistory() {
 		return "/userViews/royal_intro/deoksuPalace/deoksuHistory";
 	}
-	
-/////////////창경궁
-	@GetMapping("/changgyeongmain")
-	public String changgyeong() {
-		return "/userViews/royal_intro/changgyeongPalace/changgyeongMain";
-	}
-	
-/////////////창덕궁
-	@GetMapping("/changdeokmain")
-	public String changdeok() {
-		return "/userViews/royal_intro/changdeokPalace/changdeokMain";
-	}
-	
-/////////////종묘
-	@GetMapping("/jongmyomain")
-	public String jongmyo() {
-		return "/userViews/royal_intro/jongmyoPalace/jongmyoMain";
-	}
-
 
 }
