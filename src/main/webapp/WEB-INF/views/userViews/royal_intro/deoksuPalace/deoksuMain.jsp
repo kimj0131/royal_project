@@ -15,18 +15,18 @@
 	
 	<div style="margin:10px">
 		<img src="" alt="이미지" />
-		<a href="/royal/palace/gyeongbokhistory">덕수궁 소개, 역사</a>
+		<a href="/royal/palace/deoksuhistory">덕수궁 소개, 역사</a>
 	</div>
 	<div style="margin:10px">
-		<a href="">덕수궁 내부 건축물</a>
+		<a href="/royal/palace/royalInner">덕수궁 내부 건축물</a>
 		<img src="" alt="이미지" />
 	</div>
 	<div style="margin:10px">
 		<img src="" alt="이미지" />
-		<a href="/royal/index/gb/guide">관람안내</a>
+		<a href="/royal/palace/royalInfo">관람안내</a>
 	</div>
 	<div style="margin:10px">
-		<a href="/royal/index/gb/reserve">해설*행사 예약</a>
+		<a href="/royal/palace/reservation">해설*행사 예약</a>
 		<img src="" alt="이미지" />
 	</div>
 	<jsp:include page="../../../layout/footer.jsp"/>
