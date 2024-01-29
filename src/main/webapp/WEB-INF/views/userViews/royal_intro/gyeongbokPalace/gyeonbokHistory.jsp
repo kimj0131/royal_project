@@ -1,31 +1,35 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
+<c:url value="/resources/css/historyCSS.css" var="historyCSS" />
+<c:url value="/resources/image/gyeongbok/gb.png" var="gyeongbokimage" />
+<c:url value="/resources/image/gyeongbok/gbicon.png" var="gyeongbokicon" />
 <meta charset="UTF-8">
 <title>경복궁 소개 및 역사 페이지</title>
+<link rel="stylesheet" href="${historyCSS}" />
 </head>
 <body>
-
 	<div>
+		<h2>경복궁 소개.역사</h2>
 		<div>
-			<div>
-				<img src="/resource/templete/royal/img/sub/intro/img_intro_gbg.png"
-					alt="경복궁 전경사진">
+			<div class="container">
+				<img alt="경복궁메인이미지" src="${gyeongbokimage}" />
 			</div>
 			<div>
-				<div>
-					<img src="/imgs/images/2023/12/27/20231227133939229_DM4TC9DV.png" alt="">
+				<div class="container">
+					<img src="${gyeongbokicon}" alt="경복궁아이콘" />
 				</div>
-				<div >
-					경복궁(景福宮)은 1392년 조선 건국 후 <br> 1395년(태조 4)에 창건한 조선왕조 제일의
-					법궁(法宮)이다.
-				</div>
-				<div >
+				<div class="title_wrap">경복궁(景福宮)은 1392년 조선 건국 후 1395년(태조 4)에
+					창건한 조선왕조 제일의 법궁(法宮)이다.</div>
+				<br>
+
+				<div class="title_text">
 					경복궁은 백악산(북악산)을 주산으로 넓은 지형에 건물을 배치하였고 정문인 광화문 앞으로 넓은 육조거리가 펼쳐진 한양의
 					중심이었다. ‘경복’의 이름은 ‘새 왕조가 큰 복을 누려 번영할 것’이라는 의미가 담겨있으며, 이곳에서 세종 대에
-					훈민정음이 창제되어 반포되기도 하였다.<br> <br> 경복궁은 1592년(선조 25) 임진왜란으로
+					훈민정음이 창제되어 반포되기도 하였다.. <br> <br> 경복궁은 1592년(선조 25) 임진왜란으로
 					소실되었는데 그 후 복구되지 못하였다가 270여년이 지난 1867년(고종 4)에 다시 지어졌다. 고종 대에 들어 건청궁과
 					태원전, 집옥재 등이 조성되었으며, 특히 건청궁 옥호루는 1895년 을미사변으로 명성황후가 시해되는 비운의 장소이기도
 					하다.<br> <br> 1910년 경술국치 후 경복궁은 계획적으로 훼손되기 시작하여 1915년
@@ -36,12 +40,14 @@
 			</div>
 		</div>
 	</div>
-	<div >
-		<div>역사</div>
+	<div>
+		<div class="history">역사</div>
 		<div>
-			<table >
+			<table class="history_table" border="1">
 				<caption>경복궁 역사 테이블 - 연도, 내용으로 구성</caption>
-				
+				<colgroup>
+					<col style="width: 25%;"></col>
+				</colgroup>
 				<thead>
 					<tr>
 						<th scope="col">연도</th>
@@ -166,8 +172,7 @@
 							<p style="text-align: center;">2001년~2021년</p>
 						</td>
 						<td>
-							<div>흥례문 일원, 광화문 일원, 흥복전, 향원정 보수 및
-								취향교 복원</div>
+							<div>흥례문 일원, 광화문 일원, 흥복전, 향원정 보수 및 취향교 복원</div>
 						</td>
 					</tr>
 					<tr>
@@ -182,5 +187,6 @@
 			</table>
 		</div>
 	</div>
+
 </body>
 </html>
