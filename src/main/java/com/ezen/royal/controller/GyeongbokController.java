@@ -22,5 +22,4 @@ public class GyeongbokController {
 		return "/userViews/royal_intro/gyeongbokPalace/gyeonbokHistory";
 	}
 
-
 }
