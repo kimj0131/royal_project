@@ -12,7 +12,7 @@
 	<footer>
 		<a href="/royal/main/home"><img src="${logoIMG}"/></a>
 		<span>ⓒ Cultural Heritage Administration Royal Palaces and Tombs Center. All rights reserved.</span>
-		<a href="https://github.com/kimj0131/royal_project"><img src="${logoIMG}"/></a>
+		<a href="https://github.com/kimj0131/royal_project"><img src="${githubIMG}"/></a>
 	</footer>
 
 </body>
