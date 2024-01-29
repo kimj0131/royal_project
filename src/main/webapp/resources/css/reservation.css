@@ -1,0 +1,91 @@
+@charset "UTF-8";
+*{
+    font-family: "Noto Sans KR";
+}
+
+
+.sub {
+    width: 100%;
+    height: 185px;
+    position: relative;
+}
+
+.sub .mainImg {
+    width: 100%;
+    height: 100%;
+}
+
+.mainImg {
+    position: relative;
+}
+
+.mainImg > img {
+    width: 100%;
+    height: 100%;
+}
+
+.sub h1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 35px;
+    color: white;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#click {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+}
+
+#click > div {
+    border: 2px solid black;
+    margin: 5px;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.sub-heading {
+    margin: 5px;
+    padding: 10px;
+    background: linear-gradient(180deg, rgba(221, 208, 241, 0.68) 0%, rgba(0, 2, 15, 0.00) 100%);
+    border: 1px solid black;
+    text-align: center;
+}
+
+span {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.click-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
+
+.click-row {
+    border: 2px solid black;
+    margin: 5px;
+    padding: 5px;
+    display: flex;
+    flex-wrap: nowrap; 
+}
+
+.click-row:hover {
+    background-color: #efe8e8;
+}
+
+.events{
+    border: 2px solid black;
+    margin: 5px;
+    padding: 5px;
+    display: flex;
+    flex-wrap: nowrap; 
+}
