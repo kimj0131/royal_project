@@ -7,10 +7,10 @@
 <title>Login</title>
 </head>
 	<body>
-		<jsp:include page="../layout/header.jsp"/>
+		<jsp:include page="../../layout/header.jsp"/>
 		
 		<h1>로그인 페이지</h1>
 
-	<jsp:include page="../layout/footer.jsp"/>
+	<jsp:include page="../../layout/footer.jsp"/>
 	</body>
 </html>

@@ -8,7 +8,7 @@
 </head>
 <body>
 
-	<jsp:include page="../layout/header.jsp" />
+	<jsp:include page="../../layout/header.jsp" />
 
 	<h2
 		style="border: 1px solid white; background: linear-gradient(180deg, rgba(221, 208, 241, 0.68) 0%, rgba(0, 2, 15, 0.00) 100%);">예약모아보기</h2>
@@ -36,7 +36,7 @@
 
 
 
-	<jsp:include page="../layout/footer.jsp" />
+	<jsp:include page="../../layout/footer.jsp" />
 
 </body>
 </html>

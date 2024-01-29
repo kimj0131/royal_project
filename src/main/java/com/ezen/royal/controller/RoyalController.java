@@ -10,7 +10,7 @@ public class RoyalController {
 
 	@GetMapping("/index")
 	public String coverPage() {
-		return "/home/coverPage";
+		return "/userViews/main/coverPage";
 	}
 	
 	@GetMapping("/index/main")

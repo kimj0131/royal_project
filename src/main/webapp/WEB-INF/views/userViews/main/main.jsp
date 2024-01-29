@@ -7,10 +7,10 @@
 <title>메인페이지</title>
 </head>
 <body>
-	<jsp:include page="../layout/header.jsp" />
+	<jsp:include page="../../layout/header.jsp" />
 	<h1>메인페이지</h1>
 
-	<jsp:include page="../layout/navibar.jsp" />
+	<jsp:include page="../../layout/navibar.jsp" />
 
 	<div style="font-size: 60px;">
 		<div>궁능유적본부</div>
@@ -24,7 +24,7 @@
 		</div>
 		<div>알림판(행사)</div>
 	</div>
-	<jsp:include page="../layout/footer.jsp" />
+	<jsp:include page="../../layout/footer.jsp" />
 
 </body>
 </html>

@@ -8,8 +8,8 @@
 </head>
 <body>
 
-	<jsp:include page="../layout/header.jsp"/>
-	<jsp:include page="../layout/navibar.jsp"/>
+	<jsp:include page="../../../layout/header.jsp"/>
+	<jsp:include page="../../../layout/navibar.jsp"/>
 	
 	<h2>경복궁 메인 img</h2>
 	
@@ -29,6 +29,6 @@
 		<a href="/royal/index/gb/reserve">해설*행사 예약</a>
 		<img src="" alt="이미지" />
 	</div>
-	<jsp:include page="../layout/footer.jsp"/>
+	<jsp:include page="../../../layout/footer.jsp"/>
 </body>
 </html>

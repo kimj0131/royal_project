@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>경복궁 내부 건축물</title>
+<title>궁 내부 건축물</title>
 </head>
 <body>
 

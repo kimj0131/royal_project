@@ -17,8 +17,9 @@ public class OpenApiDataController {
 	OpenApiService openApiService;
 
 	@GetMapping("manager/database/inner/openApi")
-	public void inputData() {
+	public String inputData() {
 
+		return "managerViews/common/royalInner/openApi";
 	}
 
 	@GetMapping("manager/database/inner/insert")
