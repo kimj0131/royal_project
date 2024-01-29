@@ -90,3 +90,6 @@ buildNumber.properties
 
 # database 정보
 database.properties
+
+# kakao 정보
+kakao.properties

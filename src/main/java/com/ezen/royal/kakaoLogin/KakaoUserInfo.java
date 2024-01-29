@@ -13,7 +13,7 @@ import com.google.gson.JsonParser;
 
 @Service
 public class KakaoUserInfo {
-	public void createKakaoUser(String token) {
+	public void getKakaoUserInfo(String token) {
 
 		String reqURL = "https://kapi.kakao.com/v2/user/me";
 
@@ -25,6 +25,7 @@ public class KakaoUserInfo {
 	       conn.setRequestMethod("POST");
 	       conn.setDoOutput(true);
 	       conn.setRequestProperty("Authorization", "Bearer " + token); //전송할 header 작성, access_token전송
+	       conn.setRequestProperty("Content-Type", "application/x-www-form-urlencoded;charset=utf-8");
 
 	       //결과 코드가 200이라면 성공
 	       int responseCode = conn.getResponseCode();
@@ -40,11 +41,10 @@ public class KakaoUserInfo {
 	       }
 	       System.out.println("response body : " + result);
 
-	       //Gson 라이브러리로 JSON파싱
-	       JsonParser parser = new JsonParser();
-	       JsonElement element = parser.parse(result);
-//
-	       int id = element.getAsJsonObject().get("id").getAsInt();
+	       // JSON파싱
+	       JsonElement element = JsonParser.parseString(result);
+
+	       long id = element.getAsJsonObject().get("id").getAsLong();
 	       
 	       boolean hasEmail = element.getAsJsonObject().get("kakao_account").getAsJsonObject().get("has_email").getAsBoolean();
 	       String email = "";
