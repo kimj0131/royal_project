@@ -1,0 +1,16 @@
+@charset "UTF-8";
+
+*{
+    font-family: "Noto Sans KR";
+}
+#footer{
+    background-color: #F8F8F8;
+    color: #666666;
+    display: flex;
+    justify-content:space-between;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+#footer_text{
+    padding-top: 80px;
+}
