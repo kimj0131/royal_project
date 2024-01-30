@@ -103,9 +103,7 @@
 								<td>만7세~만18세</td>
 							</tr>
 							<tr>
-								<td class="bdl" colspan="6" style="text-align: left;"><a
-									href="https://ticket.uforus.co.kr/web/main?shopEncode=&amp;productGroupCode=02000005&amp;lang=ko"><span
-										class="time_red">* 후원관람 시 전각관람권도 필수로 구매요망</span></a></td>
+								<td class="bdl" colspan="6" style="text-align: left;">후원관람 시 전각관람권도 필수로 구매요망</span></a></td>
 							</tr>
 							<tr>
 								<td colspan="2">창경궁</td>
@@ -207,7 +205,7 @@
 									<p>경복궁,창덕궁</p>30,000원
 									<p>
 										덕수궁,창경궁<span style="font-size: 10pt;"><span
-											style="font-size: 12pt;">·원</span></span>
+											style="font-size: 12pt;"></span></span>
 									</p>
 									<p>
 										<span style="font-size: 10pt;"><span
