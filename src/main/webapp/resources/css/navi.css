@@ -10,7 +10,7 @@
     width: 100px;
     height: auto;
     color: white;
-    position: fixed;
+    position: sticky;
     left:30px;
     top:250px;
     z-index: 100;
