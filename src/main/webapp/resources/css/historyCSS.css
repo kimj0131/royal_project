@@ -1,14 +1,22 @@
 @charset "UTF-8";
 
+/* @media all and (min-width:768px) and (max-width:1023px) {
+	
+} */
+
 *{
     font-family: "Noto Sans KR";
 	box-sizing: border-box;
 }
 
+body {
+	height: 100%;
+}
+
 h2 {
 	text-align: left;
 	margin-top: 100px;
-	font-size: 40px;
+	font-size: 35px;
 	padding-left: 250px;
 	margin: 0 auto;	
 }
@@ -34,19 +42,21 @@ img {
 
 .title_text {
 	margin: 0 auto;
-	font-size: 12px;
+	font-size: 15px;
     font-weight: normal;
     text-align: justify;
-    margin-bottom: 30px;
+    margin-left: 260px;
+    margin-right: 260px;
+	
 } 
 
 .history {
 	margin: 0 auto;
 	font-size: 25px;
 	font-weight: bold;
-	margin-top: 20px;
+	margin-top: 5%;
 	margin-bottom: 10px;
-	padding-left: 280px;
+	margin-left: 18%;
 }
 
 .history_table {
@@ -55,9 +65,8 @@ img {
     border-collapse: collapse;
 	background-color: white;
 	margin-top: 20px;
-	width: 800px;
+	width: 1000px;
 	margin: 0 auto;
-	
   }
 
 .history_table caption {
@@ -67,7 +76,13 @@ img {
 }
 
 .history_table th, .history_table td {
-	border: 1px solid #ddd;
+	border: 1px solid #ced4da;
 	padding: 10px;
 	text-align: center;
 }
+
+.history_table th {
+	background-color: #f1f1f1;
+}
+
+

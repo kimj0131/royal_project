@@ -14,6 +14,7 @@
 <body>
 	<div>
 		<h2>경복궁 소개.역사</h2>
+		<hr width="70%">
 		<div>
 			<div class="container">
 				<img alt="경복궁메인이미지" src="${gyeongbokimage}" />
@@ -22,7 +23,7 @@
 				<div class="container">
 					<img src="${gyeongbokicon}" alt="경복궁아이콘" />
 				</div>
-				<div class="title_wrap">경복궁(景福宮)은 1392년 조선 건국 후 1395년(태조 4)에
+				<div class="title_wrap">경복궁(景福宮)은 1392년 조선 건국 후<br> 1395년(태조 4)에
 					창건한 조선왕조 제일의 법궁(法宮)이다.</div>
 				<br>
 
@@ -44,10 +45,7 @@
 		<div class="history">역사</div>
 		<div>
 			<table class="history_table" border="1">
-				<caption>경복궁 역사 테이블 - 연도, 내용으로 구성</caption>
-				<colgroup>
-					<col style="width: 25%;"></col>
-				</colgroup>
+				
 				<thead>
 					<tr>
 						<th scope="col">연도</th>
