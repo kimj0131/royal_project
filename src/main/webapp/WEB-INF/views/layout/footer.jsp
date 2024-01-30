@@ -11,9 +11,14 @@
 
 <div id="footer_more_top"> </div>
 	<div id="footer">
-		<a id="footer_logo" href="/royal/main/home"><img style="width:300px; height:auto; padding-left:50px" src="${logoIMG}"/></a>
-		<span id="footer_text">ⓒ Cultural Heritage Administration Royal Palaces and Tombs Center. All rights reserved.</span>
-		<a href="https://github.com/kimj0131/royal_project"><img style="width:250px; height:auto" src="${githubIMG}"/></a>
+		<a id="footer_logo" href="/royal/main/home">
+		<img style="width:320px; height:auto; padding:30px 0 0 50px" src="${logoIMG}"/></a>
+		<span id="footer_text">
+		ⓒ Cultural Heritage Administration Royal Palaces and Tombs Center.
+		All rights reserved.</span>
+		<a style="width:300px; height:auto; padding:30px 0 0 50px" 
+			href="https://github.com/kimj0131/royal_project">
+		<img  src="${githubIMG}"/></a>
 	</div>
 
 </body>
