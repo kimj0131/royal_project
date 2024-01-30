@@ -12,6 +12,8 @@
 <link rel="stylesheet" href="${historyCSS}" />
 </head>
 <body>
+<jsp:include page="../../../layout/header.jsp" />
+
 	<div>
 		<h2>경복궁 소개.역사</h2>
 		<hr width="70%">
@@ -185,6 +187,6 @@
 			</table>
 		</div>
 	</div>
-
+	<jsp:include page="../../../layout/footer.jsp" />
 </body>
 </html>
