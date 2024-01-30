@@ -4,17 +4,15 @@
     font-family: "Noto Sans KR";
     box-sizing: border-box;
 }
-body{
-    padding-left: 25px;
-    padding-top: 80px;
-}
+
 
 #navibar{
     width: 100px;
     height: auto;
     color: white;
     position: sticky;
-    top:20px;
+    left:30px;
+    top:250px;
     z-index: 1;
     border-radius: 30px;
     background-color: #4e4e4e;
