@@ -93,3 +93,6 @@ database.properties
 
 # kakao 정보
 kakao.properties
+
+# naver 정보
+naver.properties
