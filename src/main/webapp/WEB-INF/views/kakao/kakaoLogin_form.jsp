@@ -22,11 +22,17 @@
 	<a href="https://kauth.kakao.com/oauth/authorize?
 		response_type=code&
 		client_id=${REST_API_KEY}&
-		redirect_uri=http://${IP}${REDIRECT_URI}&
+		redirect_uri=${IP}${REDIRECT_URI}&
 		prompt=login">
 		<img src="${LOGIN_FORMAT_PNG}" alt="kakaoLogin" />
 	</a>
 	<br>
 	<button onClick="location.href='${LOGOUT_URI}'">로그아웃</button>
+	
+	<hr>
+	<div>sessionScope : ${sessionScope.token}</div>
+	<script>
+		console.log();
+	</script>
 </body>
 </html>
