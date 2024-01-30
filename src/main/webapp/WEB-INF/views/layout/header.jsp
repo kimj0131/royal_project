@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>header</title>
 <c:url value="/resources/css/header.css" var="headerCSS" />
 <c:url value="/resources/image/logo.png" var="logoIMG" />
 <link rel="stylesheet" href="${headerCSS}" />
@@ -21,23 +21,26 @@
 			<li id="logo"><a href="/royal/main/home"><img
 					src="${logoIMG}" /></a></li>
 			<li><a id="category_name" href="/royal/palace/gyeongbokmain">궁소개</a>
-				<ul>
-					<li><a href="/royal/palace/gyeongbokmain">경복궁</a></li>
-					<li><a href="/royal/palace/deoksumain">덕수궁</a></li>
-					<li><a href="/royal/palace/changgyeongmain">창경궁</a></li>
-					<li><a href="/royal/palace/changdeokmain">창덕궁</a></li>
-					<li><a href="/royal/palace/jongmyomain">종묘</a></li>
+				<ul id="detail_categoty" style="margin:0; padding:0; padding-top:37px">
+					<li style="line-height:170%;"><a href="/royal/palace/gyeongbokmain">경복궁</a></li>
+					<li style="line-height:170%;"><a href="/royal/palace/deoksumain">덕수궁</a></li>
+					<li style="line-height:170%;"><a href="/royal/palace/changgyeongmain">창경궁</a></li>
+					<li style="line-height:170%;"><a href="/royal/palace/changdeokmain">창덕궁</a></li>
+					<li style="line-height:170%;"><a href="/royal/palace/jongmyomain">종묘</a></li>
 				</ul></li>
 			<li><a id="category_name" href="#">통합예약</a></li>
 			<li><a id="category_name"  href="#">행사</a></li>
 			<li><a id="category_name" href="#">소통</a>
-				<ul>
-					<li><a href="#">공지사항</a></li>
-					<li><a href="#">QnA</a></li>
-
+				<ul id="detail_categoty" style="margin:0; padding:0;  padding-top:37px">
+					<li style="line-height:170%;"><a=href="#">공지사항</a></li>
+					<li style="line-height:170%;"><a href="#">QnA</a></li>
 				</ul></li>
 			<li><a id="category_name" href="#">팀소개</a></li>
 		</ul>
+	</div>
+	
+	<div id="header_more_bottom">
+	
 	</div>
 
 	<!--  
