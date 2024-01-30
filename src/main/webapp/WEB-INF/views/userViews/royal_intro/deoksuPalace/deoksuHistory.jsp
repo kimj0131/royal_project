@@ -43,7 +43,6 @@
 		</div>
 	</div>
 	<div>
-		<div class="history">역사</div>
 		<div>
 			<table class="history_table" border="1">
 				<thead class="history_table caption">

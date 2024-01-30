@@ -18,7 +18,7 @@ public class JongmyoController {
 		return "/userViews/royal_intro/jongmyoPalace/jongmyoMain";
 	}
 	
-	@GetMapping("/jongmyokhistory")
+	@GetMapping("/jongmyohistory")
 	public String jongmyoHistory() {
 		return "/userViews/royal_intro/jongmyoPalace/jongmyoHistory";
 	}

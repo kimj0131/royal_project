@@ -15,7 +15,7 @@
 	
 	<div style="margin:10px">
 		<img src="" alt="이미지" />
-		<a href="/royal/palace/jongmyokhistory">종묘 소개, 역사</a>
+		<a href="/royal/palace/jongmyohistory">종묘 소개, 역사</a>
 	</div>
 	<div style="margin:10px">
 		<a href="/royal/palace/royalInner">종묘 내부 건축물</a>
