@@ -3,9 +3,9 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 
-<c:url value="/resources/css/navi.css" var="naviCSS" />
-<c:url value="/resources/image/homeBTN.png" var="homeBTN" />
-<c:url value="/resources/image/topBTN.png" var="topBTN" />
+<c:url value="/resources/css/layout/navi.css" var="naviCSS" />
+<c:url value="/resources/image/layout/homeBTN.png" var="homeBTN" />
+<c:url value="/resources/image/layout/topBTN.png" var="topBTN" />
 <link rel="stylesheet" href="${naviCSS}" />
 <link rel="stylesheet" href="${homeBTN}" />
 <link rel="stylesheet" href="${topBTN}" />

@@ -2,9 +2,9 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
-<c:url value="/resources/css/footer.css" var="footerCSS" />
-<c:url value="/resources/image/logo.png" var="logoIMG" />
-<c:url value="/resources/image/githubicon.png" var="githubIMG" />
+<c:url value="/resources/css/layout/footer.css" var="footerCSS" />
+<c:url value="/resources/image/layout/logo.png" var="logoIMG" />
+<c:url value="/resources/image/layout/githubicon.png" var="githubIMG" />
 <link rel="stylesheet" href="${footerCSS}" />
 <link rel="stylesheet" href="${logoIMG}" />
 <link rel="stylesheet" href="${githubIMG}" />

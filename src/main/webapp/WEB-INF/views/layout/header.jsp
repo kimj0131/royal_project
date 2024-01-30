@@ -6,8 +6,8 @@
 <head>
 <meta charset="UTF-8">
 <title>header</title>
-<c:url value="/resources/css/header.css" var="headerCSS" />
-<c:url value="/resources/image/logo.png" var="logoIMG" />
+<c:url value="/resources/css/layout/header.css" var="headerCSS" />
+<c:url value="/resources/image/layout/logo.png" var="logoIMG" />
 <link rel="stylesheet" href="${headerCSS}" />
 <link rel="stylesheet" href="${logoIMG}" />
 
