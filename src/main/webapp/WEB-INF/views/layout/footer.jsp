@@ -16,7 +16,7 @@
 		<span id="footer_text">
 		ⓒ Cultural Heritage Administration Royal Palaces and Tombs Center.
 		All rights reserved.</span>
-		<a style="width:230px; height:auto; padding:30px 0 0 50px" 
+		<a style="width:230px; height:auto; padding:30px" 
 			href="https://github.com/kimj0131/royal_project">
 		<img  src="${githubIMG}"/></a>
 	</div>
