@@ -12,8 +12,8 @@
 <link rel="stylesheet" href="${historyCSS}" />
 </head>
 <body>
-<jsp:include page="../../../layout/header.jsp" />
-
+	<jsp:include page="../../../layout/header.jsp" />
+	<br>
 	<div>
 		<h2>경복궁 소개.역사</h2>
 		<hr width="70%">
@@ -25,8 +25,10 @@
 				<div class="container">
 					<img src="${gyeongbokicon}" alt="경복궁아이콘" />
 				</div>
-				<div class="title_wrap">경복궁(景福宮)은 1392년 조선 건국 후<br> 1395년(태조 4)에
-					창건한 조선왕조 제일의 법궁(法宮)이다.</div>
+				<div class="title_wrap">
+					경복궁(景福宮)은 1392년 조선 건국 후<br> 1395년(태조 4)에 창건한 조선왕조 제일의
+					법궁(法宮)이다.
+				</div>
 				<br>
 
 				<div class="title_text">
@@ -47,8 +49,8 @@
 		<div class="history">역사</div>
 		<div>
 			<table class="history_table" border="1">
-				
-				<thead>
+
+				<thead class="history_table caption">
 					<tr>
 						<th scope="col">연도</th>
 						<th scope="col">내용</th>
@@ -187,6 +189,7 @@
 			</table>
 		</div>
 	</div>
+	<br><br>
 	<jsp:include page="../../../layout/footer.jsp" />
 </body>
 </html>
