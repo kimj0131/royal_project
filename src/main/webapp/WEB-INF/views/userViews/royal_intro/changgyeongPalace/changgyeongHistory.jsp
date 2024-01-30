@@ -1,24 +1,28 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
+<c:url value="/resources/css/cg.css" var="CGCSS" />
 <meta charset="UTF-8">
 <title>창경궁 내부 건축물</title>
+<link rel="stylesheet" href="${CGCSS}" />
 </head>
 <body>
+	<h2>창경궁 소개·역사</h2>
 	<div class="sub_con_wrap pt0" id="sub_con_wrap">
 		<!-- [S] sub_con_section -->
 		<div class="sub_con_section">
 			<!-- [S] palace_intro -->
 			<div class="palace_intro_wrap">
 				<div class="img_wrap">
-					<img src="/resource/templete/royal/img/sub/intro/img_intro_cgg.png"
+					<img src="../resources/image/cg/img_intro_cgg.png"
 						alt="창경궁 전경사진">
 				</div>
 				<div class="txt_wrap">
 					<div class="ic_wrap">
-						<img src="/imgs/images/2023/12/22/20231222151204670_KI3WU7D3.png"
+						<img src="../resources/image/cg/20231222151204670_KI3WU7D3.png"
 							title="" alt=""
 							style="vertical-align: baseline; border: 0px solid rgb(0, 0, 0); width: 83px;">
 					</div>
@@ -46,7 +50,6 @@
 			<div class="txt_section_tit">역사</div>
 			<div class="wrap table_wrap">
 				<table class="table bd_table bd th_c history_table">
-					<caption>창경궁 역사 테이블 - 연도, 내용으로 구성</caption>
 					<colgroup>
 						<col style="width: 25%;">
 						<col>
@@ -152,6 +155,8 @@
 		</div>
 		<!-- [E] sub_con_section -->
 		<!-- [S] survey_wrap -->
+		
+		<!--
 		<div class="sub_section survey_wrap">
 			<div class="survey_box">
 				<form name="satisForm" id="satisForm" method="post">
@@ -185,7 +190,9 @@
 							onclick="ManpaJs.fn_sendSatis(); return false;">등록</button>
 					</div>
 				</form>
-			</div>
+			</div> 
+			 -->
+		
 		</div>
 		<!-- [E] survey_wrap -->
 	</div>
