@@ -22,4 +22,9 @@ public class innerAndInfoController {
 		return "/userViews/royal_intro/guide_view";
 	}
 	
+	@GetMapping("/viewing_time") // 관람시간
+	public String viewing_time() {
+		return "/userViews/royal_intro/viewing_time";
+	}
+	
 }
