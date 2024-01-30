@@ -31,7 +31,4 @@
 		<task:scheduler id="jobScheduler" pool-size="10"/>
 		<task:annotation-driven scheduler="jobScheduler"/>
 	
-	<!-- NaverLoginBO Class에 대한 Bean설정 추가 -->
-	<!-- <beans:bean id="naverLoginBO" class="com.ezen.royal.naverLogin.NaverLoginBO" /> -->
-	
 </beans:beans>

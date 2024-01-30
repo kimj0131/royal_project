@@ -26,12 +26,12 @@ public class Scheduler {
 	public void autoUpdate() {
 		
 		Calendar cal = Calendar.getInstance();
-		int year = cal.get(cal.YEAR);
-		int month = cal.get(cal.MONTH) + 1;
-		int date = cal.get(cal.DATE);
-		int hour = cal.get(cal.HOUR_OF_DAY);
-		int min = cal.get(cal.MINUTE);
-		int sec = cal.get(cal.SECOND);
+		int year = cal.get(Calendar.YEAR);
+		int month = cal.get(Calendar.MONTH) + 1;
+		int date = cal.get(Calendar.DATE);
+		int hour = cal.get(Calendar.HOUR_OF_DAY);
+		int min = cal.get(Calendar.MINUTE);
+		int sec = cal.get(Calendar.SECOND);
 		apiService.upsertApiDataList();
 		
 		log.info(String.format("[%d/%d/%d | %02d:%02d:%02d]api 데이터 최신화가 완료되었습니다", year, month, date, hour, min, sec));
