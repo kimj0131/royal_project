@@ -1,0 +1,53 @@
+@charset "UTF-8";
+
+* {
+    box-sizing: border-box;
+}
+
+.menu {
+	font-size: 36px;
+    font-weight: bold;
+    border: 0;
+    color: black;
+    margin-bottom: 50px;
+    width: 100%;
+    vertical-align: middle;
+}
+
+a {
+  text-decoration-line: none;
+  color: black;
+  }
+
+
+.mainPic{
+	position: relative;
+	width: 100%;
+}
+
+.mainImage img{
+	vertical-align: middle;
+	  max-width: 100%;
+	  height: auto;
+	  display: block;
+}
+
+.mainText{
+	position: absolute;
+    top: 40%;
+    left: 40%;
+	color:white;
+	text-shadow: 2px 2px 1px black;
+	text-align: center;
+}
+
+#smallText {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+    letter-spacing: 5px;
+}
+
+#bigText{
+	font-size: 4rem;
+    font-weight: bold;
+}
