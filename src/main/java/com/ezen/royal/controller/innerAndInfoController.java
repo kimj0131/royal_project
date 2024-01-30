@@ -27,4 +27,9 @@ public class innerAndInfoController {
 		return "/userViews/royal_intro/viewing_time";
 	}
 	
+	@GetMapping("/fare") // 관람요금
+	public String fare() {
+		return "/userViews/royal_intro/fare";
+	}
+	
 }
