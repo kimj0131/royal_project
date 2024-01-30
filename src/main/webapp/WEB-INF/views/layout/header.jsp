@@ -43,37 +43,4 @@
 	
 	</div>
 
-	<!--  
-	<div id="top_category">
-
-		<div>
-			<ul class="home_category">
-				<li id="logo"><a href="/royal/main/home"><img
-						src="${logoIMG}" /></a></li>
-				<div id="palace_introduce_category">
-					<ul>
-						<li><a href="/royal/palace/gyeongbokmain">궁소개</a>
-							<ul>
-								<li><a href="/royal/palace/gyeongbokmain">경복궁</a></li>
-								<li><a href="/royal/palace/deoksumain">덕수궁</a></li>
-								<li><a href="/royal/palace/changgyeongmain">창경궁</a></li>
-								<li><a href="/royal/palace/changdeokmain">창덕궁</a></li>
-								<li><a href="/royal/palace/jongmyomain">종묘</a></li>
-							</ul>
-						</li>
-				</div>
-				<li id="HC_name"><a id="HC_name_a" href="">통합예약</a></li>
-				<li id="HC_name"><a id="HC_name_a" href="">행 사</a></li>
-				<div id="palace_introduce_category">
-					<ul>
-						<li id="HC_name"><a id="HC_name_a" href="">소 통</a></li>
-							<li><a href="">공지사항</a></li>
-							<li><a href="">QnA</a></li>
-						<li id="HC_name"><a id="HC_name_a" href="">팀 소개</a></li>
-					</ul>
-				</div>
-		</div>
-	</div>
 	
-
--->
