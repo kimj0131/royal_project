@@ -1,0 +1,112 @@
+@charset "UTF-8";
+
+*{
+    font-family: "Noto Snas KR";
+}
+
+.header_top{
+    width: 100%;
+    height: 100%;
+    background-color: #052644;
+    display: flex; 
+    flex-direction: row-reverse;
+    align-items: center;
+
+}
+.header_top > a{
+    color: white;
+    text-decoration-line: none;
+    padding-right: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+#logo{
+    vertical-align: middle;
+    
+}
+
+.top_category{
+    text-align: center;
+    width:100%;
+    height:100%;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    list-style-type: none;
+    text-align: center;
+    position : relative;
+    float:left;
+    line-height: 50px; 
+    text-align: center;
+    
+}
+
+#detail_categoty > li{
+   float: left;
+   width: 20%;
+   height: 50%;
+  line-height: 20px;
+   text-align: center;
+
+}
+
+#category_name{
+    font-size: 25px;
+    font-weight: bold;
+    display: inline-block;
+    padding-top: 10px;
+}
+#category_name:hover{
+    border-bottom: solid 2px gray;
+
+}
+.menuBox {
+    display: grid;
+    align-items:center;
+    grid-template-columns: repeat(6, 1fr);
+    padding-left: 30px;
+    padding-top: 0;
+    padding-bottom: 20px;
+   border-bottom: solid 2px rgb(218, 218, 218);
+}
+
+
+
+/* 드롭박스 */
+
+ul li{
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color:#333;
+}
+
+#top_category > ul > li > ul {
+    width:40%;
+    display:none;
+    position: absolute;
+    background-color:transparent;
+    margin: 5px;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+#top_category > ul > li:hover > ul {
+    display:block;
+
+}
+
+#top_category > ul > li > ul > li:hover {
+    background: #05264462;
+    transition: ease 0.5s;
+}
+
+#top_category > ul > li > ul > li:hover > a{
+    color: white;
+} 
+
+#header_more_bottom{
+    width: 100%;
+    height: 40px;
+}
