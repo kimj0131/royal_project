@@ -5,6 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>CoverPage</title>
+<c:url value="/resources/css/coverpage.css" var="coverCSS" />
 </head>
 <body>
 
