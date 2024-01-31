@@ -28,7 +28,7 @@
 					<li style="line-height:170%;"><a href="/royal/palace/changdeokmain">창덕궁</a></li>
 					<li style="line-height:170%;"><a href="/royal/palace/jongmyomain">종묘</a></li>
 				</ul></li>
-			<li><a id="category_name" href="#">통합예약</a></li>
+			<li><a id="category_name" href="/royal/palace/reservation">통합예약</a></li>
 			<li><a id="category_name"  href="#">행사</a></li>
 			<li><a id="category_name" href="#">소통</a>
 				<ul id="detail_categoty" style="margin:0; padding:0;  padding-top:37px">
