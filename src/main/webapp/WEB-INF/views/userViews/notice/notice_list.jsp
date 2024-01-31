@@ -11,16 +11,29 @@
 </head>
 <body>
 	<jsp:include page="../../layout/header.jsp" />
-	<div>
+	<div class="top_img_name">
 		<div>
-			<img src="https://royal.cha.go.kr/resource/templete/royal/img/sub/bg_sub06.jpg">
+			<img id="top_bg_Img" src="https://royal.cha.go.kr/resource/templete/royal/img/sub/bg_sub06.jpg">
 		</div>
-		<div>
-			<h2>소  통</h2>
+		<div class="sub_category_name">
+			<h2 id="sub_name">소  통</h2>
 		</div>
 	</div>
 	
-	<h1>공지사항</h1>
+	<div>
+		<div id="notice_title_div">
+			<h2 id="notice_title">공지사항</h2>
+		</div>
+		
+		<div class="BTN_class">
+			<div id="all_BTN"><a href="">전 체</a></div>
+			<div id="GB_BTN"><a href="">경복궁</a></div>
+			<div id="DS_BTN"><a href="">덕수궁</a></div>
+			<div id="CG_BTN"><a href="">창경궁</a></div>
+			<div id="CD_BTN"><a href="">창덕궁</a></div>
+			<div id="JM_BTN"><a href="">종 묘</a></div>
+		</div>
+	</div>
 	
 	
 	

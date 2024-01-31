@@ -1,1 +1,59 @@
 @charset "UTF-8";
+
+*{
+    font-family: "Noto Snas KR";
+}
+
+#top_bg_Img{
+    width: 100%;
+}
+
+.sub_category_name #sub_name{
+    position: absolute;
+    color: white;
+    font-weight: bold;
+    font-size: 36px;
+    Top : 250px;
+    left: 960px;
+}
+
+
+
+#notice_title{
+    padding-left: 180px;
+    font-size: 36px;
+}
+
+.BTN_class{
+    width: auto;
+    height: 35px;
+    margin : 5px;
+    padding: 0 5px;
+    display: flex;
+    justify-content: center;
+    border-bottom: solid 1px #EAEAEA;
+    
+}
+
+.BTN_class > div > a{
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 5px;
+    text-align: center;
+    border-radius: 20px;
+    padding: 0 35px; 
+}
+
+#all_BTN{
+    border: 3px solid transparent;
+    border-radius: 20px;
+    background-color: #ffffff;
+    background-image: linear-gradient(#fff, #fff), linear-gradient(to right,#C1457E, rgb(152, 133, 195),#1B66B9);
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+}
+
+#all_BTN > a{
+    color: #815295;
+}
+
