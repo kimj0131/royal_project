@@ -30,7 +30,8 @@
 	<button onClick="location.href='${LOGOUT_URI}'">로그아웃</button>
 	
 	<hr>
-	<div>sessionScope : ${sessionScope.token}</div>
+	<div>sessionScope : ${sessionScope.token}</div> <br>
+	<div>sessionScope : ${sessionScope.social_id}</div>
 	<script>
 		console.log();
 	</script>

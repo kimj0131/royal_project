@@ -9,6 +9,7 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.PropertySource;
@@ -16,7 +17,7 @@ import org.springframework.core.env.Environment;
 import org.springframework.stereotype.Service;
 
 import com.ezen.royal.api.dto.MemberDTO;
-import com.ezen.royal.api.mapper.LoginMapperXML;
+import com.ezen.royal.api.mapper.LoginMapper;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonParser;
 
@@ -31,7 +32,7 @@ public class kakaoServiceImpl implements kakaoService {
 	@Autowired
 	Environment env; // kakao.properties 사용하기 위한 객체
 	@Autowired
-	LoginMapperXML loginMapperXml;
+	LoginMapper loginMapper;
 	//
 
 	// [getAccessToken(GAT) 필드] //
@@ -106,14 +107,15 @@ public class kakaoServiceImpl implements kakaoService {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		// 세션 어트리뷰트에 저장
+		// 세션 어트리뷰트에 토큰 저장
 		req.getSession().setAttribute("token", access_Token);
+		log.info("(token)세션 어트리뷰트 설정함: " + req.getSession().getAttribute("token"));
 
 		return access_Token;
 	}
 
 	@Override
-	public int upsertMember(String token) {
+	public int upsertMember(String token, HttpServletRequest req) {
 
 		MemberDTO memberDTO = new MemberDTO();
 		
@@ -170,13 +172,19 @@ public class kakaoServiceImpl implements kakaoService {
 			memberDTO.setSocial_id(Long.toString(social_id));
 			memberDTO.setMember_name(nickname);
 			memberDTO.setMember_email(email);
-			memberDTO.setMemeber_type("kakao");
+			memberDTO.setMember_type("kakao");
 
+			// 로그인 했는지 확인 하기 위한 세션 어트리뷰트
+			HttpSession session = req.getSession();
+			session.setAttribute("social_id", social_id);
+			log.info("(social_id)세션 어트리뷰트 설정함: " + session.getAttribute("social_id"));
+			
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 		
-		return loginMapperXml.upsertMember(memberDTO);
+		
+		return loginMapper.upsertMember(memberDTO);
 	}
 
 	@Override
@@ -186,7 +194,9 @@ public class kakaoServiceImpl implements kakaoService {
 				+ env.getProperty("IP") + LO_REDIRECT_URI;
 
 		// 세션 어트리뷰트 삭제
-		System.out.println("삭제 직전 세션 어트리뷰트: " + req.getSession().getAttribute("token"));
+		HttpSession session = req.getSession();
+		log.info("(token)로그아웃 직전 세션 어트리뷰트: " + session.getAttribute("token"));
+		log.info("(social_id)로그아웃 직전 세션 어트리뷰트: " + session.getAttribute("social_id"));
 		req.getSession().invalidate();
 
 		return LO_REQ_URL + parameter;

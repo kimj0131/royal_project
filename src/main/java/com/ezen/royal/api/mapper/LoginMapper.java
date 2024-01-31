@@ -2,6 +2,6 @@ package com.ezen.royal.api.mapper;
 
 import com.ezen.royal.api.dto.MemberDTO;
 
-public interface LoginMapperXML {
+public interface LoginMapper {
 	int upsertMember(MemberDTO dto);
 }
