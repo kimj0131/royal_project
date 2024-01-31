@@ -8,11 +8,13 @@
 <title>Insert title here</title>
 <c:url value="/resources/css/royalInfoCSS/fare.css" var="fareCSS" />
 <c:url value="/resources/css/royalInfoCSS/lnb.css" var="lnbCSS" />
+<c:url value="/resources/image/royalInfo/right.png" var="rightIMG" />
 <c:url value="/resources/image/royalInfo/royalInfo.jpg"
 	var="royalInfoIMG" />
 <link rel="stylesheet" href="${fareCSS}" />
 <link rel="stylesheet" href="${lnbCSS}" />
 <link rel="stylesheet" href="${royalInfoIMG}" />
+<link rel="stylesheet" href="${rightIMG}" />
 </head>
 <body>
 
@@ -40,7 +42,7 @@
 							href="/royal/palace/viewing_time">관람시간</a></li>
 						<li class="lnb_depth2_item" id="SNB_R703000000"><a
 							href="/royal/palace/fare"><B>관람요금</a></li>
-						<li class="lnb_depth2_item" id="SNB_R707000000"><a href="">오시는
+						<li class="lnb_depth2_item" id="SNB_R707000000"><a href="/royal/palace/roadmap">오시는
 								길</a></li>
 					</ul>
 				</div>
@@ -483,7 +485,8 @@
 							<div class="sub_con_section">
 								<div class="btn_wrap tac">
 									<a href="/royal/palace/reservation" class="btn arr_btn_b">해설/행사
-										예약하기 </a>
+										예약하기 &nbsp;<img src="${rightIMG}"
+								alt=""></a>
 								</div>
 							</div>
 						</div>

@@ -35,7 +35,7 @@
 		</div>
 	</a>
 
-	<a href="https://royal.cha.go.kr/royal/palace/royalInfo">
+	<a href="/royal/palace/viewing_time">
 		<div class="menu" style="margin:10px">
 			<img src="../resources/image/royal_inner/main/changgyeong/bg_menu03_03.jpg" alt="이미지" />
 	   		관람안내

@@ -44,7 +44,7 @@
 							href="/royal/palace/viewing_time"><B>관람시간</a></li>
 						<li class="lnb_depth2_item" id="SNB_R703000000"><a
 							href="/royal/palace/fare">관람요금</a></li>
-						<li class="lnb_depth2_item" id="SNB_R707000000"><a href="">오시는
+						<li class="lnb_depth2_item" id="SNB_R707000000"><a href="/royal/palace/loadmap">오시는
 								길</a></li>
 					</ul>
 				</div>

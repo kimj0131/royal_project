@@ -36,7 +36,7 @@
 		</div>
 	</a>
 	
-	<a href="/royal/palace/royalInfo">
+	<a href="/royal/palace/viewing_time">
 		<div class="menu" style="margin:10px">
 			<img src="../resources/image/royal_inner/main/jongmyo/bg_menu05_03.jpg" alt="이미지" />
 			관람안내

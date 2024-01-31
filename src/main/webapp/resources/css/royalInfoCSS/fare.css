@@ -301,3 +301,24 @@ body, html {
     margin-bottom: 8px;
     font-weight: 400;
 }
+
+.arr_btn_b {
+    height: 50px;
+    padding: 0 20px;
+    justify-content: space-between;
+    border: solid 1px #000;
+    color: #000 !important;
+    font-weight: 500;
+}
+
+.btn {
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+
+.tac {
+    text-align: center;
+}

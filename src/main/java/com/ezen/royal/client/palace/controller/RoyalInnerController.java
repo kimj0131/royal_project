@@ -17,19 +17,5 @@ public class RoyalInnerController {
 		return "/userViews/royal_intro/royal_Inner_view";
 	}
 	
-	@GetMapping("/royalInfo") // 관람안내
-	public String info() {
-		return "/userViews/royal_intro/guide_view";
-	}
-	
-	@GetMapping("/viewing_time") // 관람시간
-	public String viewing_time() {
-		return "/userViews/royal_intro/viewing_time";
-	}
-	
-	@GetMapping("/fare") // 관람요금
-	public String fare() {
-		return "/userViews/royal_intro/fare";
-	}
-	
+
 }
