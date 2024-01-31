@@ -32,7 +32,7 @@
 			<li><a id="category_name"  href="#">행사</a></li>
 			<li><a id="category_name" href="#">소통</a>
 				<ul id="detail_categoty" style="margin:0; padding:0;  padding-top:37px">
-					<li style="line-height:170%;"><a=href="#">공지사항</a></li>
+					<li style="line-height:170%;"><a href="#">공지사항</a></li>
 					<li style="line-height:170%;"><a href="#">QnA</a></li>
 				</ul></li>
 			<li><a id="category_name" href="#">팀소개</a></li>

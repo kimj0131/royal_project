@@ -86,7 +86,6 @@ a {
     width:40%;
     display:none;
     position: absolute;
-    font-size:14px;
     background-color:transparent;
     margin: 5px;
     font-weight: bold;
@@ -95,12 +94,17 @@ a {
 
 #top_category > ul > li:hover > ul {
     display:block;
+
 }
 
 #top_category > ul > li > ul > li:hover {
-    background: rgba(173, 136, 173, 0.342);
+    background: #05264462;
     transition: ease 0.5s;
-    }
+}
+
+#top_category > ul > li > ul > li:hover > a{
+    color: white;
+} 
 
 #header_more_bottom{
     width: 100%;
