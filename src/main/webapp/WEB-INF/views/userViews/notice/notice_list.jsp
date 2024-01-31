@@ -7,7 +7,9 @@
 <meta charset="UTF-8">
 	<title>notice</title>
 	<c:url value="/resources/css/communication/notice.css" var="noticeCSS" />
+	<c:url value="/resources/css/communication/public_communication.css" var="public_communicationCSS" />
 	<link rel="stylesheet" href="${noticeCSS}" />
+	<link rel="stylesheet" href="${public_communicationCSS}" />
 </head>
 <body>
 	<jsp:include page="../../layout/header.jsp" />
