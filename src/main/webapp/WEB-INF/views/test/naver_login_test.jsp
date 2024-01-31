@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%> <%@ taglib prefix="c"
 uri="http://java.sun.com/jsp/jstl/core"%>
+<c:url value="/resources/js/naver_login/naver_login.js" var="naverloginJS" />
+<c:url value="/resources/js/naver_login/naver.js" var="naverJS" />
 <!DOCTYPE html>
 <html>
 	<head>
@@ -15,17 +17,8 @@ uri="http://java.sun.com/jsp/jstl/core"%>
 
 	<body>
 		<div id="naver_id_login"></div>
-		<script>
-			var naver_id_login = new naver_id_login(
-				"N5HvSFFdmpPxwnX4OiLp",
-				"http://localhost:9000/royal/user/login/naver/callback"
-			);
-			var state = naver_id_login.getUniqState();
-			naver_id_login.setButton("green", 3, 40);
-			naver_id_login.setDomain("http://localhost:9000");
-			naver_id_login.setState(state);
-			// naver_id_login.setPopup();
-			naver_id_login.init_naver_id_login();
-		</script>
+
+		<script src="${naverJS}"></script>
+		<script src="${naverloginJS}"></script>
 	</body>
 </html>

@@ -22,7 +22,7 @@ public class Scheduler {
 	 */
 	// * 을 입력할경우 모두(항상)으로 설정함
 	// cron = 초 분 시 일 월 요일
-	@Scheduled(cron = "0 3 16 * * *")
+	@Scheduled(cron = "0 0 2 * * *")
 	public void autoUpdate() {
 		
 		Calendar cal = Calendar.getInstance();
