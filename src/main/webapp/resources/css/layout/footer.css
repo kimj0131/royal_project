@@ -1,7 +1,9 @@
 @charset "UTF-8";
 
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+
 *{
-    font-family: "Noto Sans KR";
+    font-family: 'Poppins', sans-serif;
     box-sizing: border-box;
 }
 
@@ -18,8 +20,8 @@ body{
 #footer{
     width: 100%;
     height: 100%;
-    background-color: #F8F8F8;
-    color: #666666;
+    background-color: #35414d;
+    color: white;
     display: flex;
     justify-content:space-between;
 
@@ -27,3 +29,5 @@ body{
 #footer_text{
     padding-top: 100px;
 }
+
+

@@ -4,7 +4,7 @@
 
 <c:url value="/resources/css/layout/footer.css" var="footerCSS" />
 <c:url value="/resources/image/layout/logo.png" var="logoIMG" />
-<c:url value="/resources/image/layout/githubicon.png" var="githubIMG" />
+<c:url value="/resources/image/layout/whiteGitBTN.png" var="githubIMG" />
 <link rel="stylesheet" href="${footerCSS}" />
 <link rel="stylesheet" href="${logoIMG}" />
 <link rel="stylesheet" href="${githubIMG}" />
@@ -17,8 +17,9 @@
 		ⓒ Cultural Heritage Administration Royal Palaces and Tombs Center.
 		All rights reserved.</span>
 
-		<a href="https://github.com/kimj0131/royal_project">
-			<img style="width:220px; height:auto; padding:30px"  src="${githubIMG}"/>
+		<a id="gitIMG"href="https://github.com/kimj0131/royal_project">
+			<img  style="width:80px; height:auto; 
+				  padding-right:30px; padding-top:40px"  src="${githubIMG}"/>
 		</a>
 	</div>
 

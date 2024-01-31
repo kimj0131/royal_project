@@ -4,8 +4,8 @@
 
 
 <c:url value="/resources/css/layout/navi.css" var="naviCSS" />
-<c:url value="/resources/image/layout/homeBTN.png" var="homeBTN" />
-<c:url value="/resources/image/layout/topBTN.png" var="topBTN" />
+<c:url value="/resources/image/layout/whiteHomeBTN.png" var="homeBTN" />
+<c:url value="/resources/image/layout/whiteTopBTN.png" var="topBTN" />
 <link rel="stylesheet" href="${naviCSS}" />
 <link rel="stylesheet" href="${homeBTN}" />
 <link rel="stylesheet" href="${topBTN}" />
@@ -24,7 +24,7 @@
 		</li>
 		<li style="line-height:300%;" >
 			<a href="javascript:window.scrollTo(0,0);" style="padding-top:10px">
-			<img style="width:auto; height:60px;  padding-top:15px" src="${topBTN}"/>
+			<img style="width:auto; height:70px;  padding-top:15px" src="${topBTN}"/>
 			</a>
 		</li>
       </ul>
