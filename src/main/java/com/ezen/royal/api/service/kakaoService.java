@@ -8,6 +8,6 @@ public interface kakaoService {
 	
 	public String logout(String token, HttpServletRequest req);
 	
-	public void getUserInfo(String token);
+	public int upsertMember(String token);
 	
 }

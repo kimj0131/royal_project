@@ -22,6 +22,7 @@ public class KakaoController {
 	@Autowired
 	kakaoService kakaoService;
 	
+	// 이후 로그인폼 컨트롤러로 바꾸면서 삭제 예정
 	@RequestMapping("kakao/form")
 	public String kakaoLoginForm() {
 		return "kakao/kakaoLogin_form";
@@ -31,7 +32,7 @@ public class KakaoController {
 	public String kakaoLogin(@RequestParam("code") String code, HttpServletRequest req) {
 
 		String accessToken = kakaoService.getAccessToken(code, req);
-		kakaoService.getUserInfo(accessToken);
+		int result = kakaoService.upsertMember(accessToken);
 
 		return "redirect:/kakao/form";
 	}

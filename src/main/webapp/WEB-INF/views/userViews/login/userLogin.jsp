@@ -9,7 +9,10 @@
 	<body>
 		<jsp:include page="../../layout/header.jsp"/>
 		
-		<h1>로그인 페이지</h1>
+		<h1>간편 로그인</h1>
+		<button>카카오</button> 
+		<br>
+		<button>네이버</button>
 
 	<jsp:include page="../../layout/footer.jsp"/>
 	</body>

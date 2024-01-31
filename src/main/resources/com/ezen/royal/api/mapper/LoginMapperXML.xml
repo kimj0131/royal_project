@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ezen.royal.api.mapper.LoginMapperXML">
+
+	<update id="upsertMember">
+        MERGE INTO member A USING (
+			SELECT
+  				#{social_id} as social_id
+	  			#{member_name} as member_name,
+  				#{member_email} as member_email,
+  				#{member_type} as member_type,
+			FROM DUAL
+		) B
+		ON (A.social_id = B.social_id)
+		WHEN MATCHED THEN
+		UPDATE
+			SET
+  				A.social_id = B.social_id		
+				A.member_name = B.member_name,
+				A.member_email = B.member_email,
+  				A.member_type = B.member_type,
+		WHEN NOT MATCHED THEN
+		INSERT (
+				member_id, 
+				social_id
+				member_name, 
+				member_email, 
+				member_type, 
+		)
+		VALUES (
+			member_id_seq.nextval,
+  			B.social_id
+  			B.member_name,
+  			B.member_email,
+  			B.member_type,
+		)
+	</update>
+
+</mapper>

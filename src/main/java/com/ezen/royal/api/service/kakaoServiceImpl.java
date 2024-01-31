@@ -15,6 +15,8 @@ import org.springframework.context.annotation.PropertySource;
 import org.springframework.core.env.Environment;
 import org.springframework.stereotype.Service;
 
+import com.ezen.royal.api.dto.MemberDTO;
+import com.ezen.royal.api.mapper.LoginMapperXML;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonParser;
 
@@ -28,8 +30,10 @@ public class kakaoServiceImpl implements kakaoService {
 	// [공통 필드] //
 	@Autowired
 	Environment env; // kakao.properties 사용하기 위한 객체
+	@Autowired
+	LoginMapperXML loginMapperXml;
 	//
-	
+
 	// [getAccessToken(GAT) 필드] //
 	private static String GAT_REQ_URL = "https://kauth.kakao.com/oauth/token";
 	private static String GAT_REDIRECT_URI = "/royal/kakao/login";
@@ -38,7 +42,7 @@ public class kakaoServiceImpl implements kakaoService {
 	// [getUserInfo(GUI) 필드] //
 	private static String GUI_REQ_URL = "https://kapi.kakao.com/v2/user/me";
 	//
-	
+
 	// [Logout(LO) 필드] //
 	// 서비스 로그아웃 + 카카오계정 로그아웃
 	private static String LO_REQ_URL = "https://kauth.kakao.com/oauth/logout";
@@ -109,8 +113,10 @@ public class kakaoServiceImpl implements kakaoService {
 	}
 
 	@Override
-	public void getUserInfo(String token) {
+	public int upsertMember(String token) {
 
+		MemberDTO memberDTO = new MemberDTO();
+		
 		// access_token을 이용하여 사용자 정보 조회
 		try {
 			URL url = new URL(GUI_REQ_URL);
@@ -142,26 +148,35 @@ public class kakaoServiceImpl implements kakaoService {
 			// JSON파싱
 			JsonElement element = JsonParser.parseString(result);
 
-			long id = element.getAsJsonObject().get("id").getAsLong();
-
+			long social_id = element.getAsJsonObject().get("id").getAsLong();
+			
+			String nickname = element.getAsJsonObject().get("properties").getAsJsonObject().get("nickname")
+					.getAsString();
+			
+			String email = "";
 			boolean hasEmail = element.getAsJsonObject().get("kakao_account").getAsJsonObject().get("has_email")
 					.getAsBoolean();
-			String email = "";
 			if (hasEmail) {
 				email = element.getAsJsonObject().get("kakao_account").getAsJsonObject().get("email").getAsString();
 			}
-			
-			String nickname = element.getAsJsonObject().get("properties").getAsJsonObject().get("nickname").getAsString();
-			
-			log.info("[GUI] user_id : " + id);
-			log.info("[GUI] user_email : " + email);
-			log.info("[GUI] user_nickname : " + nickname);
 
 			br.close();
+
+			log.info("[GUI] social_id : " + social_id);
+			log.info("[GUI] email : " + email);
+			log.info("[GUI] nickname : " + nickname);
+
+			// dto에 데이터 넣어서 db에 upsert
+			memberDTO.setSocial_id(Long.toString(social_id));
+			memberDTO.setMember_name(nickname);
+			memberDTO.setMember_email(email);
+			memberDTO.setMemeber_type("kakao");
 
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+		
+		return loginMapperXml.upsertMember(memberDTO);
 	}
 
 	@Override
