@@ -14,10 +14,6 @@
 	<jsp:include page="../../../layout/header.jsp"/>
 	<jsp:include page="../../../layout/navibar.jsp"/>
 
-	<div style="margin:10px">
-		<img src="" alt="이미지" />
-		<a href="/royal/palace/jongmyohistory">종묘 소개, 역사</a>
-
 	<div class="mainPic">
 		<div class="mainImage"><img src="../resources/image/main/jm/jongmyo.jpg" alt=""></div>
 		<div class="mainText">
