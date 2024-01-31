@@ -4,25 +4,26 @@
 <!DOCTYPE html>
 <html>
 <head>
-<c:url value="/resources/css/historyCSS.css" var="historyCSS" />
-<c:url value="/resources/image/jongmyo/jm.png" var="jongmyoimage" />
-<c:url value="/resources/image/jongmyo/jmicon.png" var="jongmyoicon" />
+<c:url value="/resources/css/royal_intro/historyCSS.css" var="historyCSS" />
+<c:url value="/resources/image/royal_inner/history/jongmyo/jm.png" var="jongmyoimage" />
+<c:url value="/resources/image/royal_inner/history/jongmyo/jmicon.png" var="jongmyoicon" />
 <meta charset="UTF-8">
 <title>종묘 소개 및 역사 페이지</title>
 <link rel="stylesheet" href="${historyCSS}" />
 </head>
 <body>
 	<jsp:include page="../../../layout/header.jsp" />
+	<jsp:include page="../../../layout/navibar.jsp"/>
 	<br>
 	<div>
 		<h2>종묘 소개.역사</h2>
 		<hr width="70%">
 		<div>
 			<div class="container">
-				<img alt="종묘메인이미지" src="${jongmyoimage}" />
+				<img class="img" alt="종묘메인이미지" src="${jongmyoimage}" />
 			</div>
 			<div class="container">
-				<img src="${jongmyoicon}" alt="종묘아이콘" />
+				<img class="img" src="${jongmyoicon}" alt="종묘아이콘" />
 			</div>
 		</div>
 		<br>

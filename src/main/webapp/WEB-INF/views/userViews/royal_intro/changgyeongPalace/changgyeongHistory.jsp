@@ -4,27 +4,26 @@
 <!DOCTYPE html>
 <html>
 <head>
-<c:url value="/resources/css/historyCSS.css" var="historyCSS" />
-<c:url value="/resources/image/changgyeong/cg.png"
-	var="changgyeongimage" />
-<c:url value="/resources/image/changgyeong/cgicon.png"
-	var="changgyeongicon" />
+<c:url value="/resources/css/royal_intro/historyCSS.css" var="historyCSS" />
+<c:url value="/resources/image/royal_inner/history/changgyeong/cg.png" var="changgyeongimage" />
+<c:url value="/resources/image/royal_inner/history/changgyeong/cgicon.png" var="changgyeongicon" />
 <meta charset="UTF-8">
 <title>창경궁 소개 및 역사 페이지</title>
 <link rel="stylesheet" href="${historyCSS}" />
 </head>
 <body>
 	<jsp:include page="../../../layout/header.jsp" />
+	<jsp:include page="../../../layout/navibar.jsp"/>
 	<br>
 	<div>
 		<h2>창경궁 소개.역사</h2>
 		<hr width="70%">
 		<div>
 			<div class="container">
-				<img alt="창경궁메인이미지" src="${changgyeongimage}" />
+				<img class="img" alt="창경궁메인이미지" src="${changgyeongimage}" />
 			</div>
 			<div class="container">
-				<img src="${changgyeongicon}" alt="창경궁아이콘" />
+				<img class="img" src="${changgyeongicon}" alt="창경궁아이콘" />
 			</div>
 			<div>
 				<div class="title_wrap">창경궁(昌慶宮)은 성종이 세 명의 대비를 위해 옛 수강궁에 창건한

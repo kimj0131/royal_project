@@ -4,25 +4,26 @@
 <!DOCTYPE html>
 <html>
 <head>
-<c:url value="/resources/css/historyCSS.css" var="historyCSS" />
-<c:url value="/resources/image/deoksu/ds.png" var="deoksuimage" />
-<c:url value="/resources/image/deoksu/dsicon.png" var="deoksuicon" />
+<c:url value="/resources/css/royal_intro/historyCSS.css" var="historyCSS" />
+<c:url value="/resources/image/royal_inner/history/deoksu/ds.png" var="deoksuimage" />
+<c:url value="/resources/image/royal_inner/history/deoksu/dsicon.png" var="deoksuicon" />
 <meta charset="UTF-8">
 <title>덕수궁 소개 및 역사 페이지</title>
 <link rel="stylesheet" href="${historyCSS}" />
 </head>
 <body>
 	<jsp:include page="../../../layout/header.jsp" />
+	<jsp:include page="../../../layout/navibar.jsp"/>
 	<br>
 	<div>
 		<h2>덕수궁 소개.역사</h2>
 		<hr width="70%">
 		<div>
 			<div class="container">
-				<img alt="덕수궁메인이미지" src="${deoksuimage}" />
+				<img class="img" alt="덕수궁메인이미지" src="${deoksuimage}" />
 			</div>
 			<div class="container">
-				<img src="${deoksuicon}" alt="덕수궁아이콘" />
+				<img class="img" src="${deoksuicon}" alt="덕수궁아이콘" />
 			</div>
 		</div>
 		<br>

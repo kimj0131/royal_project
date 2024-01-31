@@ -4,25 +4,26 @@
 <!DOCTYPE html>
 <html>
 <head>
-<c:url value="/resources/css/historyCSS.css" var="historyCSS" />
-<c:url value="/resources/image/changdeok/cd.png" var="changdeokimage" />
-<c:url value="/resources/image/changdeok/cdicon.png" var="changdeokicon" />
+<c:url value="/resources/css/royal_intro/historyCSS.css" var="historyCSS" />
+<c:url value="/resources/image/royal_inner/history/changdeok/cd.png" var="changdeokimage" />
+<c:url value="/resources/image/royal_inner/history/changdeok/cdicon.png" var="changdeokicon" />
 <meta charset="UTF-8">
 <title>창덕궁 소개 및 역사 페이지</title>
 <link rel="stylesheet" href="${historyCSS}" />
 </head>
 <body>
 	<jsp:include page="../../../layout/header.jsp" />
+	<jsp:include page="../../../layout/navibar.jsp"/>
 	<br>
 	<div>
 		<h2>창덕궁 소개.역사</h2>
 		<hr width="70%">
 		<div>
 			<div class="container">
-				<img alt="창덕궁메인이미지" src="${changdeokimage}" />
+				<img class="img" alt="창덕궁메인이미지" src="${changdeokimage}" />
 			</div>
 			<div class="container">
-				<img src="${changdeokicon}" alt="창덕궁아이콘" />
+				<img class="img" src="${changdeokicon}" alt="창덕궁아이콘" />
 			</div>
 			<div>
 				<div class="title_wrap">
