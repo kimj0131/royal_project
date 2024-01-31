@@ -1,14 +1,15 @@
 @charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
 
 *{
-    font-family: "Noto Snas KR";
+    font-family: 'Poppins', sans-serif;
     box-sizing: border-box;
 }
 
 
 #navibar{
-    width: 100px;
-    height: auto;
+    width: 80px;
+    height: 450px;
     color: white;
     position: fixed;
     left:30px;
@@ -16,21 +17,24 @@
     z-index: 100;
     border-radius: 15px;
     background-color: #052644;
+    border:solid 10px #052644;
 }
-
 
 #navibar > ul > li{
     list-style: none;
     border-bottom: solid 1px rgb(233, 233, 233); 
     text-align: center;
-    padding-top: 8px;
-    padding-bottom: 8px;
+}
+#navibar > ul > li:first-child{
+    list-style: none;
+    border-top: solid 1px rgb(233, 233, 233); 
+    text-align: center;
 }
 
 #navibar > ul > li > a{
     text-decoration: none;
     color: inherit;
-    font-size: 20px;
+    font-size: 15px;
     font-weight: 600;
     display: inline-block;
     transition: .3s;
