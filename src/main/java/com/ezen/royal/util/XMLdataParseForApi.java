@@ -11,7 +11,7 @@ import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
-import com.ezen.royal.dto.RoyalInnerDTO;
+import com.ezen.royal.api.dto.InnerDataFromOpenApiDTO;
 
 public class XMLdataParseForApi {
 
@@ -29,7 +29,7 @@ public class XMLdataParseForApi {
 	}
 	
 	// XML데이터들을 List로 반환하는 메서드
-	public List<RoyalInnerDTO> getParseDataList(){
+	public List<InnerDataFromOpenApiDTO> getParseDataList(){
 		try {
 			
 			String uri = "https://www.heritage.go.kr/heri/gungDetail/gogungListOpenApi.do";
@@ -42,7 +42,7 @@ public class XMLdataParseForApi {
 			NodeList nList = doc.getElementsByTagName("list");
 			
 			// 리턴할 dto 리스트 생성
-			List<RoyalInnerDTO> dtoList = new ArrayList<>();
+			List<InnerDataFromOpenApiDTO> dtoList = new ArrayList<>();
 			
 			for(int temp = 0; temp < nList.getLength(); temp++){
 				
@@ -50,7 +50,7 @@ public class XMLdataParseForApi {
 			
 				Element eElement = (Element) nNode;
 				
-				RoyalInnerDTO innerDTO = new RoyalInnerDTO();
+				InnerDataFromOpenApiDTO innerDTO = new InnerDataFromOpenApiDTO();
 				
 				// royal_inner_seq.nextval을 사용하지 않을경우 api의 serial_number를 받아 쓴다
 				innerDTO.setRoyal_inner_id(Integer.parseInt(getTagValue("serial_number", eElement)));

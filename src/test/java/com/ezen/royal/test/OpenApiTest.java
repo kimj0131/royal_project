@@ -11,7 +11,7 @@ import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
-import com.ezen.royal.dto.RoyalInnerDTO;
+import com.ezen.royal.api.dto.InnerDataFromOpenApiDTO;
 
 public class OpenApiTest {
 
@@ -30,7 +30,7 @@ public class OpenApiTest {
 
 	public static void main(String[] args) {
 
-		List<RoyalInnerDTO> dtoList = new ArrayList<>();
+		List<InnerDataFromOpenApiDTO> dtoList = new ArrayList<>();
 		
 		try {
 			DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
@@ -56,7 +56,7 @@ public class OpenApiTest {
 //				System.out.println("시리얼 넘버 : " + getTagValue("serial_number", eElement));
 //				System.out.println("==========================================");
 				
-				RoyalInnerDTO innerDTO = new RoyalInnerDTO();
+				InnerDataFromOpenApiDTO innerDTO = new InnerDataFromOpenApiDTO();
 				
 				innerDTO.setRoyal_id(Integer.parseInt(getTagValue("gung_number", eElement)));
 				innerDTO.setRoyal_inner_name(getTagValue("contents_kor", eElement));

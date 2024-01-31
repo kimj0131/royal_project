@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
-import com.ezen.royal.service.OpenApiService;
+import com.ezen.royal.api.service.InnerDataFromOpenApiService;
 
 import lombok.extern.log4j.Log4j;
 
@@ -15,7 +15,7 @@ import lombok.extern.log4j.Log4j;
 public class Scheduler {
 	
 	@Autowired
-	OpenApiService apiService;
+	InnerDataFromOpenApiService apiService;
 	
 	/**
 	 * 1. 매일 오전 ?시에 api데이터를 갱신하는 스케쥴러
