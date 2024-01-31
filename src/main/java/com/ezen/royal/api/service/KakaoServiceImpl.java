@@ -26,28 +26,28 @@ import lombok.extern.log4j.Log4j;
 @Log4j
 @Service
 @PropertySource("classpath:config/kakao.properties") // kakao.properties 사용하기 위한 어노테이션
-public class kakaoServiceImpl implements kakaoService {
+public class KakaoServiceImpl implements KakaoService {
 
-	// [공통 필드] //
+	// [공통 필드]
 	@Autowired
 	Environment env; // kakao.properties 사용하기 위한 객체
 	@Autowired
 	LoginMapper loginMapper;
 	//
 
-	// [getAccessToken(GAT) 필드] //
+	// [getAccessToken(GAT) 필드]
 	private static String GAT_REQ_URL = "https://kauth.kakao.com/oauth/token";
 	private static String GAT_REDIRECT_URI = "/royal/kakao/login";
 	//
 
-	// [getUserInfo(GUI) 필드] //
+	// [getUserInfo(GUI) 필드]
 	private static String GUI_REQ_URL = "https://kapi.kakao.com/v2/user/me";
 	//
 
-	// [Logout(LO) 필드] //
+	// [Logout(LO) 필드]
 	// 서비스 로그아웃 + 카카오계정 로그아웃
-	private static String LO_REQ_URL = "https://kauth.kakao.com/oauth/logout";
-	private static String LO_REDIRECT_URI = "/royal/kakao/form";
+//	private static String LO_REQ_URL = "https://kauth.kakao.com/oauth/logout";
+//	private static String LO_REDIRECT_URI = "/royal/kakao/form";
 	//
 
 	@Override
@@ -74,6 +74,7 @@ public class kakaoServiceImpl implements kakaoService {
 			bw.write(sb.toString());
 			bw.flush();
 
+			// [log] 
 			// 결과 코드가 200이라면 성공
 			int responseCode = conn.getResponseCode();
 			if (responseCode == 200) {
@@ -81,6 +82,7 @@ public class kakaoServiceImpl implements kakaoService {
 			} else {
 				log.warn("[GAT] (Fail)responseCode : " + responseCode);
 			}
+			//
 
 			// 요청을 통해 얻은 JSON타입의 Response 메세지 읽어오기
 			BufferedReader br = new BufferedReader(new InputStreamReader(conn.getInputStream()));
@@ -90,26 +92,28 @@ public class kakaoServiceImpl implements kakaoService {
 			while ((line = br.readLine()) != null) {
 				result += line;
 			}
+			
+			// [log] 
 			log.info("[GAT] response body : " + result);
-
+			//
+			
 			// JSON파싱
 			JsonElement element = JsonParser.parseString(result);
 
 			access_Token = element.getAsJsonObject().get("access_token").getAsString();
 			refresh_Token = element.getAsJsonObject().get("refresh_token").getAsString();
 
+			// [log] 
 			log.info("[GAT] access_token : " + access_Token);
 			log.info("[GAT] refresh_token : " + refresh_Token);
-
+			//
+			
 			br.close();
 			bw.close();
 
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		// 세션 어트리뷰트에 토큰 저장
-		req.getSession().setAttribute("token", access_Token);
-		log.info("(token)세션 어트리뷰트 설정함: " + req.getSession().getAttribute("token"));
 
 		return access_Token;
 	}
@@ -129,13 +133,15 @@ public class kakaoServiceImpl implements kakaoService {
 			conn.setRequestProperty("Authorization", "Bearer " + token); // 전송할 header 작성, access_token전송
 			conn.setRequestProperty("Content-Type", "application/x-www-form-urlencoded;charset=utf-8");
 
+			// [log] 
 			// 결과 코드가 200이라면 성공
 			int responseCode = conn.getResponseCode();
 			if (responseCode == 200) {
-				log.info("[GUI] (Success)responseCode : " + responseCode);
+				log.info("[UM] (Success)responseCode : " + responseCode);
 			} else {
-				log.warn("[GUI] (Fail)responseCode : " + responseCode);
+				log.warn("[UM] (Fail)responseCode : " + responseCode);
 			}
+			//
 
 			// 요청을 통해 얻은 JSON타입의 Response 메세지 읽어오기
 			BufferedReader br = new BufferedReader(new InputStreamReader(conn.getInputStream()));
@@ -145,12 +151,15 @@ public class kakaoServiceImpl implements kakaoService {
 			while ((line = br.readLine()) != null) {
 				result += line;
 			}
-			log.info("[GUI] response body : " + result);
-
+			
+			// [log] 
+			log.info("[UM] response body : " + result);
+			//
+			
 			// JSON파싱
 			JsonElement element = JsonParser.parseString(result);
 
-			long social_id = element.getAsJsonObject().get("id").getAsLong();
+			String social_id = element.getAsJsonObject().get("id").getAsString();
 			
 			String nickname = element.getAsJsonObject().get("properties").getAsJsonObject().get("nickname")
 					.getAsString();
@@ -164,12 +173,14 @@ public class kakaoServiceImpl implements kakaoService {
 
 			br.close();
 
-			log.info("[GUI] social_id : " + social_id);
-			log.info("[GUI] email : " + email);
-			log.info("[GUI] nickname : " + nickname);
-
+			// [log] 
+			log.info("[UM] social_id : " + social_id);
+			log.info("[UM] email : " + email);
+			log.info("[UM] nickname : " + nickname);
+			//
+			
 			// dto에 데이터 넣어서 db에 upsert
-			memberDTO.setSocial_id(Long.toString(social_id));
+			memberDTO.setSocial_id(social_id);
 			memberDTO.setMember_name(nickname);
 			memberDTO.setMember_email(email);
 			memberDTO.setMember_type("kakao");
@@ -177,28 +188,28 @@ public class kakaoServiceImpl implements kakaoService {
 			// 로그인 했는지 확인 하기 위한 세션 어트리뷰트
 			HttpSession session = req.getSession();
 			session.setAttribute("social_id", social_id);
-			log.info("(social_id)세션 어트리뷰트 설정함: " + session.getAttribute("social_id"));
+			
+			// [log] 
+			log.info("[UM](social_id)세션 어트리뷰트 설정함: " + session.getAttribute("social_id"));
+			// 
 			
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 		
-		
 		return loginMapper.upsertMember(memberDTO);
 	}
 
 	@Override
-	public String logout(String token, HttpServletRequest req) {
-
-		String parameter = "?client_id=" + env.getProperty("REST_API_KEY") + "&logout_redirect_uri="
-				+ env.getProperty("IP") + LO_REDIRECT_URI;
-
-		// 세션 어트리뷰트 삭제
+	public void logout(HttpServletRequest req) {
+		
+		// [log]
 		HttpSession session = req.getSession();
-		log.info("(token)로그아웃 직전 세션 어트리뷰트: " + session.getAttribute("token"));
-		log.info("(social_id)로그아웃 직전 세션 어트리뷰트: " + session.getAttribute("social_id"));
+		String social_id = (String) session.getAttribute("social_id");
+		log.info("[LO](social_id)로그아웃 직전 세션 어트리뷰트: " + social_id);
+		//
+		
+		// 세션 어트리뷰트 삭제
 		req.getSession().invalidate();
-
-		return LO_REQ_URL + parameter;
 	}
 }

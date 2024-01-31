@@ -7,6 +7,10 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+	
+	<jsp:include page="../layout/navibar.jsp" />
+	
+	예약관리 페이지
+	
 </body>
 </html>

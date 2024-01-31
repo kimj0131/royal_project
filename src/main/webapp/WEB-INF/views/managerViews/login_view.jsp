@@ -7,8 +7,10 @@
 <title>Insert title here</title>
 </head>
 <body>
-나 로그인 페이지
-
- <a href="./summary">요약</a>
+	
+	로그인 페이지
+	
+	<hr>
+	<a href="./summary">로그인</a>
 </body>
 </html>

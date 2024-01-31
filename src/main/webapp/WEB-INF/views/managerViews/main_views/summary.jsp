@@ -7,9 +7,10 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<a href="./event">행사</a> /
-	<a href="./notice">공지사항</a> /
-	<a href="./qna">QnA</a> /
-	<a href="./reservation">예약</a> ★
+	
+	<jsp:include page="../layout/navibar.jsp" />
+	
+	요약 페이지
+	
 </body>
 </html>

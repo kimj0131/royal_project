@@ -7,6 +7,10 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+	
+	<jsp:include page="../layout/navibar.jsp" />
+	
+	행사관리 페이지
+	
 </body>
 </html>

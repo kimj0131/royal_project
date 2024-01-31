@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.ezen.royal.api.service.kakaoService;
+import com.ezen.royal.api.service.KakaoService;
 
 import lombok.extern.log4j.Log4j;
 
@@ -24,7 +24,7 @@ import lombok.extern.log4j.Log4j;
 public class KakaoController {
 	
 	@Autowired
-	kakaoService kakaoService;
+	KakaoService kakaoService;
 	
 	@Autowired
 	Environment env; // kakao.properties 사용하기 위한 객체
@@ -40,26 +40,43 @@ public class KakaoController {
 
 		String accessToken = kakaoService.getAccessToken(code, req);
 		int result = kakaoService.upsertMember(accessToken, req);
+		
+		// [log]
+		if (result > 0)
+			log.info("upsert 완료");
+		//
 
 		return "redirect:/kakao/form";
 	}
 	
-	@GetMapping("kakao/logout")
-	public void kakaoLogout(HttpServletRequest req, HttpServletResponse resp) {
+	@GetMapping("kakao/logout/ready")
+	public void kakaoLogoutReady(HttpServletResponse resp) {
 		
-		kakaoService.logout((String)req.getSession().getAttribute("token"), req);
-		
-		HttpSession session = req.getSession();
-		log.info("(token)로그아웃 한 후 세션 어트리뷰트: " + session.getAttribute("token"));
-		log.info("(social_id)로그아웃 한 후 세션 어트리뷰트: " + session.getAttribute("social_id"));
-		
+		// 카카오 로그아웃 뷰로 이동
 		try {
 			resp.sendRedirect(String.format(
 					"https://kauth.kakao.com/oauth/logout?client_id=%s&" 
-							+ "logout_redirect_uri=%s/royal/kakao/form",
+							+ "logout_redirect_uri=%s/royal/kakao/logout/finish",
 								env.getProperty("REST_API_KEY"), env.getProperty("IP")));
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+		
+	}
+	
+	@GetMapping("kakao/logout/finish")
+	public String kakaoLogoutFinish(HttpServletRequest req) {
+		
+		// 카카오 로그아웃 뷰에서 사용자가 [이 서비스만 로그아웃],[카카오계정과 함께 로그아웃] 둘 중 하나를 선택하면
+		// 이곳에 와서 세션 어트리뷰트를 삭제함
+		kakaoService.logout(req);
+		
+		// [log] 
+		HttpSession session = req.getSession();
+		String social_id = (String) session.getAttribute("social_id");
+		log.info("(social_id)로그아웃 한 후 세션 어트리뷰트: " + social_id);
+		//
+		
+		return "redirect:/kakao/form";
 	}
 }

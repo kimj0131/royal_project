@@ -8,7 +8,7 @@
 <spring:eval expression="@environment['IP']" var="IP"/>
 
 <c:url value="/resources/image/kakao_login_large_wide.png" var="LOGIN_FORMAT_PNG"/>
-<c:url value="/kakao/logout" var="LOGOUT_URI"/>
+<c:url value="/kakao/logout/ready" var="LOGOUT_URI"/>
 <c:set value="/royal/kakao/login" var="REDIRECT_URI"/>
 <!DOCTYPE html>
 <html>
@@ -30,10 +30,7 @@
 	<button onClick="location.href='${LOGOUT_URI}'">로그아웃</button>
 	
 	<hr>
-	<div>sessionScope : ${sessionScope.token}</div> <br>
 	<div>sessionScope : ${sessionScope.social_id}</div>
-	<script>
-		console.log();
-	</script>
+
 </body>
 </html>
