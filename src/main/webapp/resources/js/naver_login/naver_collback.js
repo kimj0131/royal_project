@@ -8,23 +8,24 @@ function naverSignInCallback() {
 	// 프로필 조회 이후에 확인이 가능
 	// alert(naver_id_login.getProfileData("id"));
 	// alert(naver_id_login.getProfileData("name"));
-	// alert(naver_id_login.getProfileData("email"));
 
 	const naver_user_data = {
-		identifier: naver_id_login.getProfileData("id"),
-		user_name: naver_id_login.getProfileData("name"),
-		user_email: naver_id_login.getProfileData("email"),
+		social_id: naver_id_login.getProfileData("id"),
+		member_name: naver_id_login.getProfileData("name"),
+		member_email: naver_id_login.getProfileData("email"),
+		member_type: "naver",
 	};
 
 	const xhttp = new XMLHttpRequest();
 	xhttp.addEventListener("readystatechange", (e) => {
 		if (xhttp.readyState == 4 && xhttp.status == 200) {
-			// alert(JSON.parse(xhttp.responseText).user_name + "님의 정보가 서버로 전달되었습니다");
+			// test alert
+			alert("[TEST] : " + JSON.parse(xhttp.responseText).member_name + "님의 정보가 서버로 전달되었습니다");
 		}
 	});
 	xhttp.open("POST", "./");
 	xhttp.setRequestHeader("content-type", "application/json");
 	xhttp.send(JSON.stringify(naver_user_data));
 
-	location.href = "/royal/user/login/naver";
+	location.href = "/royal/main/home";
 }

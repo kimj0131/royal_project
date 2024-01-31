@@ -1,7 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%> <%@ taglib prefix="c"
-uri="http://java.sun.com/jsp/jstl/core"%>
+uri="http://java.sun.com/jsp/jstl/core"%> <%@taglib uri="http://www.springframework.org/tags" prefix="spring"%>
+
+<spring:eval expression="@environment.getProperty('login.naver.callback.uri')" var="naverKey" />
+
 <c:url value="/resources/js/naver_login/naver_login.js" var="naverloginJS" />
-<c:url value="/resources/js/naver_login/naver.js" var="naverJS" />
+<c:url value="/resources/js/naver_login/config/naver.js" var="naverJS" />
 <!DOCTYPE html>
 <html>
 	<head>
