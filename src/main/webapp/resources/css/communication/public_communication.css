@@ -34,14 +34,19 @@
 
 .BTN_class{
     width: 100%;
-    height: 35px;
+    height: auto;
     margin : 5px;
     padding-right: 5px;
     text-align: center;
     display: flex;
     justify-content: center;
-    border-bottom: solid 1px #EAEAEA;
-    
+}
+
+.BTN_class > div {
+    width: 110px;
+    height: 35px;
+    margin: 0 10px;
+    padding: 3px;
 }
 
 .BTN_class > div > a{
@@ -49,12 +54,11 @@
     font-weight: bold;
     margin-top: 5px;
     text-align: center;
-    border-radius: 20px;
-    padding: 5px 35px; 
+    border-radius: 20px; 
 }
 
 #all_BTN{
-    border: 3px solid transparent;
+    border: 1px solid transparent;
     border-radius: 20px;
     background-color: #ffffff;
     background-image: linear-gradient(#fff, #fff), linear-gradient(to right,#C1457E, rgb(152, 133, 195),#1B66B9);
@@ -64,4 +68,60 @@
 
 #all_BTN > a{
     color: #815295;
+}
+
+#GB_BTN{
+    border: 3px solid #604206;
+    border-radius: 20px;
+    background-color: #ffffff;
+}
+
+#GB_BTN > a{
+    color: #604206;
+    margin: 0 5px 0 5px;
+}
+
+#DS_BTN{
+    border: 3px solid #286d79;
+    border-radius: 20px;
+    background-color: #ffffff;
+}
+
+#DS_BTN > a{
+    color: #286d79;
+}
+
+#CG_BTN{
+    border: 3px solid #14489c;
+    border-radius: 20px;
+    background-color: #ffffff;
+}
+
+#CG_BTN > a{
+    color: #14489c;
+}
+
+#CD_BTN{
+    border: 3px solid #b6383d;
+    border-radius: 20px;
+    background-color: #ffffff;
+}
+
+#CD_BTN > a{
+    color: #b6383d;
+}
+
+#JM_BTN{
+    border: 3px solid #c14b35;
+    border-radius: 20px;
+    background-color: #ffffff;
+}
+
+#JM_BTN > a{
+    color: #c14b35;
+}
+
+#white_space{
+    height: 15px;
+    border-bottom: solid 1px #EAEAEA;
 }
