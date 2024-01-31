@@ -13,12 +13,13 @@
 </head>
 <body>
 	<jsp:include page="../../layout/header.jsp" />
+	
 	<div class="top_img_name">
 		<div>
 			<img id="top_bg_Img" src="https://royal.cha.go.kr/resource/templete/royal/img/sub/bg_sub06.jpg">
 		</div>
-		<div class="sub_category_name">
-			<h2 id="sub_name">소  통</h2>
+		<div id="sub_category_name">
+			<h2>소  통</h2>
 		</div>
 	</div>
 	
