@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper
+	namespace="com.ezen.royal.client.palace.mapper.RoyalInnerMapper">
+
+	<!-- royalId에 해당하는 궁 내부 건축물 이름 가져오는 쿼리, HTML 헤더에서 royalName클릭 (궁 버튼) 클릭시 
+		사용 / 뿌려지는 royal_inner_name grid 등으로 사용예정-->
+	<select id="getRoyalById"
+		resultType="com.ezen.royal.client.palace.dto.RoyalDTO">
+		SELECT royal_inner_name FROM royal_inner
+		INNER JOIN royal
+		USING (royal_id)
+		WHERE royal_id =#{royalId}
+	</select>
+
+	<!-- 위에 뿌려진 로얄네임 => royal_inner_id 클릭시 해당하는 궁에 속하는 건축물 리스트를 가져오는 쿼리 
+	HTML royal_name -> fotter의 건축물 이름 
+	royal_inner_detail -> fotter의 건축물 이야기 
+	royal_inner_imgpath -> fotter의 img 
+		태그 -->
+	<select id="getRoyalInnerList"
+		resultType="com.ezen.royal.api.dto.InnerDataFromOpenApiDTO">
+		SELECT royal_inner_name, royal_inner_detail,
+		royal_inner_imgpath
+		FROM royal_inner
+		WHERE royal_inner_id = #{royal_inner_id}
+	</select>
+
+</mapper>
