@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.ezen.royal.api.service.KakaoService;
+import com.ezen.royal.util.MakeDefaultAddress;
 
 import lombok.extern.log4j.Log4j;
 
@@ -38,13 +39,11 @@ public class KakaoController {
 	@GetMapping("kakao/login/ready")
 	public void kakaoLoginReady(HttpServletRequest req, HttpServletResponse resp) {
 
-		String contextPath = req.getContextPath();
 		String client_id = env.getProperty("kakao.rest.api.key");
 		// 카카오 개발자 페이지에서
 		// 카카오 로그인에서 사용할 OAuth Redirect URI를 설정해야 함
-		String redirect_uri = env.getProperty("kakao.server.domain") 
-								+ contextPath 
-								+ env.getProperty("kakao.login.callback.uri");
+		String redirect_uri = MakeDefaultAddress.getMakeDefaultAddress(req)
+				+ env.getProperty("kakao.login.callback.uri");
 
 		// 카카오 로그인 뷰로 이동
 		try {
@@ -73,14 +72,12 @@ public class KakaoController {
 	@GetMapping("kakao/logout/ready")
 	public void kakaoLogoutReady(HttpServletRequest req, HttpServletResponse resp) {
 		
-		String contextPath = req.getContextPath();
 		String client_id = env.getProperty("kakao.rest.api.key");
 		// 카카오 개발자 페이지에서
 		// 카카오 로그인에서 사용할 Logout Redirect URI를 설정해야 함
-		String redirect_uri = env.getProperty("kakao.server.domain") 
-								+ contextPath 
-								+ env.getProperty("kakao.logout.callback.uri");
-
+		String redirect_uri = MakeDefaultAddress.getMakeDefaultAddress(req)
+				+ env.getProperty("kakao.logout.callback.uri");
+		
 		// 카카오 로그아웃 뷰로 이동
 		try {
 			resp.sendRedirect(String.format("https://kauth.kakao.com/oauth/logout?"

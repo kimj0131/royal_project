@@ -21,7 +21,7 @@
 	<button onClick="location.href='${LOGOUT_URI}'">로그아웃</button>
 	
 	<hr>
-	<div>sessionScope : ${sessionScope.social_id}</div>
+	<div>sessionScope : ${sessionScope.login_user}</div>
 
 </body>
 </html>

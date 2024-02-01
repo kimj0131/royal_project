@@ -18,6 +18,7 @@ import org.springframework.stereotype.Service;
 
 import com.ezen.royal.api.dto.MemberDTO;
 import com.ezen.royal.api.mapper.LoginMapper;
+import com.ezen.royal.util.MakeDefaultAddress;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonParser;
 
@@ -46,11 +47,9 @@ public class KakaoServiceImpl implements KakaoService {
 	@Override
 	public String getAccessToken(String code, HttpServletRequest req) {
 		
-		String contextPath = req.getContextPath();
 		String client_id = env.getProperty("kakao.rest.api.key");
-		String redirect_uri = env.getProperty("kakao.server.domain") 
-								+ contextPath 
-								+ env.getProperty("kakao.login.callback.uri");
+		String redirect_uri = MakeDefaultAddress.getMakeDefaultAddress(req)
+				+ env.getProperty("kakao.login.callback.uri");
 		
 		String access_Token = "";
 		String refresh_Token = "";
@@ -187,10 +186,10 @@ public class KakaoServiceImpl implements KakaoService {
 
 			// 로그인 했는지 확인 하기 위한 세션 어트리뷰트
 			HttpSession session = req.getSession();
-			session.setAttribute("social_id", social_id);
+			session.setAttribute("login_user", social_id);
 			
 			// [log] 
-			log.info("[UM](social_id)세션 어트리뷰트 설정함: " + session.getAttribute("social_id"));
+			log.info("[UM](login_user)세션 어트리뷰트 설정함: " + session.getAttribute("login_user"));
 			// 
 			
 		} catch (IOException e) {
@@ -205,11 +204,11 @@ public class KakaoServiceImpl implements KakaoService {
 		
 		// [log]
 		HttpSession session = req.getSession();
-		String social_id = (String) session.getAttribute("social_id");
-		log.info("[LO](social_id)로그아웃 직전 세션 어트리뷰트: " + social_id);
+		String social_id = (String) session.getAttribute("login_user");
+		log.info("[LO](login_user)로그아웃 직전 세션 어트리뷰트: " + social_id);
 		//
 		
 		// 세션 어트리뷰트 삭제
-		req.getSession().invalidate();
+		session.invalidate();
 	}
 }
