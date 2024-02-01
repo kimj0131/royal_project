@@ -13,9 +13,7 @@
 
 </head>
 <body>
-	<div class="header_top">
-		<a id="login" href="/royal/main/login">로그인</a>
-	</div>
+	<jsp:include page="./header_top.jsp"></jsp:include>
 	<div id="top_category">
 		<ul class="menuBox">
 			<li id="logo"><a href="/royal/main/home">
