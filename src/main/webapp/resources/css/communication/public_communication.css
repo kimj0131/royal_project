@@ -26,9 +26,13 @@
     transform: translate(-50%, -50%);
 } 
 
+.notice_title_BTN{
+    padding: 0 300px;
+    
+}
 
 #notice_title{
-    padding-left: 250px;
+    margin: 80px 120px 35px 120px;
     font-size: 36px;
 }
 
@@ -43,18 +47,18 @@
 }
 
 .BTN_class > div {
-    width: 110px;
-    height: 35px;
-    margin: 0 10px;
+    width: 130px;
+    height: 40px;
+    margin: 0 30px;
     padding: 3px;
 }
 
 .BTN_class > div > a{
-    font-size: 16px;
+    font-size: 18px;
     font-weight: bold;
     margin-top: 5px;
     text-align: center;
-    border-radius: 20px; 
+    border-radius: 30px; 
 }
 
 #all_BTN{

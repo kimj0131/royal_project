@@ -23,7 +23,7 @@
 		</div>
 	</div>
 	
-	<div>
+	<div class="notice_title_BTN">
 		<div id="notice_title_div">
 			<h2 id="notice_title">공지사항</h2>
 		</div>
