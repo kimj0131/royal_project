@@ -20,7 +20,7 @@ public class RoyalInnerController {
 	@Autowired
 	RoyalInnerService royalInnerService;
 	
-	@GetMapping("/royalInner/{royalId}")
+	@GetMapping("/royalInner/royalId")
 	public String getRoyalDetails(@PathVariable Integer royalId, Model model) {
 		return null;
 		
