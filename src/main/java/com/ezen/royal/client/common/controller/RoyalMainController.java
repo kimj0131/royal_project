@@ -34,7 +34,7 @@ public class RoyalMainController {
 	
 	@GetMapping("/login") // 로그인 페이지
 	public String userLogin() {
-		return "/userViews/login/userLogin";
+		return "/userViews/login/user_login";
 	}
 	
 	@GetMapping("/teamInfo") // 팀 소개
