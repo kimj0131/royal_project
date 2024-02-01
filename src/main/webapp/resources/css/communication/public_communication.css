@@ -28,32 +28,42 @@
 
 .notice_title_BTN{
     padding: 0 300px;
-    
+    display: flex;
+    flex-direction: column ;
+    margin:0 150px;
 }
 
 #notice_title{
-    margin: 80px 120px 35px 120px;
+    margin: 80px 0 35px 0;
     font-size: 36px;
+    display: flex;
+    flex-direction: row;
+    min-width: 900px
 }
 
 .BTN_class{
     width: 100%;
     height: auto;
-    margin : 5px;
     padding-right: 5px;
     text-align: center;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
+    min-width: 900px;
 }
 
 .BTN_class > div {
     width: 130px;
     height: 40px;
-    margin: 0 30px;
-    padding: 3px;
+    padding: 3px ;
+}
+
+.BTN_class > div :nth-child(n+2){
+
 }
 
 .BTN_class > div > a{
+    width: 120px;
+    height: 35px;
     font-size: 18px;
     font-weight: bold;
     margin-top: 5px;
@@ -68,10 +78,26 @@
     background-image: linear-gradient(#fff, #fff), linear-gradient(to right,#C1457E, rgb(152, 133, 195),#1B66B9);
     background-origin: border-box;
     background-clip: content-box, border-box;
+
 }
 
 #all_BTN > a{
     color: #815295;
+
+}
+
+#all_BTN:active {
+	color: white;
+	background-color: #ffffff;
+    background-image: linear-gradient(to right,#C1457E, rgb(152, 133, 195),#1B66B9), linear-gradient(to right,#C1457E, rgb(152, 133, 195),#1B66B9);
+    animation-fill-mode: forwards;
+}
+
+#all_BTN > a:active{
+    color: white;
+    background-color: #ffffff;
+    background-image: linear-gradient(to right,#C1457E, rgb(152, 133, 195),#1B66B9), linear-gradient(to right,#C1457E, rgb(152, 133, 195),#1B66B9);
+    animation-fill-mode: forwards;
 }
 
 #GB_BTN{
