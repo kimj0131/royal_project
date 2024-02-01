@@ -57,9 +57,6 @@
     padding: 3px ;
 }
 
-.BTN_class > div :nth-child(n+2){
-
-}
 
 .BTN_class > div > a{
     width: 120px;
