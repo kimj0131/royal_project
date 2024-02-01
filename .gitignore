@@ -95,5 +95,5 @@ database.properties
 kakao.properties
 
 # naver 정보
-naver.js
+naver_login_config.js
 naver.properties

@@ -4,7 +4,7 @@ uri="http://java.sun.com/jsp/jstl/core"%> <%@taglib uri="http://www.springframew
 <spring:eval expression="@environment.getProperty('login.naver.callback.uri')" var="naverKey" />
 
 <c:url value="/resources/js/naver_login/naver_login.js" var="naverloginJS" />
-<c:url value="/resources/js/naver_login/config/naver.js" var="naverJS" />
+<c:url value="/resources/js/naver_login/config/naver_login_config.js" var="naverJS" />
 <%
 	if(session.getAttribute("login_user") == null){
 		out.print("<script>");

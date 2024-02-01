@@ -10,8 +10,8 @@ import lombok.extern.log4j.Log4j;
 public class LoginController {
 	
 	// 로그인 페이지 매핑
-	@GetMapping("/login/form")
+	@GetMapping("/main/login/")
 	public String naver_login() {
-		return "userViews/login/userLogin";
+		return "userViews/login/user_login";
 	}
 }
