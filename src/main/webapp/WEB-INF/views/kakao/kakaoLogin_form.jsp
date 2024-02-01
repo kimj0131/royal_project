@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
-<c:url value="/resources/image/kakao_login_large_wide.png" var="LOGIN_FORMAT_PNG"/>
+<c:url value="/resources/image/kakao_login_large_wide_2.png" var="LOGIN_FORMAT_PNG"/>
 <c:url value="/kakao/logout/ready" var="LOGOUT_URI"/>
 <c:url value="/kakao/login/ready" var="LOGIN_URI"/>
 <!DOCTYPE html>

@@ -1,1 +1,23 @@
-@charset "UTF-8";
+*{
+    font-family: "Noto Snas KR";
+}
+
+#login_wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#login_title {
+	font-size: 30px;
+	font-weight: bold;
+    margin-bottom: 30px;
+}
+
+#login_kakaoBtn {
+	margin-bottom: 5px;
+}
+
+#login_kakaoBtn_img {
+    width: 323.75px;
+}

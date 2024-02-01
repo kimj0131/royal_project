@@ -66,7 +66,7 @@ public class KakaoController {
 			log.info("upsert 완료");
 		//
 
-		return "redirect:/kakao/form";
+		return "redirect:/main/home";
 	}
 
 	@GetMapping("kakao/logout/ready")
