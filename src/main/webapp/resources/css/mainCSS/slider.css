@@ -1,0 +1,20 @@
+@charset "UTF-8";
+
+.slider_wrap {
+    overflow: hidden;
+    width: 100%;
+}
+
+.slider_inner {
+    display: flex;
+    transition: transform 3s ease-in-out;
+}
+
+.slider {
+    width: 100%;
+    display: none;
+}
+
+button {
+    margin: 5px;
+}
