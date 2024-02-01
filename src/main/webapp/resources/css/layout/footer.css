@@ -6,13 +6,15 @@
 }
 
 html,body {
-    padding: 0px;
+    height: 100%;
     margin: 0px;
 }
 
 /* footer 위에 여백 줌*/
 #footer_more_div{
-    min-height: calc(100% - 347px);
+    height: 100px;
+    min-height: calc(100% - 600px);
+    
 }
 
 

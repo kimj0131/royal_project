@@ -84,16 +84,13 @@
 }
 
 #all_BTN:active {
-	color: white;
 	background-color: #ffffff;
     background-image: linear-gradient(to right,#C1457E, rgb(152, 133, 195),#1B66B9), linear-gradient(to right,#C1457E, rgb(152, 133, 195),#1B66B9);
     animation-fill-mode: forwards;
 }
 
-#all_BTN > a:active{
+#all_BTN:active > a{
     color: white;
-    background-color: #ffffff;
-    background-image: linear-gradient(to right,#C1457E, rgb(152, 133, 195),#1B66B9), linear-gradient(to right,#C1457E, rgb(152, 133, 195),#1B66B9);
     animation-fill-mode: forwards;
 }
 
