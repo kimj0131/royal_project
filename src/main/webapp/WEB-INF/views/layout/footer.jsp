@@ -9,7 +9,7 @@
 <link rel="stylesheet" href="${logoIMG}" />
 <link rel="stylesheet" href="${githubIMG}" />
 
-<div id="footer_more_top"> </div>
+<div id="footer_more_div"> </div>
 	<div id="footer">
 		<a id="footer_logo" href="/royal/main/home">
 		<img style="width:200px; height:auto; padding:30px 0 0 50px" src="${logoIMG}"/></a>

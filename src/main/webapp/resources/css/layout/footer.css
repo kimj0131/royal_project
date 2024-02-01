@@ -5,20 +5,20 @@
     box-sizing: border-box;
 }
 
-body{
-    margin: 0 0 0 0;
+html,body {
+    padding: 0px;
+    margin: 0px;
 }
 
 /* footer 위에 여백 줌*/
-#footer_more_top{
-    width: 100%;
-    height: 40px;
+#footer_more_div{
+    min-height: calc(100% - 347px);
 }
 
 
 #footer{
     width: 100%;
-    height: 100%;
+    height: 120px;
     background-color: #35414d;
     color: white;
     display: flex;
