@@ -27,5 +27,6 @@ function naverSignInCallback() {
 	xhttp.setRequestHeader("content-type", "application/json");
 	xhttp.send(JSON.stringify(naver_user_data));
 
-	location.href = "/royal/main/home";
+	location.href = "/royal/user/login/naver";
+	// location.href = "/royal/main/home";
 }

@@ -5,6 +5,14 @@ uri="http://java.sun.com/jsp/jstl/core"%> <%@taglib uri="http://www.springframew
 
 <c:url value="/resources/js/naver_login/naver_login.js" var="naverloginJS" />
 <c:url value="/resources/js/naver_login/config/naver.js" var="naverJS" />
+<%
+	if(session.getAttribute("login_user") == null){
+		out.print("<script>");
+		out.print("alert('테스트 알람');");
+		out.print("</script>");
+	}
+%>
+	
 <!DOCTYPE html>
 <html>
 	<head>
@@ -20,6 +28,7 @@ uri="http://java.sun.com/jsp/jstl/core"%> <%@taglib uri="http://www.springframew
 
 	<body>
 		<div id="naver_id_login"></div>
+		<a href="../logout"><button>로그아웃</button></a>
 
 		<script src="${naverJS}"></script>
 		<script src="${naverloginJS}"></script>
