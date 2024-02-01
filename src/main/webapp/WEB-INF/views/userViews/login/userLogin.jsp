@@ -10,7 +10,7 @@
 		<jsp:include page="../../layout/header.jsp"/>
 		
 		<h1>간편 로그인</h1>
-		<button>카카오</button> 
+		<button>카카오</button>
 		<br>
 		<button>네이버</button>
 

@@ -37,21 +37,21 @@ public class KakaoServiceImpl implements KakaoService {
 
 	// [getAccessToken(GAT) 필드]
 	private static String GAT_REQ_URL = "https://kauth.kakao.com/oauth/token";
-	private static String GAT_REDIRECT_URI = "/royal/kakao/login";
 	//
 
 	// [getUserInfo(GUI) 필드]
 	private static String GUI_REQ_URL = "https://kapi.kakao.com/v2/user/me";
 	//
 
-	// [Logout(LO) 필드]
-	// 서비스 로그아웃 + 카카오계정 로그아웃
-//	private static String LO_REQ_URL = "https://kauth.kakao.com/oauth/logout";
-//	private static String LO_REDIRECT_URI = "/royal/kakao/form";
-	//
-
 	@Override
 	public String getAccessToken(String code, HttpServletRequest req) {
+		
+		String contextPath = req.getContextPath();
+		String client_id = env.getProperty("kakao.rest.api.key");
+		String redirect_uri = env.getProperty("kakao.server.domain") 
+								+ contextPath 
+								+ env.getProperty("kakao.login.callback.uri");
+		
 		String access_Token = "";
 		String refresh_Token = "";
 
@@ -68,8 +68,8 @@ public class KakaoServiceImpl implements KakaoService {
 			BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(conn.getOutputStream()));
 			StringBuilder sb = new StringBuilder();
 			sb.append("grant_type=authorization_code");
-			sb.append("&client_id=" + env.getProperty("REST_API_KEY")); // TODO REST_API_KEY 입력
-			sb.append("&redirect_uri=" + env.getProperty("IP") + GAT_REDIRECT_URI); // TODO 인가코드 받은 redirect_uri 입력
+			sb.append("&client_id=" + client_id); // TODO REST_API_KEY 입력
+			sb.append("&redirect_uri=" + redirect_uri); // TODO 인가코드 받은 redirect_uri 입력
 			sb.append("&code=" + code);
 			bw.write(sb.toString());
 			bw.flush();
