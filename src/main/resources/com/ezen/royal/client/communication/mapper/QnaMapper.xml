@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ezen.royal.client.communication.mapper.QnaMapper">
+	<select id="getAll" resultType="com.ezen.royal.client.coommunication.dto.QnaDTO">
+	SELECT * FROM qna ORDER BY
+	qna_id DESC
+	</select>
+	<select id="get" resultType="com.ezen.royal.client.communication.dto.QnaDTO">
+		SELECT * FROM qna WHERE
+		qna_id=#{qnd_id}
+	</select>
+</mapper>
