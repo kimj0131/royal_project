@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.ezen.royal.api.mapper.InnerDataFromOpenApiMapper;
-import com.ezen.royal.util.XMLdataParseForApi;
+import com.ezen.royal.util.XMLdataParseToRoyalInnerFromOpenApi;
 
 @Service
 public class InnerDataFromOpenApiServiceImpl implements InnerDataFromOpenApiService{
@@ -19,7 +19,7 @@ public class InnerDataFromOpenApiServiceImpl implements InnerDataFromOpenApiServ
 	}
 	@Override
 	public int insertApiDataList() {
-		XMLdataParseForApi parseApi = new XMLdataParseForApi();
+		XMLdataParseToRoyalInnerFromOpenApi parseApi = new XMLdataParseToRoyalInnerFromOpenApi();
 		
 		return innerMapper.insertDataAll(parseApi.getParseDataList());
 	}
@@ -27,7 +27,7 @@ public class InnerDataFromOpenApiServiceImpl implements InnerDataFromOpenApiServ
 	// upsert 방식 > royal_inner_id를 기준으로 데이터가 있으면 update 없으면 insert
 	@Override
 	public int upsertApiDataList() {
-		XMLdataParseForApi parseApi = new XMLdataParseForApi();
+		XMLdataParseToRoyalInnerFromOpenApi parseApi = new XMLdataParseToRoyalInnerFromOpenApi();
 		
 		return innerMapper.upsertDataAll(parseApi.getParseDataList());
 	}

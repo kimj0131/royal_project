@@ -1,3 +1,5 @@
+const profile_form = document.getElementById("profile_form");
+
 var naver_id_login = new naver_id_login(naver.client_id, naver.callback_uri);
 // 접근 토큰 값 출력
 // alert(naver_id_login.oauthParams.access_token);
@@ -5,28 +7,16 @@ var naver_id_login = new naver_id_login(naver.client_id, naver.callback_uri);
 naver_id_login.get_naver_userprofile("naverSignInCallback()");
 // 네이버 사용자 프로필 조회 이후 프로필 정보를 처리할 callback function
 function naverSignInCallback() {
-	// 프로필 조회 이후에 확인이 가능
-	// alert(naver_id_login.getProfileData("id"));
-	// alert(naver_id_login.getProfileData("name"));
+	// 프로필 데이터 form input에 설정 후 submit
+	var profile_social_id = document.getElementById("profile_social_id");
+	var profile_user_name = document.getElementById("profile_user_name");
+	var profile_user_email = document.getElementById("profile_user_email");
+	var profile_social_type = document.getElementById("profile_social_type");
 
-	const naver_user_data = {
-		social_id: naver_id_login.getProfileData("id"),
-		member_name: naver_id_login.getProfileData("name"),
-		member_email: naver_id_login.getProfileData("email"),
-		member_type: "naver",
-	};
+	profile_social_id.value = naver_id_login.getProfileData("id");
+	profile_user_name.value = naver_id_login.getProfileData("name");
+	profile_user_email.value = naver_id_login.getProfileData("email");
+	profile_social_type.value = "naver";
 
-	const xhttp = new XMLHttpRequest();
-	xhttp.addEventListener("readystatechange", (e) => {
-		if (xhttp.readyState == 4 && xhttp.status == 200) {
-			// test alert
-			alert("[TEST] : " + JSON.parse(xhttp.responseText).member_name + "님의 정보가 서버로 전달되었습니다");
-		}
-	});
-	xhttp.open("POST", "./");
-	xhttp.setRequestHeader("content-type", "application/json");
-	xhttp.send(JSON.stringify(naver_user_data));
-
-	// location.href = "/royal/user/login/naver";
-	location.href = "/royal/main/home";
+	profile_form.submit();
 }

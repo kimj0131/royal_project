@@ -5,15 +5,14 @@
     box-sizing: border-box;
 }
 
-html,body {
-    height: 100%;
+body {
     margin: 0px;
 }
 
 /* footer 위에 여백 줌*/
 #footer_more_div{
-    height: 100px;
-    min-height: calc(100% - 600px);
+    height: 60px;
+
     
 }
 
@@ -25,10 +24,8 @@ html,body {
     color: white;
     display: flex;
     justify-content:space-between;
-  
-
-
 }
+
 #footer_text{
     padding-top: 80px;
 }

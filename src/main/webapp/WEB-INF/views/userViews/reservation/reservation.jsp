@@ -11,8 +11,8 @@
 <link rel="stylesheet" href="${reserveCSS}" />
 </head>
 <body>
-	<jsp:include page="../../layout/header.jsp" />
-
+	
+	<jsp:include page="/WEB-INF/views/layout/header.jsp" />
 	<div class="sub">
 		<div class="mainImg">
 			<img
@@ -68,6 +68,6 @@
 	
 	<script src="${reserveJS}"></script>
 
-	<jsp:include page="../../layout/footer.jsp" />
+	<jsp:include page="/WEB-INF/views/layout/footer.jsp" />
 </body>
 </html>

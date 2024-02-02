@@ -101,6 +101,6 @@ public class KakaoController {
 		log.info("(social_id)로그아웃 한 후 세션 어트리뷰트: " + social_id);
 		//
 
-		return "redirect:/kakao/form";
+		return "redirect:/main/home";
 	}
 }

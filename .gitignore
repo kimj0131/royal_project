@@ -97,3 +97,6 @@ kakao.properties
 # naver 정보
 naver_login_config.js
 naver.properties
+
+# admin 계정정보
+adminAcc.properties

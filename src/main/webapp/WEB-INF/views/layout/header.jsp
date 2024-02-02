@@ -27,7 +27,7 @@
 					<li style="line-height:170%;"><a href="/royal/palace/jongmyomain">종묘</a></li>
 				</ul></li>
 			<li><a id="category_name" href="/royal/palace/reservation">통합예약</a></li>
-			<li><a id="category_name"  href="#">행사</a></li>
+			<li><a id="category_name"  href="/royal/palace/event">행사</a></li>
 			<li><a id="category_name" href="/royal/communication/notice">소통</a>
 				<ul id="detail_categoty" style="margin:0; padding:0;  padding-top:50px">
 					<li style="line-height:170%;"><a href="/royal/communication/notice">공지사항</a></li>

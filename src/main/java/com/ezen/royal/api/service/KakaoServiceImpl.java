@@ -169,6 +169,8 @@ public class KakaoServiceImpl implements KakaoService {
 			if (hasEmail) {
 				email = element.getAsJsonObject().get("kakao_account").getAsJsonObject().get("email").getAsString();
 			}
+			
+			String type = "kakao";
 
 			br.close();
 
@@ -182,11 +184,12 @@ public class KakaoServiceImpl implements KakaoService {
 			memberDTO.setSocial_id(social_id);
 			memberDTO.setMember_name(nickname);
 			memberDTO.setMember_email(email);
-			memberDTO.setMember_type("kakao");
+			memberDTO.setMember_type(type);
 
 			// 로그인 했는지 확인 하기 위한 세션 어트리뷰트
 			HttpSession session = req.getSession();
 			session.setAttribute("login_user", social_id);
+			session.setAttribute("login_type", type);
 			
 			// [log] 
 			log.info("[UM](login_user)세션 어트리뷰트 설정함: " + session.getAttribute("login_user"));
