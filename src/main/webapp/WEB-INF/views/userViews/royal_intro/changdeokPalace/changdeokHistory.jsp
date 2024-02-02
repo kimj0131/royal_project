@@ -16,7 +16,7 @@
 	<jsp:include page="/WEB-INF/views/layout/navibar.jsp"/>
 	<br>
 	<div>
-		<h2>창덕궁 소개.역사</h2>
+		<div class="palace_title">창덕궁 소개.역사</div>
 		<hr width="70%">
 		<div>
 			<div class="container">

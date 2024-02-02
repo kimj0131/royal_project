@@ -16,7 +16,7 @@
 	<jsp:include page="/WEB-INF/views/layout/navibar.jsp"/>
 	<br>
 	<div>
-		<h2>종묘 소개.역사</h2>
+		<div class="palace_title">종묘 소개.역사</div>
 		<hr width="70%">
 		<div>
 			<div class="container">
@@ -45,7 +45,7 @@
 			제사의 음식을 마련하는 곳) 등의 건물이 있다.</div>
 		<br>
 	</div>
-	<div>
+
 		<div>
 			<table class="history_table" border="1">
 				<thead>
@@ -222,7 +222,7 @@
 				</tbody>
 			</table>
 		</div>
-	</div>
+
 	<br>
 	<br>
 	<jsp:include page="/WEB-INF/views/layout/footer.jsp" />

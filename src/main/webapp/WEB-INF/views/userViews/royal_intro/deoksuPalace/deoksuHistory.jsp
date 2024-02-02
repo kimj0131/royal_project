@@ -16,7 +16,7 @@
 	<jsp:include page="/WEB-INF/views/layout/navibar.jsp"/>
 	<br>
 	<div>
-		<h2>덕수궁 소개.역사</h2>
+		<div class="palace_title">덕수궁 소개.역사</div>
 		<hr width="70%">
 		<div>
 			<div class="container">
@@ -28,8 +28,9 @@
 		</div>
 		<br>
 		<div class="title_wrap">
-			덕수궁은 1897년에 선포된 황제국, 대한제국의 황궁으로 옛 이름은 경운궁입니다.<br>
+			덕수궁은 1897년에 선포된 황제국, 대한제국의 황궁으로 옛 이름은 경운궁입니다.
 		</div>
+		<br>
 		<div class="title_text">
 			덕수궁은 원래 조선 제 9대 성종의 형인 월산대군의 사저였고, 그 후에도 월산대군의 후손이 살던 곳이었다. 1592년(선조
 			25) 임진왜란으로 도성의 궁들이 모두 소실되자 1593년(선조 26)부터 임시 궁궐로 사용하여 정릉동 행궁(貞陵洞
