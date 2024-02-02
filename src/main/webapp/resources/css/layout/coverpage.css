@@ -1,0 +1,92 @@
+@charset "UTF-8";
+
+body{
+	background-color: rgb(215 230 240);
+	padding-top: 100px;
+
+}
+
+
+/* 전체 화면 3분할*/
+#divfull{
+	width:100%;
+	height: 100%;
+	display: grid;
+    grid-template-columns: 2fr 1fr 2fr; /* 3 columns */
+  
+}
+
+/* 그리드 3개 중 왼쪽 그리드*/
+#leftDiv{
+     margin-right: 80px;	
+		padding-left: 50px;
+		padding-bottom :10px;
+}
+
+#left1{
+	display: flex;  	
+	 flex-direction: row;
+	 padding-bottom: 50px;
+
+}
+
+ #leftImg1{
+	margin-right: 10px;
+}
+ 
+
+#left2{
+	display: flex;  	
+	 flex-direction: row;
+	
+}
+
+#leftImg2{
+	margin-right: 10px;
+}
+
+#left4{
+	margin-top:10px;
+	border : 2px solid white;
+	display: flex;  	
+	 flex-direction: row;
+}
+
+#centerImg{
+  padding-top: 100px;
+ 	
+}
+
+#rightDiv {
+	padding-bottom: 100px;
+}
+#right1{
+	display: grid;  	
+	 grid-template-columns: 1fr 1fr;
+	
+}
+#right2{
+	display: grid;  	
+	 grid-template-columns: 1fr 1fr;
+	
+}
+#right3{
+	display: grid;  	
+	 grid-template-columns: 1fr 1fr;
+	
+}
+
+
+#palaceImg{
+	width: 300px;
+	height: auto;
+	margin-left: 10px;
+}
+
+
+span{
+	font-size: 13px;
+	color:  : white;
+}
+
+
