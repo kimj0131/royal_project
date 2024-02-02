@@ -11,8 +11,8 @@
 </head>
 <body>
 
-	<jsp:include page="../../../layout/header.jsp"/>
-	<jsp:include page="../../../layout/navibar.jsp"/>
+	<jsp:include page="/WEB-INF/views/layout/header.jsp"/>
+	<jsp:include page="/WEB-INF/views/layout/navibar.jsp"/>
 		
 	<div class="mainPic">
 		<div class="mainImage"><img src="../resources/image/royal_inner/main/deoksu/deoksugung.jpg" alt=""></div>
@@ -22,6 +22,7 @@
 		</div>
 	</div>
 	
+	<div class="banner">
 	<a href="/royal/palace/deoksuhistory">
 		<div class="menu" style="margin:10px">
 			<img src="../resources/image/royal_inner/main/deoksu/bg_menu04_01.jpg" alt="이미지" />
@@ -49,8 +50,9 @@
 			<img src="../resources/image/royal_inner/main/deoksu/bg_menu04_04.jpg" alt="이미지" />
 		</div>
 	</a>
+	</div>
 	
-	<jsp:include page="../../../layout/footer.jsp"/>
+	<jsp:include page="/WEB-INF/views/layout/footer.jsp"/>
 	
 </body>
 </html>
