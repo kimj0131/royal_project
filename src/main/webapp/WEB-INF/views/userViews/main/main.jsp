@@ -11,23 +11,22 @@
 <link rel="stylesheet" href="${sliderCSS}" />
 </head>
 <body>
-   <jsp:include page="../../layout/header.jsp" />
-   <jsp:include page="../../layout/navibar.jsp" />
-
-   <div style="font-size: 40px;">궁능유적본부</div>
+   <jsp:include page="/WEB-INF/views/layout/header.jsp" />
+   <jsp:include page="/WEB-INF/views/layout/navibar.jsp" />
+   <div class="title" style="font-size: 30px;">궁능유적본부</div>
    <div class="box">
       <div class="slide">
          <div class="images">
-            <img alt="경복궁" src="../resources/image/royal_inner/main/gyeongbok/gyeongbokgung.jpg" />
-            <img alt="덕수궁" src="../resources/image/royal_inner/main/deoksu/deoksugung.jpg" />
-            <img alt="창경궁" src="../resources/image/royal_inner/main/changgyeong/changgyeonggung.jpg" />
-            <img alt="창덕궁" src="../resources/image/royal_inner/main/changdeok/changdeokgung.jpg" />
-            <img alt="종묘" src="../resources/image/royal_inner/main/jongmyo/jongmyo.jpg" />
+            <img class="img" alt="" src="../resources/image/slider/event1.jpg" />
+            <img class="img" alt="" src="../resources/image/slider/event2.jpg" />
+            <img class="img" alt="" src="../resources/image/slider/event3.jpg" />
          </div>
       </div>
-      <button class="back">❮</button>
-      <button class="next">❯</button>
-   </div>
+  </div>
+  	
+     <button class="back">❮</button>
+     <button class="next">❯</button>
+     
    <div>
       공지사항 <a href="">전체보러가기</a>
       <div>리스트1,2,3</div>
@@ -36,7 +35,7 @@
       <a href="/royal/palace/event">알림판(행사)</a>
    </div>
    <!-- 행사 가는 링크 달기 -->
-   <jsp:include page="../../layout/footer.jsp" />
+   <jsp:include page="/WEB-INF/views/layout/footer.jsp" />
 
    <script src="${sliderJS}"></script>
 </body>
