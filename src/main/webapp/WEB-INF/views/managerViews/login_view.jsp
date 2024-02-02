@@ -27,7 +27,7 @@ uri="http://java.sun.com/jsp/jstl/core"%>
 						<div class="card fat">
 							<div class="card-body">
 								<h4 class="card-title">Login</h4>
-								<form method="POST" class="my-login-validation" novalidate="">
+								<form action="./login" method="POST" class="my-login-validation" novalidate="">
 									<div class="form-group">
 										<input
 											id="ID"
