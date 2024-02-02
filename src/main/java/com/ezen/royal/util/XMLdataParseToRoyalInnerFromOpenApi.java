@@ -13,7 +13,7 @@ import org.w3c.dom.NodeList;
 
 import com.ezen.royal.api.dto.InnerDataFromOpenApiDTO;
 
-public class XMLdataParseForApi {
+public class XMLdataParseToRoyalInnerFromOpenApi {
 
 	// tag값의 정보를 가져오는 함수
 	public String getTagValue(String tag, Element eElement) {
