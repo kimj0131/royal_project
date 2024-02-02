@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
-<c:url value="/resources/js/managerViews/navibar.js" var="navibarJS" />
+<c:url value="/resources/js/manager/navibar.js" var="navibarJS" />
 
 <div id="navibar">
 	<button id="summaryBtn">요약</button>
