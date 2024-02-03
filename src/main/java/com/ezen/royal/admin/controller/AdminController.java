@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.ezen.royal.admin.service.AdminLoginService;
+import com.ezen.royal.secure.SecureTools;
 
 import lombok.extern.log4j.Log4j;
 
@@ -22,17 +23,19 @@ public class AdminController {
 	AdminLoginService adminLoginService;
 	
 
-	@GetMapping("/login") // 관리자 로그인 페이지
+	// 관리자 로그인 페이지 매핑
+	@GetMapping("/") // 관리자 로그인 페이지
 	public String admin_login_view() {
+		return "redirect:/YWRtaW5wYWdl/login";
+	}
+	@GetMapping("/login") // 관리자 로그인 페이지
+	public String admin_login_view2() {
 		return "managerViews/login_view";
 	}
-	
-	
 	
 	// [TEST] id = royaladmin password = royaladmin
 	@PostMapping("/login") // 관리자 로그인
 	public String admin_login(HttpServletRequest request,HttpSession session) {
-		System.out.println("관리자 로그인 시도");
 		
 		String id = request.getParameter("ID");
 		String pwd = request.getParameter("password");
@@ -42,6 +45,9 @@ public class AdminController {
 			
 			if(result > 0) {
 				log.info("[INFO] 관리자 로그인");
+				
+				// 로그인 유지, 확인을 위해 어트리뷰트 설정 (해쉬코드 아이디값) 
+				session.setAttribute("login_admin", SecureTools.getHashedString(id));
 				return "redirect:/YWRtaW5wYWdl/summary";
 			} else {
 				// 관리자 계정 로그인에 실패했을 때
@@ -52,6 +58,14 @@ public class AdminController {
 			log.warn("[WARNING] 관리자 로그인에 문제가 발생했습니다");
 			return "redirect:/YWRtaW5wYWdl/login";
 		}
+	}
+	@GetMapping("/logout")
+	public String admin_logout(HttpServletRequest request,HttpSession session) {
+		
+		// 세션초기화
+		session.invalidate();
+		// 초기화 후 로그인페이지로 리다이렉트
+		return "redirect:/YWRtaW5wYWdl/login";
 	}
 	
 	@GetMapping("/summary") // 관리자 요약 페이지

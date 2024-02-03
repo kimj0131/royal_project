@@ -1,8 +1,20 @@
+<%@page import="org.springframework.validation.BindingResult"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%> <%@ taglib prefix="c"
 uri="http://java.sun.com/jsp/jstl/core"%>
 <c:url value="/resources/css/manager/login_view.css" var="loginCSS" />
 <c:url value="/resources/image/layout/githubicon.png" var="logoIMG" />
 <c:url value="/resources/js/manager/login_view.js" var="loginJS" />
+
+<% 
+	// 로그인 상태 확인 변수 설정
+	String login_admin = (String) session.getAttribute("login_admin");
+	//response.sendRedirect(request.getContextPath() + "/YWRtaW5wYWdl/summary");
+	
+	// 세션 확인
+	System.out.println("로그인뷰 세션확인 : " + request.getSession(false));
+	
+%>
+
 <!DOCTYPE html>
 <html>
 	<head>
@@ -17,6 +29,13 @@ uri="http://java.sun.com/jsp/jstl/core"%>
 		/>
 	</head>
 	<body class="my-login-page">
+		<c:if test="${!empty login_admin}">
+			<script>
+				alert("이미 로그인 중입니다.");
+				location.href='./summary';
+			</script>
+		</c:if>
+	
 		<section class="h-100">
 			<div class="container h-100">
 				<div class="row justify-content-md-center h-100">
