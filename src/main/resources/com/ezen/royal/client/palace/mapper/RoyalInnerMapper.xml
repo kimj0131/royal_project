@@ -2,22 +2,17 @@
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.ezen.royal.client.palace.mapper.RoyalInnerMapper">
+<mapper
+	namespace="com.ezen.royal.client.palace.mapper.RoyalInnerMapper">
 
 	<select id="getAll"
 		resultType="com.ezen.royal.client.palace.dto.InnerDTO">
-		SELECT * FROM royal_inner
-		INNER JOIN royal USING(royal_id) WHERE royal_id = #{royalId}
+		SELECT royal_inner_name, royal_name FROM royal_inner INNER JOIN royal
+		USING(royal_id) WHERE royal_name = #{palace}
 	</select>
-	
-    <select id="getRoyalNameById" resultType="com.ezen.royal.client.palace.dto.InnerDTO">
-        SELECT royal_inner_name FROM royal_inner WHERE royal_id = #{royalId}
-    </select>
 
-    <select id="royalInnerList" resultType="com.ezen.royal.client.palace.dto.InnerDTO">
-        SELECT royal_inner_name, royal_inner_detail, royal_inner_imgpath
-        FROM royal_inner
-        WHERE royal_id = #{royalId}
-    </select>
-
+	<select id="getSelectedInnerDTO" 
+		resultType="com.ezen.royal.client.palace.dto.InnerDTO">
+		SELECT * FROM royal_inner WHERE royal_inner_name = #{inner}
+	</select>
 </mapper>

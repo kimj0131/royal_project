@@ -4,37 +4,42 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>궁 내부 건축물</title>
+<c:url value="/resources/css/royal_intro/royal_inner_view.css" var="innerCSS" />
+<title>${palaceName} 내부 건축물</title>
+<link rel="stylesheet" href="${innerCSS}" />
 </head>
 <body>
-
-	<c:set var="royalId" value="1" />
-	<c:set var="allInfo" value="${royals.getAll(royalId)}" />
-
-	<c:set var="royalId" value="1" />
-	<c:set var="royalName" value="${royals.getRoyalNameById(royalId)}" />
-
-	<c:set var="royalId" value="1" />
-	<c:set var="innerList" value="${royalInnerDatas}" />
-
-	<div id="header">
-	    <ul>
-	        <li>${royalId}</li>
-	        <li>${royalName} 내부건축물</li>
-	    </ul>
-	</div>
-	<div id="main">
-	    <!-- 여기에 궁 내부 건축물 정보를 표시할 부분 -->
-	</div>
-	<div id="footer">
-	    <!-- 건축물 정보 표시 -->
-	    <c:forEach var="inner" items="${royalInnerDatas}">
-	        <p>${inner.royalInnerName}</p>
-	        <img src="${inner.royalInnerImgPath}" alt="건축물 이미지">
-	        <span>${inner.royalInnerDetail}</span>
-	    </c:forEach>
+	<jsp:include page="/WEB-INF/views/layout/header.jsp" />
+	<jsp:include page="/WEB-INF/views/layout/navibar.jsp" />
+	
+	<div class="royal-name">
+    <a href="/royal/palace/royalInner?palace=경복궁">경복궁</a>
+    <a href="/royal/palace/royalInner?palace=덕수궁">덕수궁</a>
+    <a href="/royal/palace/royalInner?palace=창경궁">창경궁</a>
+    <a href="/royal/palace/royalInner?palace=창덕궁">창덕궁</a>
+    <a href="/royal/palace/royalInner?palace=종묘">종묘</a>
 	</div>
 
+	<h2>${palaceName}이야기</h2>
+
+
+	<div class="grid-container">
+		<c:forEach items="${innerNameList}" var="innerName">
+			<form action="/royal/palace/royalInner" method="get">
+				<input type="hidden" name="palace" value="${palaceName}" /> <input
+					type="hidden" name="inner" value="${innerName}" />
+				<div class="innerNameDiv" onclick="this.parentNode.submit();">${innerName}</div>
+			</form>
+		</c:forEach>
+	</div>
+	<div></div>
+
+
+
+	<h2>${innerDTO.royal_inner_name}</h2>
+	<img class="mainImg" src="${innerDTO.royal_inner_imgpath}" alt="건축물이미지" />
+	<div class="content">${innerDTO.royal_inner_detail}</div>
+
+	<jsp:include page="/WEB-INF/views/layout/footer.jsp" />
 </body>
 </html>

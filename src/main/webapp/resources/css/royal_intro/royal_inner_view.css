@@ -1,0 +1,85 @@
+@charset "UTF-8";
+
+*{
+    font-family: "Noto Snas KR";
+    box-sizing: border-box;
+}
+
+.grid-container {
+	margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); 
+    width: 66%;
+}
+
+.royal-name{
+	margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); 
+    text-align: center;
+    gap: 10px; 
+    width: 50%;
+    margin-bottom: 15px;
+    padding: 10px;
+}
+
+.royal-name > a{
+    border: 1px solid transparent;
+    border-radius: 20px;
+    text-align: center;
+    width: 66%;
+}
+
+.royal-name > :first-child{
+    border: 3px solid #604206;
+    border-radius: 20px;
+}
+.royal-name > :nth-child(2){
+    border: 3px solid #286d79;
+    border-radius: 20px;
+}
+.royal-name > :nth-child(3){
+    border: 3px solid #14489c;
+    border-radius: 20px;
+}
+.royal-name > :nth-child(4){
+    border: 3px solid #b6383d;
+    border-radius: 20px;
+}
+.royal-name > :nth-child(5){
+    border: 3px solid #c14b35;
+    border-radius: 20px;
+}
+
+h2 {
+    width: 66%;
+    margin: 0 auto;
+    padding : 5px;
+    margin-bottom: 15px;
+}
+
+.innerNameDiv {
+    cursor: pointer;
+    border: 1px solid #ccc; 
+    padding: 10px;
+    width: 66%;
+    margin: 0 auto;
+    margin-bottom: 10px;
+}
+
+
+.mainImg{ 
+    width: 66%;
+    margin: 0 auto;
+    padding : 5px;
+    display: block;
+}
+
+.content{ 
+    width: 66%;
+    margin: 0 auto;
+    padding : 5px;
+    margin-top: 15px;
+    font-size: 13px;
+}
+

@@ -7,7 +7,7 @@
 <c:url value="/resources/css/royal_intro/jongmyo.css" var="JMCSS" />
 <meta charset="UTF-8">
 <link rel="stylesheet" href="${JMCSS}" />
-<title>종묘 메인 페이지</title>
+<title>${palaceName} 메인 페이지</title>
 </head>
 <body>
 
@@ -30,7 +30,7 @@
 		</div>
 	</a>
 	
-	<a href="/royal/palace/royalInner">
+	<a href="/royal/palace/royalInner?palace=종묘">
 		<div class="menu" style="margin:10px">
 			종묘 내부 건축물
 			<img src="../resources/image/royal_inner/main/jongmyo/bg_menu05_02.jpg" alt="이미지" />

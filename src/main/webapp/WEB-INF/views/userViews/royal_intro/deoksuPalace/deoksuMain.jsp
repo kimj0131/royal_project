@@ -7,7 +7,7 @@
 <c:url value="/resources/css/royal_intro/deoksugung.css" var="DSCSS" />
 <meta charset="UTF-8">
 <link rel="stylesheet" href="${DSCSS}" />
-<title>덕수궁 메인페이지</title>
+<title>${palaceName} 메인페이지</title>
 </head>
 <body>
 
@@ -30,7 +30,7 @@
 		</div>
 	</a>
 	
-	<a href="/royal/palace/royalInner">
+	<a href="/royal/palace/royalInner?palace=덕수궁">
 		<div class="menu" style="margin:10px">
 			덕수궁 내부 건축물
 			<img src="../resources/image/royal_inner/main/deoksu/bg_menu04_02.jpg" alt="이미지" />

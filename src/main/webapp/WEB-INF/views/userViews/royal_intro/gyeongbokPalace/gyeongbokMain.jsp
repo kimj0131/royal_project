@@ -7,7 +7,7 @@
 <c:url value="/resources/css/royal_intro/gyeongbokgung.css" var="GBCSS" />
 <meta charset="UTF-8">
 <link rel="stylesheet" href="${GBCSS}" />
-<title>경복궁 메인 페이지</title>
+<title>${palaceName}메인 페이지</title>
 </head>
 <body>
 
@@ -30,24 +30,13 @@
 		</div>
 	</a>
 
-	<a href="<c:url value='/getRoyalDetails/${royal.royalId}' />">
-		<div class="menu" style="margin: 10px">
-			경복궁 내부 건축물 <img src="../resources/image/royal_inner/main/gyeongbok/bg_menu01_02.jpg"
-				alt="이미지" />
-		</div>
+	<a href="/royal/palace/royalInner?palace=경복궁">
+    <div class="menu" style="margin: 10px"> 
+        경복궁 내부 건축물 <img src="../resources/image/royal_inner/main/gyeongbok/bg_menu01_02.jpg" alt="이미지" />
+    </div>
 	</a>
-	<!--
-	<form action="<c:url value='/getRoyalDetails' />" method="get">
-	    <input type="hidden" name="royalId" value="${royal.royalId}" />
-	    <div class="menu" style="margin:10px">
-	        경복궁 내부 건축물
-	        <img src="../resources/image/royal_inner/main/gyeongbok/bg_menu01_02.jpg" alt="이미지" />
-	        <input type="submit" value="Go">
-	    </div>
-	</form>
-		-->
+
 		
-	
 	<a href="/royal/palace/viewing_time">
 		<div class="menu" style="margin:10px">
 			<img src="../resources/image/royal_inner/main/gyeongbok/bg_menu01_03.jpg" alt="이미지" />

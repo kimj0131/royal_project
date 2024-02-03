@@ -5,10 +5,6 @@ import java.util.List;
 import com.ezen.royal.client.palace.dto.InnerDTO;
 
 public interface RoyalInnerMapper {
-
-	//List<RoyalDTO> getAll();
-	
-	InnerDTO getRoyalNameById(Integer royalId);
-	
-	List<InnerDTO> royalInnerList(Integer royalId);
+	List<InnerDTO> getAll(String palace);
+	InnerDTO getSelectedInnerDTO(String innner);
 }

@@ -4,8 +4,7 @@ import lombok.Data;
 
 @Data
 public class InnerDTO {
-    private Integer royalInnerId;
-    private Integer royalId;
-    private String royalInnerName;
-    private String royalInnerDetail;
+    private String royal_inner_name;
+    private String royal_inner_detail;
+    private String royal_inner_imgpath;   
 }
