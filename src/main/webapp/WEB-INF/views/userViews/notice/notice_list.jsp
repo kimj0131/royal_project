@@ -36,7 +36,7 @@
 		<div class="BTN_class">
 			<div id="all_BTN" class="all on">전 체</div>
 			<div id="GB_BTN" class="GB">경복궁</div>
-			<div id="DS_BTN " class="DS">덕수궁</div>
+			<div id="DS_BTN" class="DS">덕수궁</div>
 			<div id="CG_BTN" class="CG">창경궁</div>
 			<div id="CD_BTN" class="CD">창덕궁</div>
 			<div id="JM_BTN" class="JM">종 묘</div>
@@ -49,7 +49,7 @@
 		<div class="search_left">
 			<div class="count_div">전체: **개</div>
 		</div>
-		<form name="listForm" id="listForm" method="post" onsubmit="fn_search(); return false;"></form><input type="hidden" name="_csrf" value="90233427-ad76-42a3-a21f-fd13dc9189e9">
+		<form name="listForm" id="listForm" method="post" onsubmit="fn_search(); return false;"></form>
 			<div class="search_right">
 				<select name="search_select_id" id="search_select_id" title="구분">
 					<option>전체</option>
