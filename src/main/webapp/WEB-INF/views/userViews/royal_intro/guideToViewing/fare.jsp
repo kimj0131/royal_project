@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>관람요금</title>
 <c:url value="/resources/css/royalInfoCSS/fare.css" var="fareCSS" />
 <c:url value="/resources/css/royalInfoCSS/lnb.css" var="lnbCSS" />
 <c:url value="/resources/image/royalInfo/right.png" var="rightIMG" />
@@ -18,12 +18,10 @@
 </head>
 <body>
 
-	<jsp:include page="../../layout/header.jsp" />
+	<jsp:include page="/WEB-INF/views/layout/header.jsp" />
 
 	<div class="contents_wrap" id="contents_wrap">
-		<!-- [S] contents -->
 		<div class="contents contents_sub">
-			<!-- [S] sub_visual-->
 			<div class="sub_visual">
 				<div class="img_wrap">
 					<img src="${royalInfoIMG}" alt="">
@@ -42,23 +40,20 @@
 							href="/royal/palace/viewing_time">관람시간</a></li>
 						<li class="lnb_depth2_item" id="SNB_R703000000"><a
 							href="/royal/palace/fare"><B>관람요금</a></li>
-						<li class="lnb_depth2_item" id="SNB_R707000000"><a href="/royal/palace/roadmap">오시는
-								길</a></li>
+						<li class="lnb_depth2_item" id="SNB_R707000000"><a
+							href="/royal/palace/roadmap">오시는 길</a></li>
 					</ul>
 				</div>
 
 				<div class="contents_inn" id="sub_contents">
-					<!-- [E] breadcrumb -->
-					<!-- [S] sub_tit_wrap -->
+			
 					<div class="sub_tit_wrap">
 						<h2 class="tit">관람요금</h2>
-
 					</div>
 
-					<!-- [S] sub_con_wrap -->
+			
 					<div class="sub_con_wrap pt0" id="sub_con_wrap">
 						<div class="sub_con_section">
-							<!-- div class="txt_section_tit">일반관람시간</div -->
 							<div class="wrap table_wrap">
 								<table class="table bd_table bd th_c">
 									<colgroup>
@@ -194,8 +189,6 @@
 								</ul>
 							</div>
 						</div>
-						<!-- [E] sub_con_section -->
-						<!-- [S] sub_con_section -->
 						<div class="sub_con_section">
 							<div class="sub_con_tit">특별권</div>
 							<div class="wrap table_wrap">
@@ -316,8 +309,6 @@
 									</tbody>
 								</table>
 							</div>
-							<!-- [E] sub_con_section -->
-							<!-- [S] sub_con_section -->
 							<div class="sub_con_section">
 								<div class="sub_con_tit">무료관람대상자&nbsp;</div>
 								<div class="box_wrap">
@@ -387,8 +378,7 @@
 									</ul>
 								</div>
 							</div>
-							<!-- [E] sub_con_section -->
-							<!-- [S] sub_con_section -->
+
 							<div class="sub_con_section">
 								<div class="wrap table_wrap">
 									<table class="table bd_table bd th_c">
@@ -485,8 +475,8 @@
 							<div class="sub_con_section">
 								<div class="btn_wrap tac">
 									<a href="/royal/palace/reservation" class="btn arr_btn_b">해설/행사
-										예약하기 &nbsp;<img src="${rightIMG}"
-								alt=""></a>
+										예약하기 &nbsp;<img src="${rightIMG}" alt="">
+									</a>
 								</div>
 							</div>
 						</div>
@@ -495,6 +485,6 @@
 			</div>
 		</div>
 	</div>
-	<jsp:include page="../../layout/footer.jsp" />
+	<jsp:include page="/WEB-INF/views/layout/footer.jsp" />
 </body>
 </html>

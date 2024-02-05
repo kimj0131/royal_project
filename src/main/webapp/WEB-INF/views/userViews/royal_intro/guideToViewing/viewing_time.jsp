@@ -8,10 +8,11 @@
 <head>
 <meta charset="UTF-8">
 <title>관람시간</title>
+
 <c:url value="/resources/css/royalInfoCSS/viewing_time.css" var="viewing_timeCSS" />
 <c:url value="/resources/css/royalInfoCSS/lnb.css" var="lnbCSS" />
-<c:url value="/resources/image/royalInfo/royalInfo.jpg"
-	var="royalInfoIMG" />
+<c:url value="/resources/image/royalInfo/royalInfo.jpg" var="royalInfoIMG" />
+
 <link rel="stylesheet" href="${viewing_timeCSS}" />
 <link rel="stylesheet" href="${lnbCSS}" />
 <link rel="stylesheet" href="${royalInfoIMG}" />
@@ -19,10 +20,9 @@
 
 <body>
 
-	<jsp:include page="../../layout/header.jsp" />
+	<jsp:include page="/WEB-INF/views/layout/header.jsp" />
 
 	<div class="contents_wrap" id="contents_wrap">
-		<!-- [S] contents -->
 		<div class="contents contents_sub">
 			<!-- [S] sub_visual-->
 			<div class="sub_visual">
@@ -44,8 +44,8 @@
 							href="/royal/palace/viewing_time"><B>관람시간</a></li>
 						<li class="lnb_depth2_item" id="SNB_R703000000"><a
 							href="/royal/palace/fare">관람요금</a></li>
-						<li class="lnb_depth2_item" id="SNB_R707000000"><a href="/royal/palace/loadmap">오시는
-								길</a></li>
+						<li class="lnb_depth2_item" id="SNB_R707000000">
+						<a href="/royal/palace/roadmap">오시는길</a></li>
 					</ul>
 				</div>
 				<div class="contents_inn" id="sub_contents">
@@ -54,7 +54,7 @@
 					</div>
 					<div class="sub_txt_wrap"></div>
 					<div class="sub_con_wrap pt0" id="sub_con_wrap">
-						<!-- [S] sub_con_section -->
+					
 						<div class="sub_con_section">
 							<div class="txt_section_tit">정기휴일</div>
 							<ul class="holiday_list">
@@ -80,8 +80,6 @@
 							<div class="info_txt">※ 단, 정기휴일이 공휴일 및 대체공휴일과 겹칠 경우에는 개방하며,
 								그 다음의 첫 번째 비공휴일이 정기휴일임</div>
 						</div>
-						<!-- [E] sub_con_section -->
-						<!-- [S] sub_con_section -->
 						<div class="sub_con_section">
 							<div class="txt_section_tit">일반관람시간</div>
 							<div class="wrap table_wrap">
@@ -186,8 +184,6 @@
 								</table>
 							</div>
 						</div>
-						<!-- [E] sub_con_section -->
-						<!-- [S] sub_con_section -->
 						<div class="sub_con_section">
 							<div class="txt_section_tit">특별관람시간</div>
 							<div class="wrap table_wrap">
@@ -290,8 +286,6 @@
 							<div class="wrap light">※ 특별관람은 기관 사정에 따라 변동될 수 있으니 자세한
 								사항은&nbsp;공지사항을 참고하시기 바랍니다.</div>
 						</div>
-						<!-- [E] sub_con_section -->
-						<!-- [S] sub_con_section -->
 						<div class="sub_con_section">
 							<div class="txt_section_tit">창경궁 기간별 야간개방구역 이동시간 및 대온실 내부개방
 								일정</div>
@@ -338,8 +332,6 @@
 									내부도 식물 보호를 위하여 위와 같이 야간에는 기간별 제한 개방을 운영하고 있으니 이점 양해 부탁드립니다.</div>
 							</div>
 						</div>
-						<!-- [E] sub_con_section -->
-						<!-- [S] sub_con_section -->
 
 
 					</div>
@@ -348,7 +340,7 @@
 			</div>
 		</div>
 	</div>
-	<jsp:include page="../../layout/footer.jsp" />
+	<jsp:include page="/WEB-INF/views/layout/footer.jsp" />
 </body>
 
 </html>
