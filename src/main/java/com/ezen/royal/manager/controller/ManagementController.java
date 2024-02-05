@@ -1,4 +1,4 @@
-package com.ezen.royal.admin.controller;
+package com.ezen.royal.manager.controller;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.ezen.royal.admin.service.AdminLoginService;
+import com.ezen.royal.manager.service.ManagerLoginService;
 import com.ezen.royal.secure.SecureTools;
 
 import lombok.extern.log4j.Log4j;
@@ -17,31 +17,32 @@ import lombok.extern.log4j.Log4j;
 @Log4j
 @Controller
 @RequestMapping("/YWRtaW5wYWdl")
-public class AdminController {
+public class ManagementController {
 	
 	@Autowired
-	AdminLoginService adminLoginService;
+	ManagerLoginService managerLoginService;
 	
 
 	// 관리자 로그인 페이지 매핑
 	@GetMapping("/") // 관리자 로그인 페이지
-	public String admin_login_view() {
+	public String manager_login_view() {
 		return "redirect:/YWRtaW5wYWdl/login";
 	}
 	@GetMapping("/login") // 관리자 로그인 페이지
-	public String admin_login_view2() {
+	public String manager_login_view2() {
 		return "managerViews/login_view";
 	}
 	
 	// [TEST] id = royaladmin password = royaladmin
-	@PostMapping("/login") // 관리자 로그인
-	public String admin_login(HttpServletRequest request,HttpSession session) {
+	// 관리자 로그인
+	@PostMapping("/login") 
+	public String manager_login(HttpServletRequest request,HttpSession session) {
 		
 		String id = request.getParameter("ID");
 		String pwd = request.getParameter("password");
 		
 		if (id != null && pwd != null) {
-			int result = adminLoginService.verification(id, pwd);
+			int result = managerLoginService.verification(id, pwd);
 			
 			if(result > 0) {
 				log.info("[INFO] 관리자 로그인");
@@ -59,37 +60,39 @@ public class AdminController {
 			return "redirect:/YWRtaW5wYWdl/login";
 		}
 	}
+	// 로그아웃
 	@GetMapping("/logout")
-	public String admin_logout(HttpServletRequest request,HttpSession session) {
-		
+	public String manager_logout(HttpServletRequest request,HttpSession session) {
 		// 세션초기화
 		session.invalidate();
 		// 초기화 후 로그인페이지로 리다이렉트
 		return "redirect:/YWRtaW5wYWdl/login";
 	}
 	
+	
+	
 	@GetMapping("/summary") // 관리자 요약 페이지
-	public String admin_summary() {
+	public String manage_summary() {
 		return "managerViews/main_views/summary";
 	}
 	
 	@GetMapping("/event") // 관리자 행사 관리 페이지
-	public String admin_event() {
+	public String manage_event() {
 		return "managerViews/main_views/event_manage";
 	}
 	
 	@GetMapping("/notice") // 관리자 공지사항 수정 페이지
-	public String admin_notice() {
+	public String manage_notice() {
 		return "managerViews/main_views/notice_manage";
 	}
 	
 	@GetMapping("/qna") // 관리자 qna관리 페이지
-	public String admin_qna() {
+	public String manage_qna() {
 		return "managerViews/main_views/qna_manage";
 	}
 	
 	@GetMapping("/reservation") // 관리자 통합예약 관리 페이지
-	public String admin_reservation() {
+	public String manage_reservation() {
 		return "managerViews/main_views/reservation_manage";
 	}
 }
