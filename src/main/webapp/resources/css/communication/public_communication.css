@@ -175,17 +175,19 @@
 .search_div{
     display: flex;
     justify-content: space-between;
+    padding-bottom: 60px;
+
 }
 
 .search_left{
-    padding-left: 60px;
-    padding-top: 30px;
+	padding: 40px 0 0 450px;
     font-size: 20px;
     font-weight: bold;
 }
 .search_right{
-    padding-right: 60px;
-    padding-top: 30px;
+
+    padding: 40px 300px 0 0;
+    margin:0 150px;
     display: flex;
     align-items: center;
     justify-content: flex-end;
@@ -213,6 +215,11 @@
     padding: 0 25px;
     border: none;
     max-width: 100%;
+    
+}
+
+#search_input_id:focus{
+    outline: 0;
 }
 
 
@@ -228,3 +235,7 @@
     margin-left: 15px;
     font-size: 1rem;
 }
+.count_div{
+    width: 130px;
+}
+

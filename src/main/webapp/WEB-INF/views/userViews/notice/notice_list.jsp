@@ -61,6 +61,16 @@
 			</div>
 		</form>	
 	</div>
+	
+	<div class="board_wrap">
+		<div class="board_wrap_layout">
+			<div>번호</div>
+			<div>담당부서</div>
+			<div>제목</div>
+			<div>등록일</div>
+			<div>조회수</div>
+		</div>
+	</div>
 
 
 	<script src="${public_communicationJS}"></script>

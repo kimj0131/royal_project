@@ -1,2 +1,14 @@
 @charset "UTF-8";
+*{
+    font-family: "Noto Snas KR";
+}
 
+.board_wrap{
+    display: flex;
+    flex-direction: column;
+}
+
+.board_wrap_layout{
+    display: flex;
+    justify-content: ;
+}
