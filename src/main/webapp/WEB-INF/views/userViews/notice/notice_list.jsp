@@ -49,7 +49,7 @@
 		<div class="search_left">
 			<div class="count_div">전체: **개</div>
 		</div>
-		<form name="listForm" id="listForm" method="post" onsubmit="fn_search(); return false;"></form>
+		<form name="listForm" id="listForm" method="post" onsubmit="fn_search(); return false;">
 			<div class="search_right">
 				<select name="search_select_id" id="search_select_id" title="구분">
 					<option>전체</option>
