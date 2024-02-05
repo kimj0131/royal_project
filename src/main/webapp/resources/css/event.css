@@ -4,12 +4,46 @@
     box-sizing: border-box;
 }
 
+.sub {
+	width: 100%;
+	height: 185px;
+	position: relative;
+}
+
+.sub .mainImg {
+	width: 100%;
+	height: 100%;
+}
+
+.mainImg {
+	position: relative;
+}
+
+.mainImg>img {
+	width: 100%;
+	height: 100%;
+}
+
+.sub h1 {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	font-size: 35px;
+	color: white;
+	font-weight: bold;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
 
 h2 {
 	text-align: left;
 	margin: 300px;
 	font-size: 23px;
 	padding-left: 270px;
+	padding-top: 40px;
 	margin: 0 auto;	
 	top: 200px;
 }
@@ -31,78 +65,61 @@ h2 {
 
 .click-row1 {
 	display: flex;
-	border: 2px solid #683A0D;
+	border: 3px solid #604206;
+	background-color: white;
 	color: #683A0D;
 	font-weight: bold;
 	flex-wrap: nowrap;
 	padding: 5px 30px;
 	cursor: pointer;
-	border-radius: 18px;
+	border-radius: 20px;
 }
 
 .click-row2 {
 	display: flex;
-	border: 2px solid #1A6073;
-	color: #1A6073;
+	border: 3px solid #286d79;
+	background-color: white;
+	color: #286d79;
 	font-weight: bold;
 	flex-wrap: nowrap;
 	padding: 5px 30px;
 	cursor: pointer;
-	border-radius: 18px;
+	border-radius: 20px;
 }
 
 .click-row3 {
 	display: flex;
-	border: 2px solid #0D3D96;
-	color: #0D3D96;
+	border: 3px solid #14489c;
+	background-color: white;
+	color: #14489c;
 	font-weight: bold;
 	flex-wrap: nowrap;
 	padding: 5px 30px;
 	cursor: pointer;
-	border-radius: 18px;
+	border-radius: 20px;
 }
 
 .click-row4 {
 	display: flex;
-	border: 2px solid #C91B16;
-	color: #C91B16;
+	border: 3px solid #b6383d;
+	background-color: white;
+	color: #b6383d;
 	font-weight: bold;
 	flex-wrap: nowrap;
 	padding: 5px 30px;
 	cursor: pointer;
-	border-radius: 18px;
-}
-/*
-.date {
-    display: flex;
-    max-width: 100%;
-    height: 200px;
-    align-items: center;
-    text-align: center;
-    margin: 0 auto;
-    justify-content: center;
+	border-radius: 20px;
 }
 
-.date div{
-	text-align: center;
-	font-size: 28px;
-	font-weight: bold;
-  	justify-content: space-evenly;
-}
-
-
-*/
-
-/* section calendar */
-
-.sec_cal {
+.date-wrap {
     width: 360px;
     margin: 0 auto;
     height: 500px;
 }
 
-.sec_cal .cal_nav {
+.date-wrap .date-month {
     display: flex;
+	padding-top: 30px;
     justify-content: center;
     align-items: center;
     font-weight: 700;
@@ -110,7 +127,29 @@ h2 {
     line-height: 78px;
 }
 
-.sec_cal .cal_nav .year-month {
+.month-move {
+	border: none;
+	background-color: transparent;
+	font-weight: 700;
+    font-size: 48px;
+	cursor : pointer; 
+}
+
+.month-move:hover {
+	color: #ed2a61;
+}
+
+#month-prev {
+	padding-right: 30px;
+}
+
+#month-next {
+	padding-left: 30px;
+}
+
+
+/*
+.date-wrap .date-month .month-this {
     width: 300px;
     text-align: center;
     line-height: 1;
@@ -133,75 +172,4 @@ h2 {
     align-items: center;
 }
 
-.sec_cal .cal_nav .go-prev::before,
-.sec_cal .cal_nav .go-next::before {
-    content: "";
-    display: block;
-    width: 20px;
-    height: 20px;
-    border: 3px solid #000;
-    border-width: 3px 3px 0 0;
-    transition: border 0.1s;
-}
-
-.sec_cal .cal_nav .go-prev:hover::before,
-.sec_cal .cal_nav .go-next:hover::before {
-    border-color: #ed2a61;
-}
-
-.sec_cal .cal_nav .go-prev::before {
-    transform: rotate(-135deg);
-}
-
-.sec_cal .cal_nav .go-next::before {
-    transform: rotate(45deg);
-}
-
-.sec_cal .cal_wrap {
-    padding-top: 40px;
-    position: relative;
-    margin: 0 auto;
-}
-
-.sec_cal .cal_wrap .days {
-    display: flex;
-    margin-bottom: 20px;
-    padding-bottom: 20px;
-    border-bottom: 1px solid #ddd;
-}
-
-.sec_cal .cal_wrap::after {
-    top: 368px;
-}
-
-.sec_cal .cal_wrap .day {
-    display:flex;
-    align-items: center;
-    justify-content: center;
-    width: calc(100% / 7);
-    text-align: left;
-    color: #999;
-    font-size: 12px;
-    text-align: center;
-    border-radius:5px
-}
-
-.current.today {background: rgb(242 242 242);}
-
-.sec_cal .cal_wrap .dates {
-    display: flex;
-    flex-flow: wrap;
-    height: 290px;
-}
-
-.sec_cal .cal_wrap .day:nth-child(7n -1) {
-    color: #3c6ffa;
-}
-
-.sec_cal .cal_wrap .day:nth-child(7n) {
-    color: #ed2a61;
-}
-
-.sec_cal .cal_wrap .day.disable {
-    color: #ddd;
-}
+*/
