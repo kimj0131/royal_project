@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper
+	namespace="com.ezen.royal.client.communication.mapper.FaqMapper">
+
+	<select id="getAll"
+		resultType="com.ezen.royal.client.communication.dto.FaqDTO">
+		SELECT * FROM faq ORDER BY
+		faq_id DESC
+	</select>
+
+	<select id="get"
+		resultType="com.ezen.royal.client.communication.dto.FaqDTO">
+		SELECT * FROM faq WHERE
+		faq_id=#{faq_id}
+	</select>
+
+	<select id="getUniqueValuesCount"
+		resultType="java.lang.Integer">
+		SELECT COUNT(DISTINCT faq_id) AS unique_values_count
+		FROM faq
+	</select>
+</mapper>
+	
+	

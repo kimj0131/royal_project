@@ -7,27 +7,27 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.ezen.royal.client.communication.service.QnaService;
+import com.ezen.royal.client.communication.service.FaqService;
 
 import lombok.extern.log4j.Log4j;
 
 @Log4j
 @Controller
 @RequestMapping("/communication")
-public class QnaController {
-	
-	@Autowired
-	QnaService qnaService;
-	
+public class FaqController {
 
-	@GetMapping("/notice/qna")
-	public String qna(Model model) {
-		qnaService.qna(model);
-		return "/userViews/notice/qna_form";
+	@Autowired
+	FaqService faqService;
+
+	@GetMapping("/faq")
+	public String faq(Model model) {
+		faqService.faq(model);
+
+		Integer uniqueValuesCount = faqService.getUniqueValuesCount();
+
+		model.addAttribute("uniqueValuesCount", uniqueValuesCount);
+
+		return "/userViews/notice/faq_form";
 	}
-	
-	@PostMapping("/notice/qna")
-	public String write() {
-		return "redirect:/notice/qna";			
-	}
+
 }
