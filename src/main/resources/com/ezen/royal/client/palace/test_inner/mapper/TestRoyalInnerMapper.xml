@@ -9,7 +9,7 @@
 	</select>
 	
 	<select id="getSelectedInnerDTO" resultType="com.ezen.royal.client.palace.test_inner.dto.InnerDTO">
-		SELECT * FROM royal_inner WHERE royal_inner_name = #{inner}
+		SELECT * FROM royal_inner WHERE royal_inner_name = #{inner} AND royal_id = #{royalId}
 	</select>
 
 </mapper>

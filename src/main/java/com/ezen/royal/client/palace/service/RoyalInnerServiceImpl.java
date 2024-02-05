@@ -15,6 +15,8 @@ public class RoyalInnerServiceImpl implements RoyalInnerService {
 
 	@Autowired
 	RoyalInnerMapper royalInnerMapper;
+
+	
 	
 	@Override
 	public List<String> getInnerNameList(String palace) {
@@ -28,8 +30,12 @@ public class RoyalInnerServiceImpl implements RoyalInnerService {
 		
 		return InnerNameList;
 	}
+	
 	@Override
-	public InnerDTO getSelectedInnerDTO(String innerName) {
-		return royalInnerMapper.getSelectedInnerDTO(innerName);
+	public InnerDTO getSelectedInnerDTO(String innerName, Integer royalId) {
+		
+		return royalInnerMapper.getSelectedInnerDTO(innerName,royalId);
 	}
+
+	
 }

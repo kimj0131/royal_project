@@ -26,8 +26,25 @@
 	<div class="grid-container">
 		<c:forEach items="${innerNameList}" var="innerName">
 			<form action="/royal/palace/royalInner" method="get">
-				<input type="hidden" name="palace" value="${palaceName}" /> <input
-					type="hidden" name="inner" value="${innerName}" />
+				<input type="hidden" name="palace" value="${palaceName}" />
+				 <input	type="hidden" name="inner" value="${innerName}" />
+					<c:choose>
+						<c:when test="${palaceName eq '경복궁'}">
+						<input	type="hidden" name="royalId" value="1" />
+						</c:when>
+						<c:when test="${palaceName eq '창덕궁'}">
+						<input	type="hidden" name="royalId" value="2" />
+						</c:when>
+						<c:when test="${palaceName eq '창경궁'}">
+						<input	type="hidden" name="royalId" value="3" />
+						</c:when>
+						<c:when test="${palaceName eq '덕수궁'}">
+						<input	type="hidden" name="royalId" value="4" />
+						</c:when>
+						<c:when test="${palaceName eq '종묘'}">
+						<input	type="hidden" name="royalId" value="5" />
+						</c:when>
+					</c:choose>
 				<div class="innerNameDiv" onclick="this.parentNode.submit();">${innerName}</div>
 			</form>
 		</c:forEach>
