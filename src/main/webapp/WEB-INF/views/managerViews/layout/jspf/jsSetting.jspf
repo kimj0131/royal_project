@@ -1,0 +1,14 @@
+<!-- JS -->
+<c:url value="/resources/vendor/manager/jquery/jquery.min.js" var="jqueryMinJs" />
+<c:url value="/resources/vendor/manager/bootstrap/js/bootstrap.bundle.min.js" var="bootstrapBundleMinJs" />	
+<c:url value="/resources/vendor/manager/jquery-easing/jquery.easing.min.js" var="jqueryEasingMinJs" />	
+<c:url value="/resources/js/manager/ruang-admin.js" var="ruangAdminJs" />	
+<c:url value="/resources/vendor/manager/chart.js/Chart.min.js" var="ChartMinJs" />
+<c:url value="/resources/js/manager/demo/chart-area-demo.js" var="chartAreaDemoJs" />
+
+<script src="${jqueryMinJs}"></script>	
+<script src="${bootstrapBundleMinJs}"></script>
+<script src="${jqueryEasingMinJs}"></script>
+<script src="${ruangAdminJs}"></script>
+<script src="${ChartMinJs}"></script>
+<script src="${chartAreaDemoJs}"></script>

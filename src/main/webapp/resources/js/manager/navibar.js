@@ -5,7 +5,7 @@ const qnaBtn = document.querySelector('#qnaBtn');
 const noticeBtn = document.querySelector('#noticeBtn');
 
 summaryBtn.addEventListener('click', (e) => {
-    location.href = 'summary';
+    location.href = 'index';
 });
 
 reservationBtn.addEventListener('click', (e) => {

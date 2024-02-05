@@ -1,0 +1,7 @@
+<!-- CSS -->
+<c:url value="/resources/vendor/manager/fontawesome-free/css/all.min.css" var="allMinCss" />
+<c:url value="/resources/vendor/manager/bootstrap/css/bootstrap.min.css" var="bootstrapMinCss" />
+<c:url value="/resources/css/manager/ruang-admin.css" var="ruangAdminCss" />
+<link href="${allMinCss}" rel="stylesheet" type="text/css">
+<link href="${bootstrapMinCss}" rel="stylesheet" type="text/css">
+<link href="${ruangAdminCss}" rel="stylesheet">
