@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ezen.royal.manager.mapper.QnaManageMapper">
+
+	<!-- 모든 QnA 목록 (작성일 내림차순) -->
+	<select id="getQNAList">
+		SELECT * FROM qna ORDER BY qna_date DESC
+	</select>
+	<!-- 답변이 비어있는 QnA 목록 -->
+	<select id="getQNAListResultEmpty">
+		SELECT * FROM qna WHERE qna_result IS NULL
+	</select>
+	
+	<!-- QnA 상세 내용 -->
+	<select id="getQNADetail">
+		SELECT * FROM qna WHERE qna_id=#{qna_id}
+	</select>
+	
+	<!-- QnA 답변 추가 -->
+	<update id="updateQNA">
+		UPDATE qna SET qna_result=#{result} WHERE qna_id=#{modify_id}
+	</update>
+	
+</mapper>

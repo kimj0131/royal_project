@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ezen.royal.manager.mapper.NoticeManageMapper">
+
+	<!-- 공지사항 목록 -->
+	<select id="getNoticeList">
+		SELECT * FROM notice ORDER BY notice_id
+	</select>
+	<!-- 공지사항 상세내용 -->
+	<select id="getNoticeDetail">
+		SELECT * FROM notice WHERE notice_id=#{notice_id}
+	</select>
+	
+	<!-- 공지사항 추가 -->
+	<insert id="">
+		INSERT INTO notice(
+			notice_id,
+			royal_id,
+			notice_title,
+			notice_content
+		)VALUES(
+			notice_id_seq.nextval,
+			#{royal_id},
+			#{notice_title},
+			#{notice_content}
+		)
+	</insert>
+	
+	<!-- 공지사항 수정 -->
+	<update id="updateNotice">
+		UPDATE notice SET
+			royal_id=#{royal_id},
+			notice_title=#{notice_title},
+			notice_content=#{notice_content}
+		WHERE
+			notice_id=#{modify_id}
+	</update>
+	
+	<!-- 공지사항 삭제 -->
+	<delete id="deleteNotice">
+		DELETE FROM notice WHERE notice_id=#{delete_id}
+	</delete>
+	
+</mapper>

@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ezen.royal.manager.mapper.EventManageMapper">
+
+	<!-- 모든 이벤트 목록 -->
+	<select id="getEventList" resultType="com.ezen.royal.manager.dto.EventDTO">
+		SELECT * FROM eventlist ORDER BY start_date
+	</select>
+	
+	<!-- 이벤트 상세내용 -->
+	<select id="getEventDetail" resultType="com.ezen.royal.manager.dto.EventDTO">
+		SELECT * FROM eventlist WHERE event_id=#{event_id}
+	</select>
+	
+	<!-- 이벤트 회차 목록 -->
+	<select id="getEventRoundList" resultType="com.ezen.royal.manager.dto.EventRoundDTO">
+		SELECT * FROM event_round WHERE event_id=#{event_id}
+	</select>
+	
+	<!-- 이벤트 추가 -->
+	<insert id="insertEvent">
+		INSERT INTO eventlist(
+			event_id, 
+			royal_id, 
+			event_type, 
+			event_name, 
+			event_location, 
+			start_date, 
+			end_date, 
+			event_link, 
+			event_imgpath, 
+			reservable
+		)VALUES(
+			eventlist_id_seq.nextval, 
+			#{royal_id}, 
+			#{event_type}, 
+			#{event_name}, 
+			#{event_location},
+			#{start_date},
+			#{end_date},
+			#{event_link},
+			#{event_imgpath),
+			#{reservable}
+		)
+	</insert>
+	
+	<!-- 이벤트 회차 추가 -->
+	<insert id="insertEventRounds" parameterType="java.util.List">
+		INSERT INTO event_round(
+			round_id,
+			event_id,
+			round_num,
+			round_time,
+			round_capacity
+		) SELECT event_round_id_seq.nextval, A.* FROM(
+		<foreach item="item" collection="list" separator="UNION ALL">
+			SELECT
+				#{item.event_id} as event_id,
+				#{item.round_num} as round_num,
+				#{item.round_time} as round_time,
+				#{item.round_capacity} as round_capaticy
+			FROM dual
+		</foreach>
+		) A
+	</insert>
+	
+	<!-- 이벤트 수정 -->
+	<update id="updateEvent">
+		UPDATE eventlist SET
+			event_type=#{event_type},
+			event_name=#{event_name},
+			event_location=#{event_location},
+			start_date=#{start_date},
+			end_date=#{end_date},
+			event_link=#{event_link},
+			event_imgpath=#{event_imgpath},
+			reservable=#{reservable}
+		WHERE 
+			event_id=#{modify_id}
+	</update>
+	
+	<!-- 이벤트 회차 수정 (단일로 받았을 때) -->
+	<update id="">
+		UPDATE event_round SET
+			event_id=#{event_id},
+			round_num=#{round_num},
+			round_time=#{round_time},
+			round_capacity=#{round_capacity}
+		WHERE
+			round_id=#{modify_id}
+	</update>
+	
+	<!-- 이벤트 회차 수정 (리스트로 받았을떄) -->
+	<update id="updateEventRoundList" parameterType="java.util.List">\
+		<foreach collection="list" item="item">
+		UPDATE event_round SET
+			event_id=#{item.event_id},
+			round_num=#{item.round_num},
+			round_time=#{item.round_time},
+			round_capacity=#{item.round_capacity}
+		WHERE
+			round_id=#{item.round_id}
+		</foreach>
+	</update>
+	
+	<!-- 이벤트 삭제 -->
+	<delete id="deleteEvent">
+		DELETE FROM eventlist WHERE event_id=#{delete_id}
+	</delete>
+	<!-- 이벤트 회차 전부 삭제 -->
+	<delete id="deleteEventRound">
+		DELETE FROM event_round WHERE event_id=#{delete_id}
+	</delete>
+	
+	
+	
+</mapper>
