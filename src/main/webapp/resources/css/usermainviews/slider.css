@@ -1,57 +1,35 @@
-@charset "UTF-8";
-
 .title {
   margin-left: 10%;
 }
 
-
-.images{
-  width: 1214px;
-  height: 392px; /* 이미지 높이 설정 */
+/* 기본 스타일 */
+.outer {
   position: relative;
-  /* display: flex; */
-  transition: transform 0.5s;
-
+  /* width: 100%; */
+  max-width: 1214px;
+  max-height: 392px;
+  margin: 0 auto;
   overflow: hidden;
-
-/**어떤 속성에 대해 애니메이션 효과를 주는 속성이다. 
-tranform속성에 0.5초의 듀레이션(동작의 시작해서 끝나는 시간)을 준다.**/
 }
 
-/* .img {
-  
-  width: 100%;
+.inner-list {
+  display: flex;
+  transition: 0.5s ease-out;
   height: 100%;
-  background-size: cover;
-  background-position: center;
-  display: inline-block !important;
-  animation: slider 12s infinite linear;
-} */
+}
 
-.img { 
-  position: absolute;
-  top: 0;
-  left: 0;
+.inner {
+  box-sizing: border-box;
   width: 100%;
-  height: 100%;
-  background-size: cover;
-  background-position: center;
-
-  animation: slider 12s infinite linear;
-}
-.img:nth-child(1) {
-  background-image: url('https://royal.cha.go.kr/comm/viewImage.do?f=s4A4cSWNbdBEwoQVuBZ0vILCFNT4xHcQh6Yn%2BmcaF8byFaK5WVzTcdHH01KCbLCCjhzPUbDEcuOH91uZKvK8bw%3D%3D');
 }
 
-.img:nth-child(2) {
-  background-image: url('https://royal.cha.go.kr/comm/viewImage.do?f=ya6rqZwHkHDZW%2BAJgFBRLgkYbuIn8miaE0P%2FKgXxRrf14RypH7fcqXeuZKDSH9BgFWUYhIdfzYCPxmuFx4yVig%3D%3D');
+.inner img {
+  width: 100%;
+  height: 392px;
+  margin: 0 auto;
+  display: block;
 }
 
-.img .button1 {
-  margin: auto;
-}
-
-/**버튼위치**/
 .button1 a.back {
   left: 0px;
 }
@@ -62,7 +40,6 @@ tranform속성에 0.5초의 듀레이션(동작의 시작해서 끝나는 시간
 .button1 a {
   position: absolute;
   top: 50%;
-  transform: translateY(-50%);
   width: 50px;
   height: 50px;
   line-height: 50px;
@@ -71,17 +48,66 @@ tranform속성에 0.5초의 듀레이션(동작의 시작해서 끝나는 시간
   color: #fff;
   transition: all 0.3s ease;
 }
+
 .button1 a:hover {
   border-radius: 50%;
-  background-color: #000000;
+  background-color: black;
   color: #fff;
+}
+
+/* 반응형 스타일 */
+@media (max-width: 767px) {
+  .inner-list {
+    flex-direction: row; /* 화면이 작을 때 세로로 배치 */
+  }
+
+  .inner {
+    width: 100%;
+    height: 100%;
+  }
+
+  .button1 a {
+    top: auto; /* 예시로 조절, 필요에 따라 변경 가능 */
+  }
 }
 
 
 
+/* ---------- 메인 공지사항 CSS ---------- */
 
+.body * {
+  box-sizing: border-box;
+}
 
-/* --------------공지사항------------- */
-.notice{
-  border: solid 1px black;
+.title_top {
+  margin-left: 150px;
+  border-bottom: solid black 1px;
+}
+.all {
+  margin-left: 5%;
+}
+
+.list {
+  margin-left: 120px;
+}
+
+.layout .notice {
+  width: 50%;
+  position: relative;
+  margin-right: 50px;
+}
+
+.notice_title {
+  display: inline-flex;
+  align-items: center;
+  font-size: 35px;
+}
+
+.notice .item a {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  justify-content: space-between;
 }
