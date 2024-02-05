@@ -30,7 +30,7 @@
 		</div>
 	</a>
 	
-	<a href="/royal/palace/royalInner?palace=덕수궁">
+	<a href="/royal/palace/royalInner?palace=덕수궁&royalId=4">
 		<div class="menu" style="margin:10px">
 			덕수궁 내부 건축물
 			<img src="../resources/image/royal_inner/main/deoksu/bg_menu04_02.jpg" alt="이미지" />

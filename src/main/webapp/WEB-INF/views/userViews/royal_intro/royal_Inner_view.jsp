@@ -13,11 +13,11 @@
 	<jsp:include page="/WEB-INF/views/layout/navibar.jsp" />
 	
 	<div class="royal-name">
-    <a href="/royal/palace/royalInner?palace=경복궁">경복궁</a>
-    <a href="/royal/palace/royalInner?palace=덕수궁">덕수궁</a>
-    <a href="/royal/palace/royalInner?palace=창경궁">창경궁</a>
-    <a href="/royal/palace/royalInner?palace=창덕궁">창덕궁</a>
-    <a href="/royal/palace/royalInner?palace=종묘">종묘</a>
+    <a href="/royal/palace/royalInner?palace=경복궁&royalId=1">경복궁</a>
+    <a href="/royal/palace/royalInner?palace=덕수궁&royalId=4">덕수궁</a>
+    <a href="/royal/palace/royalInner?palace=창경궁&royalId=3">창경궁</a>
+    <a href="/royal/palace/royalInner?palace=창덕궁&royalId=2">창덕궁</a>
+    <a href="/royal/palace/royalInner?palace=종묘&royalId=5">종묘</a>
 	</div>
 
 	<h2>${palaceName}이야기</h2>
@@ -51,12 +51,15 @@
 	</div>
 	<div></div>
 
-
-
 	<h2>${innerDTO.royal_inner_name}</h2>
 	<img class="mainImg" src="${innerDTO.royal_inner_imgpath}" alt="건축물이미지" />
 	<div class="content">${innerDTO.royal_inner_detail}</div>
-
+	<!-- 
+	<p>Debug - Inner Name: ${innerDTO.royal_inner_name}</p>
+	<p>Debug - Inner Image Path: ${innerDTO.royal_inner_imgpath}</p>
+	<p>Debug - Inner Detail: ${innerDTO.royal_inner_detail}</p>
+	 -->
+	
 	<jsp:include page="/WEB-INF/views/layout/footer.jsp" />
 </body>
 </html>

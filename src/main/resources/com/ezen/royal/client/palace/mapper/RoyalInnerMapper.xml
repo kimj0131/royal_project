@@ -7,12 +7,14 @@
 
 	<select id="getAll"
 		resultType="com.ezen.royal.client.palace.dto.InnerDTO">
-		SELECT royal_inner_name, royal_name FROM royal_inner INNER JOIN royal
+		SELECT royal_inner_name, royal_name FROM royal_inner
+		INNER JOIN royal
 		USING(royal_id) WHERE royal_name = #{palace}
 	</select>
 
-	<select id="getSelectedInnerDTO" 
+	<select id="getSelectedInnerDTO"
 		resultType="com.ezen.royal.client.palace.dto.InnerDTO">
-		SELECT * FROM royal_inner WHERE royal_inner_name = #{inner}  and royal_id= #{royalId}
+		SELECT * FROM royal_inner WHERE royal_inner_name = #{inner}
+		and royal_id= #{royalId}
 	</select>
 </mapper>

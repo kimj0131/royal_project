@@ -30,7 +30,7 @@
 		</div>
 	</a>
 	
-	<a href="/royal/palace/royalInner?palace=종묘">
+	<a href="/royal/palace/royalInner?palace=종묘&royalId=5">
 		<div class="menu" style="margin:10px">
 			종묘 내부 건축물
 			<img src="../resources/image/royal_inner/main/jongmyo/bg_menu05_02.jpg" alt="이미지" />

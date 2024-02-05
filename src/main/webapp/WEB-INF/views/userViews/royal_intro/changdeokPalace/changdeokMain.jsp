@@ -30,7 +30,7 @@
 		</div>
 	</a>
 	
-	<a href="/royal/palace/royalInner?palace=창덕궁">
+	<a href="/royal/palace/royalInner?palace=창덕궁&royalId2">
 		<div class="menu" style="margin:10px">
 			창덕궁 내부 건축물
 			<img src="../resources/image/royal_inner/main/changdeok/bg_menu02_02.jpg" alt="이미지" />
