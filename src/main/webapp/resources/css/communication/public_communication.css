@@ -110,6 +110,8 @@
 }
 
 #white_space{
+    margin-left: 450px;
+    width: 1210px;
     height: 40px;
     border-bottom: solid 1px #EAEAEA;
 }
