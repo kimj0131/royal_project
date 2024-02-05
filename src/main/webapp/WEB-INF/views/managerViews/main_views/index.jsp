@@ -12,15 +12,8 @@
 	
 	<title>manager_index</title>
 	
-	<!-- IMAGES -->
-	<c:url value="/resources/imager/manager/logo/logo.png" var="logoPng" />
-	<link href="${logoPng}" rel="icon">
-	
-	<!-- ICONS -->
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-
-	<!-- CSS -->
-	<%@ include file="/WEB-INF/views/managerViews/layout/jspf/cssSetting.jspf" %>
+	<!-- Common CSS -->
+	<%@ include file="/WEB-INF/views/managerViews/layout/jspf/commonCss.jspf" %>
 	
 </head>
 
@@ -43,8 +36,7 @@
 					<div class="d-sm-flex align-items-center justify-content-between mb-4">
 						<h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
 						<ol class="breadcrumb">
-							<li class="breadcrumb-item"><a href="./">Home</a></li>
-							<li class="breadcrumb-item active" aria-current="page">Dashboard</li>
+							<li class="breadcrumb-item active" aria-current="page">home</li>
 						</ol>
 					</div>
 
@@ -375,44 +367,9 @@
 							</div>
 						</div>
 					</div>
-					
-					<!--Row-->
-
-					<div class="row">
-						<div class="col-lg-12 text-center">
-							<p>
-								Do you like this template ? you can download from 
-								<a href="https://github.com/indrijunanda/RuangAdmin" class="btn btn-primary btn-sm" target="_blank">
-									<i class="fab fa-fw fa-github"></i>
-									&nbsp;GitHub
-								</a>
-							</p>
-						</div>
-					</div>
-
-					<!-- Modal Logout -->
-					<div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabelLogout" aria-hidden="true">
-						<div class="modal-dialog" role="document">
-							<div class="modal-content">
-								<div class="modal-header">
-									<h5 class="modal-title" id="exampleModalLabelLogout">Ohh No!</h5>
-									<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-										<span aria-hidden="true">&times;</span>
-									</button>
-								</div>
-								<div class="modal-body">
-									<p>Are you sure you want to logout?</p>
-								</div>
-								<div class="modal-footer">
-									<button type="button" class="btn btn-outline-primary" data-dismiss="modal">Cancel</button>
-									<a href="login.html" class="btn btn-primary">Logout</a>
-								</div>
-							</div>
-						</div>
-					</div>
-
 				</div>
 				<!---Container Fluid-->
+			
 			</div>
 			
 			<!-- Footer -->
@@ -427,8 +384,14 @@
 		<i class="fas fa-angle-up"></i>
 	</a>
 
-	<!-- JS -->
-	<%@ include file="/WEB-INF/views/managerViews/layout/jspf/jsSetting.jspf" %>
+	<!-- Common JS -->
+	<%@ include file="/WEB-INF/views/managerViews/layout/jspf/commonJs.jspf" %>
+	
+	<!-- Chart JS -->
+	<c:url value="/resources/vendor/manager/chart.js/Chart.min.js" var="ChartMinJs" />
+	<c:url value="/resources/js/manager/demo/chart-area-demo.js" var="chartAreaDemoJs" />	
+	<script src="${ChartMinJs}"></script>
+	<script src="${chartAreaDemoJs}"></script>
 
 </body>
 

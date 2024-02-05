@@ -1,11 +1,17 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-	
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
+<!-- IMG -->
+<c:url value="/resources/image/manager/logo/logo2.png" var="logoIMG" />
+
+<!-- Icons -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
 <!-- Sidebar -->
 <ul class="navbar-nav sidebar sidebar-light accordion" id="accordionSidebar">	
 	<a class="sidebar-brand d-flex align-items-center justify-content-center" href="/royal/YWRtaW5wYWdl/index">
 		<div class="sidebar-brand-icon">
-			<img src="img/logo/logo2.png">
+			<img src="${logoIMG}">
 		</div>
 		<div class="sidebar-brand-text mx-3">대한민궁</div>
 	</a>
@@ -31,7 +37,7 @@
 		<div id="collapseReservation" class="collapse" aria-labelledby="headingForm" data-parent="#accordionSidebar">
 			<div class="bg-white py-2 collapse-inner rounded">
 				<h6 class="collapse-header">예약관리</h6>
-				<a class="collapse-item" href="/royal/YWRtaW5wYWdl/reservation/delete">삭제</a>
+				<a class="collapse-item" href="/royal/YWRtaW5wYWdl/reservation/delete">취소</a>
 			</div>
 		</div>
 	</li>

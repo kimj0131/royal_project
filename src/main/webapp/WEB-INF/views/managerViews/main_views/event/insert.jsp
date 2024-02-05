@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,17 +12,11 @@
 	
 	<title>manager_event_insert</title>
 	
-	<!-- IMAGES -->
-	<c:url value="/resources/imager/manager/logo/logo.png" var="logoPng" />
-	<link href="${logoPng}" rel="icon">
-	
-	<!-- ICONS -->
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-
-	<!-- CSS -->
-	<%@ include file="/WEB-INF/views/managerViews/layout/jspf/cssSetting.jspf" %>
+	<!-- Common CSS -->
+	<%@ include file="/WEB-INF/views/managerViews/layout/jspf/commonCss.jspf" %>
 	
 </head>
+
 <body id="page-top">
 	<div id="wrapper">
 		
@@ -38,9 +31,8 @@
 				<jsp:include page="/WEB-INF/views/managerViews/layout/topbar.jsp"></jsp:include>
 				<!-- TopBar -->
 
-
 				<!-- Container Fluid-->
-
+				
 				<!---Container Fluid-->
 			
 			</div>
@@ -57,8 +49,9 @@
 		<i class="fas fa-angle-up"></i>
 	</a>
 
-	<!-- JS -->
-	<%@ include file="/WEB-INF/views/managerViews/layout/jspf/jsSetting.jspf" %>
-	
+	<!-- Common JS -->
+	<%@ include file="/WEB-INF/views/managerViews/layout/jspf/commonJs.jspf" %>
+
 </body>
+
 </html>

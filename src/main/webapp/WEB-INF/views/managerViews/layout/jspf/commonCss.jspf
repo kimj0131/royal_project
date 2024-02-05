@@ -1,0 +1,7 @@
+<!-- CSS -->
+<c:url value="/resources/vendor/manager/fontawesome-free/css/all.css" var="allCss" />
+<c:url value="/resources/vendor/manager/bootstrap/css/bootstrap.css" var="bootstrapCss" />
+<c:url value="/resources/css/manager/ruang-admin.css" var="ruangAdminCss" />
+<link href="${allCss}" rel="stylesheet" type="text/css">
+<link href="${bootstrapCss}" rel="stylesheet" type="text/css">
+<link href="${ruangAdminCss}" rel="stylesheet">
