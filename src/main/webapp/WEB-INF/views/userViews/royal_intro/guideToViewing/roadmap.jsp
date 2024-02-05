@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,7 +8,9 @@
 <title>오시는길</title>
 <c:url value="/resources/css/royalInfoCSS/lnb.css" var="lnbCSS" />
 <c:url value="/resources/css/royalInfoCSS/roadmap.css" var="roadmapCSS" />
-<c:url value="/resources/image/royalInfo/royalInfo.jpg" var="royalInfoIMG" />
+<c:url value="/resources/js/royalInfo/roadmap.js" var="roadmapJS" />
+<c:url value="/resources/image/royalInfo/royalInfo.jpg"
+	var="royalInfoIMG" />
 
 <link rel="stylesheet" href="${lnbCSS}" />
 <link rel="stylesheet" href="${roadmapCSS}" />
@@ -17,6 +19,7 @@
 </head>
 <body>
 	<jsp:include page="/WEB-INF/views/layout/header.jsp" />
+
 
 	<div class="contents_wrap">
 		<div class="contents contents_sub">
@@ -31,6 +34,22 @@
 
 
 			<div class="inner">
+
+				<div class="royal-name">
+					<a href="/royal/palace/roadmap?palace=경복궁" class="palace-link"
+						data-lat="37.57962" data-lng="126.977028">경복궁</a> <a
+						href="/royal/palace/roadmap?palace=덕수궁" class="palace-link"
+						data-lat="37.565824" data-lng="126.974618">덕수궁</a> <a
+						href="/royal/palace/roadmap?palace=창경궁" class="palace-link"
+						data-lat="37.578758" data-lng="126.995310">창경궁</a> <a
+						href="/royal/palace/roadmap?palace=창덕궁" class="palace-link"
+						data-lat="37.579032" data-lng="126.991012">창덕궁</a> <a
+						href="/royal/palace/roadmap?palace=종묘" class="palace-link"
+						data-lat="37.574574" data-lng="126.994143">종묘</a>
+				</div>
+
+
+
 				<div class=lnb_wrap>
 					<div class="lnb_tit">관람안내</div>
 					<ul class="lnb_depth2_wrap">
@@ -45,29 +64,16 @@
 			</div>
 		</div>
 	</div>
+
+
 	<div id="map" style="width: 100%; height: 350px;"></div>
+
 
 	<script type="text/javascript"
 		src="//dapi.kakao.com/v2/maps/sdk.js?appkey=a02c96fb7cb49a8f4966e5fbe5a27f11"></script>
-		<!-- a02c96fb7cb49a8f4966e5fbe5a27f11 숨겨야함 -->
-	<script>
-		var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
-		mapOption = {
-			center : new kakao.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
-			level : 3
-		// 지도의 확대 레벨
-		};
-
-		// 지도를 표시할 div와  지도 옵션으로  지도를 생성합니다
-		var map = new kakao.maps.Map(mapContainer, mapOption);
-
-		var marker = new kakao.maps.Marker({
-			// 지도 중심좌표에 마커를 생성합니다 
-			position : map.getCenter()
-		});
-		// 지도에 마커를 표시합니다
-		marker.setMap(map);
-	</script>
-		<jsp:include page="/WEB-INF/views/layout/footer.jsp" />
+		
+	
+	<jsp:include page="/WEB-INF/views/layout/footer.jsp" />
+	<script src="${roadmapJS}"></script>
 </body>
 </html>
