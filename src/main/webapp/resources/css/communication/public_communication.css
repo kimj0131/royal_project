@@ -73,7 +73,7 @@
 }
 
 .all{
-    border: 1px solid transparent;
+    border: 0 solid transparent;
     border-radius: 20px;
     background-image: linear-gradient(#fff,#fff), linear-gradient(to right,#C1457E, rgb(152, 133, 195),#1B66B9);
     background-color: white;
@@ -170,4 +170,61 @@
 .BTN_class > [class="JM on"] {
     background-color: #c14b35;
     color: white;
+}
+
+.search_div{
+    display: flex;
+    justify-content: space-between;
+}
+
+.search_left{
+    padding-left: 60px;
+    padding-top: 30px;
+    font-size: 20px;
+    font-weight: bold;
+}
+.search_right{
+    padding-right: 60px;
+    padding-top: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+#search_select_id{
+    width: 130px;
+    height: 50px;
+    border-radius: 25px 0 0 25px;
+    background-color: #EAEAEA;
+    padding: 0 25px;
+    font-size: 16px;
+    border-style: none;
+}
+
+#search_select_id:focus{
+    outline: 0;
+}
+
+#search_input_id{
+    width: 320px;
+    height: 50px;
+    border-radius: 0 25px 25px 0;
+    background-color: #EAEAEA;
+    padding: 0 25px;
+    border: none;
+    max-width: 100%;
+}
+
+
+.search_right > button{
+    width: 120px;
+    height: 50px;
+    border-radius: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    background: #131313;
+    margin-left: 15px;
+    font-size: 1rem;
 }
