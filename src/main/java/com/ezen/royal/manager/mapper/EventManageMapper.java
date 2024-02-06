@@ -19,6 +19,7 @@ public interface EventManageMapper {
 	int insertEvent(EventManageDTO dto);
 	// Event_Round Insert
 	int insertEventRounds(List<EventRoundManageDTO> list);
+	// Event_Round Insert 
 
 	// Event Update
 	int updateEvent(EventManageDTO dto, int modify_id);
@@ -32,5 +33,7 @@ public interface EventManageMapper {
 	int deleteEvent(int delete_id);
 	// Event_Round Delete
 	int deleteEventRound(int delete_id);
+	// Eveny_Round Delete one
+	int deleteEventRoundOneRow(int delete_id, int delete_round_num);
 
 }

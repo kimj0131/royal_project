@@ -7,11 +7,10 @@ import lombok.Data;
 @Data
 public class NoticeManageDTO {
 
-	private Integer notice_id;
-	// private String royal_name; // <- ?????? id가아님????
-	private Integer royal_id;
-	private String notice_title;
-	private String notice_content;
-	private Date notice_date;
+	private Integer notice_id;		// 공지사항 ID
+	private Integer royal_id;		// 연관된 ID
+	private String notice_title;	// 공지사항 제목
+	private String notice_content;	// 공지사항 내용
+	private Date notice_date;		// 공지사항 작성일
 	
 }
