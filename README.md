@@ -25,6 +25,9 @@
 ## mission
 > * 방혜미 : 지도 api 데이터 활용 - 오시는길 페이지 
 > * 방혜미 : 내부 건축물 이미지 (DB의 이미지path 추가하여 이미지 여러개 나열 해보기)
+> * 김준형 : Event 테이블 데이터 추가 시 회차만큼 Event_round 테이블 데이터 추가하는 service
+> * 김준형 : Event 테이블 데이터 회차 컬럼을 수정 시 Event_round 테이블 데이터 회차수 만큼 insert or delete 하는 service
+> * 
 
 ## done
 > * 김준형, 조현우 : 공공 API 연계 후 데이터 캐싱(DB) [[Commit]](https://github.com/kimj0131/royal_project/commit/b2bce768f3d814af2542e768a4397b3d1be525f8)
@@ -35,7 +38,6 @@
 > * 김태형 : 커버페이지 => 메인페이지 이동 및 각 궁 소개페이지 이동 작업
 ***
 ## 발생한 문제
-> * 김준형 : DB 테이블 컬럼명 참조키 이름 통일화 필요
 > * 
 
 ## 해결한 문제
