@@ -17,4 +17,21 @@
 		SELECT * FROM royal_inner WHERE royal_inner_name = #{inner}
 		and royal_id= #{royalId}
 	</select>
+<!-- 
+
+  <select id="getRoyalById"
+      resultType="com.ezen.royal.client.palace.dto.InnerDTO">
+      SELECT * FROM royal_inner
+      INNER JOIN royal USING (royal_id)
+       WHERE royal_id = #{royal_id}
+   </select>
+
+   <select id="getRoyalNameById"
+      resultType="com.ezen.royal.client.palace.dto.InnerDTO">
+      SELECT royal_inner_name FROM royal_inner WHERE royal_id = #{royalId}
+   </select>
+   
+    -->
+
 </mapper>
+
