@@ -69,12 +69,16 @@ h2 {
 
 
 .mainImg{  
-    width: 1240px;
-    height: 574px;
     width: 66%;
+    height: 574px;
     margin: 0 auto;
     padding : 5px;
     display: block;
+}
+
+#imageSlider > img{
+    width: 840px;
+    height: 574px;
 }
 
 .content{ 

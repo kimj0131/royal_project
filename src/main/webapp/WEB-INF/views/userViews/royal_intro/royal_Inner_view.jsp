@@ -5,6 +5,7 @@
 <html>
 <head>
 <c:url value="/resources/css/royal_intro/royal_inner_view.css" var="innerCSS" />
+<c:url value="/resources/js/royal_intro/royal_inner_view.js" var="innerJS" />
 <title>${palaceName} 내부 건축물</title>
 <link rel="stylesheet" href="${innerCSS}" />
 </head>
@@ -23,50 +24,54 @@
 	<h2>${palaceName}이야기</h2>
 
 
-	<div class="grid-container">
-		<c:forEach items="${innerNameList}" var="innerName">
-			<form action="/royal/palace/royalInner" method="get">
-				<input type="hidden" name="palace" value="${palaceName}" />
-				 <input	type="hidden" name="inner" value="${innerName}" />
-					<c:choose>
-						<c:when test="${palaceName eq '경복궁'}">
-						<input	type="hidden" name="royalId" value="1" />
-						</c:when>
-						<c:when test="${palaceName eq '창덕궁'}">
-						<input	type="hidden" name="royalId" value="2" />
-						</c:when>
-						<c:when test="${palaceName eq '창경궁'}">
-						<input	type="hidden" name="royalId" value="3" />
-						</c:when>
-						<c:when test="${palaceName eq '덕수궁'}">
-						<input	type="hidden" name="royalId" value="4" />
-						</c:when>
-						<c:when test="${palaceName eq '종묘'}">
-						<input	type="hidden" name="royalId" value="5" />
-						</c:when>
-					</c:choose>
-				<div class="innerNameDiv" onclick="this.parentNode.submit();">${innerName}</div>
-			</form>
-		</c:forEach>
-	</div>
-	<div></div>
+    <div class="grid-container">
+        <!-- innerNameList에 있는 각 내부 건물 이름에 대해 반복하여 폼 생성 -->
+        <c:forEach items="${innerNameList}" var="innerName">
+            <!-- 폼을 제출할 경로를 설정하고, GET 메서드를 사용하여 데이터를 전송 -->
+            <form action="/royal/palace/royalInner" method="get">
+                <!-- 각 폼에는 palaceName, innerName 및 royalId 값을 전송하는 숨겨진 입력 필드가 포함됨 -->
+                <input type="hidden" name="palace" value="${palaceName}" />
+                <input type="hidden" name="inner" value="${innerName}" />
+                <!-- palaceName에 따라 royalId 값을 설정 -->
+                <c:choose>
+                    <c:when test="${palaceName eq '경복궁'}">
+                        <input type="hidden" name="royalId" value="1" />
+                    </c:when>
+                    <c:when test="${palaceName eq '창덕궁'}">
+                        <input type="hidden" name="royalId" value="2" />
+                    </c:when>
+                    <c:when test="${palaceName eq '창경궁'}">
+                        <input type="hidden" name="royalId" value="3" />
+                    </c:when>
+                    <c:when test="${palaceName eq '덕수궁'}">
+                        <input type="hidden" name="royalId" value="4" />
+                    </c:when>
+                    <c:when test="${palaceName eq '종묘'}">
+                        <input type="hidden" name="royalId" value="5" />
+                    </c:when>
+                </c:choose>
+                <!-- innerNameDiv를 클릭하면 해당 폼을 제출함 -->
+                <div class="innerNameDiv" onclick="this.parentNode.submit();">${innerName}</div>
+            </form>
+        </c:forEach>
+    </div>
 
-	<h2>${innerDTO.royal_inner_name}</h2>
-	<!--<img class="mainImg" src="${innerDTO.royal_inner_imgpath}" alt="건축물이미지" /> -->
-	<div class="mainImg" style="width: 1240px; height: 574px;">
-		<c:forEach items="${innerDTO.royal_inner_imgpath}" var="imagePath">
-		<img src="${imagePath }" alt="건축물이미지" />	
-		</c:forEach>
-	</div>
-	
-
-	<div class="content">${innerDTO.royal_inner_detail}</div>
+    <div class="mainImg">
+        <!-- 이미지 슬라이드를 표시할 div -->
+        <div id="imageSlider">
+            <!-- 이미지 경로를 가져와 슬라이드로 표시 -->
+            <c:forEach items="${innerDTO.royal_inner_imgpath}" var="imagePath">
+                <img src="${imagePath}" alt="건축물이미지" />
+            </c:forEach>
+        </div>
+    </div>
+    <div class="content">${innerDTO.royal_inner_detail}</div>
 	<!-- 
 	<p>Debug - Inner Name: ${innerDTO.royal_inner_name}</p>
 	<p>Debug - Inner Image Path: ${innerDTO.royal_inner_imgpath}</p>
 	<p>Debug - Inner Detail: ${innerDTO.royal_inner_detail}</p>
 	 -->
-
+	<script src="${innerJS}"></script>
 
 	<jsp:include page="/WEB-INF/views/layout/footer.jsp" />
 </body>

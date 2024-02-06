@@ -86,9 +86,9 @@ public class RoyalInnerController {
 		InnerDTO innerDTO = innerService.getSelectedInnerDTO(inner, royalId);  
 		req.setAttribute("innerDTO", innerDTO);
 		  
-		System.out.println("Inner Name: " + inner);
-	    System.out.println("Royal ID: " + royalId);
-	    System.out.println("InnerDTO: " + innerDTO);
+		//System.out.println("Inner Name: " + inner);
+	    //System.out.println("Royal ID: " + royalId);
+	    //System.out.println("InnerDTO: " + innerDTO);
 	    
         return "/userViews/royal_intro/royal_Inner_view";
     }
