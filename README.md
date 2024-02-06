@@ -27,12 +27,13 @@
 > * 방혜미 : 내부 건축물 이미지 (DB의 이미지path 추가하여 이미지 여러개 나열 해보기)
 > * 김준형 : Event 테이블 데이터 추가 시 회차만큼 Event_round 테이블 데이터 추가하는 service
 > * 김준형 : Event 테이블 데이터 회차 컬럼을 수정 시 Event_round 테이블 데이터 회차수 만큼 insert or delete 하는 service
-> * 조현우 : 관리자 페이지에서 DB데이터 CRUD를 GUI로 구성 
+> * 조현우 : 관리자 페이지에 각각의 뷰에서 DB데이터 CRUD를 GUI로 구성 
 
 ## done
 > * 김준형, 조현우 : 공공 API 연계 후 데이터 캐싱(DB) [[Commit]](https://github.com/kimj0131/royal_project/commit/b2bce768f3d814af2542e768a4397b3d1be525f8)
 > * 김준형 : Spring scheduler로 공공 API 갱신주기 설정 [[Commit]](https://github.com/kimj0131/royal_project/commit/33482572463fdb34d4146daf1298d9ea5e3bc5da)
 > * 김준형, 조현우 : 소셜 로그인 API 연계 (네이버, 카카오) [[Commit_1]](https://github.com/kimj0131/royal_project/commit/4e2913ff5720284ab7ea7f97da3b6c5f3dd4e66b), [[Commit_2]](https://github.com/kimj0131/royal_project/commit/7eb75f11a4e2cc01dd2f1e1aef8b4cf4b995b200)
+> * 조현우 :  각각의 궁 내부 건축물 페이지 테스트 코드 작성 (공공API 데이터, 4대궁궐 및 종묘 내부 건축물 정보를 DB에서 가져와 활용) [[Commit]](https://github.com/kimj0131/royal_project/commit/1ca63792ed713a0112a4760b8fe12210915a52e3)
 > * 방혜미 :  공공API 데이터활용, 4대궁궐 및 종묘 내부 건축물 정보 DB에서 가져오기 [[Commit]](https://github.com/kimj0131/royal_project/commit/4d064e4af6bbd1177c85bf19ec7aa69d7ccdcd76)
 > * 김태형 : 지도 api 연계
 > * 김태형 : 커버페이지 => 메인페이지 이동 및 각 궁 소개페이지 이동 작업
