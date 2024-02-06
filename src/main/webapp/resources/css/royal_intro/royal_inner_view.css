@@ -68,7 +68,9 @@ h2 {
 }
 
 
-.mainImg{ 
+.mainImg{  
+    width: 1240px;
+    height: 574px;
     width: 66%;
     margin: 0 auto;
     padding : 5px;

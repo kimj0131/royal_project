@@ -52,14 +52,22 @@
 	<div></div>
 
 	<h2>${innerDTO.royal_inner_name}</h2>
-	<img class="mainImg" src="${innerDTO.royal_inner_imgpath}" alt="건축물이미지" />
+	<!--<img class="mainImg" src="${innerDTO.royal_inner_imgpath}" alt="건축물이미지" /> -->
+	<div class="mainImg" style="width: 1240px; height: 574px;">
+		<c:forEach items="${innerDTO.royal_inner_imgpath}" var="imagePath">
+		<img src="${imagePath }" alt="건축물이미지" />	
+		</c:forEach>
+	</div>
+	
+
 	<div class="content">${innerDTO.royal_inner_detail}</div>
 	<!-- 
 	<p>Debug - Inner Name: ${innerDTO.royal_inner_name}</p>
 	<p>Debug - Inner Image Path: ${innerDTO.royal_inner_imgpath}</p>
 	<p>Debug - Inner Detail: ${innerDTO.royal_inner_detail}</p>
 	 -->
-	
+
+
 	<jsp:include page="/WEB-INF/views/layout/footer.jsp" />
 </body>
 </html>
