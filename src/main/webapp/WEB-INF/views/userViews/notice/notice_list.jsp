@@ -72,6 +72,11 @@
 		</div>
 	</div>
 
+<c:forEach items="${noticeList}" var="notice">
+${notice.notice_title}
+${notice.notice_date}
+
+</c:forEach>
 
 	<script src="${public_communicationJS}"></script>
 	<jsp:include page="../../layout/footer.jsp" />

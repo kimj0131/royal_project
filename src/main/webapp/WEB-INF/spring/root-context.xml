@@ -38,7 +38,9 @@
 	<!-- royal_inner test mapper -->
 	<mybatis-spring:scan base-package="com.ezen.royal.client.palace.test_inner.mapper"/>
 	
-	<!-- qna mapper -->
+	<!-- qna&notice mapper -->
 	<mybatis-spring:scan base-package="com.ezen.royal.client.communication.mapper"/>
+
+	
 
 </beans>
