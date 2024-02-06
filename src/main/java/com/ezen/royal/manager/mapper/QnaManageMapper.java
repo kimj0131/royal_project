@@ -10,7 +10,6 @@ public interface QnaManageMapper {
 	List<QNAManageDTO> getQNAList();
 	// No Result QnA Detail List
 	List<QNAManageDTO> getQNAListResultEmpty();
-	
 	// QnA Detail
 	QNAManageDTO getQNADetail(int qna_id);
 	

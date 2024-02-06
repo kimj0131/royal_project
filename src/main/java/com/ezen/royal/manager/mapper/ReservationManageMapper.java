@@ -14,7 +14,6 @@ public interface ReservationManageMapper {
 	ReservationManageDTO getResvDetail(int resv_id);
 	
 	// Reservation Delete
-	int deleteResv(int resv_id);
+	int deleteResv(int delete_id);
 
-	
 }

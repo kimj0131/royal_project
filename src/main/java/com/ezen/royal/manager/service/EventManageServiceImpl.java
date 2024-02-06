@@ -23,21 +23,21 @@ public class EventManageServiceImpl implements EventManageService{
 	// 이벤트 전체 리스트
 	/**
 	 *  * 이벤트 테이블의 전체 목록을 attribute에 list로 싣는다. <br>
-	 *  ※ attribute name = events
+	 *  ※ attribute name = eventList
 	 */
 	@Override
 	public void getEventList(Model model) {
-		model.addAttribute("events", eventManageMapper.getEventList());
+		model.addAttribute("eventList", eventManageMapper.getEventList());
 	}
 
 	// 이벤트 상세내용 
 	/**
 	 *  * 이벤트 테이블의 지정된 내용을 attribute에 싣는다. <br>
-	 *  ※ attribute name = eventDetail
+	 *  ※ attribute name = event
 	 */
 	@Override
 	public void getEventDetail(Model model, int event_id) {
-		model.addAttribute("eventDetail", eventManageMapper.getEventDetail(event_id));
+		model.addAttribute("event", eventManageMapper.getEventDetail(event_id));
 	}
 
 	// 이벤트 추가, 이벤트회차도 같이 추가한다
@@ -93,10 +93,10 @@ public class EventManageServiceImpl implements EventManageService{
 		
 		// 이벤트 수정시 회차 수정 이력이 있으면 다시 insert한다
 		if (dto.getEvent_rounds() != eventManageMapper.getEventDetail(modify_id).getEvent_rounds()) {
-			int deleteResult = eventManageMapper.deleteEventRound(dto.getEvent_id());
-			int insertResult = eventManageMapper.insertEventRounds(roundList);
+			int delResult = eventManageMapper.deleteEventRound(dto.getEvent_id());
+			int insResult = eventManageMapper.insertEventRounds(roundList);
 			
-			if (deleteResult > 0 && insertResult > 0) {
+			if (delResult > 0 && insResult > 0) {
 				return eventManageMapper.updateEvent(dto, modify_id);
 			} else {
 				return -1;
@@ -106,16 +106,24 @@ public class EventManageServiceImpl implements EventManageService{
 		}
 	}
 
-	// 이벤트 회차 수정
+	// 이벤트 회차 수정 단일
+	/**
+	 * * EventRoundManageDTO와 수정할 round_id를 전달받아 수정한다 <br>
+	 * ※ 성공시 1를 반환한다 <br>
+	 */
 	@Override
-	public int updateEventRound(EventRoundManageDTO roundManageDTO) {
-		return 0;
+	public int updateEventRound(EventRoundManageDTO roundManageDTO, int modify_round_id) {
+		return eventManageMapper.updateEventRound(roundManageDTO, modify_round_id);
 	}
 	
 	// 이벤트 삭제
+	/**
+	 * * round_id를 전달받아 삭제한다 <br>
+	 * ※ 성공시 1를 반환한다 <br>
+	 */
 	@Override
 	public int deleteEvent(int delete_id) {
-		return 0;
+		return eventManageMapper.deleteEvent(delete_id);
 	}
 	
 }

@@ -13,7 +13,7 @@
 	</select>
 	
 	<delete id="deleteResv">
-		DELETE reservation WHERE resv_id=#{resv_id}
+		DELETE reservation WHERE resv_id=#{delete_id}
 	</delete>
 	
 </mapper>
