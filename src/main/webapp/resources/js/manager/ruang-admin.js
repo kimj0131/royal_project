@@ -81,7 +81,7 @@ $('.popover-dismiss').popover({
 // Custom
 
 
-// sidebar Javascript
+// [sidebar Javascript]
 /* 
   collapseItems.item(?)
   ? = 0 -> 예약_삭제
@@ -137,6 +137,10 @@ if (href.endsWith('/reservation/delete')) {
   }
 }
 
+
+
+// [event탭 Javascript]
+
 // n회차 칸을 추가할 div
 const fg_custom2 = document.querySelector('.fg_custom2 > .form-group');
 // plus 버튼
@@ -169,8 +173,8 @@ const addInputGroup = () => {
 
     // 3. "운영시간" 입력 필드 생성
     const input = document.createElement('input');
-    input.id = `round${roundNum}`;
-    input.type = 'text';
+    input.name = `round${roundNum}`;
+    input.type = 'time';
     input.classList.add('form-control');
     input.placeholder = '운영시간';
     input.setAttribute('aria-label', 'time');
@@ -198,3 +202,18 @@ const deleteInputGroup = () => {
 
 plusBtn.addEventListener('click', (e) => addInputGroup());
 minusBtn.addEventListener('click', (e) => deleteInputGroup());
+
+// 행사 추가 할때 유효성 검사
+const submitBtn = document.querySelector('#submitBtn');
+const submitInput = document.querySelector('#submitInput');
+
+submitBtn.addEventListener('click', (e) => {
+  const start_date = document.querySelector('#start_date').valueAsDate;
+  const end_date = document.querySelector('#end_date').valueAsDate;
+  // 시작일과 종료일을 입력하지 않았다면 submit 불가
+  if (start_date == null || end_date == null) {
+    alert('시작일과 종료일을 설정해 주세요');
+  } else {
+    submitInput.click();
+  }
+});

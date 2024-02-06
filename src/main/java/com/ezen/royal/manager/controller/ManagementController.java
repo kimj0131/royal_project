@@ -1,5 +1,10 @@
 package com.ezen.royal.manager.controller;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
@@ -9,6 +14,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.ezen.royal.manager.dto.EventManageDTO;
+import com.ezen.royal.manager.dto.EventRoundManageDTO;
+import com.ezen.royal.manager.service.EventManageService;
 import com.ezen.royal.manager.service.ManagerLoginService;
 import com.ezen.royal.secure.SecureTools;
 
@@ -21,6 +29,9 @@ public class ManagementController {
 	
 	@Autowired
 	ManagerLoginService managerLoginService;
+	
+	@Autowired
+	EventManageService eventManageService;
 	
 
 	// 관리자 로그인 페이지 매핑
@@ -86,7 +97,8 @@ public class ManagementController {
 			return "";
 	}
 	
-	@GetMapping("/event/*") // 관리자 행사 관리 페이지
+	// 관리자 행사 관리 페이지
+	@GetMapping("/event/*")
 	public String manage_event(HttpServletRequest request) {
 		String uri = request.getRequestURI();
 		
@@ -100,6 +112,92 @@ public class ManagementController {
 			return "";
 	}
 	
+	@PostMapping("/event/insert")
+	public String manage_event_insert(HttpServletRequest request) {
+		
+		/*
+			# 넘겨 받는 파라미터 값들의 키
+			
+			- EventManagerDTO 관련
+			royal_id
+			event_type
+			event_name
+			event_location
+			start_date
+			end_date
+			event_link
+			event_imgpath
+			reservable
+			
+			- EventRoundManageDTO 관련
+			round + 숫자
+		*/
+		String royal_id = request.getParameter("royal_id");
+		String event_type = request.getParameter("event_type");
+		String event_name = request.getParameter("event_name");
+		String event_location = request.getParameter("event_location");
+		String start_date = request.getParameter("start_date");
+		String end_date = request.getParameter("end_date");
+		String event_link = request.getParameter("event_link");
+		String event_imgpath = request.getParameter("event_imgpath");
+		String reservable = request.getParameter("reservable");
+		String round_capacity = request.getParameter("round_capacity");
+		
+		
+		
+		// 유효성 검사
+		
+		//
+		
+		
+		
+		// EventRoundManageDTO
+		List<EventRoundManageDTO> eventRoundManageDTO_List = new ArrayList<>();
+		for (int i = 1; i <= 10; ++i) {
+			String round = request.getParameter(String.format("round%d", i));
+			if (round == null) {
+				break;
+			} else {
+				EventRoundManageDTO dto = new EventRoundManageDTO();
+				dto.setRound_capacity(Integer.parseInt(round_capacity));
+				dto.setRound_num(i);
+				dto.setRound_time(round);
+				eventRoundManageDTO_List.add(dto);
+			}
+		}
+		//
+		
+		
+		// EventManageDTO
+		EventManageDTO eventManageDTO = new EventManageDTO();
+		eventManageDTO.setRoyal_id(Integer.parseInt(royal_id));
+		eventManageDTO.setEvent_type(event_type);	
+		eventManageDTO.setEvent_name(event_name);
+		eventManageDTO.setEvent_location(event_location);
+		eventManageDTO.setEvent_rounds(eventRoundManageDTO_List.size());
+		try {
+			eventManageDTO.setStart_date(new SimpleDateFormat("yyyy-MM-dd").parse(start_date));
+			eventManageDTO.setEnd_date(new SimpleDateFormat("yyyy-MM-dd").parse(end_date));
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
+		eventManageDTO.setEvent_link(event_link);
+		eventManageDTO.setEvent_imgpath(event_imgpath);
+		eventManageDTO.setReservable(reservable.charAt(0));
+		//
+		
+		
+		// log
+		log.info(eventManageDTO);
+		log.info(eventRoundManageDTO_List);
+		//
+		
+		
+		// eventManageService.insertEvent(null, null, 0);
+		return "managerViews/main_views/event/insert";	
+	}
+	
+	//
 	@GetMapping("/notice") // 관리자 공지사항 수정 페이지
 	public String manage_notice() {
 		return "managerViews/main_views/notice_manage";

@@ -59,58 +59,64 @@
 									<h6 class="m-0 font-weight-bold text-primary">행사 추가</h6>
 								</div>
 								<div class="card-body">
-									<form>
+									<form action="/royal/YWRtaW5wYWdl/event/insert" method="post">
 										<div class="fg_custom_wrapper">
 											<div class="fg_custom1">
 												<div class="form-group">
-													<label for="royal_id">궁 ID</label>
-													<input type="text" class="form-control fc_custom" id="royal_id" 
-														placeholder="ID">
+													<label for="royal_id">궁</label>
+													<select name="royal_id" class="form-control fc_custom">
+														<option value="1">경복궁</option>
+														<option value="2">창덕궁</option>
+														<option value="3">창경궁</option>
+														<option value="4">덕수궁</option>
+														<option value="5">종묘</option>
+													</select>
 												</div>
 												<div class="form-group">
 													<label for="event_type">행사 유형</label>
-													<input type="text" class="form-control fc_custom" id="event_type" 
-														placeholder="해설 or 행사">
+													<select name="event_type" class="form-control fc_custom">
+														<option value="commentary">해설</option>
+														<option value="event">행사</option>
+													</select>
 												</div>
 												<div class="form-group">
 													<label for="event_name">행사 이름</label>
-													<input type="text" class="form-control fc_custom" id="event_name" 
+													<input type="text" class="form-control fc_custom" name="event_name" 
 														placeholder="이름">
 												</div>
 												<div class="form-group">
 													<label for="event_location">행사 장소</label>
-													<input type="text" class="form-control fc_custom" id="event_location" 
+													<input type="text" class="form-control fc_custom" name="event_location" 
 														placeholder="주소">
 												</div>
 												<div class="form-group">
 													<label for="start_date">시작일</label>
-													<input type="text" class="form-control fc_custom" id="start_date" 
-														placeholder="시작일">
+													<input type="date" class="form-control fc_custom" name="start_date" id="start_date">
 												</div>
 												<div class="form-group">
 													<label for="end_date">종료일</label>
-													<input type="text" class="form-control fc_custom" id="end_date" 
-														placeholder="종료일">
+													<input type="date" class="form-control fc_custom" name="end_date" id="end_date">
 												</div>
 												<div class="form-group">
 													<label for="event_link">행사 사이트</label>
-													<input type="text" class="form-control fc_custom" id="event_link" 
+													<input type="text" class="form-control fc_custom" name="event_link" 
 														placeholder="사이트 주소">
 												</div>
 												<div class="form-group">
 													<label for="event_imgpath">행사 사진</label>
-													<input type="text" class="form-control fc_custom" id="event_imgpath" 
+													<input type="text" class="form-control fc_custom" name="event_imgpath" 
 														placeholder="사진 경로">
 												</div>
 												<div class="form-group">
 													<label for="reservable">예약가능 여부</label>
-													<input type="text" class="form-control fc_custom" id="reservable" 
-														placeholder="가능 or 불가">
+													<select name="reservable" class="form-control fc_custom">
+														<option value="Y">가능</option>
+														<option value="N">불가</option>
+													</select>
 												</div>
 												<div class="form-group">
 													<label for="reservable">회차별 인원수</label>
-													<input type="text" class="form-control fc_custom" id="reservable" 
-														placeholder="인원수">
+													<input type="number" class="form-control fc_custom" name="round_capacity" min="0" value="0">
 												</div>
 											</div>
 											
@@ -133,13 +139,15 @@
 														<div class="input-group-prepend">
 															<span class="input-group-text" id="basic-addon1">1회차</span>
 														</div>
-														<input id="round1" type="text" class="form-control" placeholder="운영시간" aria-label="time" aria-describedby="basic-addon1">
+														<input name="round1" type="time" class="form-control" placeholder="운영시간" aria-label="time" aria-describedby="basic-addon1">
 													</div>
 												</div>
 											
 											</div>
 										</div>
-										<button type="submit" class="btn btn-primary">추가하기</button>
+										<!-- js에서 유효성 검사 -->
+										<button type="button" id="submitBtn" class="btn btn-primary">추가하기</button>
+										<input id="submitInput" type="submit" style="display: none;">
 									</form>
 								</div>
 							</div>
@@ -220,18 +228,7 @@
 											</tr>
 										</tfoot>
 										<tbody>
-											<tr data-toggle="modal" data-target="#detailModal">
-												<td>00</td>
-												<td>해설</td>
-												<td>궁 투어</td>
-												<td>서울 종로구 사직로 161 경복궁</td>
-												<td>2024/00/00</td>
-												<td>2024/00/00</td>
-												<td>naver.com</td>
-												<td>!@$!%15125</td>
-												<td>가능</td>
-											</tr>
-											<tr data-toggle="modal" data-target="#detailModal">
+											<tr id="${event_id}" data-toggle="modal" data-target="#detailModal">
 												<td>00</td>
 												<td>해설</td>
 												<td>궁 투어</td>
