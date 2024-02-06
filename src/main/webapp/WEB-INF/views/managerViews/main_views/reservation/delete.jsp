@@ -58,9 +58,7 @@
 								<div class="card-body">
 									<form>
 										<div class="form-group">
-											<div class="custom-file">
-												<input type="text" class="form-control" id="Id_to_delete" placeholder="취소할 예약 ID">
-											</div>
+											<input type="text" class="form-control" id="Id_to_delete" placeholder="취소할 예약 ID">
 										</div>
 										<button type="submit" class="btn btn-primary">취소하기</button>
 									</form>

@@ -78,8 +78,10 @@ $('.popover-dismiss').popover({
 });
 
 
-// sidebar Javascript
+// Custom
 
+
+// sidebar Javascript
 /* 
   collapseItems.item(?)
   ? = 0 -> 예약_삭제
@@ -135,44 +137,64 @@ if (href.endsWith('/reservation/delete')) {
   }
 }
 
+// n회차 칸을 추가할 div
+const fg_custom2 = document.querySelector('.fg_custom2 > .form-group');
+// plus 버튼
+const plusBtn = document.querySelector('.plusBtn');
+// minus 버튼
+const minusBtn = document.querySelector('.minusBtn');
 
-/////// 현재 페이지 내에서 클릭시 변환
-// const collapseItems = document.querySelectorAll('.collapse-item');
-// const collapses = document.querySelectorAll('.collapse');
-// const navItems = document.querySelectorAll('.nav-item');
+// 버튼 눌렀을 때 회차 추가
+const addInputGroup = () => {
 
-// collapseItems.forEach((collapseItem) => {
-//   collapseItem.addEventListener('click', (e) => {
-//     collapseItems.forEach((children) => {
-//       if(e.currentTarget == children) {
-//         children.classList.add('active');
-//       } else {
-//         children.classList.remove('active');
-//       }
-//     }); 
-//   });
-// });
+  // n회차 칸이 몇개 들어있는지 확인 하기 위한 nodeList
+  var inputGroups_in_fgCustom2 = document.querySelectorAll('.fg_custom2 > .form-group > .input-group');
+  var roundNum = inputGroups_in_fgCustom2.length + 1;
 
-// collapses.forEach((collapse) => {
-//   collapse.addEventListener('click', (e) => {   
-//     collapses.forEach((children) => {
-//       if(e.currentTarget == children) {
-//         children.classList.add('show');
-//       } else {
-//         children.classList.remove('show');
-//       }
-//     });
-//   });
-// });
+  if (roundNum < 11) {
+    // 1. 새로운 "1회차" 입력 그룹 요소 생성
+    const newInputGroup = document.createElement('div');
+    newInputGroup.classList.add('input-group', 'mb-3');
 
-// navItems.forEach((navItem) => {
-//   navItem.addEventListener('click', (e) => {   
-//     navItems.forEach((children) => {
-//       if(e.currentTarget == children) {
-//         children.classList.add('active');
-//       } else {
-//         children.classList.remove('active');
-//       }
-//     });
-//   });
-// });
+    // 2. "1회차" 라벨과 입력 필드를 포함하는 "input-group-prepend" 요소 생성
+    const prependGroup = document.createElement('div');
+    prependGroup.classList.add('input-group-prepend');
+
+    const label = document.createElement('span');
+    label.classList.add('input-group-text');
+    label.id = 'basic-addon1';
+    label.textContent = `${roundNum}회차`;
+
+    prependGroup.appendChild(label);
+
+    // 3. "운영시간" 입력 필드 생성
+    const input = document.createElement('input');
+    input.id = `round${roundNum}`;
+    input.type = 'text';
+    input.classList.add('form-control');
+    input.placeholder = '운영시간';
+    input.setAttribute('aria-label', 'time');
+    input.setAttribute('aria-describedby', 'basic-addon1');
+
+    // 4. 새로운 입력 그룹에 "input-group-prepend"와 입력 필드 추가
+    newInputGroup.appendChild(prependGroup);
+    newInputGroup.appendChild(input);
+
+    // 5. 새로운 회차 칸 추가
+    fg_custom2.appendChild(newInputGroup);
+  }
+};
+
+// 버튼 눌렀을 때 회차 삭제
+const deleteInputGroup = () => {
+    // n회차 칸이 몇개 들어있는지 확인 하기 위한 nodeList
+    var formGroup = document.querySelectorAll('.fg_custom2 > .form-group');
+    var roundNum = formGroup.item(0).children.length;
+
+    if (roundNum > 4) {
+      formGroup.item(0).children.item(roundNum - 1).remove();
+    }
+};
+
+plusBtn.addEventListener('click', (e) => addInputGroup());
+minusBtn.addEventListener('click', (e) => deleteInputGroup());
