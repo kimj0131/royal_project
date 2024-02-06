@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,6 +15,8 @@
 <link rel="stylesheet" href="${faqCSS}" />
 <link rel="stylesheet" href="${public_communicationCSS}" />
 <link rel="stylesheet" href="${public_communicationJS}" />
+<script src="https://kit.fontawesome.com/a2b7421397.js"
+	crossorigin="anonymous"></script>
 </head>
 <body>
 	<jsp:include page="../../layout/header.jsp" />
@@ -48,8 +51,10 @@
 			<div class="inner">
 				<div class="search_div">
 					<div class="search_left">
-						<div class="count_div">전체:
-								<%=request.getAttribute("uniqueValuesCount")%>개</div>
+						<div class="count_div">
+							전체:
+							<%=request.getAttribute("uniqueValuesCount")%>개
+						</div>
 					</div>
 					<form name="listForm" id="listForm" method="post"
 						onsubmit="fn_search(); return false;">
@@ -72,18 +77,43 @@
 							<ul class="faq-list">
 								<c:forEach items="${faq}" var="faq" varStatus="status">
 									<li class="q_item">
-										<div class="faq-title" onclick="toggleContent(${status.index})">
-											${faq.faq_title}
-										</div>
+										<div class="faq-title"
+											onclick="toggleContent(${status.index})">
+											${faq.faq_title}</div>
 										<div class="faq-result" id="faq-result-${status.index}">
-											${faq.faq_result}
-										</div>
+											${faq.faq_result}</div>
 									</li>
 								</c:forEach>
 							</ul>
 						</c:if>
 					</div>
 				</div>
+
+				<div class="sub_section_qna_wrap">
+					<div class="qna_box">
+						<div class="top">
+							<div class="tit_wrap">
+								<span class="ic_q"><i class="fa-solid fa-q"
+									style="font-size: 40px"></i></span> &nbsp;&nbsp;
+								<div class="tit">문의하기</div>
+							</div>
+						</div>
+
+						<div class="input_wrap">
+							<form id="qnaForm" action="/communication/faq/" method="POST">
+								<textarea id="qnaContent" name="qna_content" rows="5"
+									cols="80"></textarea>
+								<br> 글쓴이 <input id="" type="text"
+									name="" /> 비밀번호 <input id="Password"
+									type="password" name="qna_password" /> <input type="hidden"
+									name="" value="">
+								<button class="btn" type="submit">보내기</button>
+							</form>
+						</div>
+						
+					</div>
+				</div>
+
 			</div>
 		</div>
 	</div>

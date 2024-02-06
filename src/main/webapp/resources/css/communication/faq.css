@@ -5,81 +5,140 @@
 }
 
 .sub_con_section {
-  padding-top: 55px;
+	padding-top: 55px;
 }
 
 .sub_con_section .txt_section_tit {
-  font-weight: bold;
-  font-size: 1.625rem;
-  margin-bottom: 50px;
-  position: relative;
+	font-weight: bold;
+	font-size: 1.625rem;
+	margin-bottom: 50px;
+	position: relative;
 }
 
 .bd_wrap {
-  border-top: solid 2px #0a134f;
-  border-bottom: solid 1px #aeaeae;
+	border-top: solid 2px #0a134f;
+	border-bottom: solid 1px #aeaeae;
 }
 
 .faq_list .q_item {
-  display: flex;
-  width: 100%;
-  font-size: 1.125rem;
-  position: relative;
+	display: flex;
+	width: 100%;
+	font-size: 1.125rem;
+	position: relative;
 }
 
 .wrap {
-  width: 100%;
+	width: 100%;
 }
 
 body * {
-  box-sizing: border-box;
+	box-sizing: border-box;
 }
 
 .contents_wrap {
-  padding: 180px 0 0 80px;
+	padding: 180px 0 0 80px;
 }
 
 .contents_sub .inner {
-  display: flex;
+	display: flex;
 }
 
 .inner {
-  width: 1030px;
-  max-width: 100%;
-  height: auto;
-  position: relative;
-  margin: 0 auto;
-  padding: 0 15px;
+	width: 1030px;
+	max-width: 100%;
+	height: auto;
+	position: relative;
+	margin: 0 auto;
+	padding: 0 15px;
 }
 
 .faq-result {
-  display: flex;
-  align-content:flex-start;
-  margin-top: 10px;
-  padding: 15px;
-  border: 1px solid #ccc;
-  background-color: #f9f9f9;
+	display: flex;
+	align-content: flex-start;
+	margin-top: 10px;
+	padding: 15px;
+	border: 1px solid #ccc;
+	background-color: #f9f9f9;
 }
+
 .q_item {
 	border-bottom: solid 2px black;
 	padding-top: 50px;
 	padding-bottom: 50px
 }
 
-.contents_sub #lnbInclude+.contents_inn, .contents_sub .lnb_wrap+.contents_inn {
-    width: calc(100% - 390px);
+.contents_sub #lnbInclude+.contents_inn, .contents_sub .lnb_wrap+.contents_inn
+	{
+	width: calc(100% - 390px);
 }
+
 .contents_sub .contents_inn {
-    width: 100%;
-    padding-top: 80px;
+	width: 100%;
+	padding-top: 80px;
 }
+
 body * {
-    box-sizing: border-box;
+	box-sizing: border-box;
 }
+
 :visited, body * {
-    color: inherit;
-    font-family: inherit;
-    padding: 0;
-    margin: 0;
+	color: inherit;
+	font-family: inherit;
+	padding: 0;
+	margin: 0;
+}
+
+.tit {
+	padding-top: 50px;
+	padding-bottom: 50px;
+}
+
+.sub_section_qna_wrap {
+	padding-top: 50px;
+}
+
+.qna_box {
+	width: 100%;
+	border: solid 1px #ECECEC;
+	padding: 45px 40px;
+}
+
+.qna_box .tit_wrap {
+	display: flex;
+	align-items: baseline;
+}
+.tit {
+	font-size: 20px;
+}
+
+.input_wrap {
+    max-width: 100%;
+    width: 100%;
+    padding: 10px; /* 내부 여백 추가 */
+    box-sizing: border-box; /* 내부 여백 포함 */
+}
+
+#qnaContent {
+    width: 100%; /* 텍스트 영역 너비를 100%로 설정 */
+    height: 400px; /* 텍스트 영역의 기본 높이 설정 */
+    padding: 10px; /* 내부 여백 추가 */
+    box-sizing: border-box; /* 내부 여백 포함 */
+    resize: vertical; /* 사용자가 수직으로 크기 조정할 수 있도록 설정 */
+    border: 1px solid #ccc; /* 테두리 추가 */
+    border-radius: 5px; /* 모서리를 둥글게 만듦 */
+    font-size: 16px; /* 폰트 크기 설정 */
+    line-height: 1.5; /* 줄 간격 설정 */
+    resize: none;
+}
+
+
+.btn {
+
+    padding: 10px 10px; /* 내부 여백 설정 */
+    font-size: 16px; /* 폰트 크기 설정 */
+    border: solid 1px black;
+    color: black;
+    cursor: pointer; /* 커서 모양 변경 */
+
 }
 
