@@ -44,6 +44,8 @@
 	<!-- qna&notice mapper -->
 	<mybatis-spring:scan base-package="com.ezen.royal.client.communication.mapper"/>
 
+	<!-- Manage mappers -->
+	<mybatis-spring:scan base-package="com.ezen.royal.manager.mapper"/>
 	
 
 </beans>
