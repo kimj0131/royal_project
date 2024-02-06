@@ -24,16 +24,22 @@
 			<h2>마이페이지</h2>
 		</div>
 	</div>
-
 	<div class="reservationList">
 		<div id="reserv_title">
-			<h2 id="reservation_title">예약내역</h2>
+			<h2 id="notice_title">기본정보</h2>
+			
+		</div>
+	</div>
+	<div class="reservationList">
+		<div id="reserv_title">
+			<h2 id="notice_title">예약내역</h2>
+			
 		</div>
 
 
 	</div>
 	<div class="reservboard_wrap">
-		<div class="board_wrap_layout">
+		<div class="reservboard_wrap_layout">
 			<div>예약번호</div>
 			<div>궁이름</div>
 			<div>날짜 및 시간</div>
@@ -45,7 +51,7 @@
 
 	<div class="notice_title_BTN">
 		<div id="notice_title_div">
-			<h2 id="notice_title">Q&A내역</h2>
+			<h2 id="notice_title">내가 작성한 Q&A</h2>
 		</div>
 		<div class="BTN_class">
 			<div id="all_BTN" class="all on">전 체</div>
@@ -69,6 +75,8 @@
 			<div>작성일</div>
 
 		</div>
+		
+		
 	</div>
 
 
