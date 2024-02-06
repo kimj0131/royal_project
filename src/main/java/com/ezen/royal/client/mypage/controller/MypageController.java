@@ -12,7 +12,6 @@ import lombok.extern.log4j.Log4j;
 @RequestMapping("/mypage")
 public class MypageController {
 	
-	
 	@GetMapping("/myPageView") // 마이페이지
 	public String myPageView() {
 		return "/userViews/mypage/mypage";
