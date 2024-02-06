@@ -31,6 +31,7 @@
 	</a>
 
 	<a href="/royal/palace/royalInner?palace=경복궁&royalId=1">
+	<!-- "/RoyalInner/details/${royal_id}" -->
     <div class="menu" style="margin: 10px"> 
         경복궁 내부 건축물 <img src="../resources/image/royal_inner/main/gyeongbok/bg_menu01_02.jpg" alt="이미지" />
     </div>

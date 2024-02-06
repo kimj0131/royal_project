@@ -37,5 +37,22 @@ public class RoyalInnerServiceImpl implements RoyalInnerService {
 		return royalInnerMapper.getSelectedInnerDTO(innerName,royalId);
 	}
 
-	
+/*
+ @Override
+   public List<String> details(Integer royal_id) {
+       List<InnerDTO> innerDtoList = royalInnerMapper.getRoyalById(royal_id);
+       List<String> innerNames = new ArrayList<>();
+
+       for (InnerDTO dto : innerDtoList) {
+           innerNames.add(dto.getRoyal_inner_name());
+       }
+       return innerNames;
+   }
+
+   @Override
+   public String getRoyalNameById(Integer royalId) {
+       return royalInnerMapper.getRoyalNameById(royalId);
+   }
+   
+*/
 }
