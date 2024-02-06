@@ -27,7 +27,8 @@
 > * 방혜미 : 내부 건축물 이미지 (DB의 이미지path 추가하여 이미지 여러개 나열 해보기)
 > * 김준형 : Event 테이블 데이터 추가 시 회차만큼 Event_round 테이블 데이터 추가하는 service
 > * 김준형 : Event 테이블 데이터 회차 컬럼을 수정 시 Event_round 테이블 데이터 회차수 만큼 insert or delete 하는 service
-> * 조현우 : 관리자 페이지에 각각의 뷰에서 DB데이터 CRUD를 GUI로 구성 
+> * 조현우 : 관리자 페이지에 각각의 뷰에서 DB데이터 CRUD를 GUI로 구성
+> * 김태형 : 마이페이지에 기본정보, 예약내역, QnA 내역 나오게 전체 Controller, DTO, Service, Mapper, JSP 제작
 
 ## done
 > * 김준형, 조현우 : 공공 API 연계 후 데이터 캐싱(DB) [[Commit]](https://github.com/kimj0131/royal_project/commit/b2bce768f3d814af2542e768a4397b3d1be525f8)
