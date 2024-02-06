@@ -11,6 +11,7 @@
 }
 
 .board_wrap_layout{
+    background: #F8F8F8;
     border-top: 3px solid black;
     border-bottom: solid 1px #EAEAEA; 
     font-size: 15px;
