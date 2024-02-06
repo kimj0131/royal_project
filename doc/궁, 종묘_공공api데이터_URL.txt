@@ -1,0 +1,46 @@
+공공 api 데이터
+
+api 목록
+https://www.cha.go.kr/html/HtmlPage.do?pg=/publicinfo/pbinfo3_0201.jsp&mn=NS_04_04_02
+
+- 경복궁
+
+// 문화재 검색
+https://www.cha.go.kr/cha/SearchKindOpenapiList.do?ccbaKdcd=13&ccbaMnm1=%EA%B2%BD%EB%B3%B5%EA%B6%81
+
+// 상세정보
+https://www.cha.go.kr/cha/SearchKindOpenapiDt.do?ccbaKdcd=13&ccbaAsno=01170000&ccbaCtcd=11
+
+- 창덕궁
+
+// 문화재 검색
+https://www.cha.go.kr/cha/SearchKindOpenapiList.do?ccbaKdcd=13&ccbaMnm1=%EC%B0%BD%EB%8D%95%EA%B6%81
+
+// 상세정보
+https://www.cha.go.kr/cha/SearchKindOpenapiDt.do?ccbaKdcd=13&ccbaAsno=01220000&ccbaCtcd=11
+
+- 창경궁
+
+// 문화재 검색
+https://www.cha.go.kr/cha/SearchKindOpenapiList.do?ccbaKdcd=13&ccbaMnm1=%EC%B0%BD%EA%B2%BD%EA%B6%81
+
+// 상세정보
+https://www.cha.go.kr/cha/SearchKindOpenapiDt.do?ccbaKdcd=13&ccbaAsno=01230000&ccbaCtcd=11
+
+- 덕수궁
+
+// 문화재 검색
+https://cha.go.kr/cha/SearchKindOpenapiList.do?ccbaKdcd=13&ccbaMnm1=%EB%8D%95%EC%88%98%EA%B6%81
+
+// 상세정보
+https://www.cha.go.kr/cha/SearchKindOpenapiDt.do?ccbaKdcd=13&ccbaAsno=01240000&ccbaCtcd=11
+
+
+- 종묘
+
+// 문화재 검색
+https://cha.go.kr/cha/SearchKindOpenapiList.do?ccbaKdcd=13&ccbaMnm1=%EC%A2%85%EB%AC%98
+
+// 상세정보
+https://www.cha.go.kr/cha/SearchKindOpenapiDt.do?ccbaKdcd=13&ccbaAsno=01250000&ccbaCtcd=11
+
