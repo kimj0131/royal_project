@@ -18,8 +18,7 @@
     text-align: center;
     display: grid;
     grid-template-columns: 1fr 180px 570px 180px 1fr;
- 
-    padding-top: 10px;
+    padding: 10px;
 }
 
 .board_wrap_list{
@@ -29,7 +28,6 @@
     text-align: center;
     display: grid;
     grid-template-columns: 1fr 180px 570px 180px 1fr;
-
-    padding-top: 5px;
+    padding: 5px;
 
 }

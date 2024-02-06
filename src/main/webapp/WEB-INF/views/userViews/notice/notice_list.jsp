@@ -71,8 +71,8 @@
 			<div>등록일</div>
 			<div>조회수</div>
 		</div>
-		<div class="board_wrap_list">
-    		<c:forEach items="${noticeList}" var="notice">
+    	<c:forEach items="${noticeList}" var="notice">
+			<div class="board_wrap_list">
 		        <div>${notice.notice_id}</div>
 		        <div><c:choose>
 		            <c:when test="${notice.royal_id == 1}">
@@ -93,8 +93,9 @@
 		        </c:choose></div>
 		        <a>${notice.notice_title}</a>
 		        <div>${notice.notice_date}</div>
-    		</c:forEach>
-		</div>
+		        <div></div>
+			</div>
+    	</c:forEach>
 	</div>
 
 	<script src="${public_communicationJS}"></script>
