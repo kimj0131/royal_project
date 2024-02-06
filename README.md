@@ -23,7 +23,6 @@
 ***
 
 ## mission
-> * 김태형 : 지도 api 연계
 > * 방혜미 : 지도 api 데이터 활용 - 오시는길 페이지 
 > * 방혜미 : 내부 건축물 이미지 (DB의 이미지path 추가하여 이미지 여러개 나열 해보기)
 
@@ -32,7 +31,8 @@
 > * 김준형 : Spring scheduler로 공공 API 갱신주기 설정 [[Commit]](https://github.com/kimj0131/royal_project/commit/33482572463fdb34d4146daf1298d9ea5e3bc5da)
 > * 김준형, 조현우 : 소셜 로그인 API 연계 (네이버, 카카오) [[Commit_1]](https://github.com/kimj0131/royal_project/commit/4e2913ff5720284ab7ea7f97da3b6c5f3dd4e66b), [[Commit_2]](https://github.com/kimj0131/royal_project/commit/7eb75f11a4e2cc01dd2f1e1aef8b4cf4b995b200)
 > * 방혜미 :  공공API 데이터활용, 4대궁궐 및 종묘 내부 건축물 정보 DB에서 가져오기 [[Commit]](https://github.com/kimj0131/royal_project/commit/4d064e4af6bbd1177c85bf19ec7aa69d7ccdcd76)
-
+> * 김태형 : 지도 api 연계
+> * 김태형 : 커버페이지 => 메인페이지 이동 및 각 궁 소개페이지 이동 작업
 ***
 ## 발생한 문제
 > * 김준형 : DB 테이블 컬럼명 참조키 이름 통일화 필요
