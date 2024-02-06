@@ -13,11 +13,11 @@ import lombok.extern.log4j.Log4j;
 @Log4j
 @Controller
 @RequestMapping("/palace")
-@PropertySource("classpath:config/kakao.properties")
+@PropertySource("classpath:config/kakao.properties") // kakao.properties 사용하기 위한 어노테이션
 public class GuideViewController {
 	
 	@Autowired
-	Environment env;
+	Environment env; // kakao.properties 사용하기 위한 객체
 	
 	@GetMapping("/viewing_time") // 관람시간
 	public String viewing_time() {
@@ -33,7 +33,7 @@ public class GuideViewController {
 	public String roadmap(Model model) {
 		String apiKey = env.getProperty("kakao.appkey");
 	
-		model.addAttribute("apiKey", apiKey);
+		model.addAttribute("apiKey", apiKey); // 카카오지도 appkey
 		
 		return "/userViews/royal_intro/guideToViewing/roadmap";
 	}

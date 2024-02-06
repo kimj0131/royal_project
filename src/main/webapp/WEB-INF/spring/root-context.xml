@@ -33,6 +33,9 @@
 	<!-- 스캔으로 통해 매퍼를 자동으로 회수 -->
 	<mybatis-spring:scan base-package="com.ezen.royal.api.mapper"/>
 	
+	<!-- inner image update test mapper -->
+	<mybatis-spring:scan base-package="com.ezen.royal.api.innerImgpathTest.mapper"/>
+	
 	<!-- royal_inner mapper -->
 	<mybatis-spring:scan base-package="com.ezen.royal.client.palace.mapper"/>
 	<!-- royal_inner test mapper -->
