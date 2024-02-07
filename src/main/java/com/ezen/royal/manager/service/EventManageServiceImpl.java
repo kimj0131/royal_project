@@ -20,21 +20,12 @@ public class EventManageServiceImpl implements EventManageService{
 	EventManageMapper eventManageMapper;
 	
 	// 이벤트 전체 리스트
-	/**
-	 *  * 이벤트 테이블의 전체 목록을 attribute에 list로 싣는다. <br>
-	 *  ※ attribute name = eventList
-	 */
 	@Override
 	public void getEventList(Model model) {
 		model.addAttribute("eventList", eventManageMapper.getEventList());
 	}
 
-	// 이벤트 상세내용 
-	/**
-	 *  * 이벤트 테이블의 지정된 내용을 attribute에 싣는다. <br>
-	 *  ※ attribute name = event	<br>
-	 *  ※ attribute name = event_rounds	<br>
-	 */
+	// 이벤트 상세내용
 	@Override
 	public void getEventDetail(Model model, int event_id) {
 		model.addAttribute("event", eventManageMapper.getEventDetail(event_id));
@@ -42,12 +33,6 @@ public class EventManageServiceImpl implements EventManageService{
 	}
 
 	// 이벤트 추가, 이벤트회차도 같이 추가한다
-	/**
-	 * * EventManageDTO를 전달받아 DB에 추가한다 <br>
-	 * ※ 성공시 1, 실패시 -1을 반환한다 <br>
-	 * ※ 추가 시 이벤트 회차 테이블 데이터도 생성, 추가한다. <br>
-	 *   - 시간은 1시간 간격으로 생성됨 (수정가능)
-	 */
 	@Override
 	public int insertEvent(EventManageDTO dto, List<EventRoundManageDTO> roundList) {
 		
@@ -61,11 +46,6 @@ public class EventManageServiceImpl implements EventManageService{
 	}
 
 	// 이벤트 수정
-	/**
-	 * * EventManageDTO와 수정할 event_id를 전달받아 수정한다 <br>
-	 * ※ 성공시 1, 실패시 -1을 반환한다 <br>
-	 * ※ 수정 시 event_rounds의 값이 차이가 있으면 event_round를 추가하거나 삭제한다
-	 */
 	@Override
 	public int updateEvent(EventManageDTO dto, List<EventRoundManageDTO> roundList, int modify_id) {
 		
@@ -85,20 +65,12 @@ public class EventManageServiceImpl implements EventManageService{
 	}
 
 	// 이벤트 회차 수정 단일
-	/**
-	 * * EventRoundManageDTO와 수정할 round_id를 전달받아 수정한다 <br>
-	 * ※ 성공시 1를 반환한다 <br>
-	 */
 	@Override
 	public int updateEventRound(EventRoundManageDTO roundManageDTO, int modify_round_id) {
 		return eventManageMapper.updateEventRound(roundManageDTO, modify_round_id);
 	}
 	
 	// 이벤트 삭제
-	/**
-	 * * round_id를 전달받아 삭제한다 <br>
-	 * ※ 성공시 1를 반환한다 <br>
-	 */
 	@Override
 	public int deleteEvent(int delete_id) {
 		return eventManageMapper.deleteEvent(delete_id);
