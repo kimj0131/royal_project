@@ -24,7 +24,6 @@
 
 	<div class="contents_wrap" id="contents_wrap">
 		<div class="contents contents_sub">
-			<!-- [S] sub_visual-->
 			<div class="sub_visual">
 				<div class="img_wrap">
 					<img src="${royalInfoIMG}" alt="">

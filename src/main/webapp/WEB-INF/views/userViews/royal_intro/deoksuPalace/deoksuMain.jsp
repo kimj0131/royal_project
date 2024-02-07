@@ -11,8 +11,8 @@
 </head>
 <body>
 
-	<jsp:include page="/WEB-INF/views/layout/header.jsp"/>
-	<jsp:include page="/WEB-INF/views/layout/navibar.jsp"/>
+	<jsp:include page="/WEB-INF/views/userViews/layout/header.jsp"/>
+	<jsp:include page="/WEB-INF/views/userViews/layout/navibar.jsp"/>
 		
 	<div class="mainPic">
 		<div class="mainImage"><img src="../resources/image/royal_inner/main/deoksu/deoksugung.jpg" alt=""></div>
@@ -52,7 +52,7 @@
 	</a>
 	</div>
 	
-	<jsp:include page="/WEB-INF/views/layout/footer.jsp"/>
+	<jsp:include page="/WEB-INF/views/userViews/layout/footer.jsp"/>
 	
 </body>
 </html>
