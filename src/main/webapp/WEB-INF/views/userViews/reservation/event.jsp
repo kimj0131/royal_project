@@ -13,7 +13,7 @@
 </head>
 <body>
 	
-	<jsp:include page="/WEB-INF/views/layout/header.jsp" />
+	<jsp:include page="/WEB-INF/views/userViews/layout/header.jsp" />
 	<div class="sub">
 		<div class="mainImg">
 			<img
@@ -30,10 +30,10 @@
 	
 	<div class="container">
 		<div class="click">
-				<div class="click-row1">경복궁</div>
-				<div class="click-row2">덕수궁</div>
-				<div class="click-row3">창경궁</div>
-				<div class="click-row4">창덕궁</div>
+				<div class="click-row">경복궁</div>
+				<div class="click-row">덕수궁</div>
+				<div class="click-row">창경궁</div>
+				<div class="click-row">창덕궁</div>
 			</div>
 	</div>
 
@@ -83,6 +83,6 @@
 
 	<script src="${eventJS}"></script>
 	
-	<jsp:include page="/WEB-INF/views/layout/footer.jsp" />
+	<jsp:include page="/WEB-INF/views/userViews/layout/footer.jsp" />
 </body>
 </html>

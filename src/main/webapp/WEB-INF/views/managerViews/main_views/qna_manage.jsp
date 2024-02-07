@@ -8,7 +8,7 @@
 </head>
 <body>
 	
-	<jsp:include page="../layout/navibar.jsp" />
+	<jsp:include page="/WEB-INF/views/userViews/layout/navibar.jsp"/>
 	
 	qna관리 페이지
 	

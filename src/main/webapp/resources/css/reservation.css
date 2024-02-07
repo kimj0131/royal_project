@@ -26,7 +26,7 @@
 
 .sub h1 {
 	position: absolute;
-	top: 50%;
+	top: 40%;
 	left: 50%;
 	transform: translate(-50%, -50%);
 	font-size: 35px;
@@ -37,43 +37,91 @@
 	justify-content: center;
 }
 
+.container {
+	text-align: center;
+    margin: 0 auto;
+	margin:0 50px;
+}
+
 #click {
 	display: flex;
 	justify-content: space-evenly;
 	flex-direction: row;
+    margin: 0 60px;
+    padding-top: 29px;
 }
 
 .click-row {
-	border: 2px solid black;
 	display: flex;
+	border: 3px solid;
+	font-weight: bold;
+	text-align: center;
 	flex-wrap: nowrap;
-	padding: 15px;
+	padding: 5px 30px;
 	cursor: pointer;
-	border-radius: 30%;
+	border-radius: 20px;
 }
 
-.click-row:hover {
-	background-color: #efe8e8;
+.click-row:first-child{
+	border: 3px solid #604206;
+	background-color: white;
+	color: #683A0D;
+}
+
+.click-row:nth-child(2){
+	border: 3px solid #286d79;
+	background-color: white;
+	color: #286d79;
+}
+
+.click-row:nth-child(3){
+	border: 3px solid #14489c;
+	background-color: white;
+	color: #14489c;
+}
+
+.click-row:last-child{
+	border: 3px solid #b6383d;
+	background-color: white;
+	color: #b6383d;
+}
+
+
+.click-row:first-child:hover {
+	background-color: #683A0D;
+	color: white;
+}
+
+.click-row:nth-child(2):hover {
+	background-color: #286d79;
+	color: white;
+}
+
+.click-row:nth-child(3):hover {
+	background-color: #14489c;
+	color: white;
+}
+
+.click-row:last-child:hover {
+	background-color: #b6383d;
+	color: white;
 }
 
 .sub-heading {
-	margin-top: 20px;
-	padding: 13px;
-	background: linear-gradient(180deg, rgba(221, 208, 241, 0.68) 0%,
-		rgba(0, 2, 15, 0.00) 100%);
-	border: 1px solid black;
-	height: 60px;
-	text-align: center;
-	font-size: 30px;
-	font-weight: bold;
+	text-align: left;
+	margin: 300px;
+	font-size: 23px;
+	padding-left: 270px;
+	padding-top: 40px;
+	margin: 0 auto;	
+	top: 200px;
 }
 
 .sub-bottom {
 	display: block;
-	margin-top: 20px;
-	margin-bottom: 50px;
+	padding-left: 270px;
 	font-size: 15px;
-	text-align: center;
+	text-align: justify;
 }
 
 .list {
@@ -84,10 +132,23 @@
 .click-container {
 	display: grid;
 	gap: 10px;
+	grid-template-rows: 50px 150px 150px;
+}
+
+.click-container b{
+ 	padding-top: 30px;
+	padding-left: 20px;
+	font-size: 20px;
+}
+
+.events p {
+	padding-left: 20px;
+	font-size: 14px;
 }
 
 .events {
-	border: 2px solid black;
+	border: 1px solid #F1F1F1;
+	background-color:#F8F8F8;
 	margin: 5px;
 	padding: 5px;
 	display: grid;
@@ -99,19 +160,31 @@
 #booking {
 	position: absolute;
 	bottom: 0;
-	right: 0;
+	left: 20px;
+	bottom: 5px;
 	margin: 5px;
 	padding: 5px;
-	border: 1px solid black;
+	border: 1px solid #604206;
+	background-color:white;
 	cursor: pointer;
+	width: 80px;
+	height: 30px;
+	font-size: 12px;
+	text-align: center;
 }
 
 #eventPage {
 	position: absolute;
 	bottom: 0;
-	right: 150px;
+	left: 110px;
+	bottom: 5px;
 	margin: 5px;
 	padding: 5px;
-	border: 1px solid black;
+	border: 1px solid #604206;
+	background-color:white;
 	cursor: pointer;
+	width: 80px;
+	height: 30px;
+	font-size: 12px;
+	text-align: center;
 }

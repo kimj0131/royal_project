@@ -26,7 +26,7 @@
 
 .sub h1 {
 	position: absolute;
-	top: 50%;
+	top: 40%;
 	left: 50%;
 	transform: translate(-50%, -50%);
 	font-size: 35px;
@@ -59,56 +59,62 @@ h2 {
     display: flex;
     justify-content: space-evenly;
     flex-direction: row;
-    margin-left: 60px;
-    margin-right: 60px;
+    margin: 0 60px;
 }
 
-.click-row1 {
+.click-row {
 	display: flex;
+	border: 3px solid;
+	font-weight: bold;
+	flex-wrap: nowrap;
+	border-radius: 20px;
+    padding: 5px 30px;
+	cursor: pointer;	
+}
+
+.click-row:first-child{
 	border: 3px solid #604206;
 	background-color: white;
 	color: #683A0D;
-	font-weight: bold;
-	flex-wrap: nowrap;
-	padding: 5px 30px;
-	cursor: pointer;
-	border-radius: 20px;
 }
 
-.click-row2 {
-	display: flex;
+.click-row:nth-child(2){
 	border: 3px solid #286d79;
 	background-color: white;
 	color: #286d79;
-	font-weight: bold;
-	flex-wrap: nowrap;
-	padding: 5px 30px;
-	cursor: pointer;
-	border-radius: 20px;
 }
 
-.click-row3 {
-	display: flex;
+.click-row:nth-child(3){
 	border: 3px solid #14489c;
 	background-color: white;
 	color: #14489c;
-	font-weight: bold;
-	flex-wrap: nowrap;
-	padding: 5px 30px;
-	cursor: pointer;
-	border-radius: 20px;
 }
 
-.click-row4 {
-	display: flex;
+.click-row:last-child{
 	border: 3px solid #b6383d;
 	background-color: white;
 	color: #b6383d;
-	font-weight: bold;
-	flex-wrap: nowrap;
-	padding: 5px 30px;
-	cursor: pointer;
-	border-radius: 20px;
+}
+
+
+.click-row:first-child:hover {
+	background-color: #683A0D;
+	color: white;
+}
+
+.click-row:nth-child(2):hover {
+	background-color: #286d79;
+	color: white;
+}
+
+.click-row:nth-child(3):hover {
+	background-color: #14489c;
+	color: white;
+}
+
+.click-row:last-child:hover {
+	background-color: #b6383d;
+	color: white;
 }
 
 .date-wrap {
