@@ -1,6 +1,18 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
+<% 
+	// 로그인 상태 확인 변수 설정
+	String login_admin = (String) session.getAttribute("login_admin");
+%>
+<!-- 세션에 로그인 정보가 없으면 알람을 띄우고 로그인화면으로 보냄 -->
+<c:if test="${empty login_admin}">
+	<script>
+		alert("정상적인 접근이 아닙니다");
+		location.href='/royal/YWRtaW5wYWdl/';
+	</script>
+</c:if>
+
 <!-- IMG -->
 <c:url value="/resources/image/manager/logo/logo2.png" var="logoIMG" />
 

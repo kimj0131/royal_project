@@ -23,7 +23,8 @@ public interface EventManageMapper {
 
 	// Event Update
 	int updateEvent(EventManageDTO dto, int modify_id);
-	// Event_Round Update *** 어떤방식으로 작성해야 할지 좀더 고민 ***
+	
+	// Event_Round Update
 	// 단일로 받아서 Update
 	int updateEventRound(EventRoundManageDTO roundDTO, int modify_id);
 	// *** List로 받아서 Update

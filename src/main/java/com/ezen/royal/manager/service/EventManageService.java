@@ -15,7 +15,7 @@ public interface EventManageService {
 	void getEventDetail(Model model, int event_id);
 	
 	// event 추가
-	int insertEvent(EventManageDTO dto, List<EventRoundManageDTO> roundList, int capacity);
+	int insertEvent(EventManageDTO dto, List<EventRoundManageDTO> roundList);
 	
 	// event 수정
 	int updateEvent(EventManageDTO dto, List<EventRoundManageDTO> roundList, int modify_id);
