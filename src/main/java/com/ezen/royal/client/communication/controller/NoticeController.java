@@ -25,6 +25,10 @@ public class NoticeController {
 		
 		noticeService.getNoticeList(model);
 		
+		Integer uniqueValuesCount = noticeService.getUniqueValuesCount();
+
+		model.addAttribute("uniqueValuesCount", uniqueValuesCount);
+		
 		return "/userViews/notice/notice_list";
 		
 	

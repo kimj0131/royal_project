@@ -12,9 +12,9 @@
 		notice_id DESC
 	</select>
 	
-	<select id="get"
-		resultType="com.ezen.royal.client.communication.dto.NoticeDTO">
-		SELECT * FROM notice WHERE 
-		notice_id=#{notice_id}
+	<select id="getUniqueValuesCount"
+		resultType="java.lang.Integer">
+		SELECT COUNT(DISTINCT notice_id) AS unique_values_count
+		FROM notice
 	</select>
 </mapper>

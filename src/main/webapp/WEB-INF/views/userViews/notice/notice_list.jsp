@@ -47,22 +47,26 @@
 
 	<div class="search_div">
 		<div class="search_left">
-			<div class="count_div">전체: **개</div>
+			<div class="count_div">
+				전체:
+				<%=request.getAttribute("uniqueValuesCount")%>개
+			</div>
 		</div>
-		<form name="listForm" id="listForm" method="post" onsubmit="fn_search(); return false;">
+		<form name="listForm" id="listForm" method="post"
+			onsubmit="fn_search(); return false;">
 			<div class="search_right">
 				<select name="search_select_id" id="search_select_id" title="구분">
 					<option>전체</option>
 					<option>제목</option>
 					<option>내용</option>
-				</select>
-				<input type="text" name="search_input_id" id="search_input_id" value title="검색어를 입력해 주세요" placeholder="검색어를 입력해주세요.">
+				</select> <input type="text" name="search_input_id" id="search_input_id"
+					value title="검색어를 입력해 주세요" placeholder="검색어를 입력해주세요.">
 				<button type="submit">검색</button>
 			</div>
-		</form>	
+		</form>
 	</div>
-	
-	
+
+
 	<div class="board_wrap">
 		<div class="board_wrap_layout">
 			<div>번호</div>
@@ -71,31 +75,33 @@
 			<div>등록일</div>
 			<div>조회수</div>
 		</div>
-    	<c:forEach items="${noticeList}" var="notice">
+		<c:forEach items="${noticeList}" var="notice">
 			<div class="board_wrap_list">
-		        <div>${notice.notice_id}</div>
-		        <div><c:choose>
-		            <c:when test="${notice.royal_id == 1}">
+				<div>${notice.notice_id}</div>
+				<div>
+					<c:choose>
+						<c:when test="${notice.royal_id == 1}">
 		                경복궁
 		            </c:when>
-		            <c:when test="${notice.royal_id == 2}">
+						<c:when test="${notice.royal_id == 2}">
 		                창덕궁
 		            </c:when>
-		            <c:when test="${notice.royal_id == 3}">
+						<c:when test="${notice.royal_id == 3}">
 		                창경궁
 		            </c:when>
-		            <c:when test="${notice.royal_id == 4}">
+						<c:when test="${notice.royal_id == 4}">
 		                덕수궁
 		            </c:when>
-		            <c:when test="${notice.royal_id == 5}">
+						<c:when test="${notice.royal_id == 5}">
 		                종묘
 		            </c:when>
-		        </c:choose></div>
-		        <a>${notice.notice_title}</a>
-		        <div>${notice.notice_date}</div>
-		        <div></div>
+					</c:choose>
+				</div>
+				<a>${notice.notice_title}</a>
+				<div>${notice.notice_date}</div>
+				<div></div>
 			</div>
-    	</c:forEach>
+		</c:forEach>
 	</div>
 
 	<script src="${public_communicationJS}"></script>
