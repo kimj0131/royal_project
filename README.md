@@ -40,7 +40,7 @@
 > * 방혜미 : 내부 건축물 이미지 (DB의 이미지path추가 및 js슬라이드 작업 )[[commit]](https://github.com/kimj0131/royal_project/commit/3c24505a14fb54638071ae06171c8d312f8c1c31)
 > * 방혜미 : 지도 api 데이터 활용 - 관람안내 > 오시는길 페이지 [[commit]](https://github.com/kimj0131/royal_project/commit/012c89358b6c041b1c05169f36b2536019a3889c)
 > * 김준형 : Event 테이블 데이터 회차 컬럼을 수정 시 Event_round 테이블 데이터 회차수 만큼 insert or delete 하는 service [[Commit]](https://github.com/kimj0131/royal_project/commit/f856a8d61cbe07e3e5bfee5becbc1c6204e3cc7c)
-> * 
+> * 서빈   : 궁 안내 페이지의 관람시간, 관람요금 페이지 최종 수정 작업 완료 [[Commit]](https://github.com/kimj0131/royal_project/commit/050af8c7017116652f7f2990b657cd1e300fd7d2)
 
 ***
 
