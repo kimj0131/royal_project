@@ -18,7 +18,7 @@
 </head>
 <body>
 
-	<jsp:include page="/WEB-INF/views/layout/header.jsp" />
+	<jsp:include page="/WEB-INF/views/userViews/layout/header.jsp" />
 
 	<div class="contents_wrap" id="contents_wrap">
 		<div class="contents contents_sub">
@@ -485,6 +485,6 @@
 			</div>
 		</div>
 	</div>
-	<jsp:include page="/WEB-INF/views/layout/footer.jsp" />
+	<jsp:include page="/WEB-INF/views/userViews/layout/footer.jsp" />
 </body>
 </html>

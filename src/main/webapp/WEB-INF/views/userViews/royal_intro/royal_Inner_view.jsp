@@ -8,10 +8,11 @@
 <c:url value="/resources/js/royal_intro/royal_inner_view.js" var="innerJS" />
 <title>${palaceName} 내부 건축물</title>
 <link rel="stylesheet" href="${innerCSS}" />
+<script src="https://kit.fontawesome.com/2706cc5797.js" crossorigin="anonymous"></script>
 </head>
 <body>
-	<jsp:include page="/WEB-INF/views/layout/header.jsp" />
-	<jsp:include page="/WEB-INF/views/layout/navibar.jsp" />
+	<jsp:include page="/WEB-INF/views/userViews/layout/header.jsp" />
+	<jsp:include page="/WEB-INF/views/userViews/layout/navibar.jsp" />
 	
 	<div class="royal-name">
     <a href="/royal/palace/royalInner?palace=경복궁&royalId=1">경복궁</a>
@@ -54,6 +55,7 @@
                 <div class="innerNameDiv" onclick="this.parentNode.submit();">${innerName}</div>
             </form>
         </c:forEach>
+          
     </div>
 
     <div class="mainImg">
@@ -71,8 +73,9 @@
 	<p>Debug - Inner Image Path: ${innerDTO.royal_inner_imgpath}</p>
 	<p>Debug - Inner Detail: ${innerDTO.royal_inner_detail}</p>
 	 -->
-	<script src="${innerJS}"></script>
+	<script src="${innerJS}"></script>  
+</head>
 
-	<jsp:include page="/WEB-INF/views/layout/footer.jsp" />
+	<jsp:include page="/WEB-INF/views/userViews/layout/footer.jsp" />
 </body>
 </html>
