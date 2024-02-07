@@ -107,7 +107,7 @@
 				</div>
 				<a>${notice.notice_title}</a>
 				<div>${notice.notice_date}</div>
-				<div></div>
+				<div>${notice.notice_view_count}</div>
 			</div>
 		</c:forEach>
 	</div>
