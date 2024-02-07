@@ -1,8 +1,8 @@
-(function($) {
+(function ($) {
   "use strict"; // Start of use strict
 
   // Toggle the side navigation
-  $("#sidebarToggle, #sidebarToggleTop").on('click', function(e) {
+  $("#sidebarToggle, #sidebarToggleTop").on('click', function (e) {
     $("body").toggleClass("sidebar-toggled");
     $(".sidebar").toggleClass("toggled");
     if ($(".sidebar").hasClass("toggled")) {
@@ -11,14 +11,14 @@
   });
 
   // Close any open menu accordions when window is resized below 768px
-  $(window).resize(function() {
+  $(window).resize(function () {
     if ($(window).width() < 768) {
       $('.sidebar .collapse').collapse('hide');
     };
   });
 
   // Prevent the content wrapper from scrolling when the fixed side navigation hovered over
-  $('body.fixed-nav .sidebar').on('mousewheel DOMMouseScroll wheel', function(e) {
+  $('body.fixed-nav .sidebar').on('mousewheel DOMMouseScroll wheel', function (e) {
     if ($(window).width() > 768) {
       var e0 = e.originalEvent,
         delta = e0.wheelDelta || -e0.detail;
@@ -28,7 +28,7 @@
   });
 
   // Scroll to top button appear
-  $(document).on('scroll', function() {
+  $(document).on('scroll', function () {
     var scrollDistance = $(this).scrollTop();
     if (scrollDistance > 100) {
       $('.scroll-to-top').fadeIn();
@@ -38,7 +38,7 @@
   });
 
   // Smooth scrolling using jQuery easing
-  $(document).on('click', 'a.scroll-to-top', function(e) {
+  $(document).on('click', 'a.scroll-to-top', function (e) {
     var $anchor = $(this);
     $('html, body').stop().animate({
       scrollTop: ($($anchor.attr('href')).offset().top)
@@ -191,13 +191,13 @@ const addInputGroup = () => {
 
 // 버튼 눌렀을 때 회차 삭제
 const deleteInputGroup = () => {
-    // n회차 칸이 몇개 들어있는지 확인 하기 위한 nodeList
-    var formGroup = document.querySelectorAll('.fg_custom2 > .form-group');
-    var roundNum = formGroup.item(0).children.length;
+  // n회차 칸이 몇개 들어있는지 확인 하기 위한 nodeList
+  var formGroup = document.querySelectorAll('.fg_custom2 > .form-group');
+  var roundNum = formGroup.item(0).children.length;
 
-    if (roundNum > 4) {
-      formGroup.item(0).children.item(roundNum - 1).remove();
-    }
+  if (roundNum > 4) {
+    formGroup.item(0).children.item(roundNum - 1).remove();
+  }
 };
 
 plusBtn.addEventListener('click', (e) => addInputGroup());
@@ -216,4 +216,60 @@ submitBtn.addEventListener('click', (e) => {
   } else {
     submitInput.click();
   }
+});
+
+// 비동기 방식으로 각 행사의 디테일 정보 가져오기
+const rows = $('.tableRowData')
+const modal_details = $('#modal_details > div:nth-child(even)');
+const modal_rounds = $('#modal_rounds');
+
+console.log(modal_rounds);
+console.log(modal_details);
+
+rows.each(function (index, item) {
+
+  item.addEventListener('click', (e) => {
+    // 초기화 작업
+    modal_rounds.empty();
+
+    $.ajax(ajaxSettings = {
+      url: `/royal/YWRtaW5wYWdl/event/ajax/${item.id}`,
+      method: 'GET',
+      dataType: 'json',
+      success: (object, state, xhttp) => {
+
+        console.log(object.event);
+        // 회차 정보 넣기
+        object.event_rounds.forEach(item => {
+          const newRoundDiv = document.createElement('div')
+          const newText = document.createTextNode(`${item.round_num}회차 : ${item.round_time}`);
+          newRoundDiv.appendChild(newText);
+          modal_rounds.append(newRoundDiv);
+        });
+
+        // 상세 정보 넣기
+        modal_details.each(function (index, item) {
+          switch (index) {
+            case 0:
+              item.innerHTML = object.event.event_name;
+              break;
+            case 1:
+              item.innerHTML = object.event.event_location;
+              break;
+            case 2:
+              item.innerHTML = object.event.start_date;
+              break;
+            case 3:
+              item.innerHTML = object.event.end_date;
+              break;
+            case 3:
+              item.innerHTML = object.event.event_link;
+              break;
+            default:
+              item.innerHTML = object.event.reservable;
+          }
+        })
+      }
+    })
+  });
 });

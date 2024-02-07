@@ -49,7 +49,7 @@
 		<div id="collapseReservation" class="collapse" aria-labelledby="headingForm" data-parent="#accordionSidebar">
 			<div class="bg-white py-2 collapse-inner rounded">
 				<h6 class="collapse-header">예약관리</h6>
-				<a class="collapse-item" href="/royal/YWRtaW5wYWdl/reservation/delete">취소</a>
+				<a class="collapse-item" href="/royal/YWRtaW5wYWdl/reservation/form/delete">취소</a>
 			</div>
 		</div>
 	</li>
@@ -62,9 +62,9 @@
 		<div id="collapseEvent" class="collapse" aria-labelledby="headingTable" data-parent="#accordionSidebar">
 			<div class="bg-white py-2 collapse-inner rounded">
 				<h6 class="collapse-header">행사관리</h6>
-				<a class="collapse-item" href="/royal/YWRtaW5wYWdl/event/insert">추가</a> 
-				<a class="collapse-item" href="/royal/YWRtaW5wYWdl/event/update">수정</a>
-				<a class="collapse-item" href="/royal/YWRtaW5wYWdl/event/delete">삭제</a>
+				<a class="collapse-item" href="/royal/YWRtaW5wYWdl/event/form/insert">추가</a> 
+				<a class="collapse-item" href="/royal/YWRtaW5wYWdl/event/form/update">수정</a>
+				<a class="collapse-item" href="/royal/YWRtaW5wYWdl/event/form/delete">삭제</a>
 			</div>
 		</div>
 	</li>
