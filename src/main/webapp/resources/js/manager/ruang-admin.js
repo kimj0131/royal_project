@@ -257,13 +257,21 @@ rows.each(function (index, item) {
               item.innerHTML = object.event.event_location;
               break;
             case 2:
-              item.innerHTML = object.event.start_date;
+              const start_dateObject = new Date(object.event.start_date);
+              item.innerHTML = `${start_dateObject.getFullYear()}년 ${start_dateObject.getMonth()}월 ${start_dateObject.getDate()}일`;
               break;
             case 3:
-              item.innerHTML = object.event.end_date;
+              const end_dateObject = new Date(object.event.end_date);
+              item.innerHTML = `${end_dateObject.getFullYear()}년 ${end_dateObject.getMonth()}월 ${end_dateObject.getDate()}일`;
               break;
-            case 3:
-              item.innerHTML = object.event.event_link;
+            case 4:
+              function autoLineBreak(text, maxLen) {
+                const regex = new RegExp(`(.{1,${maxLen}})`, "g");
+                return text.replace(regex, "$1\n");
+              }
+              const text = object.event.event_link;
+              const result = autoLineBreak(text, 10);
+              item.innerHTML = result;
               break;
             default:
               item.innerHTML = object.event.reservable;
