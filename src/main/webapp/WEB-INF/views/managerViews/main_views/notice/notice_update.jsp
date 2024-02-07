@@ -7,10 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-	
-	<jsp:include page="/WEB-INF/views/userViews/layout/navibar.jsp"/>
-	
-	공지사항 페이지
-	
+
 </body>
 </html>
