@@ -15,9 +15,9 @@
 <link rel="stylesheet" href="${sliderCSS}" />
 </head>
 <body>
-	<jsp:include page="/WEB-INF/views/layout/header.jsp" />
-	<jsp:include page="/WEB-INF/views/layout/navibar.jsp" />
-	<div class="title" style="font-size: 25px;">서울고궁안내</div>
+	<jsp:include page="/WEB-INF/views/userViews/layout/header.jsp" />
+	<jsp:include page="/WEB-INF/views/userViews/layout/navibar.jsp" />
+	<div class="title1" style="font-size: 25px;">서울고궁안내</div>
 
 	<div class="outer">
 		<div class="inner-list">
@@ -36,40 +36,45 @@
 			</div>
 		</div>
 	</div>
-	<div class="left">
-		<div class="notice">
-			<div class="title_top">
-				<h2 class="notice_title">공지사항</h2>
-				<a href="/royal/communication/notice"> <div class="all">전체보기</div>
-				</a>
+	<div class="alarm">
+		<div class="left">
+			<div class="notice">
+				<div class="title_top">
+					<div class="notice_title">공지사항</div>
+					<a class="all" href="/royal/communication/notice">전체보기</a>
+					<!-- 전체보기 링크 -->
+				</div>
+				<ul class="list">
+					<li class="item"><a href="">
+							<div class="title">공지사항</div>
+							<div class="inner_title">ssss</div>
+							<div class="inner_date">2024.02.12</div>
+					</a></li>
+					<c:forEach var="notice" items="${noticeList}" begin="1" end="5"
+						step="1" varStatus="status">
+						<li class="item">
+							<div class="title">공지사항</div>
+							<div class="inner_title">${notice.notice_title}</div>
+							<div class="inner_date">${notice.notice_date}</div>
+						</li>
+					</c:forEach>
+				</ul>
 			</div>
-			<ul class="list">
-				<li class="item"><a href=""> <div class="inner_title">공지사항</div>
-						<div>공지사항 제목 내용1111111</div> <span class="inner_date">2024.02.01</span>
-				</a></li>
-				<li class="item"><a href=""> <span class="inner_title">공지사항</span>
-						<div>공지사항 제목 내용2222222</div> <span class="inner_date">2024.02.02</span>
-				</a></li>
-				<li class="item"><a href=""> <span class="inner_title">공지사항</span>
-						<div>공지사항 제목 내용3333333</div> <span class="inner_date">2024.02.03</span>
-				</a></li>
-				<li class="item"><a href=""> <span class="inner_title">공지사항</span>
-						<div>공지사항 제목 내용4444444</div> <span class="inner_date">2024.02.04</span>
-				</a></li>
-				<li class="item"><a href=""> <span class="inner_title">공지사항</span>
-						<div>공지사항 제목 내용5555555</div> <span class="inner_date">2024.02.05</span>
-				</a></li>
-			</ul>
 		</div>
 		<div class="right">
-			<div class="inform">
-			<h2 class="main_title">알림판</h2>
-				<a href="/royal/palace/event">알림판(행사)</a>
+			<div class="banner_wrap">
+				<div class="inform">
+					<div class="main_title">알림판</div>
+				</div>
+				<a class="imgtag" href="https://www.chf.or.kr/short/6d6N"> <img alt=""
+					class="img" src="https://www.chf.or.kr/jnrepo/namo/img/images/000063/20240119205704416_TEOZXDIK.png">
+				</a>
+				<div></div>
+				<!-- 행사 가는 링크 달기 -->
 			</div>
-			<!-- 행사 가는 링크 달기 -->
 		</div>
 	</div>
-	<jsp:include page="/WEB-INF/views/layout/footer.jsp" />
+	<jsp:include page="/WEB-INF/views/userViews/layout/footer.jsp" />
 
 	<script src="${sliderJS}"></script>
 </body>

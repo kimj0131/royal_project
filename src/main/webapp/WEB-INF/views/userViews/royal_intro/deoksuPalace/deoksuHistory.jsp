@@ -12,8 +12,8 @@
 <link rel="stylesheet" href="${historyCSS}" />
 </head>
 <body>
-	<jsp:include page="/WEB-INF/views/layout/header.jsp" />
-	<jsp:include page="/WEB-INF/views/layout/navibar.jsp"/>
+	<jsp:include page="/WEB-INF/views/userViews/layout/header.jsp" />
+	<jsp:include page="/WEB-INF/views/userViews/layout/navibar.jsp"/>
 	<br>
 	<div>
 		<div class="palace_title">덕수궁 소개.역사</div>
@@ -148,6 +148,6 @@
 	</div>
 	<br>
 	<br>
-	<jsp:include page="/WEB-INF/views/layout/footer.jsp" />
+	<jsp:include page="/WEB-INF/views/userViews/layout/footer.jsp" />
 </body>
 </html>
