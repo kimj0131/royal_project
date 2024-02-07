@@ -24,18 +24,14 @@ public interface EventManageMapper {
 	// Event Update
 	int updateEvent(EventManageDTO dto, int modify_id);
 	
-	// Event_Round Update
-	// 단일로 받아서 Update
-	int updateEventRound(EventRoundManageDTO roundDTO, int modify_id);
-	// *** List로 받아서 Update
-	int updateEventRoundList(List<EventRoundManageDTO> list);
-	
+	// Event_Round Update > not use
+	// int updateEventRound(EventRoundManageDTO roundDTO, int modify_id);
 	
 	// Event Delete
 	int deleteEvent(int delete_id);
 	// Event_Round Delete
 	int deleteEventRound(int delete_id);
-	// Eveny_Round Delete one to max round_num
-	int deleteEventRoundToMaxRoundNum(int delete_id);
+	// Eveny_Round Delete one to max round_num > not use
+	// int deleteEventRoundToMaxRoundNum(int delete_id);
 
 }

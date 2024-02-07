@@ -90,7 +90,7 @@
 	</update>
 	
 	<!-- 이벤트 회차 수정 (단일로 받았을 때) -->
-	<update id="updateEventRound">
+	<!-- <update id="updateEventRound">
 		UPDATE event_round SET
 			event_id=#{event_id},
 			round_num=#{round_num},
@@ -98,20 +98,7 @@
 			round_capacity=#{round_capacity}
 		WHERE
 			round_id=#{modify_id}
-	</update>
-	
-	<!-- *** 이벤트 회차 수정 (리스트로 받았을때) -->
-	<update id="updateEventRoundList" parameterType="java.util.List">\
-		<foreach collection="list" item="item">
-		UPDATE event_round SET
-			event_id=#{item.event_id},
-			round_num=#{item.round_num},
-			round_time=#{item.round_time},
-			round_capacity=#{item.round_capacity}
-		WHERE
-			round_id=#{item.round_id}
-		</foreach>
-	</update>
+	</update> -->
 	
 	
 	<!-- DELETE -->
@@ -124,9 +111,9 @@
 		DELETE FROM event_round WHERE event_id=#{delete_id}
 	</delete>
 	<!-- 이벤트 회차 하나 삭제(마지막 회차) -->
-	<delete id="deleteEventRoundToMaxRoundNum">
+	<!-- <delete id="deleteEventRoundToMaxRoundNum">
 		DELETE FROM event_round WHERE event_id=#{delete_id} AND round_num=(SELECT MAX(round_num) FROM event_round)
-	</delete>
+	</delete> -->
 	
 	
 	

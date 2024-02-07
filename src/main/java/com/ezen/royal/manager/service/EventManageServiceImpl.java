@@ -14,11 +14,11 @@ import lombok.extern.log4j.Log4j;
 
 @Log4j
 @Service
-public class EventManageServiceImpl implements EventManageService{
+public class EventManageServiceImpl implements EventManageService {
 
 	@Autowired
 	EventManageMapper eventManageMapper;
-	
+
 	// 이벤트 전체 리스트
 	@Override
 	public void getEventList(Model model) {
@@ -35,9 +35,9 @@ public class EventManageServiceImpl implements EventManageService{
 	// 이벤트 추가, 이벤트회차도 같이 추가한다
 	@Override
 	public int insertEvent(EventManageDTO dto, List<EventRoundManageDTO> roundList) {
-		
+
 		int result = eventManageMapper.insertEvent(dto);
-		
+
 		if (result > 0) {
 			return eventManageMapper.insertEventRounds(roundList);
 		} else {
@@ -48,32 +48,34 @@ public class EventManageServiceImpl implements EventManageService{
 	// 이벤트 수정
 	@Override
 	public int updateEvent(EventManageDTO dto, List<EventRoundManageDTO> roundList, int modify_id) {
-		
-		// 이벤트 수정시 회차 수정 이력이 있으면 다시 insert한다
-		if (dto.getEvent_rounds() != eventManageMapper.getEventDetail(modify_id).getEvent_rounds()) {
-			int delResult = eventManageMapper.deleteEventRound(dto.getEvent_id());
+
+		// 이벤트 수정시 회차 데이터를 다시 insert한다
+		// 수정할 테이블의 event_id를 받아 round 데이터를 delete
+		int delResult = eventManageMapper.deleteEventRound(dto.getEvent_id());
+		if (delResult > 0) {
+			// 삭제가 완료되었으면 전달받은 list를 insert
 			int insResult = eventManageMapper.insertEventRounds(roundList);
-			
-			if (delResult > 0 && insResult > 0) {
+			if (insResult > 0) {
+				// 이후 이벤트를 update
 				return eventManageMapper.updateEvent(dto, modify_id);
 			} else {
-				return -1;
+				return 0;
 			}
 		} else {
-			return eventManageMapper.updateEvent(dto, modify_id);
+			return 0;
 		}
+
 	}
 
-	// 이벤트 회차 수정 단일
-	@Override
-	public int updateEventRound(EventRoundManageDTO roundManageDTO, int modify_round_id) {
-		return eventManageMapper.updateEventRound(roundManageDTO, modify_round_id);
-	}
-	
 	// 이벤트 삭제
 	@Override
 	public int deleteEvent(int delete_id) {
-		return eventManageMapper.deleteEvent(delete_id);
+		int roundResult = eventManageMapper.deleteEventRound(delete_id);
+		if (roundResult > 0) {
+			return eventManageMapper.deleteEvent(delete_id);
+		} else {
+			return 0;
+		}
 	}
-	
+
 }
