@@ -25,7 +25,6 @@
 ## mission
 > * 방혜미 : 지도 api 데이터 활용 - 오시는길 페이지 
 > * 방혜미 : 내부 건축물 이미지 (DB의 이미지path 추가하여 이미지 여러개 나열 해보기)
-> * 김준형 : Event 테이블 데이터 추가 시 회차만큼 Event_round 테이블 데이터 추가하는 service
 > * 김준형 : Event 테이블 데이터 회차 컬럼을 수정 시 Event_round 테이블 데이터 회차수 만큼 insert or delete 하는 service
 > * 조현우 : 관리자 페이지에 각각의 뷰에서 DB데이터 CRUD를 GUI로 구성
 > * 김태형 : 마이페이지에 기본정보, 예약내역, QnA 내역 나오게 전체 Controller, DTO, Service, Mapper, JSP 제작
@@ -38,6 +37,7 @@
 > * 방혜미 :  공공API 데이터활용, 4대궁궐 및 종묘 내부 건축물 정보 DB에서 가져오기 [[Commit]](https://github.com/kimj0131/royal_project/commit/4d064e4af6bbd1177c85bf19ec7aa69d7ccdcd76)
 > * 김태형 : 지도 api 연계
 > * 김태형 : 커버페이지 => 메인페이지 이동 및 각 궁 소개페이지 이동 작업
+> * 조현우 : Event 테이블 데이터 추가 시 회차만큼 Event_round 테이블 데이터 추가하는 service [[Commit]](https://github.com/kimj0131/royal_project/commit/df13ec3e732f5fa6803c16d42b58d2afc91e42a9)
 ***
 ## 발생한 문제
 > * 
