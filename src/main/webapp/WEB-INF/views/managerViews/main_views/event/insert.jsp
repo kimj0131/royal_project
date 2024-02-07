@@ -22,6 +22,8 @@
 	<c:url value="/resources/vendor/manager/datatables/dataTables.bootstrap4.css" var="dataTablesBootstrap4Css" />
 	<link href="${dataTablesBootstrap4Css}" rel="stylesheet">
 	
+	<!-- jquery -->
+	<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 </head>
 
 <body id="page-top">
@@ -59,7 +61,7 @@
 									<h6 class="m-0 font-weight-bold text-primary">행사 추가</h6>
 								</div>
 								<div class="card-body">
-									<form action="/royal/YWRtaW5wYWdl/event/insert" method="post">
+									<form action="/royal/YWRtaW5wYWdl/event/post/insert" method="post">
 										<div class="fg_custom_wrapper">
 											<div class="fg_custom1">
 												<div class="form-group">
@@ -168,21 +170,42 @@
 									</div>
 									<div class="modal-body">
 										<h5 class="font-weight-bold">상세 정보</h5>
-										<p>
-											<div> 행사명 : 달빛축제 </div>
-											<div> 장소 : 서울 종로구 사직로 161 경복궁 </div>
-											<div> 시작일 : 2024/02/05 </div>
-											<div> 종료일 : 2024/02/05 </div>
-											<div> 홈페이지 : www.naver.com </div>
-										</p>
+										<div id="modal_details">
+											<div style="font-size: 12px; font-weight: bold">
+												행사명
+											</div>
+											<div style="margin-bottom: 10px"></div>
+											
+											<div style="font-size: 12px; font-weight: bold">
+												장소
+											</div>
+											<div style="margin-bottom: 10px"></div>
+												
+											<div style="font-size: 12px; font-weight: bold">
+												시작일
+											</div>
+											<div style="margin-bottom: 10px"></div>
+						
+											<div style="font-size: 12px; font-weight: bold">
+												종료일
+											</div>
+											<div style="margin-bottom: 10px"></div>
+										
+											<div style="font-size: 12px; font-weight: bold">
+												홈페이지
+											</div>
+											<div style="margin-bottom: 10px"></div>
+											
+											<div style="font-size: 12px; font-weight: bold">
+												예약가능 여부
+											</div>
+											<div style="margin-bottom: 10px"></div>
+										</div>
+											
 										<br>
 										<h5 class="font-weight-bold">회차 정보</h5>
-										<p>
-											<div> 1회차 : 4:00 ~ 5:00 </div>
-											<div> 2회차 : 4:00 ~ 5:00 </div>
-											<div> 3회차 : 4:00 ~ 5:00 </div>
-											<div> 4회차 : 4:00 ~ 5:00 </div>
-										</p>
+										<div id="modal_rounds">
+										</div>
 									</div>
 									<div class="modal-footer">
 										<button type="button" class="btn btn-outline-primary"
@@ -228,17 +251,19 @@
 											</tr>
 										</tfoot>
 										<tbody>
-											<tr id="${event_id}" data-toggle="modal" data-target="#detailModal">
-												<td>00</td>
-												<td>해설</td>
-												<td>궁 투어</td>
-												<td>서울 종로구 사직로 161 경복궁</td>
-												<td>2024/00/00</td>
-												<td>2024/00/00</td>
-												<td>naver.com</td>
-												<td>!@$!%15125</td>
-												<td>가능</td>
-											</tr>
+											<c:forEach items="${eventList}" var="event">
+												<tr id="${event.event_id}" class="tableRowData" data-toggle="modal" data-target="#detailModal">
+													<td style="word-break:break-all">${event.royal_id}</td>
+													<td style="word-break:break-all">${event.event_type}</td>
+													<td style="word-break:break-all">${event.event_name}</td>
+													<td style="word-break:break-all">${event.event_location}</td>
+													<td width="100px" style="word-break:break-all">${event.start_date}</td>
+													<td width="100px" style="word-break:break-all">${event.end_date}</td>
+													<td width="200px" style="word-break:break-all">${event.event_link}</td>
+													<td width="200px" style="word-break:break-all">${event.event_imgpath}</td>
+													<td style="word-break:break-all">${event.reservable}</td>
+												</tr>
+											</c:forEach>
 										</tbody>
 									</table>
 								</div>
