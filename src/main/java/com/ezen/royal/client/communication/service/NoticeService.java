@@ -6,6 +6,6 @@ public interface NoticeService {
 	
 	void getNoticeList(Model model);
 	
-	
+	Integer getUniqueValuesCount();
 
 }

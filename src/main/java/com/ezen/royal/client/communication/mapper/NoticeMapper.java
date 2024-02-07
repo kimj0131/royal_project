@@ -10,5 +10,7 @@ public interface NoticeMapper {
 	public List<NoticeDTO> getList();
 	
 	public NoticeDTO get(int notice_id);
+
+	Integer getUniqueValuesCount();
 	
 }
