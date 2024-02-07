@@ -16,7 +16,7 @@
 <link rel="stylesheet" href="${public_communicationJS}" />
 </head>
 <body>
-	<jsp:include page="../../layout/header.jsp" />
+	<jsp:include page="/WEB-INF/views/userViews/layout/header.jsp" />
 
 	<div class="top_img_name">
 		<div>
@@ -99,6 +99,6 @@
 	</div>
 
 	<script src="${public_communicationJS}"></script>
-	<jsp:include page="../../layout/footer.jsp" />
+	<jsp:include page="/WEB-INF/views/userViews/layout/footer.jsp" />
 </body>
 </html>
