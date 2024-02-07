@@ -6,7 +6,7 @@ import lombok.Data;
 public class FaqDTO {
 
 	private Integer faq_id;
-	private Integer faq_royal_id;
+	private Integer royal_id;
 	private String faq_title;
 	private String faq_result;
 

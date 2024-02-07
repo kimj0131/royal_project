@@ -77,6 +77,26 @@
 							<ul class="faq-list">
 								<c:forEach items="${faq}" var="faq" varStatus="status">
 									<li class="q_item">
+										<div>${faq.faq_id}</div>
+										<div>
+											<c:choose>
+												<c:when test="${faq.faq_royal_id == 1}">
+							                경복궁
+							            </c:when>
+												<c:when test="${faq.faq_royal_id == 2}">
+							                창덕궁
+							            </c:when>
+												<c:when test="${faq.faq_royal_id == 3}">
+							                창경궁
+							            </c:when>
+												<c:when test="${faq.faq_royal_id == 4}">
+							                덕수궁
+							            </c:when>
+												<c:when test="${faq.faq_royal_id == 5}">
+							                종묘
+							            </c:when>
+											</c:choose>
+										</div>
 										<div class="faq-title"
 											onclick="toggleContent(${status.index})">
 											${faq.faq_title}</div>
@@ -100,15 +120,21 @@
 						</div>
 
 						<div class="input_wrap">
-							<form id="qnaForm" action="/communication/faq/" method="POST">
-								<textarea id="qnaContent" name="qna_content" rows="5"
-									cols="80"></textarea>
-								<input id="" type="hidden"
-									name="member_name" />
+							<form id="qnaForm" action="/royal/communication/faq/"
+								method="POST">
+								<!-- 문의 제목 값을 담는 숨겨진 필드 -->
+								<input type="text" name="qna_title" value="${qna.qna_title}">
+								<textarea id="qnaContent" name="qna_content" rows="5" cols="80"></textarea>
+								<input id="qnaWriter" type="text" name="member_name" />
+								<!-- 사용자 이름을 입력하는 필드 -->
+								<input type="text" name="qna_royal_id"
+									value="${qna.qna_royal_id}">
+								<!-- Royal ID 값을 담는 숨겨진 필드 -->
+								<!--  <input type="hidden" name="qna_date" value="${qna.qna_date}">-->
+								<!-- 문의 날짜 값을 담는 숨겨진 필드 -->
 								<button class="btn" type="submit">보내기</button>
 							</form>
 						</div>
-						
 					</div>
 				</div>
 
