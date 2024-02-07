@@ -186,14 +186,13 @@ public class ManagementController {
 		eventManageDTO.setReservable(reservable.charAt(0));
 		//
 		
-		
 		// log
 		log.info(eventManageDTO);
 		log.info(eventRoundManageDTO_List);
 		//
 		
 		
-		// eventManageService.insertEvent(null, null, 0);
+		eventManageService.insertEvent(eventManageDTO, eventRoundManageDTO_List);
 		return "managerViews/main_views/event/insert";	
 	}
 	

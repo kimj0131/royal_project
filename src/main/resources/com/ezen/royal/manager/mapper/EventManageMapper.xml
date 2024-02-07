@@ -62,7 +62,7 @@
 		) SELECT event_round_id_seq.nextval, A.* FROM(
 		<foreach item="item" collection="list" separator="UNION ALL">
 			SELECT
-				#{item.event_id} as event_id,
+				(SELECT max(event_id) FROM event_list) as event_id,
 				#{item.round_num} as round_num,
 				#{item.round_time} as round_time,
 				#{item.round_capacity} as round_capaticy

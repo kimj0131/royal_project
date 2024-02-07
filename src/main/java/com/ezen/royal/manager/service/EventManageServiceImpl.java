@@ -32,11 +32,13 @@ public class EventManageServiceImpl implements EventManageService{
 	// 이벤트 상세내용 
 	/**
 	 *  * 이벤트 테이블의 지정된 내용을 attribute에 싣는다. <br>
-	 *  ※ attribute name = event
+	 *  ※ attribute name = event	<br>
+	 *  ※ attribute name = event_rounds	<br>
 	 */
 	@Override
 	public void getEventDetail(Model model, int event_id) {
 		model.addAttribute("event", eventManageMapper.getEventDetail(event_id));
+		model.addAttribute("event_rounds", eventManageMapper.getEventRoundList(event_id));
 	}
 
 	// 이벤트 추가, 이벤트회차도 같이 추가한다
@@ -49,10 +51,10 @@ public class EventManageServiceImpl implements EventManageService{
 	@Override
 	public int insertEvent(EventManageDTO dto, List<EventRoundManageDTO> roundList) {
 		
-		int resultRound = eventManageMapper.insertEventRounds(roundList);
+		int result = eventManageMapper.insertEvent(dto);
 		
-		if (resultRound > 0) {
-			return eventManageMapper.insertEvent(dto);
+		if (result > 0) {
+			return eventManageMapper.insertEventRounds(roundList);
 		} else {
 			return -1;
 		}
