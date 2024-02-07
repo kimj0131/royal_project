@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -141,7 +142,8 @@
 														<div class="input-group-prepend">
 															<span class="input-group-text" id="basic-addon1">1회차</span>
 														</div>
-														<input name="round1" type="time" class="form-control" placeholder="운영시간" aria-label="time" aria-describedby="basic-addon1">
+														<input name="round1" type="time" class="roundInput1 form-control" 
+															placeholder="운영시간" aria-label="time" aria-describedby="basic-addon1">
 													</div>
 												</div>
 											
@@ -162,15 +164,17 @@
 							<div class="modal-dialog" role="document">
 								<div class="modal-content">
 									<div class="modal-header">
-										<h5 class="modal-title" id="exampleModalLongTitle">경복궁 - 달빛축제</h5>
+										<h5 class="modal-title modal_details_title" id="exampleModalLongTitle"></h5>
 										<button type="button" class="close" data-dismiss="modal"
 											aria-label="Close">
 											<span aria-hidden="true">&times;</span>
 										</button>
 									</div>
 									<div class="modal-body">
+										<img class="modal_details_img" style="width: 450px;">
+										<hr>
 										<h5 class="font-weight-bold">상세 정보</h5>
-										<div id="modal_details">
+										<div id="modal_details_top">
 											<div style="font-size: 12px; font-weight: bold">
 												행사명
 											</div>
@@ -203,8 +207,9 @@
 										</div>
 											
 										<br>
+										
 										<h5 class="font-weight-bold">회차 정보</h5>
-										<div id="modal_rounds">
+										<div id="modal_details_bottom">
 										</div>
 									</div>
 									<div class="modal-footer">
@@ -257,10 +262,10 @@
 													<td style="word-break:break-all">${event.event_type}</td>
 													<td style="word-break:break-all">${event.event_name}</td>
 													<td style="word-break:break-all">${event.event_location}</td>
-													<td width="100px" style="word-break:break-all">${event.start_date}</td>
-													<td width="100px" style="word-break:break-all">${event.end_date}</td>
-													<td width="200px" style="word-break:break-all">${event.event_link}</td>
-													<td width="200px" style="word-break:break-all">${event.event_imgpath}</td>
+													<td width="70px" style="word-break:break-all">${event.start_date}</td>
+													<td width="70px" style="word-break:break-all">${event.end_date}</td>
+													<td width="150px" style="word-break:break-all">${event.event_link}</td>
+													<td width="150px" style="word-break:break-all">${event.event_imgpath}</td>
 													<td style="word-break:break-all">${event.reservable}</td>
 												</tr>
 											</c:forEach>

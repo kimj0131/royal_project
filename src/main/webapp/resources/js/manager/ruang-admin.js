@@ -117,7 +117,7 @@ const navItems = document.querySelectorAll('.nav-item');
 
 const href = location.href;
 
-if (href.endsWith('/reservation/delete')) {
+if (href.endsWith('/reservation/form/delete')) {
   collapseItems.item(0).classList.add('active');
   collapses.item(0).classList.add('show');
   navItems.item(1).classList.add('active');
@@ -175,6 +175,7 @@ const addInputGroup = () => {
     const input = document.createElement('input');
     input.name = `round${roundNum}`;
     input.type = 'time';
+    input.classList.add(`roundInput${roundNum}`);
     input.classList.add('form-control');
     input.placeholder = '운영시간';
     input.setAttribute('aria-label', 'time');
@@ -210,21 +211,22 @@ const submitInput = document.querySelector('#submitInput');
 submitBtn.addEventListener('click', (e) => {
   const start_date = document.querySelector('#start_date').valueAsDate;
   const end_date = document.querySelector('#end_date').valueAsDate;
-  // 시작일과 종료일을 입력하지 않았다면 submit 불가
-  if (start_date == null || end_date == null) {
-    alert('시작일과 종료일을 설정해 주세요');
-  } else {
-    submitInput.click();
-  }
+  const roundInputs = document.querySelectorAll('[class^="roundInput"]');
+
+  roundInputs.forEach((roundInput) => {
+    // 시작일, 종료일, 회차별 시간을 입력하지 않았다면 submit 불가
+    if (start_date == null || end_date == null || roundInput.valueAsDate == null) {
+      alert('시작일, 종료일, 회차별 시간을 설정해 주세요');
+    } else {
+      submitInput.click();
+    }
+  });
 });
 
 // 비동기 방식으로 각 행사의 디테일 정보 가져오기
 const rows = $('.tableRowData')
-const modal_details = $('#modal_details > div:nth-child(even)');
-const modal_rounds = $('#modal_rounds');
-
-console.log(modal_rounds);
-console.log(modal_details);
+const modal_details = $('#modal_details_top > div:nth-child(even)');
+const modal_rounds = $('#modal_details_bottom');
 
 rows.each(function (index, item) {
 
@@ -238,7 +240,34 @@ rows.each(function (index, item) {
       dataType: 'json',
       success: (object, state, xhttp) => {
 
-        console.log(object.event);
+        // 이미지 넣기
+        const modal_details_img = $('.modal_details_img');
+        modal_details_img.attr('src', object.event.event_imgpath);
+
+        // 모달 창 타이틀 넣기
+        const modal_details_title = $('.modal_details_title');
+        const royal_id = object.event.royal_id;
+        var royal_name;
+        switch (royal_id) {
+          case 1:
+            royal_name = '경복궁';
+            break;
+          case 2:
+            royal_name = '창덕궁';
+            break;
+          case 3:
+            royal_name = '창경궁';
+            break;
+          case 4:
+            royal_name = '덕수궁';
+            break;
+          case 5:
+            royal_name = '종묘';
+            break;
+        }
+        modal_details_title.html(`${royal_name} - ${object.event.event_name}`);
+
+
         // 회차 정보 넣기
         object.event_rounds.forEach(item => {
           const newRoundDiv = document.createElement('div')
@@ -267,10 +296,10 @@ rows.each(function (index, item) {
             case 4:
               function autoLineBreak(text, maxLen) {
                 const regex = new RegExp(`(.{1,${maxLen}})`, "g");
-                return text.replace(regex, "$1\n");
+                return text.replace(regex, "$1<br>");
               }
               const text = object.event.event_link;
-              const result = autoLineBreak(text, 10);
+              const result = autoLineBreak(text, 55);
               item.innerHTML = result;
               break;
             default:
