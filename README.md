@@ -36,8 +36,8 @@
 > * 김태형 : 지도 api 연계
 > * 김태형 : 커버페이지 => 메인페이지 이동 및 각 궁 소개페이지 이동 작업
 > * 조현우 : Event 테이블 데이터 추가 시 회차만큼 Event_round 테이블 데이터 추가하는 service [[Commit]](https://github.com/kimj0131/royal_project/commit/df13ec3e732f5fa6803c16d42b58d2afc91e42a9)
-> * 방혜미 : 내부 건축물 이미지 (DB의 이미지path추가 및 js슬라이드 작업 )[[Commit]] https://github.com/kimj0131/royal_project/commit/3c24505a14fb54638071ae06171c8d312f8c1c31)
-> * 방혜미 : 지도 api 데이터 활용 - 관람안내 > 오시는길 페이지 [[Commit]]https://github.com/kimj0131/royal_project/commit/012c89358b6c041b1c05169f36b2536019a3889c)
+> * 방혜미 : 내부 건축물 이미지 (DB의 이미지path추가 및 js슬라이드 작업 )[[commit] https://github.com/kimj0131/royal_project/commit/3c24505a14fb54638071ae06171c8d312f8c1c31)
+> * 방혜미 : 지도 api 데이터 활용 - 관람안내 > 오시는길 페이지 [[commit] https://github.com/kimj0131/royal_project/commit/012c89358b6c041b1c05169f36b2536019a3889c)
 ***
 ## 발생한 문제
 > * 
