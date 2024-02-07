@@ -55,11 +55,19 @@
 		<form name="listForm" id="listForm" method="post"
 			onsubmit="fn_search(); return false;">
 			<div class="search_right">
-				<select name="search_select_id" id="search_select_id" title="구분">
+				<select name="search_select_id1" id="search_select_id1" title="구분">
 					<option>전체</option>
 					<option>제목</option>
 					<option>내용</option>
-				</select> <input type="text" name="search_input_id" id="search_input_id"
+				</select> 
+				<select name="search_select_id2" id="search_select_id2" title="구분">
+					<option>전체</option>
+					<option>경복궁</option>
+					<option>덕수궁</option>
+					<option>창경궁</option>
+					<option>종묘</option>
+				</select> 
+				<input type="text" name="search_input_id" id="search_input_id"
 					value title="검색어를 입력해 주세요" placeholder="검색어를 입력해주세요.">
 				<button type="submit">검색</button>
 			</div>
@@ -103,8 +111,19 @@
 			</div>
 		</c:forEach>
 	</div>
+	
+	<div>
+		<a><</a>		
+		<a>1</a>		
+		<a>2</a>		
+		<a>3</a>		
+		<a>4</a>		
+		<a>5</a>		
+		<a>></a>		
+	</div>
 
 	<script src="${public_communicationJS}"></script>
 	<jsp:include page="/WEB-INF/views/userViews/layout/footer.jsp" />
+	
 </body>
 </html>

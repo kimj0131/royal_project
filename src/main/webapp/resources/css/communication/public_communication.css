@@ -195,8 +195,8 @@
     justify-content: flex-end;
 }
 
-#search_select_id{
-    width: 130px;
+#search_select_id1{
+    width: 100px;
     height: 50px;
     border-radius: 25px 0 0 25px;
     background-color: #EAEAEA;
@@ -205,7 +205,29 @@
     border-style: none;
 }
 
-#search_select_id:focus{
+#search_select_id1{
+    width: 110px;
+    height: 50px;
+    border-radius: 25px 0 0 25px;
+    background-color: #EAEAEA;
+    padding: 0 20px;
+    font-size: 16px;
+    border-style: none;
+}
+
+#search_select_id2{
+    width: 100px;
+    height: 50px;
+    background-color: #EAEAEA;
+    padding: 0 15px;
+    font-size: 16px;
+    border-style: none;
+}
+
+
+
+
+#search_select_id1, #search_select_id2 :focus{
     outline: 0;
 }
 
