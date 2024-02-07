@@ -26,6 +26,7 @@
 ## mission
 > * 조현우 : 관리자 페이지에 각각의 뷰에서 DB데이터 CRUD를 GUI로 구성
 > * 김태형 : 마이페이지에 기본정보, 예약내역, QnA 내역 나오게 전체 Controller, DTO, Service, Mapper, JSP 제작
+> * 서빈   : 공지사항의 F&A Q&A 페이지 DB에 데이터 보내는 코드 작성 및 CSS 제작
 
 ## done
 > * 김준형, 조현우 : 공공 API 연계 후 데이터 캐싱(DB) [[Commit]](https://github.com/kimj0131/royal_project/commit/b2bce768f3d814af2542e768a4397b3d1be525f8)
@@ -60,7 +61,6 @@
 >   + session에 로그인 정보가 없으면 로그인 페이지로 되돌려보냄
 > * 방혜미 : 내부 건축물 정보 가져오는 도중 파라미터 2개의 값을 넘기지 못함
 >   + 서비스단 및 매퍼에서 @Param으로 해결
-> * 
 
 
 ***
