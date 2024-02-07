@@ -1,13 +1,13 @@
-var mapContainer = document.getElementById('map'); // 지도를 표시할 div
-var mapOption = {
+const mapContainer = document.querySelector('.map'); // 지도를 표시할 div
+const mapOption = {
 	center : new kakao.maps.LatLng(37.57962, 126.977028), // 지도의 중심좌표(기본 경복궁)
 	level : 4 // 지도의 확대 레벨
 };
 
 // 지도를 표시할 div와  지도 옵션으로  지도를 생성
-var map = new kakao.maps.Map(mapContainer, mapOption);
+const map = new kakao.maps.Map(mapContainer, mapOption);
 
-var marker = new kakao.maps.Marker({
+const marker = new kakao.maps.Marker({
 	// 지도 중심좌표에 마커를 생성
 	position : map.getCenter()
 });
@@ -21,11 +21,11 @@ document.querySelectorAll('.palace-link').forEach( (link)=> {
 		event.preventDefault();
 
 		// 클릭된 링크의 데이터 속성에서 위도와 경도 가져오기
-		var lat = parseFloat(link.getAttribute('data-lat'));
-		var lng = parseFloat(link.getAttribute('data-lng'));
+		const lat = parseFloat(link.getAttribute('data-lat'));
+		const lng = parseFloat(link.getAttribute('data-lng'));
 
 		// 새로운 지도 중심 좌표 생성
-		var newCenter = new kakao.maps.LatLng(lat, lng);
+		const newCenter = new kakao.maps.LatLng(lat, lng);
 
 		// 현재 마커의 위치 업데이트
 		marker.setPosition(newCenter);
