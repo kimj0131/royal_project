@@ -2,12 +2,12 @@
 =================
 
 # 개요
-* 우리나라의 대표적인 관광지인 조선의 4대 궁궐 과 종묘를 소개하는 페이지를 만든다
-* 
+* 우리나라의 대표적인 관광지인 조선의 4대 궁궐 과 종묘를 소개하는 페이지를 제작한다.
 
 # 목표
 * OpenApi와 Database를 사용해 데이터들을 관리하고, 적절한 곳에 데이터를 활용한다.
-* 
+* Database에 저장된 데이터들을 활용, 웹 페이지 적재적소에 활용한다.
+* 사용자(user, manager)들이 사용하기 쉽게 설계 및 제작하는 것을 목표로한다.
 
 # 라이브러리
 > * 스프링
@@ -18,12 +18,12 @@
 > * 공공데이터포털 API 연계로 궁궐, 내부 문화재 정보 조회
 > * 문화재 해설 안내
 > * 문화재 문화 행사 안내
-> * 
+> * 유저는 로그인기능을 통해 QnA 질문작성, 행사 혹은 궁궐해설 예약을 진행할 수 있음
+> * 관리자는 공지사항, QnA 답변, FAQ, 등을 직접 작성하고 수정 및 삭제할 수 있음
 
 ***
 
 ## mission
-> * 김준형 : Event 테이블 데이터 회차 컬럼을 수정 시 Event_round 테이블 데이터 회차수 만큼 insert or delete 하는 service
 > * 조현우 : 관리자 페이지에 각각의 뷰에서 DB데이터 CRUD를 GUI로 구성
 > * 김태형 : 마이페이지에 기본정보, 예약내역, QnA 내역 나오게 전체 Controller, DTO, Service, Mapper, JSP 제작
 
@@ -36,9 +36,13 @@
 > * 김태형 : 지도 api 연계
 > * 김태형 : 커버페이지 => 메인페이지 이동 및 각 궁 소개페이지 이동 작업
 > * 조현우 : Event 테이블 데이터 추가 시 회차만큼 Event_round 테이블 데이터 추가하는 service [[Commit]](https://github.com/kimj0131/royal_project/commit/df13ec3e732f5fa6803c16d42b58d2afc91e42a9)
-> * 방혜미 : 내부 건축물 이미지 (DB의 이미지path추가 및 js슬라이드 작업 )[[commit] https://github.com/kimj0131/royal_project/commit/3c24505a14fb54638071ae06171c8d312f8c1c31)
-> * 방혜미 : 지도 api 데이터 활용 - 관람안내 > 오시는길 페이지 [[commit] https://github.com/kimj0131/royal_project/commit/012c89358b6c041b1c05169f36b2536019a3889c)
+> * 방혜미 : 내부 건축물 이미지 (DB의 이미지path추가 및 js슬라이드 작업 )[[commit]](https://github.com/kimj0131/royal_project/commit/3c24505a14fb54638071ae06171c8d312f8c1c31)
+> * 방혜미 : 지도 api 데이터 활용 - 관람안내 > 오시는길 페이지 [[commit]](https://github.com/kimj0131/royal_project/commit/012c89358b6c041b1c05169f36b2536019a3889c)
+> * 김준형 : Event 테이블 데이터 회차 컬럼을 수정 시 Event_round 테이블 데이터 회차수 만큼 insert or delete 하는 service [[Commit]](https://github.com/kimj0131/royal_project/commit/f856a8d61cbe07e3e5bfee5becbc1c6204e3cc7c)
+> * 
+
 ***
+
 ## 발생한 문제
 > * 
 
