@@ -67,6 +67,8 @@ public class NaverController {
 			session.setAttribute("login_user", dto.getSocial_id());
 			// 로그인을 한 소셜타입 설정(naver)
 			session.setAttribute("login_type ", dto.getMember_type());
+			// 로그인을 한 유저네임
+			session.setAttribute("login_name", dto.getMember_name());
 
 			// 로그인상태에서 다시 로그인 버튼을 누르는 것을 막기위한 어트리뷰트 설정 (필요 X?)
 			// session.setAttribute("logging_in", true);

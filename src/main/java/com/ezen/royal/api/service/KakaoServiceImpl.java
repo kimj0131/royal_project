@@ -190,6 +190,7 @@ public class KakaoServiceImpl implements KakaoService {
 			HttpSession session = req.getSession();
 			session.setAttribute("login_user", social_id);
 			session.setAttribute("login_type", type);
+			session.setAttribute("login_name", nickname);
 			
 			// [log] 
 			log.info("[UM](login_user)세션 어트리뷰트 설정함: " + session.getAttribute("login_user"));
