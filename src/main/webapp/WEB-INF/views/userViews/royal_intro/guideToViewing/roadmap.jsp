@@ -20,7 +20,7 @@
 <body>
 	<script type="text/javascript"
 		src="//dapi.kakao.com/v2/maps/sdk.js?appkey=${apiKey}"></script>
-	<jsp:include page="/WEB-INF/views/layout/header.jsp" />
+	<jsp:include page="/WEB-INF/views/userViews/layout/header.jsp" />
 
 
 	<div class="contents_wrap">
@@ -73,7 +73,7 @@
 
 		
 	
-	<jsp:include page="/WEB-INF/views/layout/footer.jsp" />
+	<jsp:include page="/WEB-INF/views/userViews/layout/footer.jsp" />
 	<script src="${roadmapJS}"></script>
 </body>
 </html>

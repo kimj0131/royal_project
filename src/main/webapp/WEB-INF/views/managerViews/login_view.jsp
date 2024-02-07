@@ -11,7 +11,7 @@ uri="http://java.sun.com/jsp/jstl/core"%>
 	//response.sendRedirect(request.getContextPath() + "/YWRtaW5wYWdl/summary");
 	
 	// 세션 확인
-	System.out.println("로그인뷰 세션확인 : " + request.getSession(false));
+	// System.out.println("로그인뷰 세션확인 : " + request.getSession(false));
 	
 %>
 
@@ -32,7 +32,7 @@ uri="http://java.sun.com/jsp/jstl/core"%>
 		<c:if test="${!empty login_admin}">
 			<script>
 				alert("이미 로그인 중입니다.");
-				location.href='./summary';
+				location.href='/royal/YWRtaW5wYWdl/index/';
 			</script>
 		</c:if>
 	

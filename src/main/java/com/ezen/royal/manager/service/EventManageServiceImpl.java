@@ -1,6 +1,5 @@
 package com.ezen.royal.manager.service;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -48,31 +47,8 @@ public class EventManageServiceImpl implements EventManageService{
 	 *   - 시간은 1시간 간격으로 생성됨 (수정가능)
 	 */
 	@Override
-	public int insertEvent(EventManageDTO dto, List<EventRoundManageDTO> roundList, int capacity) {
+	public int insertEvent(EventManageDTO dto, List<EventRoundManageDTO> roundList) {
 		
-//		// 이벤트 회차 추가
-//		int eventRounds = dto.getEvent_rounds();
-//		
-//		List<EventRoundManageDTO> roundList = new ArrayList<>();
-//		
-//		int defaultHour = 9;
-//		int defaultMin = 0;
-//		for (int i = 0; i < eventRounds; i++) {
-//			EventRoundManageDTO roundDTO = new EventRoundManageDTO();
-//			
-//			roundDTO.setEvent_id(dto.getEvent_id());
-//			roundDTO.setRound_num(i + 1);
-//			if(defaultHour + i >= 12) {
-//				roundDTO.setRound_time(String.format("%02d:%02d", defaultHour + i + 1, defaultMin));
-//			} else {
-//				roundDTO.setRound_time(String.format("%02d:%02d", defaultHour + i, defaultMin));
-//				
-//			}
-//			roundDTO.setRound_capacity(capacity);
-//			
-//			roundList.add(roundDTO);
-//		}
-		 log.info(roundList);
 		int resultRound = eventManageMapper.insertEventRounds(roundList);
 		
 		if (resultRound > 0) {

@@ -12,7 +12,7 @@
 </head>
 <body>
 	
-	<jsp:include page="/WEB-INF/views/layout/header.jsp" />
+	<jsp:include page="/WEB-INF/views/userViews/layout/header.jsp" />
 	<div class="sub">
 		<div class="mainImg">
 			<img
@@ -68,6 +68,6 @@
 	
 	<script src="${reserveJS}"></script>
 
-	<jsp:include page="/WEB-INF/views/layout/footer.jsp" />
+	<jsp:include page="/WEB-INF/views/userViews/layout/footer.jsp" />
 </body>
 </html>

@@ -13,7 +13,7 @@
 
 </head>
 <body>
-	<jsp:include page="../../layout/header_top.jsp" />
+	<jsp:include page="/WEB-INF/views/userViews/layout/header_top.jsp" />
 
 	<div class="top_img_name">
 		<div>
@@ -81,6 +81,6 @@
 
 
 
-	<jsp:include page="../../layout/footer.jsp" />
+	<jsp:include page="/WEB-INF/views/userViews/layout/footer.jsp" />
 </body>
 </html>

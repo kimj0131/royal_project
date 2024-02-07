@@ -19,7 +19,7 @@
 	crossorigin="anonymous"></script>
 </head>
 <body>
-	<jsp:include page="../../layout/header.jsp" />
+	<jsp:include page="/WEB-INF/views/userViews/layout/header.jsp" />
 
 	<div class="wrap">
 		<div class="content_wrap" id="contents_wrap">
@@ -103,10 +103,8 @@
 							<form id="qnaForm" action="/communication/faq/" method="POST">
 								<textarea id="qnaContent" name="qna_content" rows="5"
 									cols="80"></textarea>
-								<br> 글쓴이 <input id="" type="text"
-									name="" /> 비밀번호 <input id="Password"
-									type="password" name="qna_password" /> <input type="hidden"
-									name="" value="">
+								<input id="" type="hidden"
+									name="member_name" />
 								<button class="btn" type="submit">보내기</button>
 							</form>
 						</div>
@@ -148,6 +146,6 @@
 
 	<script src="${public_communicationJS}"></script>
 
-	<jsp:include page="../../layout/footer.jsp" />
+	<jsp:include page="/WEB-INF/views/userViews/layout/footer.jsp" />
 </body>
 </html>
