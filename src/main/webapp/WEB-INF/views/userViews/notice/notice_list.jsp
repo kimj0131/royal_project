@@ -41,9 +41,9 @@
 			<div id="CD_BTN" class="CD">창덕궁</div>
 			<div id="JM_BTN" class="JM">종 묘</div>
 		</div>
+	<div id="white_space"></div>
 	</div>
 
-	<div id="white_space"></div>
 
 	<div class="search_div">
 		<div class="search_left">
