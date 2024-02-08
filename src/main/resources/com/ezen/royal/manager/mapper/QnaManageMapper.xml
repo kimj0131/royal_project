@@ -6,7 +6,7 @@
 
 	<!-- 모든 QnA 목록 (작성일 내림차순) -->
 	<select id="getQNAList">
-		SELECT * FROM qna ORDER BY qna_date DESC
+		SELECT * FROM qna ORDER BY qna_id DESC
 	</select>
 	<!-- 답변이 비어있는 QnA 목록 -->
 	<select id="getQNAListResultEmpty">
