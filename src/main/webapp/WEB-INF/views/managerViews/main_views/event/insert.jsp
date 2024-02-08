@@ -21,8 +21,8 @@
 	<%@ include file="/WEB-INF/views/managerViews/layout/jspf/commonCss.jspf" %>
 	
 	<!-- Individual CSS -->
-	<c:url value="/resources/css/manager/event/event.js" var="eventCss" />
-	<script src="${eventCss}"></script>
+	<c:url value="/resources/css/manager/event/event.css" var="eventCss" />
+	<link href="${eventCss}" rel="stylesheet">
 	
 	<!-- Page level CSS -->
 	<c:url value="/resources/vendor/manager/datatables/dataTables.bootstrap4.css" var="dataTablesBootstrap4Css" />

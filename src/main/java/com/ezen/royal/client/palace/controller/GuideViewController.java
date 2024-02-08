@@ -1,5 +1,7 @@
 package com.ezen.royal.client.palace.controller;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.core.env.Environment;
@@ -30,10 +32,12 @@ public class GuideViewController {
 	}
 	
 	@GetMapping("/roadmap") // 오시는길
-	public String roadmap(Model model) {
+	public String roadmap(HttpServletRequest request, Model model) {
 		String apiKey = env.getProperty("kakao.appkey");
+		String palace = request.getParameter("palace");
 	
 		model.addAttribute("apiKey", apiKey); // 카카오지도 appkey
+		model.addAttribute("palace", palace);
 		
 		return "/userViews/royal_intro/guideToViewing/roadmap";
 	}

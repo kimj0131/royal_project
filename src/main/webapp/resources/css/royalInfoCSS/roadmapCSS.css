@@ -45,32 +45,36 @@
 
 .inner {
     display: grid;
-    grid-template-columns: 400px 1fr;
-    width: 80%;
+    grid-template-columns: 30% 70%;
+    width: 100%;
     height: 100%;
     position: relative;
     margin: auto 50px;
     padding: 0 15px;
 }
 
-.inner .right-container {
-    width: 100%;
-    height: 100%;
+.lnb_wrap{
+    grid-column-start: 1;
+}
+.right-container{
+    grid-column-start: 2;
+    margin: 20px;
 }
 
-.right-container .map-container{
-    width: 100%;
-    height: 100%;
-}
-
-.royal-name {
+.right-container .royal-name{
     width: 80%;
-    height: auto;
+}
+
+.map{
+    width: 80%;
+    height: 500px;
+}
+.royal-name {
     padding-right: 5px;
     text-align: center;
     display: flex;
     justify-content: space-around;
-    min-width: 900px;
+    flex-wrap: wrap;
     margin: 20px;
 }
 
@@ -110,20 +114,4 @@
 .JM_BTN{
     border: 3px solid #c14b35;
     border-radius: 20px;
-}
-
-.right-container{
-    margin: 20px;
-}
-
-
-.map-container{
-    width: 100%;
-    height: 100%;
-}
-
-.map-container .map{
-    width: 100%;
-    height: 80%;
-    align-items: center;
 }
