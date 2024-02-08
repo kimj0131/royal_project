@@ -81,7 +81,6 @@
 			<div>담당부서</div>
 			<div>제목</div>
 			<div>등록일</div>
-			<div>조회수</div>
 		</div>
 		<c:forEach items="${noticeList}" var="notice">
 			<div class="board_wrap_list">
@@ -105,9 +104,8 @@
 		            </c:when>
 					</c:choose>
 				</div>
-				<a>${notice.notice_title}</a>
+				<a href="">${notice.notice_title}</a>
 				<div>${notice.notice_date}</div>
-				<div>${notice.notice_view_count}</div>
 			</div>
 		</c:forEach>
 	</div>
