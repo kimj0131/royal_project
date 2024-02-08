@@ -30,7 +30,7 @@
 				</c:otherwise>
 			</c:choose>
 			<span id="login">|</span>
-			<a id="login" href="">마이페이지</a>
+			<a id="login" href="/royal/mypage/myPageView">마이페이지</a>
 		</div>
 	</c:otherwise>
 </c:choose>

@@ -31,7 +31,7 @@
 			<li><a id="category_name" href="/royal/communication/notice">소통</a>
 				<ul id="detail_categoty" style="margin:0; padding:0;  padding-top:50px">
 					<li style="line-height:170%;"><a href="/royal/communication/notice">공지사항</a></li>
-					<li style="line-height:170%;"><a href="#">QnA</a></li>
+					<li style="line-height:170%;"><a href="/royal/communication/faq">자주묻는질문</a></li>
 				</ul></li>
 			<li><a id="category_name" href="#">팀소개</a></li>
 		</ul>
