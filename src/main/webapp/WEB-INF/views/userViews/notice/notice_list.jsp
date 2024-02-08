@@ -6,14 +6,14 @@
 <head>
 <meta charset="UTF-8">
 <title>notice_list</title>
-<c:url value="/resources/css/communication/notice.css" var="noticeCSS" />
+<c:url value="/resources/css/communication/notice_list.css" var="notice_listCSS" />
 <c:url value="/resources/css/communication/public_communication.css"
 	var="public_communicationCSS" />
 <c:url value="/resources/js/communication/public_communication.js"
 	var="public_communicationJS" />
 <c:url value="/resources/js/communication/notice.js"
 	var="noticeJS" />
-<link rel="stylesheet" href="${noticeCSS}" />
+<link rel="stylesheet" href="${notice_listCSS}" />
 <link rel="stylesheet" href="${public_communicationCSS}" />
 <link rel="stylesheet" href="${public_communicationJS}" />
 <link rel="stylesheet" href="${noticeJS}" />
