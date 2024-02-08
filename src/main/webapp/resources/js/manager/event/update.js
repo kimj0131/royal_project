@@ -187,6 +187,16 @@ rows.each(function (index, item) {
 
         // 회차 정보 넣기 //
 
+        // 회차 정보칸 리셋
+        let formGroup = document.querySelectorAll('.fg_custom2 > .form-group');
+        let roundNum = formGroup.item(0).children.length;
+        if (roundNum > 3) {
+          for (let i = roundNum; i >= 4; --i) {
+            formGroup.item(0).children.item(i - 1).remove();
+          };
+        };
+
+        // 회차 정보 삽입
         rounds.forEach(round => {
           console.log(round.round_time);
 
