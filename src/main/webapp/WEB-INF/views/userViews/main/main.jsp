@@ -31,8 +31,7 @@
 				<img alt="종묘" src="${jongmyo}">
 			</div>
 			<div class="button1">
-				<a href="#" class="back" title="이전이미지">back</a> <a href="#"
-					class="next" title="다음이미지">next</a>
+				<a class="back" title="이전이미지">back</a> <a class="next" title="다음이미지">next</a>
 			</div>
 		</div>
 	</div>
@@ -42,35 +41,34 @@
 				<div class="title_top">
 					<div class="notice_title">공지사항</div>
 					<a class="all" href="/royal/communication/notice">전체보기</a>
-					<!-- 전체보기 링크 -->
 				</div>
-				<ul class="list">
-					<li class="item"><a href="">
+				<div class="list">
+
+					<c:forEach var="notice" items="${noticeList}" begin="0" end="5">
+						<div class="item">
 							<div class="title">공지사항</div>
-							<div class="inner_title">ssss</div>
-							<div class="inner_date">2024.02.12</div>
-					</a></li>
-					<c:forEach var="notice" items="${noticeList}" begin="1" end="5"
-						step="1" varStatus="status">
-						<li class="item">
-							<div class="title">공지사항</div>
-							<div class="inner_title">${notice.notice_title}</div>
+							<div class="inner_title">
+								<a href="/notice/get?notice_title=${notice.notice_title}" />${notice.notice_title}</div>
 							<div class="inner_date">${notice.notice_date}</div>
-						</li>
+						</div>
 					</c:forEach>
-				</ul>
+				</div>
 			</div>
 		</div>
 		<div class="right">
-			<div class="banner_wrap">
-				<div class="inform">
-					<div class="main_title">알림판</div>
+			<div class="inform">
+				<div class="main_title">알림판</div>
+			</div>
+			<div class="imgslider">
+				<div class="images">
+					<a class="imgtag" href="/event/"> <img alt="" class="img"
+						src="https://www.chf.or.kr/jnrepo/namo/img/images/000063/20240119205704416_TEOZXDIK.png" />				
+					</a>
+					<a class="imgtag" href="/event/"> <img alt="" class="img"
+						src="https://www.chf.or.kr/jnrepo/namo/img/images/000063/20240119205704416_TEOZXDIK.png" />				
+					</a>
+
 				</div>
-				<a class="imgtag" href="https://www.chf.or.kr/short/6d6N"> <img alt=""
-					class="img" src="https://www.chf.or.kr/jnrepo/namo/img/images/000063/20240119205704416_TEOZXDIK.png">
-				</a>
-				<div></div>
-				<!-- 행사 가는 링크 달기 -->
 			</div>
 		</div>
 	</div>

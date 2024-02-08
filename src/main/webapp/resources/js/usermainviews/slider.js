@@ -1,3 +1,7 @@
+/* 
+  메인 이미지 슬라이드 
+*/
+
 const outer = document.querySelector('.outer');
 const innerList = document.querySelector('.inner-list');
 const inners = document.querySelectorAll('.inner');
@@ -28,7 +32,9 @@ const buttonRight = document.querySelector('.next');
 
 buttonLeft.addEventListener('click', () => {
   currentIndex--;
-  currentIndex = currentIndex < 0 ? 0 : currentIndex; // index값이 0보다 작아질 경우 0으로 변경
+  if (currentIndex < 0) {
+    currentIndex =  inners.length -1;
+  } // index값이 0보다 작아질 경우 마지막 장으로 변경
   innerList.style.marginLeft = `-${outer.clientWidth * currentIndex}px`; // index만큼 margin을 주어 옆으로 밀기
   resetInterval(); // setInterval 재설정
 });
@@ -56,4 +62,32 @@ function getInterval() {
 function resetInterval() {
   clearInterval(interval); // 기존 동작되던 interval 제거
   interval = getInterval(); // 새로운 interval 등록
+}
+
+/*
+  알림판 행사 이미지 슬라이드 
+*/
+
+const slideIndex = 0;
+
+showSlides();
+
+// 이미지 슬라이드 함수
+function showSlides() {
+  let i;
+  const slides = document.getElementById("imageSlider").getElementsByTagName("images");
+
+  // 모든 이미지를 숨김
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";  
+  }
+
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}    
+
+  // 현재 이미지를 보여줌
+  slides[slideIndex-1].style.display = "block";  
+
+  // 4초마다 다음 이미지를 보여줌
+  setTimeout(showSlides, 4000);
 }
