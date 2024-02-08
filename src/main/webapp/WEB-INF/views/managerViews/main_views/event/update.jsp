@@ -21,8 +21,8 @@
 	<%@ include file="/WEB-INF/views/managerViews/layout/jspf/commonCss.jspf" %>
 	
 	<!-- Individual CSS -->
-	<c:url value="/resources/css/manager/event/event.js" var="eventCss" />
-	<script src="${eventCss}"></script>
+	<c:url value="/resources/css/manager/event/event.css" var="eventCss" />
+	<link href="${eventCss}" rel="stylesheet">
 	
 	<!-- Page level CSS -->
 	<c:url value="/resources/vendor/manager/datatables/dataTables.bootstrap4.css" var="dataTablesBootstrap4Css" />
@@ -64,10 +64,11 @@
 						<div class="col-lg-12">
 							<div class="card mb-4">
 								<div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-									<h6 class="m-0 font-weight-bold text-primary">행사 수정</h6>
+									<h6 id="selected_event_title" class="m-0 font-weight-bold text-primary">수정할 행사 ID - </h6>
 								</div>
 								<div class="card-body">
 									<form action="/royal/YWRtaW5wYWdl/event/post/insert" method="post">
+										<input id="selected_event_hidden" name="selected_event" type="hidden">
 										<div class="fg_custom_wrapper">
 											<div class="fg_custom1">
 												<div class="form-group">

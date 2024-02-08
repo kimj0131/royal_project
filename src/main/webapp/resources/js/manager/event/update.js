@@ -98,7 +98,7 @@ rows.each(function (index, item) {
         var rounds = object.event_rounds;
 
 
-        // 궁 정보 넣기 //
+        //// 궁 정보 넣기 ////
         var selected_royal = $('#selected_royal');
         var royal_id = event.royal_id;
         // select태그 안에 있는 옵션 태그들의 인덱스는 
@@ -112,7 +112,7 @@ rows.each(function (index, item) {
         });
 
 
-        // 행사 타입 넣기 //
+        //// 행사 타입 넣기 ////
         var selected_type = $('#selected_type');
         var event_type = event.event_type;
         selected_type.children().each(function (index, element) {
@@ -124,19 +124,19 @@ rows.each(function (index, item) {
         });
 
 
-        // 행사 이름 넣기 //
+        //// 행사 이름 넣기 ////
         var selected_name = $('#selected_name');
         var event_name = event.event_name;
         selected_name.val(event_name);
 
 
-        // 행사 장소 넣기 //
+        //// 행사 장소 넣기 ////
         var selected_location = $('#selected_location');
         var event_location = event.event_location;
         selected_location.val(event_location);
 
 
-        // 시작일, 종료일 넣기 //
+        //// 시작일, 종료일 넣기 ////
         var selected_start_date = $('#selected_start_date');
         var start_date = event.start_date;
         var selected_end_date = $('#selected_end_date');
@@ -156,19 +156,19 @@ rows.each(function (index, item) {
         selected_end_date.val(modified_end_date);
 
 
-        // 행사 사이트 넣기 //
+        //// 행사 사이트 넣기 ////
         var selected_link = $('#selected_link');
         var event_link = event.event_link;
         selected_link.val(event_link);
 
 
-        // 행사 이미지 경로 넣기 //
+        //// 행사 이미지 경로 넣기 ////
         var selected_imgpath = $('#selected_imgpath');
         var event_imgpath = event.event_imgpath;
         selected_imgpath.val(event_imgpath);
 
 
-        // 예약 가능 여부 넣기 //
+        //// 예약 가능 여부 넣기 ////
         var selected_reservable = $('#selected_reservable');
         var reservable = event.reservable;
         selected_reservable.children().each(function (index, element) {
@@ -179,13 +179,13 @@ rows.each(function (index, item) {
           }
         });
 
-        // 회차별 인원수 넣기 //
+        //// 회차별 인원수 넣기 ////
         var selected_capacity = $('#selected_capacity');
         var round_capacity = rounds[0].round_capacity;
         selected_capacity.val(round_capacity);
 
 
-        // 회차 정보 넣기 //
+        //// 회차 정보 넣기 ////
 
         // 회차 정보칸 리셋
         let formGroup = document.querySelectorAll('.fg_custom2 > .form-group');
@@ -234,6 +234,11 @@ rows.each(function (index, item) {
           fg_custom2.appendChild(newInputGroup);
         });
       }
+
+      //// 수정할 행사 아이디 넣기 ////
+      let selected_event_title = document.querySelectorAll('#selected_event_title');
+
+
     });
   });
 });
