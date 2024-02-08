@@ -20,6 +20,10 @@
 	<!-- Common CSS -->
 	<%@ include file="/WEB-INF/views/managerViews/layout/jspf/commonCss.jspf" %>
 	
+	<!-- Individual CSS -->
+	<c:url value="/resources/css/manager/event/event.js" var="eventCss" />
+	<script src="${eventCss}"></script>
+	
 	<!-- Page level CSS -->
 	<c:url value="/resources/vendor/manager/datatables/dataTables.bootstrap4.css" var="dataTablesBootstrap4Css" />
 	<link href="${dataTablesBootstrap4Css}" rel="stylesheet">
