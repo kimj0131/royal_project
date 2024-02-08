@@ -28,10 +28,10 @@ public interface NoticeManageService {
 	
 	// 공지사항 수정
 	/**
-	 * * NoticeManageDTO와 수정할 notice_id 전달받아 DB에 수정한다 <br>
+	 * * NoticeManageDTO를 전달받아 DB에 수정한다 <br>
 	 * ※ 성공시 1를 반환한다 <br>
 	 */
-	int updateNotice(NoticeManageDTO dto, int modify_id);
+	int updateNotice(NoticeManageDTO dto);
 	
 	// 공지사항 삭제
 	/**

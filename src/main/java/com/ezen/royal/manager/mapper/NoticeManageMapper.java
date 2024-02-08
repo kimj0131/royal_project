@@ -16,7 +16,7 @@ public interface NoticeManageMapper {
 	int insertNotice(NoticeManageDTO dto);
 	
 	// Notice Update
-	int updateNotice(NoticeManageDTO dto, int modify_id);
+	int updateNotice(NoticeManageDTO dto);
 	
 	// ** Notice Upsert >> 후에 작성
 	

@@ -47,7 +47,7 @@ public class EventManageServiceImpl implements EventManageService {
 
 	// 이벤트 수정
 	@Override
-	public int updateEvent(EventManageDTO dto, List<EventRoundManageDTO> roundList, int modify_id) {
+	public int updateEvent(EventManageDTO dto, List<EventRoundManageDTO> roundList) {
 
 		// 이벤트 수정시 회차 데이터를 다시 insert한다
 		// 수정할 테이블의 event_id를 받아 round 데이터를 delete
