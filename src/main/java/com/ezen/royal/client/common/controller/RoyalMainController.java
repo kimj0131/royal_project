@@ -1,8 +1,12 @@
 package com.ezen.royal.client.common.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.ezen.royal.client.communication.service.NoticeService;
 
 import lombok.extern.log4j.Log4j;
 
@@ -22,14 +26,20 @@ import lombok.extern.log4j.Log4j;
 @RequestMapping("/main")
 public class RoyalMainController {
 
+	@Autowired
+	NoticeService noticeService;
+	
 	@GetMapping("/") // 커버페이지로 이동
 	public String coverPage() {
 		return "/userViews/main/coverPage";
 	}
 
 	@GetMapping("/home") // 메인페이지로 이동
-	public String main() {
+	public String main(Model model) {
+		noticeService.getNoticeList(model);
+		System.out.println(model.getAttribute("noticeList"));
 		return "/userViews/main/main";
+		
 	}
 	
 	@GetMapping("/login") // 로그인 페이지
