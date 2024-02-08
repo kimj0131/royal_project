@@ -1,0 +1,30 @@
+/* custom */
+
+.fc_custom {
+	width: 100%;
+}
+
+.fg_custom_wrapper {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	column-gap: 20px;
+}
+
+.fg_custom1 {
+	/* display: grid;
+	grid-template-columns: 1fr 1fr;
+	column-gap: 10px; */
+}
+
+#selected_title {
+	background-color: white;
+}
+
+#selected_content {
+	background-color: white;
+	height: 283px;
+}
+
+#qna_result {
+	resize: none;
+}

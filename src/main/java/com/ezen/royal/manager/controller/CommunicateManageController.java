@@ -2,9 +2,13 @@ package com.ezen.royal.manager.controller;
 
 import javax.servlet.http.HttpServletRequest;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.ezen.royal.manager.service.QnaManageService;
 
 import lombok.extern.log4j.Log4j;
 
@@ -12,6 +16,9 @@ import lombok.extern.log4j.Log4j;
 @Controller
 @RequestMapping("/YWRtaW5wYWdl")
 public class CommunicateManageController {
+
+	@Autowired
+	QnaManageService qnaManageService;
 
 	@GetMapping("/notice/*") // 관리자 공지사항 수정 페이지
 	public String manage_notice(HttpServletRequest request) {
@@ -28,7 +35,11 @@ public class CommunicateManageController {
 	}
 
 	@GetMapping("/qna") // 관리자 qna관리 페이지
-	public String manage_qna() {
+	public String manage_qna(Model model) {
+
+		// index 공용사용
+		qnaManageService.getQNAList(model);
+		qnaManageService.getQNAListResultEmpty(model);
 		return "managerViews/main_views/qna/qna_answer_update";
 	}
 

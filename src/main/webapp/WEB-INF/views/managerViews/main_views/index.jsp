@@ -31,6 +31,10 @@ uri="http://java.sun.com/jsp/jstl/core" %> <%@ taglib prefix="fmt" uri="http://j
 					<div class="container-fluid" id="container-wrapper">
 						<div class="d-sm-flex align-items-center justify-content-between mb-4">
 							<h1 class="h3 mb-0 text-gray-800">확인할 업무</h1>
+							<ol class="breadcrumb">
+								<li class="breadcrumb-item"><a href="/royal/YWRtaW5wYWdl/index">Home</a></li>
+							</ol>
+							
 						</div>
 
 						<div class="row mb-3">
@@ -66,12 +70,7 @@ uri="http://java.sun.com/jsp/jstl/core" %> <%@ taglib prefix="fmt" uri="http://j
 															>
 														</td>
 														<td>${qna.qna_title}</td>
-														<fmt:formatDate
-															value="${qna.qna_date}"
-															pattern="yyyy/MM/dd"
-															var="qnaDate"
-															type="date"
-														/>
+														<fmt:formatDate	value="${qna.qna_date}" pattern="yyyy/MM/dd" var="qnaDate" type="date" />
 														<td>${qnaDate}</td>
 														<c:choose>
 															<c:when test="${empty qna.qna_result}">
