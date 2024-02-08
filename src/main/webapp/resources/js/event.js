@@ -20,7 +20,7 @@ function getYmd(target) {
     var month = ('0' + (target.getMonth() + 1)).slice(-2);
     return [target.getFullYear(), month, '01'].join('-');
 }
-
+ 
 function fullDays(date) {
     var target = new Date(date);
     var year = target.getFullYear();
@@ -80,3 +80,36 @@ $(function () {
         drawMonth($(this).data('ym'));
     });
 });
+
+$(document).ready(function() {
+    // 완전히 로드되었을 때 실행되는 함수
+    
+    var currentMonth = new Date().getMonth() + 1;
+    
+    // 특정 달의 이벤트 이미지를 가져와서 표시하는 함수
+    function displayEventImages(month) {
+      // 서버에서 이벤트 이미지를 가져오기 위한 AJAX 요청
+      $.ajax({
+        url: '',
+        method: 'GET',
+        data: { month: month },
+        dataType: 'json',
+        success: function(response) {
+          // 서버로부터 받은 이벤트 이미지를 표시
+          // 응답 데이터를 처리하고 HTML을 생성하여 이미지를 표시
+        }
+      });
+    }
+    
+    // 페이지가 로드되면 이번 달의 이벤트 이미지를 표시
+    displayEventImages(currentMonth);
+    
+
+    $('#month-prev').on('click', function() {
+      //  새 달에 대한 이벤트 이미지를 가져옴
+    });
+    
+
+    $('#month-next').on('click', function() {
+    });
+  });
