@@ -50,23 +50,23 @@
 			<div class="royal-name">
 				<div class="palace-link GB_BTN" data-lat="37.57962"
 					data-lng="126.977028">
-					<a href="/royal/palace/roadmap?palace=경복궁">경복궁</a>
+					<a href="/royal/palace/roadmap">경복궁</a>
 				</div>
 				<div class="palace-link DS_BTN" data-lat="37.565824"
 					data-lng="126.974618">
-					<a href="/royal/palace/roadmap?palace=덕수궁">덕수궁</a>
+					<a href="/royal/palace/roadmap">덕수궁</a>
 				</div>
 				<div class="palace-link CG_BTN" data-lat="37.578758"
 					data-lng="126.995310">
-					<a href="/royal/palace/roadmap?palace=창경궁">창경궁</a>
+					<a href="/royal/palace/roadmap">창경궁</a>
 				</div>
 				<div class="palace-link CD_BTN" data-lat="37.579032"
 					data-lng="126.991012">
-					<a href="/royal/palace/roadmap?palace=창덕궁">창덕궁</a>
+					<a href="/royal/palace/roadmap">창덕궁</a>
 				</div>
 				<div class="palace-link JM_BTN" data-lat="37.574574"
 					data-lng="126.994143">
-					<a href="/royal/palace/roadmap?palace=종묘">종묘</a>
+					<a href="/royal/palace/roadmap">종묘</a>
 				</div>
 			</div>
 

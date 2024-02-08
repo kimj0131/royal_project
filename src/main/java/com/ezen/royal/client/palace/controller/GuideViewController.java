@@ -39,6 +39,8 @@ public class GuideViewController {
 		model.addAttribute("apiKey", apiKey); // 카카오지도 appkey
 		model.addAttribute("palace", palace);
 		
+		request.setAttribute("palace", palace);
+		
 		return "/userViews/royal_intro/guideToViewing/roadmap";
 	}
 	
