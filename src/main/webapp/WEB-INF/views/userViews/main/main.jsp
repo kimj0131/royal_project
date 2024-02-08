@@ -48,7 +48,8 @@
 						<div class="item">
 							<div class="title">공지사항</div>
 							<div class="inner_title">
-								<a href="/notice/get?notice_title=${notice.notice_title}" />${notice.notice_title}</div>
+								<a href="/notice/get?notice_title=${notice.notice_title}">${notice.notice_title}</a>
+							</div>
 							<div class="inner_date">${notice.notice_date}</div>
 						</div>
 					</c:forEach>
@@ -59,18 +60,16 @@
 			<div class="inform">
 				<div class="main_title">알림판</div>
 			</div>
-			<div class="imgslider">
+			<div class="imgSlider" id="imageSlider">
 				<div class="images">
-					<a class="imgtag" href="/event/"> <img alt="" class="img"
-						src="https://www.chf.or.kr/jnrepo/namo/img/images/000063/20240119205704416_TEOZXDIK.png" />				
-					</a>
-					<a class="imgtag" href="/event/"> <img alt="" class="img"
-						src="https://www.chf.or.kr/jnrepo/namo/img/images/000063/20240119205704416_TEOZXDIK.png" />				
-					</a>
-
+					<a class="imgtag" href="/event/"><img alt="" class="img"
+						src="https://www.chf.or.kr/jnrepo/namo/img/images/000063/20240119205704416_TEOZXDIK.png" /></a>
+					<a class="imgtag" href="/event/"><img alt="" class="img"
+						src="http://localhost:9000/royal/resources/image/slider/event2.jpg" /></a>
 				</div>
 			</div>
 		</div>
+	</div>
 	</div>
 	<jsp:include page="/WEB-INF/views/userViews/layout/footer.jsp" />
 

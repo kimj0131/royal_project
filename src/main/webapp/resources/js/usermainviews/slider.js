@@ -68,16 +68,14 @@ function resetInterval() {
   알림판 행사 이미지 슬라이드 
 */
 
-const slideIndex = 0;
+let slideIndex = 0;
 
 showSlides();
 
-// 이미지 슬라이드 함수
 function showSlides() {
   let i;
-  const slides = document.getElementById("imageSlider").getElementsByTagName("images");
+  const slides = document.querySelectorAll(".imgSlider .images img");
 
-  // 모든 이미지를 숨김
   for (i = 0; i < slides.length; i++) {
       slides[i].style.display = "none";  
   }
@@ -85,9 +83,8 @@ function showSlides() {
   slideIndex++;
   if (slideIndex > slides.length) {slideIndex = 1}    
 
-  // 현재 이미지를 보여줌
   slides[slideIndex-1].style.display = "block";  
 
-  // 4초마다 다음 이미지를 보여줌
   setTimeout(showSlides, 4000);
 }
+
