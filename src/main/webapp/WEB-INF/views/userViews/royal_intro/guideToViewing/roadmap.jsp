@@ -6,7 +6,8 @@
 <head>
 <meta charset="UTF-8">
 <title>오시는길</title>
-<c:url value="/resources/css/royalInfoCSS/roadmapCSS.css" var="roadmapCSS" />
+<c:url value="/resources/css/royalInfoCSS/roadmapCSS.css"
+	var="roadmapCSS" />
 <c:url value="/resources/css/royalInfoCSS/lnb.css" var="lnbCSS" />
 <c:url value="/resources/js/royalInfo/roadmap.js" var="roadmapJS" />
 <c:url value="/resources/image/royalInfo/royalInfo.jpg"
@@ -16,20 +17,21 @@
 <link rel="stylesheet" href="${roadmapCSS}" />
 
 <link rel="stylesheet" href="${royalInfoIMG}" />
-<script src="https://kit.fontawesome.com/2706cc5797.js" crossorigin="anonymous"></script>
+<script src="https://kit.fontawesome.com/2706cc5797.js"
+	crossorigin="anonymous"></script>
 </head>
 <body>
 	<jsp:include page="/WEB-INF/views/userViews/layout/header.jsp" />
 
 	<div class="contents_sub">
-			<div class="sub_visual">
-				<div class="img_wrap">
-					<img src="${royalInfoIMG}" alt="">
-				</div>
-				<div class="txt_wrap">
-					<h2 class="sub_tit">관람안내</h2>
-				</div>
+		<div class="sub_visual">
+			<div class="img_wrap">
+				<img src="${royalInfoIMG}" alt="">
 			</div>
+			<div class="txt_wrap">
+				<h2 class="sub_tit">관람안내</h2>
+			</div>
+		</div>
 	</div>
 
 	<div class="inner">
@@ -67,17 +69,37 @@
 					<a href="/royal/palace/roadmap?palace=종묘">종묘</a>
 				</div>
 			</div>
+
 			<div class="map-container">
 				<div class="map"></div>
-				
+				<div class="palace-info" id="경복궁">
+					<div class="address"></div>
+					<div class="phone"></div>
+				</div>
+				<div class="palace-info" id="덕수궁">
+					<div class="address"></div>
+					<div class="phone"></div>
+				</div>
+				<div class="palace-info" id="창경궁">
+					<div class="address"></div>
+					<div class="phone"></div>
+				</div>
+				<div class="palace-info" id="창덕궁">
+					<div class="address"></div>
+					<div class="phone"></div>
+				</div>
+				<div class="palace-info" id="종묘">
+					<div class="address"></div>
+					<div class="phone"></div>
+				</div>
 			</div>
 		</div>
 	</div>
-	
+
 	<script type="text/javascript"
 		src="//dapi.kakao.com/v2/maps/sdk.js?appkey=${apiKey}"></script>
 	<script src="${roadmapJS}"></script>
-	
+
 	<jsp:include page="/WEB-INF/views/userViews/layout/footer.jsp" />
 </body>
 </html>
