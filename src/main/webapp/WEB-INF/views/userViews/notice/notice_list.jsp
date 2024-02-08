@@ -5,15 +5,18 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>notice</title>
+<title>notice_list</title>
 <c:url value="/resources/css/communication/notice.css" var="noticeCSS" />
 <c:url value="/resources/css/communication/public_communication.css"
 	var="public_communicationCSS" />
 <c:url value="/resources/js/communication/public_communication.js"
 	var="public_communicationJS" />
+<c:url value="/resources/js/communication/notice.js"
+	var="noticeJS" />
 <link rel="stylesheet" href="${noticeCSS}" />
 <link rel="stylesheet" href="${public_communicationCSS}" />
 <link rel="stylesheet" href="${public_communicationJS}" />
+<link rel="stylesheet" href="${noticeJS}" />
 </head>
 <body>
 	<jsp:include page="/WEB-INF/views/userViews/layout/header.jsp" />
@@ -41,7 +44,7 @@
 			<div id="CD_BTN" class="CD">창덕궁</div>
 			<div id="JM_BTN" class="JM">종 묘</div>
 		</div>
-	<div id="white_space"></div>
+		<div id="white_space"></div>
 	</div>
 
 
@@ -52,26 +55,25 @@
 				<%=request.getAttribute("uniqueValuesCount")%>개
 			</div>
 		</div>
-		<form name="listForm" id="listForm" method="post"
-			onsubmit="fn_search(); return false;">
-			<div class="search_right">
-				<select name="search_select_id1" id="search_select_id1" title="구분">
-					<option>전체</option>
-					<option>제목</option>
-					<option>내용</option>
-				</select> 
-				<select name="search_select_id2" id="search_select_id2" title="구분">
-					<option>전체</option>
-					<option>경복궁</option>
-					<option>덕수궁</option>
-					<option>창경궁</option>
-					<option>종묘</option>
-				</select> 
-				<input type="text" name="search_input_id" id="search_input_id"
-					value title="검색어를 입력해 주세요" placeholder="검색어를 입력해주세요.">
-				<button type="submit">검색</button>
-			</div>
-		</form>
+		<div class="search_div">
+			<form id="searchForm">
+				<div class="search_right">
+					<select name="search_select_id1" id="search_select_id1" title="구분">
+						<option>전체</option>
+						<option>제목</option>
+						<option>내용</option>
+					</select> <select name="search_select_id2" id="search_select_id2" title="구분">
+						<option>전체</option>
+						<option>경복궁</option>
+						<option>덕수궁</option>
+						<option>창경궁</option>
+						<option>종묘</option>
+					</select> <input type="text" name="search_input_id" id="search_input_id"
+						title="검색어를 입력해 주세요" placeholder="검색어를 입력해주세요.">
+					<button type="submit">검색</button>
+				</div>
+			</form>
+		</div>
 	</div>
 
 
@@ -88,40 +90,34 @@
 				<div>
 					<c:choose>
 						<c:when test="${notice.royal_id == 1}">
-		                경복궁
-		            </c:when>
+		                	경복궁
+		            	</c:when>
 						<c:when test="${notice.royal_id == 2}">
-		                창덕궁
-		            </c:when>
+		                	창덕궁
+		            	</c:when>
 						<c:when test="${notice.royal_id == 3}">
-		                창경궁
-		            </c:when>
+		                	창경궁
+		            	</c:when>
 						<c:when test="${notice.royal_id == 4}">
-		                덕수궁
-		            </c:when>
+		                	덕수궁
+		            	</c:when>
 						<c:when test="${notice.royal_id == 5}">
-		                종묘
-		            </c:when>
+		                	종묘
+		            	</c:when>
 					</c:choose>
 				</div>
-				<a href="">${notice.notice_title}</a>
+				<a href="/royal/communication/notice_detail">${notice.notice_title}</a>
 				<div>${notice.notice_date}</div>
 			</div>
 		</c:forEach>
 	</div>
-	
-	<div>
-		<a><</a>		
-		<a>1</a>		
-		<a>2</a>		
-		<a>3</a>		
-		<a>4</a>		
-		<a>5</a>		
-		<a>></a>		
-	</div>
 
+
+
+
+	<script src="${noticeJS}"></script>
 	<script src="${public_communicationJS}"></script>
 	<jsp:include page="/WEB-INF/views/userViews/layout/footer.jsp" />
-	
+
 </body>
 </html>
