@@ -15,7 +15,7 @@ function change_btn(e) {
         for (let i = 0; i < div.children.length; ++i) {
             var children = div.children.item(i);
             if (e.currentTarget == children) {
-			    children.classList.add("on");
+                children.classList.add("on");
                 console.log(children.classList);
             }
             else {
@@ -40,11 +40,66 @@ const CG_BTN = document.querySelector("#CG_BTN");
 const CD_BTN = document.querySelector("#CD_BTN");
 const JM_BTN = document.querySelector("#JM_BTN");
 
+all_BTN.addEventListener('click', (e) => {
 
-all_BTN.addEventListener('click', (e) => change_btn(e));
-GB_BTN.addEventListener('click', (e) => change_btn(e));
-DS_BTN.addEventListener('click', (e) => change_btn(e));
-CG_BTN.addEventListener('click', (e) => change_btn(e));
-CD_BTN.addEventListener('click', (e) => change_btn(e));
-JM_BTN.addEventListener('click', (e) => change_btn(e));
+    change_btn(e);
+    location.href = '/royal/communication/faq';
+
+});
+GB_BTN.addEventListener('click', (e) => {
+
+    change_btn(e);
+    let royal_id = 1;
+    location.href = '/royal/communication/faq?royal_id=' + royal_id;
+
+});
+DS_BTN.addEventListener('click', (e) => {
+
+    change_btn(e);
+    let royal_id = 4;
+    location.href = '/royal/communication/faq?royal_id=' + royal_id;
+
+});
+CG_BTN.addEventListener('click', (e) => {
+
+    change_btn(e);
+    let royal_id = 3;
+    location.href = '/royal/communication/faq?royal_id=' + royal_id;
+
+});
+CD_BTN.addEventListener('click', (e) => {
+
+    change_btn(e);
+    let royal_id = 2;
+    location.href = '/royal/communication/faq?royal_id=' + royal_id;
+
+});
+JM_BTN.addEventListener('click', (e) => {
+
+    change_btn(e);
+    let royal_id = 5;
+    location.href = '/royal/communication/faq?royal_id=' + royal_id;
+
+});
+
+
+console.log(location.href);
+let buttonChange = location.href.charAt(location.href.length - 1)
+console.dir(buttonChange);
+console.log(typeof (buttonChange));
+if (buttonChange == 'q') {
+    all_BTN.classList.add('on');
+} else if (buttonChange == 1) {
+    GB_BTN.classList.add('on');
+} else if (buttonChange == 4) {
+    DS_BTN.classList.add('on');
+} else if (buttonChange == 2) {
+    CD_BTN.classList.add('on');
+} else if (buttonChange == 3) {
+    CG_BTN.classList.add('on');
+} else if (buttonChange == 5) {
+    JM_BTN.classList.add('on');
+}
+
+
 

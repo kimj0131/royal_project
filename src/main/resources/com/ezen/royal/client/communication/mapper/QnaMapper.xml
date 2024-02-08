@@ -5,29 +5,23 @@
 <mapper
 	namespace="com.ezen.royal.client.communication.mapper.QnaMapper">
 	<insert id="insert" parameterType="com.ezen.royal.client.communication.dto.QnaDTO">
-		<selectKey resultType="Integer" keyProperty="qna_id"
-			order="BEFORE">
-			SELECT qna_id_seq.nextval FROM dual
-		</selectKey>
-		INSERT INTO
-		qna(
-		qna_id,
-		member_id,
-		royal_id,
-		qna_title,
-		qna_content,
-		qna_date)
-		VALUES(
-		#{qna_id},
-		#{member_id},
-		#{royal_id},
-		#{qna_title},
-		#{qna_content},
-		#{qna_date})
+		INSERT INTO qna(
+			qna_id,
+			member_id,
+			royal_id,
+			qna_title,
+			qna_content
+		)VALUES(
+			qna_id_seq.nextval,
+			#{member_id},
+			#{royal_id},
+			#{qna_title},
+			#{qna_content}
+		)
 	</insert>
-	
-	<!-- 자 여기다가 쿼리문 작성 inner join 써서 where 날려서 로그인 유저 잡아오기. -->
-	<select id="social_id" parameterType="com.ezen.royal.api.dto.MemberDTO">
-	SELECT member_id FROM member WHERE social_id=?
+
+
+	<select id="getMemberId">
+		SELECT member_id FROM member WHERE social_id=#{social_id}
 	</select>
 </mapper>

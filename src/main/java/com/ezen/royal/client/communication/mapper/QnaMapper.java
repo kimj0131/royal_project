@@ -6,4 +6,7 @@ public interface QnaMapper {
 
 	int insert(QnaDTO dto);
 
+	Integer getMemberId(String social_id);
+
+
 }

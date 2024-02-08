@@ -8,18 +8,12 @@ import com.ezen.royal.client.communication.mapper.QnaMapper;
 
 @Service
 public class QnaServiceImpl implements QnaService {
-	
+
 	@Autowired
 	QnaMapper qnaMapper;
-	
+
 	@Override
 	public int insert(QnaDTO dto) {
-		int result = qnaMapper.insert(dto);
-
-		if (result > 0) {
-			return dto.getQna_id();
-		} else {
-			return result;
-		}
+		return qnaMapper.insert(dto);
 	}
 }
