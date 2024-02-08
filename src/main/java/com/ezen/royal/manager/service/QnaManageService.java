@@ -25,7 +25,7 @@ public interface QnaManageService {
 	
 	// QNA 답변달기 (수정과 같음)
 	/**
-	 * * QNA에 답변을 달아준 것을 Update한다 <br>
+	 * * 답변 내용과 qna_id를 전달받아 Update한다 <br>
 	 * ※ 성공시 1를 반환한다 <br>
 	 */
 	int updateQNA(String result, int modify_id);

@@ -34,8 +34,8 @@ public class NoticeManageServiceImpl implements NoticeManageService {
 
 	// 공지사항 수정
 	@Override
-	public int updateNotice(NoticeManageDTO dto, int modify_id) {
-		return noticeManageMapper.updateNotice(dto, modify_id);
+	public int updateNotice(NoticeManageDTO dto) {
+		return noticeManageMapper.updateNotice(dto);
 	}
 
 	// 공지사항 삭제

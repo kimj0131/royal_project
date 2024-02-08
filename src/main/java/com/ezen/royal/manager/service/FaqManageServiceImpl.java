@@ -32,8 +32,8 @@ public class FaqManageServiceImpl implements FaqManageService{
 
 	// FAQ 수정
 	@Override
-	public int updateFAQ(FAQManageDTO dto, int modify_id) {
-		return faqManageMapper.updateFAQ(dto, modify_id);
+	public int updateFAQ(FAQManageDTO dto) {
+		return faqManageMapper.updateFAQ(dto);
 	}
 
 	// FAQ 삭제

@@ -35,7 +35,7 @@
 			notice_title=#{notice_title},
 			notice_content=#{notice_content}
 		WHERE
-			notice_id=#{modify_id}
+			notice_id=#{notice_id}
 	</update>
 	
 	<!-- 공지사항 삭제 -->

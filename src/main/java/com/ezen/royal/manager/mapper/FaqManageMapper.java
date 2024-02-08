@@ -16,7 +16,7 @@ public interface FaqManageMapper {
 	int insertFAQ(FAQManageDTO dto);
 	
 	// FaQ Update
-	int updateFAQ(FAQManageDTO dto, int modify_id);
+	int updateFAQ(FAQManageDTO dto);
 	
 	// FaQ Delete
 	int deleteFAQ(int delete_id);

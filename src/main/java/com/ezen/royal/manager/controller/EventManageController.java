@@ -197,7 +197,7 @@ public class EventManageController {
 			log.info(eventManageDTO);
 			log.info(eventRoundManageDTO_List);
 			
-			eventManageService.updateEvent(eventManageDTO, eventRoundManageDTO_List, modified_id);
+			eventManageService.updateEvent(eventManageDTO, eventRoundManageDTO_List);
 			
 			return "redirect:/YWRtaW5wYWdl/event/form/insert";
 		} else if (uri.endsWith("delete")) {

@@ -28,10 +28,10 @@ public interface FaqManageService {
 	
 	// FAQ 수정
 	/**
-	 * * FAQManageDTO와 수정할 faq_id를 전달받아 수정한다 <br>
+	 * * FAQManageDTO를 전달받아 수정한다 <br>
 	 * ※ 성공시 1를 반환한다 <br>
 	 */
-	int updateFAQ(FAQManageDTO dto, int modify_id);
+	int updateFAQ(FAQManageDTO dto);
 	
 	// FAQ 삭제
 	/**

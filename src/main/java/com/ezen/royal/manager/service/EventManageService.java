@@ -34,11 +34,11 @@ public interface EventManageService {
 	
 	// event 수정
 	/**
-	 * * EventManageDTO와 수정할 event_id를 전달받아 수정한다 <br>
+	 * * EventManageDTO를 전달받아 수정한다 <br>
 	 * ※ 성공시 roundDTO list size 숫자를 반환한다 <br>
-	 * ※ 수정 시 event_rounds는 삭제되고 다시 추가된다
+	 * ※ 수정 시 event_id를 참조하는 event_rounds는 삭제되고 다시 추가된다
 	 */
-	int updateEvent(EventManageDTO dto, List<EventRoundManageDTO> roundList, int modify_id);
+	int updateEvent(EventManageDTO dto, List<EventRoundManageDTO> roundList);
 	
 	// event 삭제
 	/**
