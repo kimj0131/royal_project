@@ -9,7 +9,7 @@ public class EventManageDTO {
 	
 	private Integer event_id;		// 행사 ID
 	private Integer royal_id;		// 연관된 궁 ID
-	private String event_type;		// event 타입 (해설 : commentary, 행사 : event)
+	private String event_type;		// event 타입 (해설, 행사)
 	private String event_name;		// 행사명
 	private String event_location;	// 행사 장소
 	private Integer event_rounds;	// 행사의 하루 시행 회차(ex> 4회차)

@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -56,11 +58,12 @@
 									<h6 class="m-0 font-weight-bold text-primary">예약 취소</h6>
 								</div>
 								<div class="card-body">
-									<form>
+									<form action="/royal/YWRtaW5wYWdl/reservation/post/delete" method="post">
 										<div class="form-group">
-											<input type="text" class="form-control" id="Id_to_delete" placeholder="취소할 예약 ID">
+											<input type="text" class="form-control" id="resv_id" name="resv_id" placeholder="취소할 예약 ID">
 										</div>
-										<button type="submit" class="btn btn-primary">취소하기</button>
+										<button type="button" id="submitBtn" class="btn btn-primary">취소하기</button>
+										<input id="submitInput" type="submit" style="display: none;">
 									</form>
 								</div>
 							</div>
@@ -79,6 +82,7 @@
 												<th>예약 ID</th>
 												<th>행사 ID</th>
 												<th>회원 ID</th>
+												<th>예약 번호</th>
 												<th>예약 날짜</th>
 												<th>예약인원</th>
 											</tr>
@@ -88,25 +92,23 @@
 												<th>예약 ID</th>
 												<th>행사 ID</th>
 												<th>회원 ID</th>
+												<th>예약 번호</th>
 												<th>예약 날짜</th>
 												<th>예약인원</th>
 											</tr>
 										</tfoot>
 										<tbody>
-											<tr>
-												<td>00</td>
-												<td>00</td>
-												<td>00</td>
-												<td>2024/02/05</td>
-												<td>3</td>
-											</tr>
-											<tr>
-												<td>01</td>
-												<td>02</td>
-												<td>03</td>
-												<td>2024/02/05</td>
-												<td>3</td>
-											</tr>
+											<c:forEach items="${resvList}" var="resv">
+												<tr>
+													<td>${resv.resv_id}</td>
+													<td>${resv.event_id}</td>
+													<td>${resv.member_id}</td>
+													<td>${resv.resv_num}</td>
+													<fmt:formatDate var="formatResvDate" value="${resv.resv_date}" pattern="yyyy/MM/dd"/>
+                                      				<td>${formatResvDate}</td>
+													<td>${resv.resv_people}</td>
+												</tr>
+											</c:forEach>
 										</tbody>
 									</table>
 								</div>
@@ -134,6 +136,10 @@
 
 	<!-- Common JS -->
 	<%@ include file="/WEB-INF/views/managerViews/layout/jspf/commonJs.jspf" %>
+	
+	<!-- Individual JS -->
+	<c:url value="/resources/js/manager/reservation/delete.js" var="deleteJS" />
+	<script src="${deleteJS}"></script>
 	
 	<!-- Page level plugins -->
 	<c:url value="/resources/vendor/manager/datatables/jquery.dataTables.js" var="dataTablesJs" />

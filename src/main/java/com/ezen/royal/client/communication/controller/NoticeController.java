@@ -30,7 +30,10 @@ public class NoticeController {
 		model.addAttribute("uniqueValuesCount", uniqueValuesCount);
 		
 		return "/userViews/notice/notice_list";
-		
+	}
+	@GetMapping("/notice_detail")
+	public String notice_detail() {
 	
+		return "/userViews/notice/notice_detail";
 	}
 }

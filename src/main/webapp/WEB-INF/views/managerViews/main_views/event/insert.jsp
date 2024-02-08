@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
 <!DOCTYPE html>
 <html>
@@ -142,7 +143,7 @@
 														<div class="input-group-prepend">
 															<span class="input-group-text" id="basic-addon1">1회차</span>
 														</div>
-														<input name="round1" type="time" class="roundInput1 form-control" 
+														<input value="09:00" name="round1" type="time" class="roundInput1 form-control" 
 															placeholder="운영시간" aria-label="time" aria-describedby="basic-addon1">
 													</div>
 												</div>
@@ -178,32 +179,37 @@
 											<div style="font-size: 12px; font-weight: bold">
 												행사명
 											</div>
-											<div style="margin-bottom: 10px"></div>
+											<div style="margin-bottom: 12px"></div>
 											
 											<div style="font-size: 12px; font-weight: bold">
 												장소
 											</div>
-											<div style="margin-bottom: 10px"></div>
+											<div style="margin-bottom: 12px"></div>
 												
 											<div style="font-size: 12px; font-weight: bold">
 												시작일
 											</div>
-											<div style="margin-bottom: 10px"></div>
+											<div style="margin-bottom: 12px"></div>
 						
 											<div style="font-size: 12px; font-weight: bold">
 												종료일
 											</div>
-											<div style="margin-bottom: 10px"></div>
+											<div style="margin-bottom: 12px"></div>
 										
-											<div style="font-size: 12px; font-weight: bold">
-												홈페이지
-											</div>
-											<div style="margin-bottom: 10px"></div>
-											
 											<div style="font-size: 12px; font-weight: bold">
 												예약가능 여부
 											</div>
-											<div style="margin-bottom: 10px"></div>
+											<div style="margin-bottom: 12px"></div>
+											
+											<div style="font-size: 12px; font-weight: bold">
+												홈페이지
+											</div>
+											<div style="margin-bottom: 12px"></div>
+											
+											<div style="font-size: 12px; font-weight: bold">
+												이미지 경로
+											</div>
+											<div style="margin-bottom: 12px"></div>
 										</div>
 											
 										<br>
@@ -231,42 +237,43 @@
 									<table class="table align-items-center table-flush table-hover" id="dataTableHover">
 										<thead class="thead-light">
 											<tr>
-												<th>궁 ID</th>
+												<th>ID</th>
 												<th>행사유형</th>
 												<th>행사이름</th>
 												<th>행사장소</th>
 												<th>시작일</th>
 												<th>종료일</th>
-												<th>사이트</th>
-												<th>사진경로</th>
+												<!-- <th>사이트</th> -->
 												<th>예약가능</th>
 											</tr>
 										</thead>
 										<tfoot>
 											<tr>
-												<th>궁 ID</th>
+												<th>ID</th>
 												<th>행사유형</th>
 												<th>행사이름</th>
 												<th>행사장소</th>
 												<th>시작일</th>
 												<th>종료일</th>
-												<th>사이트</th>
-												<th>사진경로</th>
+												<!-- <th>사이트</th> -->
 												<th>예약가능</th>
 											</tr>
 										</tfoot>
 										<tbody>
 											<c:forEach items="${eventList}" var="event">
 												<tr id="${event.event_id}" class="tableRowData" data-toggle="modal" data-target="#detailModal">
-													<td style="word-break:break-all">${event.royal_id}</td>
+													<td style="word-break:break-all">${event.event_id}</td>
 													<td style="word-break:break-all">${event.event_type}</td>
 													<td style="word-break:break-all">${event.event_name}</td>
 													<td style="word-break:break-all">${event.event_location}</td>
-													<td width="70px" style="word-break:break-all">${event.start_date}</td>
-													<td width="70px" style="word-break:break-all">${event.end_date}</td>
-													<td width="150px" style="word-break:break-all">${event.event_link}</td>
-													<td width="150px" style="word-break:break-all">${event.event_imgpath}</td>
-													<td style="word-break:break-all">${event.reservable}</td>
+													
+													<fmt:formatDate var="formatStartDate" value="${event.start_date}" pattern="yyyy/MM/dd"/>
+                                      				<td>${formatStartDate}</td>
+                                       				<fmt:formatDate var="formatEndDate" value="${event.end_date}" pattern="yyyy/MM/dd"/>
+                                       				<td>${formatEndDate}</td>
+				
+													<%-- <td width="200px" style="word-break:break-all">${event.event_link}</td> --%>
+													<td width="100px" style="word-break:break-all">${event.reservable}</td>
 												</tr>
 											</c:forEach>
 										</tbody>
@@ -296,6 +303,10 @@
 
 	<!-- Common JS -->
 	<%@ include file="/WEB-INF/views/managerViews/layout/jspf/commonJs.jspf" %>
+	
+	<!-- Individual JS -->
+	<c:url value="/resources/js/manager/event/insert.js" var="insertJS" />
+	<script src="${insertJS}"></script>
 	
 	<!-- Page level plugins -->
 	<c:url value="/resources/vendor/manager/datatables/jquery.dataTables.js" var="dataTablesJs" />

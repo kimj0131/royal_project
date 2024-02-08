@@ -1,10 +1,12 @@
 package com.ezen.royal.manager.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
 
 import com.ezen.royal.manager.mapper.ReservationManageMapper;
 
+@Service
 public class ReservationManageServiceImpl implements ReservationManageService{
 
 	@Autowired

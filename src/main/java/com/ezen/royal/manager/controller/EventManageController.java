@@ -36,10 +36,13 @@ public class EventManageController {
 	
 	@GetMapping("/form/*")
 	public String manage_event_form(HttpServletRequest request, Model model) {
+
+		// 행사 테이블 리스트 실어주기
+		eventManageService.getEventList(model);
+
 		String uri = request.getRequestURI();
 
 		if (uri.endsWith("insert")) {
-			eventManageService.getEventList(model);
 			return "managerViews/main_views/event/insert";
 		} else if (uri.endsWith("update")) {
 			return "managerViews/main_views/event/update";
@@ -63,8 +66,6 @@ public class EventManageController {
 
 		data.put("event", model.getAttribute("event"));
 		data.put("event_rounds", model.getAttribute("event_rounds"));
-
-		System.out.println(model.getAttribute("event"));
 
 		try {
 			result = mapper.writeValueAsString(data);
@@ -138,6 +139,9 @@ public class EventManageController {
 			return "redirect:/YWRtaW5wYWdl/event/form/insert";
 
 		} else if (uri.endsWith("update")) {
+			
+			
+			
 			return "";
 		} else if (uri.endsWith("delete")) {
 			return "";
