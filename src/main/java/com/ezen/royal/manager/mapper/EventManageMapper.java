@@ -19,10 +19,13 @@ public interface EventManageMapper {
 	int insertEvent(EventManageDTO dto);
 	// Event_Round Insert
 	int insertEventRounds(List<EventRoundManageDTO> list);
+	// Event_Round Insert to update
+	int insertEventRoundsToUpdate(List<EventRoundManageDTO> list);
+	
 	
 
 	// Event Update
-	int updateEvent(EventManageDTO dto, int modify_id);
+	int updateEvent(EventManageDTO dto);
 	
 	// Event_Round Update > not use
 	// int updateEventRound(EventRoundManageDTO roundDTO, int modify_id);

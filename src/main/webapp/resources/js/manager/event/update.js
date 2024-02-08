@@ -64,23 +64,14 @@ plusBtn.addEventListener('click', (e) => addInputGroup());
 minusBtn.addEventListener('click', (e) => deleteInputGroup());
 
 // 행사 추가 할때 유효성 검사
-const submitBtn = document.querySelector('#submitBtn');
-const submitInput = document.querySelector('#submitInput');
-
+let selected_event_hidden = document.querySelector('#selected_event_hidden');
 submitBtn.addEventListener('click', (e) => {
-  const start_date = document.querySelector('#start_date').valueAsDate;
-  const end_date = document.querySelector('#end_date').valueAsDate;
-  const roundInputs = document.querySelectorAll('[class^="roundInput"]');
-
-  roundInputs.forEach((roundInput) => {
-    // 시작일, 종료일, 회차별 시간을 입력하지 않았다면 submit 불가
-    if (start_date == null || end_date == null || roundInput.valueAsDate == null) {
-      alert('시작일, 종료일, 회차별 시간을 설정해 주세요');
-    } else {
-      submitInput.click();
-    }
-  });
-
+  // 선택한 이벤트가 없다면 submit 불가
+  if (selected_event_hidden.value == null || selected_event_hidden.value == '') {
+    alert('수정하실 행사를 선택해주세요');
+  } else {
+    submitInput.click();
+  }
 });
 
 // 테이블의 각 행을 눌렀을 때 비동기 방식으로 각 행사의 디테일 정보 가져오기
@@ -179,6 +170,7 @@ rows.each(function (index, item) {
           }
         });
 
+
         //// 회차별 인원수 넣기 ////
         var selected_capacity = $('#selected_capacity');
         var round_capacity = rounds[0].round_capacity;
@@ -198,7 +190,6 @@ rows.each(function (index, item) {
 
         // 회차 정보 삽입
         rounds.forEach(round => {
-          console.log(round.round_time);
 
           // 1. 새로운 "1회차" 입력 그룹 요소 생성
           var newInputGroup = document.createElement('div');
@@ -233,12 +224,18 @@ rows.each(function (index, item) {
           // 5. 새로운 회차 칸 추가
           fg_custom2.appendChild(newInputGroup);
         });
+
+        //// 수정할 행사 아이디 넣기 ////
+        let selected_event_title = document.querySelector('#selected_event_title');
+        let selected_event_hidden = document.querySelector('#selected_event_hidden');
+
+        console.log(selected_event_title);
+        console.log(selected_event_hidden);
+
+        selected_event_title.innerHTML = `수정할 행사 ID - [${event.event_id}]`;
+        selected_event_hidden.value = event.event_id;
+
       }
-
-      //// 수정할 행사 아이디 넣기 ////
-      let selected_event_title = document.querySelectorAll('#selected_event_title');
-
-
     });
   });
 });

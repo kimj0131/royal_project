@@ -64,10 +64,10 @@
 						<div class="col-lg-12">
 							<div class="card mb-4">
 								<div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-									<h6 id="selected_event_title" class="m-0 font-weight-bold text-primary">수정할 행사 ID - </h6>
+									<h6 id="selected_event_title" class="m-0 font-weight-bold text-primary">수정할 행사 ID를 선택해주세요</h6>
 								</div>
 								<div class="card-body">
-									<form action="/royal/YWRtaW5wYWdl/event/post/insert" method="post">
+									<form action="/royal/YWRtaW5wYWdl/event/post/update" method="post">
 										<input id="selected_event_hidden" name="selected_event" type="hidden">
 										<div class="fg_custom_wrapper">
 											<div class="fg_custom1">
@@ -84,8 +84,8 @@
 												<div class="form-group">
 													<label for="event_type">행사 유형</label>
 													<select id="selected_type" name="event_type" class="form-control fc_custom">
-														<option value="commentary">해설</option>
-														<option value="event">행사</option>
+														<option value="해설">해설</option>
+														<option value="행사">행사</option>
 													</select>
 												</div>
 												<div class="form-group">
@@ -150,7 +150,7 @@
 											</div>
 										</div>
 										<!-- js에서 유효성 검사 -->
-										<button type="button" id="submitBtn" class="btn btn-primary">추가하기</button>
+										<button type="button" id="submitBtn" class="btn btn-primary">수정하기</button>
 										<input id="submitInput" type="submit" style="display: none;">
 									</form>
 								</div>

@@ -76,16 +76,17 @@ public class EventManageController {
 		return result;
 	}
 
+	
+	/*
+	 * # 넘겨 받는 파라미터 값들의 키 - EventManagerDTO 관련 [royal_id] [event_type] [event_name]
+	 * [event_location] [start_date] [end_date] [event_link] [event_imgpath]
+	 * [reservable] - EventRoundManageDTO 관련 [round + 숫자]
+	 */
 	@PostMapping("/post/*")
 	public String manage_event_post(HttpServletRequest request) {
 		String uri = request.getRequestURI();
 
 		if (uri.endsWith("insert")) {
-			/*
-			 * # 넘겨 받는 파라미터 값들의 키 - EventManagerDTO 관련 [royal_id] [event_type] [event_name]
-			 * [event_location] [start_date] [end_date] [event_link] [event_imgpath]
-			 * [reservable] - EventRoundManageDTO 관련 [round + 숫자]
-			 */
 			String royal_id = request.getParameter("royal_id");
 			String event_type = request.getParameter("event_type");
 			String event_name = request.getParameter("event_name");
@@ -140,9 +141,65 @@ public class EventManageController {
 
 		} else if (uri.endsWith("update")) {
 			
+			String royal_id = request.getParameter("royal_id");
+			String event_type = request.getParameter("event_type");
+			String event_name = request.getParameter("event_name");
+			String event_location = request.getParameter("event_location");
+			String start_date = request.getParameter("start_date");
+			String end_date = request.getParameter("end_date");
+			String event_link = request.getParameter("event_link");
+			String event_imgpath = request.getParameter("event_imgpath");
+			String reservable = request.getParameter("reservable");
+			String round_capacity = request.getParameter("round_capacity");
+
 			
+			// 유효성 검사
+
 			
-			return "";
+			// modified_id
+			int modified_id = Integer.parseInt(request.getParameter("selected_event"));
+			
+			// EventRoundManageDTO
+			List<EventRoundManageDTO> eventRoundManageDTO_List = new ArrayList<>();
+			for (int i = 1; i <= 10; ++i) {
+				String round = request.getParameter(String.format("round%d", i));
+				if (round == null) {
+					break;
+				} else {
+					EventRoundManageDTO dto = new EventRoundManageDTO();
+					dto.setRound_capacity(Integer.parseInt(round_capacity));
+					dto.setRound_num(i);
+					dto.setEvent_id(modified_id);
+					dto.setRound_time(round);
+					eventRoundManageDTO_List.add(dto);
+				}
+			}
+
+			// EventManageDTO
+			EventManageDTO eventManageDTO = new EventManageDTO();
+			eventManageDTO.setEvent_id(modified_id);
+			eventManageDTO.setRoyal_id(Integer.parseInt(royal_id));
+			eventManageDTO.setEvent_type(event_type);
+			eventManageDTO.setEvent_name(event_name);
+			eventManageDTO.setEvent_location(event_location);
+			eventManageDTO.setEvent_rounds(eventRoundManageDTO_List.size());
+			try {
+				eventManageDTO.setStart_date(new SimpleDateFormat("yyyy-MM-dd").parse(start_date));
+				eventManageDTO.setEnd_date(new SimpleDateFormat("yyyy-MM-dd").parse(end_date));
+			} catch (ParseException e) {
+				e.printStackTrace();
+			}
+			eventManageDTO.setEvent_link(event_link);
+			eventManageDTO.setEvent_imgpath(event_imgpath);
+			eventManageDTO.setReservable(reservable.charAt(0));
+
+			// log
+			log.info(eventManageDTO);
+			log.info(eventRoundManageDTO_List);
+			
+			eventManageService.updateEvent(eventManageDTO, eventRoundManageDTO_List, modified_id);
+			
+			return "redirect:/YWRtaW5wYWdl/event/form/insert";
 		} else if (uri.endsWith("delete")) {
 			return "";
 		} else {

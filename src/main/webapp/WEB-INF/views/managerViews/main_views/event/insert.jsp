@@ -83,8 +83,8 @@
 												<div class="form-group">
 													<label for="event_type">행사 유형</label>
 													<select name="event_type" class="form-control fc_custom">
-														<option value="commentary">해설</option>
-														<option value="event">행사</option>
+														<option value="해설">해설</option>
+														<option value="행사">행사</option>
 													</select>
 												</div>
 												<div class="form-group">

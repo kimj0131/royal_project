@@ -54,10 +54,10 @@ public class EventManageServiceImpl implements EventManageService {
 		int delResult = eventManageMapper.deleteEventRound(dto.getEvent_id());
 		if (delResult > 0) {
 			// 삭제가 완료되었으면 전달받은 list를 insert
-			int insResult = eventManageMapper.insertEventRounds(roundList);
+			int insResult = eventManageMapper.insertEventRoundsToUpdate(roundList);
 			if (insResult > 0) {
 				// 이후 이벤트를 update
-				return eventManageMapper.updateEvent(dto, modify_id);
+				return eventManageMapper.updateEvent(dto);
 			} else {
 				return 0;
 			}
