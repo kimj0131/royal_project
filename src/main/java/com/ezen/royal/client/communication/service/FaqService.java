@@ -9,5 +9,7 @@ public interface FaqService {
 	void faq(Model model);
 	
 	Integer getUniqueValuesCount();
+	
+	void faq2(Model model, Integer royal_id);
 
 }

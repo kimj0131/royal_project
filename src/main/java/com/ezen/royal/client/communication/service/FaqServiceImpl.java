@@ -7,6 +7,10 @@ import org.springframework.ui.Model;
 import com.ezen.royal.client.communication.dto.FaqDTO;
 import com.ezen.royal.client.communication.mapper.FaqMapper;
 
+import jdk.internal.org.jline.utils.Log;
+import lombok.extern.log4j.Log4j;
+
+@Log4j
 @Service
 public class FaqServiceImpl implements FaqService {
 	
@@ -18,6 +22,13 @@ public class FaqServiceImpl implements FaqService {
 		model.addAttribute("faq", faqMapper.getAll());
 		
 	}
+	
+	@Override
+	public void faq2(Model model, Integer royal_id) {
+		model.addAttribute("faq", faqMapper.getPartAll(royal_id));
+		
+	}
+	
 
 	@Override
 	public boolean detail(int faq_id, Model model) {

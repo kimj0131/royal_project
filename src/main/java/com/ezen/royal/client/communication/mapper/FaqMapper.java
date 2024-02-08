@@ -8,6 +8,8 @@ public interface FaqMapper {
 	
 	List<FaqDTO> getAll();
 	
+	List<FaqDTO> getPartAll(Integer royal_id);
+	
 	FaqDTO get(int faq_id);
 	
 	Integer getUniqueValuesCount();
