@@ -97,12 +97,10 @@
     border-radius: 20px;
 }
 
-
 #CD_BTN{
     border: 3px solid #b6383d;
     border-radius: 20px;
 }
-
 
 #JM_BTN{
     border: 3px solid #c14b35;
@@ -110,8 +108,7 @@
 }
 
 #white_space{
-    margin-left: 450px;
-    width: 1210px;
+    width: 100%;
     height: 40px;
     border-bottom: solid 1px #EAEAEA;
 }
@@ -178,7 +175,6 @@
     display: flex;
     justify-content: space-between;
     padding-bottom: 60px;
-
 }
 
 .search_left{
@@ -187,7 +183,6 @@
     font-weight: bold;
 }
 .search_right{
-
     padding: 40px 300px 0 0;
     margin:0 150px;
     display: flex;
@@ -224,9 +219,6 @@
     border-style: none;
 }
 
-
-
-
 #search_select_id1, #search_select_id2 :focus{
     outline: 0;
 }
@@ -239,13 +231,11 @@
     padding: 0 25px;
     border: none;
     max-width: 100%;
-    
 }
 
 #search_input_id:focus{
     outline: 0;
 }
-
 
 .search_right > button{
     width: 120px;
@@ -259,6 +249,7 @@
     margin-left: 15px;
     font-size: 1rem;
 }
+
 .count_div{
     width: 130px;
 }
