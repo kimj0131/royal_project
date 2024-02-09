@@ -29,26 +29,34 @@ function showSlides() {
 /**
  * 내부건축물 이름에 스타일 변경
  */
-const innerDivs = document.querySelectorAll(".innerNameDiv");
+const royalIdElement = document.getElementById('royalId');
+const getRoyalId = royalIdElement.value;
+//console.log(getRoyalId);
+const innerDivs = document.querySelectorAll('.innerNameDiv');
 
+let currentSelectedDiv = null;
+
+const applyArrow = (innerDiv) => {
+    const arrowIcon = document.createElement("i");
+    arrowIcon.classList.add("fa-solid", "fa-angles-down");
+    innerDiv.appendChild(arrowIcon);
+};
+
+const hideArrow = (innerDiv) => {
+    const arrowIcon = innerDiv.querySelector('.fa-angles-down');
+    if (arrowIcon) {
+        arrowIcon.remove();
+    }
+};
+
+// 내부 건물 이름을 클릭할 때마다 화살표 표시 상태
 innerDivs.forEach(innerDiv => {
-    innerDiv.addEventListener("click", () => {
-        innerDiv.classList.toggle("selected"); // 선택된 내부 건축물 이름의 스타일 변경
-        
-        const arrowIcon = document.createElement("i"); // 화살표 아이콘을 생성
-        arrowIcon.classList.add("fa-solid", "fa-arrow-down");
-        
-        if (innerDiv.classList.contains("selected")) {
-            innerDiv.appendChild(arrowIcon);
-        } else {
-            arrowIcon.remove();
+    innerDiv.addEventListener('click', () => {
+        if (currentSelectedDiv !== null) {
+            hideArrow(currentSelectedDiv);
         }
 
-        const form = innerDiv.closest('form');
-        if (form) {
-            form.submit();
-        }
+        applyArrow(innerDiv);
+        currentSelectedDiv = innerDiv;
     });
 });
-
-

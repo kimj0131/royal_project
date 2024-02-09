@@ -9,6 +9,7 @@
 <title>${palaceName} 내부 건축물</title>
 <link rel="stylesheet" href="${innerCSS}" />
 <script src="https://kit.fontawesome.com/2706cc5797.js" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 </head>
 <body>
 	<jsp:include page="/WEB-INF/views/userViews/layout/header.jsp" />
@@ -36,23 +37,23 @@
                 <!-- palaceName에 따라 royalId 값을 설정 -->
                 <c:choose>
                     <c:when test="${palaceName eq '경복궁'}">
-                        <input type="hidden" name="royalId" value="1" />
+                        <input type="hidden" id="royalId" name="royalId" value="1" />
                     </c:when>
                     <c:when test="${palaceName eq '창덕궁'}">
-                        <input type="hidden" name="royalId" value="2" />
+                        <input type="hidden" id="royalId" name="royalId" value="2" />
                     </c:when>
                     <c:when test="${palaceName eq '창경궁'}">
-                        <input type="hidden" name="royalId" value="3" />
+                        <input type="hidden" id="royalId" name="royalId" value="3" />
                     </c:when>
                     <c:when test="${palaceName eq '덕수궁'}">
-                        <input type="hidden" name="royalId" value="4" />
+                        <input type="hidden" id="royalId" name="royalId" value="4" />
                     </c:when>
                     <c:when test="${palaceName eq '종묘'}">
-                        <input type="hidden" name="royalId" value="5" />
+                        <input type="hidden" id="royalId" name="royalId" value="5" />
                     </c:when>
                 </c:choose>
                 <!-- innerNameDiv를 클릭하면 해당 폼을 제출함 -->
-                <div class="innerNameDiv" onclick="this.parentNode.submit();">${innerName}</div>
+                <div class="innerNameDiv">${innerName}</div>
             </form>
         </c:forEach>
           

@@ -17,9 +17,10 @@
     margin: 0 auto;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    align-items: center;
     text-align: center;
-    gap: 10px;
-    width: 50%;
+    gap: 30px;
+    width: 60%;
     margin-bottom: 15px;
     padding: 10px;
 }
@@ -28,7 +29,6 @@
     border: 1px solid transparent;
     border-radius: 20px;
     text-align: center;
-    width: 66%;
 }
 
 .royal-name > :first-child {
@@ -66,15 +66,15 @@ h2 {
 .innerNameDiv {
     cursor: pointer;
     border: 1px solid #ccc;
-    width: 130px; 
-    height: 50px; 
+    width:130px;
+	height:60px;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 .mainImg {
-    width: 66%;
+    align-items: center;
     height: 574px;
     margin: 0 auto;
     padding: 10px 80px;
@@ -82,14 +82,17 @@ h2 {
 }
 
 #imageSlider > img {
-    width: 840px;
+/* width: 840px; */
+    width: 100%;
     height: 574px;
+    margin : 10px;
 }
 
 .content {
     width: 66%;
     margin: 0 auto;
-    padding: 5px;
-    margin-top: 15px;
+    padding: 6px;
+    margin-top: 40px;
     font-size: 13px;
 }
+
