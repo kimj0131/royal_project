@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ezen.royal.api.mapper.MemberMapper">
+
+	<select id="getMemberList" resultType="com.ezen.royal.api.dto.MemberDTO">
+		SELECT * FROM member
+	</select>
+
+	<select id="memberNameForId" resultType="String">
+		SELECT member_name FROM member WHERE member_id=#{member_id}
+	</select>
+
+</mapper>

@@ -58,7 +58,7 @@ uri="http://java.sun.com/jsp/jstl/core" %> <%@ taglib prefix="fmt" uri="http://j
 
 						<!-- Row -->
 						<div class="row">
-							<!-- 수정창 -->
+							<!-- 답변 Form -->
 							<div class="col-lg-12">
 								<div class="card mb-4">
 									<div
@@ -67,7 +67,7 @@ uri="http://java.sun.com/jsp/jstl/core" %> <%@ taglib prefix="fmt" uri="http://j
 										<h6 class="m-0 font-weight-bold text-primary">QnA 답변 추가</h6>
 									</div>
 									<div class="card-body">
-										<form action="/royal/YWRtaW5wYWdl/qna/" method="post">
+										<form id="qna_answer" action="/royal/YWRtaW5wYWdl/qna/" method="post">
 											<div class="fg_custom_wrapper">
 												<div class="fg_custom">
 													<div class="form-group">
@@ -103,8 +103,8 @@ uri="http://java.sun.com/jsp/jstl/core" %> <%@ taglib prefix="fmt" uri="http://j
 													</div>
 												</div>
 											</div>
-											<input id="qna_id" type="hidden" value="" name="qna_id" />
-											<button type="submit" class="btn btn-primary">답변달기</button>
+											<input id="qna_id" type="hidden" value="3" name="qna_id" />
+											<button class="btn btn-primary">답변달기</button>
 										</form>
 									</div>
 								</div>
@@ -125,6 +125,7 @@ uri="http://java.sun.com/jsp/jstl/core" %> <%@ taglib prefix="fmt" uri="http://j
 										>
 											<thead class="thead-light">
 												<tr>
+													<!-- <th>${memberNameMap}</th> -->
 													<th>번호</th>
 													<th>작성자</th>
 													<th>제목</th>
@@ -137,7 +138,7 @@ uri="http://java.sun.com/jsp/jstl/core" %> <%@ taglib prefix="fmt" uri="http://j
 												<c:forEach items="${QNAList}" var="qna">
 													<tr id="${qna.qna_id}" class="tableRowData">
 														<td style="word-break: break-all">${qna.qna_id}</td>
-														<td style="word-break: break-all">${qna.member_id}</td>
+														<td style="word-break: break-all">${memberNameMap[qna.member_id]}</td>
 														<td style="word-break: break-all">${qna.qna_title}</td>
 														<fmt:formatDate
 															value="${qna.qna_date}"
@@ -184,7 +185,7 @@ uri="http://java.sun.com/jsp/jstl/core" %> <%@ taglib prefix="fmt" uri="http://j
 		<%@ include file="/WEB-INF/views/managerViews/layout/jspf/commonJs.jspf" %>
 
 		<!-- Individual JS -->
-		<c:url value="/resources/js/manager/qna/update.js" var="updateJS" />
+		<c:url value="/resources/js/manager/qna/qna_update.js" var="updateJS" />
 		<script src="${updateJS}"></script>
 
 		<!-- Page level plugins -->

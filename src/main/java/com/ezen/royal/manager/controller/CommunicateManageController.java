@@ -6,8 +6,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.ezen.royal.api.service.MemberService;
 import com.ezen.royal.manager.service.QnaManageService;
 
 import lombok.extern.log4j.Log4j;
@@ -19,6 +21,9 @@ public class CommunicateManageController {
 
 	@Autowired
 	QnaManageService qnaManageService;
+	
+	@Autowired
+	MemberService memberService;
 
 	@GetMapping("/notice/*") // 관리자 공지사항 수정 페이지
 	public String manage_notice(HttpServletRequest request) {
@@ -36,11 +41,25 @@ public class CommunicateManageController {
 
 	@GetMapping("/qna") // 관리자 qna관리 페이지
 	public String manage_qna(Model model) {
+		
+		// member 이름 map
+		memberService.getMemberNameAll(model);
 
 		// index 공용사용
 		qnaManageService.getQNAList(model);
 		qnaManageService.getQNAListResultEmpty(model);
 		return "managerViews/main_views/qna/qna_answer_update";
+	}
+	
+	@PostMapping("/qna")
+	public String manage_qna_update(HttpServletRequest request) {
+		String qna_id = request.getParameter("qna_id");
+		String resultString = request.getParameter("qna_result");
+		
+		log.info("qna_id : " + qna_id);
+		log.info("resultString : " + resultString);
+		
+		return "redirect:/YWRtaW5wYWdl/qna";
 	}
 
 }
