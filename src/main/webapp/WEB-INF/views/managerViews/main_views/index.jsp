@@ -58,17 +58,12 @@ uri="http://java.sun.com/jsp/jstl/core" %> <%@ taglib prefix="fmt" uri="http://j
 													<th>제목</th>
 													<th>작성일</th>
 													<th>답변</th>
-													<th></th>
 												</tr>
 											</thead>
 											<tbody>
 												<c:forEach items="${QNAList}" var="qna" begin="0" end="9">
 													<tr>
-														<td>
-															<a href="/royal/YWRtaW5wYWdl/qna?qna_id=${qna.qna_id}"
-																>${qna.qna_id}</a
-															>
-														</td>
+														<td>${qna.qna_id}</td>
 														<td>${qna.qna_title}</td>
 														<fmt:formatDate	value="${qna.qna_date}" pattern="yyyy/MM/dd" var="qnaDate" type="date" />
 														<td>${qnaDate}</td>
@@ -82,13 +77,7 @@ uri="http://java.sun.com/jsp/jstl/core" %> <%@ taglib prefix="fmt" uri="http://j
 																</td>
 															</c:otherwise>
 														</c:choose>
-														<td>
-															<a
-																href="/royal/YWRtaW5wYWdl/qna?qna_id=${qna.qna_id}"
-																class="btn btn-sm btn-primary"
-																>자세히</a
-															>
-														</td>
+														
 													</tr>
 												</c:forEach>
 											</tbody>

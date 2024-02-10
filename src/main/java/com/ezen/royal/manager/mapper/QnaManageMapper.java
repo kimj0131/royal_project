@@ -2,6 +2,8 @@ package com.ezen.royal.manager.mapper;
 
 import java.util.List;
 
+import org.apache.ibatis.annotations.Param;
+
 import com.ezen.royal.manager.dto.QNAManageDTO;
 
 public interface QnaManageMapper {
@@ -14,5 +16,5 @@ public interface QnaManageMapper {
 	QNAManageDTO getQNADetail(int qna_id);
 	
 	// QnA Update(답변)
-	int updateQNA(String result, int modify_id);
+	int updateQNA(@Param("result") String result, @Param("modify_id") int modify_id);
 }

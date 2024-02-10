@@ -51,15 +51,24 @@ public class CommunicateManageController {
 		return "managerViews/main_views/qna/qna_answer_update";
 	}
 	
-	@PostMapping("/qna")
+
+	@PostMapping("/qna") // 답변 추가
 	public String manage_qna_update(HttpServletRequest request) {
-		String qna_id = request.getParameter("qna_id");
+		String qna_idString = request.getParameter("qna_id");
 		String resultString = request.getParameter("qna_result");
 		
-		log.info("qna_id : " + qna_id);
-		log.info("resultString : " + resultString);
+		// log.info("qna_id : " + qna_idString);
 		
-		return "redirect:/YWRtaW5wYWdl/qna";
+		if (qna_idString != null && resultString != null) {
+			int qna_id = Integer.parseInt(qna_idString);
+			qnaManageService.updateQNA(resultString, qna_id);
+			return "redirect:/YWRtaW5wYWdl/qna";
+		} else {
+			log.warn("[WARNING] 답변을 추가하는데 문제가 있었습니다.");
+			return "redirect:/YWRtaW5wYWdl/qna";
+		}
+		
+		
 	}
 
 }
