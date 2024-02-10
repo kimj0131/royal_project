@@ -53,7 +53,7 @@
                     </c:when>
                 </c:choose>
                 <!-- innerNameDiv를 클릭하면 해당 폼을 제출함 -->
-                <div class="innerNameDiv">${innerName}</div>
+                <div class="innerNameDiv" onclick="this.parentNode.submit();">${innerName}</div>
             </form>
         </c:forEach>
           
@@ -74,9 +74,9 @@
 	<p>Debug - Inner Image Path: ${innerDTO.royal_inner_imgpath}</p>
 	<p>Debug - Inner Detail: ${innerDTO.royal_inner_detail}</p>
 	 -->
-	<script src="${innerJS}"></script>  
-</head>
-
+	
 	<jsp:include page="/WEB-INF/views/userViews/layout/footer.jsp" />
+	<script src="${innerJS}"></script>  
+	
 </body>
 </html>

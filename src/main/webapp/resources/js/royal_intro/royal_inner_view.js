@@ -29,6 +29,7 @@ function showSlides() {
 /**
  * 내부건축물 이름에 스타일 변경
  */
+
 const royalIdElement = document.getElementById('royalId');
 const getRoyalId = royalIdElement.value;
 //console.log(getRoyalId);
@@ -40,6 +41,8 @@ const applyArrow = (innerDiv) => {
     const arrowIcon = document.createElement("i");
     arrowIcon.classList.add("fa-solid", "fa-angles-down");
     innerDiv.appendChild(arrowIcon);
+    // 선택된 요소에 클래스 추가
+    innerDiv.classList.add('selected');
 };
 
 const hideArrow = (innerDiv) => {
@@ -47,9 +50,12 @@ const hideArrow = (innerDiv) => {
     if (arrowIcon) {
         arrowIcon.remove();
     }
+    // 선택된 요소에서 클래스 제거
+    innerDiv.classList.remove('selected');
 };
 
 // 내부 건물 이름을 클릭할 때마다 화살표 표시 상태
+
 innerDivs.forEach(innerDiv => {
     innerDiv.addEventListener('click', () => {
         if (currentSelectedDiv !== null) {
@@ -57,6 +63,8 @@ innerDivs.forEach(innerDiv => {
         }
 
         applyArrow(innerDiv);
+        innerDiv.classList.add('selected');
         currentSelectedDiv = innerDiv;
+
     });
 });
