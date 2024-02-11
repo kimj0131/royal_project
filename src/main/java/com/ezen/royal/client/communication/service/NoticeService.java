@@ -8,4 +8,6 @@ public interface NoticeService {
 	
 	Integer getUniqueValuesCount();
 
+	void getNoticeDTO(int notice_id, Model model);
+
 }

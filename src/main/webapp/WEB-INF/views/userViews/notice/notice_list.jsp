@@ -86,6 +86,7 @@
 		</div>
 		<c:forEach items="${noticeList}" var="notice">
 			<div class="board_wrap_list">
+				<c:set value="${notice.notice_id}" var="nid"/>
 				<div>${notice.notice_id}</div>
 				<div>
 					<c:choose>
@@ -106,7 +107,7 @@
 		            	</c:when>
 					</c:choose>
 				</div>
-				<a href="/royal/communication/notice_detail">${notice.notice_title}</a>
+				<a href="/royal/communication/notice_detail?notice_id=${nid}">${notice.notice_title}</a>
 				<div>${notice.notice_date}</div>
 			</div>
 		</c:forEach>

@@ -28,4 +28,12 @@ public class NoticeServiceImpl implements NoticeService{
 		return noticeMapper.getUniqueValuesCount();
 	}
 
+	@Override
+	public void getNoticeDTO(int notice_id, Model model) {
+		NoticeDTO noticeDTO = noticeMapper.get(notice_id); 
+		model.addAttribute("noticeDTO", noticeDTO);
+	
+	}
+
+
 }
