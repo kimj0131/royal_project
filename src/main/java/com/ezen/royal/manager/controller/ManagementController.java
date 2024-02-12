@@ -20,7 +20,6 @@ import lombok.extern.log4j.Log4j;
 
 @Log4j
 @Controller
-@RequestMapping("/YWRtaW5wYWdl")
 public class ManagementController {
 
 	@Autowired
@@ -30,19 +29,19 @@ public class ManagementController {
 	QnaManageService qnaManageService;
 
 	// 관리자 로그인 페이지 매핑
-	@GetMapping("/") // 관리자 로그인 페이지
+	@GetMapping("/YWRtaW5wYWdl/") // 관리자 로그인 페이지
 	public String manager_login_view() {
 		return "redirect:/YWRtaW5wYWdl/login";
 	}
 
-	@GetMapping("/login") // 관리자 로그인 페이지
+	@GetMapping("/YWRtaW5wYWdl/login") // 관리자 로그인 페이지
 	public String manager_login_view2() {
 		return "managerViews/login_view";
 	}
 
 	// [TEST] id = royaladmin password = royaladmin
 	// 관리자 로그인
-	@PostMapping("/login")
+	@PostMapping("/YWRtaW5wYWdl/login")
 	public String manager_login(HttpServletRequest request, HttpSession session) {
 
 		String id = request.getParameter("ID");
@@ -56,7 +55,7 @@ public class ManagementController {
 
 				// 로그인 유지, 확인을 위해 어트리뷰트 설정 (해쉬코드 아이디값)
 				session.setAttribute("login_admin", SecureTools.getHashedString(id));
-				return "redirect:/YWRtaW5wYWdl/index";
+				return "redirect:/manage/index";
 			} else {
 				// 관리자 계정 로그인에 실패했을 때
 				log.warn("[WARNING] 계정정보가 다릅니다");
@@ -69,7 +68,7 @@ public class ManagementController {
 	}
 
 	// 로그아웃
-	@GetMapping("/logout")
+	@GetMapping("/manage/logout")
 	public String manager_logout(HttpServletRequest request, HttpSession session) {
 		// 세션초기화
 		session.invalidate();
@@ -78,7 +77,7 @@ public class ManagementController {
 	}
 
 	// [인덱스]
-	@GetMapping("/index")
+	@GetMapping("/manage/index")
 	public String manage_index(Model model) {
 		
 		// topbar 날짜 노출

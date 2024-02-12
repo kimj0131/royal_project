@@ -48,5 +48,36 @@
 		<filter-name>encodingFilter</filter-name>
 		<servlet-name>appServlet</servlet-name>
 	</filter-mapping>
+	
+	
+	<!-- 유저 로그인 필터 -->
+	<filter>
+		<filter-name>userLoginCheckFilter</filter-name>
+		<filter-class>com.ezen.royal.filter.UserLoginFilter</filter-class>
+	</filter>
+	
+	<filter-mapping>
+		<filter-name>userLoginCheckFilter</filter-name>
+		<url-pattern>/mypage/*</url-pattern>
+	</filter-mapping>
+	
+		<!-- 추가예정 -->
+	<filter-mapping>
+		<filter-name>userLoginCheckFilter</filter-name>
+		<url-pattern>/communication/qna</url-pattern>
+	</filter-mapping>
+	
+	<!-- 관리자 로그인 필터 -->
+	<filter>
+		<filter-name>manageLoginCheckFilter</filter-name>
+		<filter-class>com.ezen.royal.filter.ManageLoginFilter</filter-class>
+	</filter>
+	
+	<filter-mapping>
+		<filter-name>manageLoginCheckFilter</filter-name>
+		<url-pattern>/manage/*</url-pattern>
+	</filter-mapping>
+	
+	
 
 </web-app>

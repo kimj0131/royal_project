@@ -8,11 +8,6 @@ uri="http://java.sun.com/jsp/jstl/core"%>
 <% 
 	// 로그인 상태 확인 변수 설정
 	String login_admin = (String) session.getAttribute("login_admin");
-	//response.sendRedirect(request.getContextPath() + "/YWRtaW5wYWdl/summary");
-	
-	// 세션 확인
-	// System.out.println("로그인뷰 세션확인 : " + request.getSession(false));
-	
 %>
 
 <!DOCTYPE html>
@@ -32,11 +27,11 @@ uri="http://java.sun.com/jsp/jstl/core"%>
 		<c:if test="${!empty login_admin}">
 			<script>
 				alert("이미 로그인 중입니다.");
-				location.href='/royal/YWRtaW5wYWdl/index/';
+				location.href='/royal/manage/index/';
 			</script>
 		</c:if>
 	
-		<section class="h-100">
+		<section class="h-100">	
 			<div class="container h-100">
 				<div class="row justify-content-md-center h-100">
 					<div class="card-wrapper">

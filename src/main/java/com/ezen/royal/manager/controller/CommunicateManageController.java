@@ -16,7 +16,7 @@ import lombok.extern.log4j.Log4j;
 
 @Log4j
 @Controller
-@RequestMapping("/YWRtaW5wYWdl")
+@RequestMapping("/manage")
 public class CommunicateManageController {
 
 	@Autowired
@@ -65,7 +65,7 @@ public class CommunicateManageController {
 			return "redirect:/YWRtaW5wYWdl/qna";
 		} else {
 			log.warn("[WARNING] 답변을 추가하는데 문제가 있었습니다.");
-			return "redirect:/YWRtaW5wYWdl/qna";
+			return "redirect:/manage/qna";
 		}
 		
 		
