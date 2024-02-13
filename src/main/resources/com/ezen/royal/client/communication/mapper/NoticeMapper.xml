@@ -6,20 +6,30 @@
 	namespace="com.ezen.royal.client.communication.mapper.NoticeMapper">
 
 
-	<select id="getList"
+	<select id="getAll"
 		resultType="com.ezen.royal.client.communication.dto.NoticeDTO">
 		SELECT * FROM notice ORDER BY
 		notice_id DESC
-	</select>
-	
-	<select id="getUniqueValuesCount"
-		resultType="java.lang.Integer">
-		SELECT COUNT(DISTINCT notice_id) AS unique_values_count
-		FROM notice
 	</select>
 	
 	<select id="get"
 		resultType="com.ezen.royal.client.communication.dto.NoticeDTO">
 		SELECT * FROM notice WHERE notice_id=#{notice_id}
 	</select>
+	
+	<select id="getPartAll" resultType="com.ezen.royal.client.communication.dto.NoticeDTO">
+		SELECT * FROM notice WHERE royal_id = #{royal_id} ORDER BY notice_id DESC
+	</select>
+	
+	<select id="search" resultType="com.ezen.royal.client.communication.dto.NoticeDTO">
+		SELECT * FROM notice
+		WHERE #{type} LIKE '%' || #{searchString} || '%'
+	</select>
+	
+	<!-- <select id="searchAll" resultType="com.ezen.royal.client.communication.dto.NoticeDTO">
+		SELECT * FROM notice 
+		WHERE notice_content  LIKE '%#{searchString}%' AND notice_title LIKE '%#{searchString}%'
+	</select> -->
+	
+	
 </mapper>

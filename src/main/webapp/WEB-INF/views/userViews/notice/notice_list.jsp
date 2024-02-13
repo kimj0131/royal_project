@@ -52,18 +52,18 @@
 		<div class="search_left">
 			<div class="count_div">
 				전체:
-				<%=request.getAttribute("uniqueValuesCount")%>개
+				${notice.size()}개
 			</div>
 		</div>
 		<div class="search_div">
-			<form id="searchForm">
+			<form id="searchForm" action="/royal/communication/notice" method="POST">
 				<div class="search_right">
-					<select name="search_select_id1" id="search_select_id1" title="구분">
-						<option>전체</option>
+					<select name="search_select_id" id="search_select_id" >
+						<option >전체</option>
 						<option>제목</option>
 						<option>내용</option>
 					</select> <input type="text" name="search_input_id" id="search_input_id"
-						title="검색어를 입력해 주세요" placeholder="검색어를 입력해주세요.">
+						 placeholder="검색어를 입력해주세요.">
 					<button type="submit">검색</button>
 				</div>
 			</form>
@@ -76,9 +76,9 @@
 			<div>번호</div>
 			<div>담당부서</div>
 			<div>제목</div>
-			<div>등록일</div>
+			<div>등록일</div>          
 		</div>
-		<c:forEach items="${noticeList}" var="notice">
+		<c:forEach items="${notice}" var="notice">
 			<div class="board_wrap_list">
 				<c:set value="${notice.notice_id}" var="nid"/>
 				<div>${notice.notice_id}</div>

@@ -2,16 +2,21 @@ package com.ezen.royal.client.communication.mapper;
 
 import java.util.List;
 
+import org.apache.ibatis.annotations.Param;
 import org.springframework.ui.Model;
 
 import com.ezen.royal.client.communication.dto.NoticeDTO;
 
 public interface NoticeMapper {
 	
-	 List<NoticeDTO> getList();
+	 List<NoticeDTO> getAll();
+	 
+	 List<NoticeDTO> getPartAll(Integer royal_id);
 	
 	 NoticeDTO get(int notice_id);
-
-	Integer getUniqueValuesCount();
+	 
+	 List<NoticeDTO> search(@Param("type") String type, @Param("searchString") String searchString);
+	 
+//	 List<NoticeDTO> searchAll(String searchString);
 	
 }
