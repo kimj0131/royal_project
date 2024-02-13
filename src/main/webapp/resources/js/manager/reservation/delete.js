@@ -7,7 +7,7 @@ submitBtn.addEventListener('click', (e) => {
 
   // 삭제할 행사id를 입력하지 않으면 submit안됨
   if (resv_id.value == null || resv_id.value == '') {
-    alert('취소할 행사id를 설정해주세요');
+    alert('취소할 예약id를 설정해주세요');
   } else {
     submitInput.click();
   };

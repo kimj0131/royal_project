@@ -60,7 +60,7 @@
 					<!-- Row -->
 					<div class="row">
 
-						<!-- 취소창 -->
+						<!-- 추가창 -->
 						<div class="col-lg-12">
 							<div class="card mb-4">
 								<div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">

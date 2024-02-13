@@ -134,4 +134,36 @@ if (href.endsWith('/reservation/form/delete')) {
     collapses.item(1).classList.add('show');
     navItems.item(2).classList.add('active');
   }
+} else if (href.includes('faq')) {
+  if (href.endsWith('insert')) {
+    collapseItems.item(4).classList.add('active');
+    collapses.item(2).classList.add('show');
+    navItems.item(3).classList.add('active');
+  } else if (href.endsWith('update')) {
+    collapseItems.item(5).classList.add('active');
+    collapses.item(2).classList.add('show');
+    navItems.item(3).classList.add('active');
+  } else if (href.endsWith('delete')) {
+    collapseItems.item(6).classList.add('active');
+    collapses.item(2).classList.add('show');
+    navItems.item(3).classList.add('active');
+  }
+} else if (href.includes('qna')) {
+  collapseItems.item(7).classList.add('active');
+  collapses.item(3).classList.add('show');
+  navItems.item(4).classList.add('active');
+} else if (href.includes('notice')) {
+  if (href.endsWith('insert')) {
+    collapseItems.item(8).classList.add('active');
+    collapses.item(4).classList.add('show');
+    navItems.item(5).classList.add('active');
+  } else if (href.endsWith('update')) {
+    collapseItems.item(9).classList.add('active');
+    collapses.item(4).classList.add('show');
+    navItems.item(5).classList.add('active');
+  } else if (href.endsWith('delete')) {
+    collapseItems.item(10).classList.add('active');
+    collapses.item(4).classList.add('show');
+    navItems.item(5).classList.add('active');
+  }
 }

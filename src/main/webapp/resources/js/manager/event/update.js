@@ -234,10 +234,7 @@ rows.each(function (index, item) {
         //// 수정할 행사 아이디 넣기 ////
         let selected_event_title = document.querySelector('#selected_event_title');
         let selected_event_hidden = document.querySelector('#selected_event_hidden');
-
-        console.log(selected_event_title);
-        console.log(selected_event_hidden);
-
+        
         selected_event_title.innerHTML = `수정할 행사 ID - [${event.event_id}]`;
         selected_event_hidden.value = event.event_id;
 

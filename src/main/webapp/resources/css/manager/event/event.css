@@ -1,3 +1,19 @@
+.fc_custom {
+  width: 100%;
+}
+
+.fg_custom_wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 20px;
+}
+
+.fg_custom1 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 10px;
+}
+
 /* 궁 ID */
 .fg_custom1 > :nth-child(1) {
   grid-column: 1 / span 1;

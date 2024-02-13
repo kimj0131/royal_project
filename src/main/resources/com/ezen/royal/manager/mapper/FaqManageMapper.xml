@@ -6,7 +6,7 @@
 
 	<!-- 모든 FAQ 목록 (카테고리별 정렬) -->
 	<select id="getFAQList" resultType="com.ezen.royal.manager.dto.FAQManageDTO">
-		SELECT * FROM faq ORDER BY faq_royal_id`
+		SELECT * FROM faq ORDER BY royal_id
 	</select>
 	<!-- FAQ 상세 -->
 	<select id="getFAQResult" resultType="com.ezen.royal.manager.dto.FAQManageDTO">
@@ -17,12 +17,12 @@
 	<insert id="insertFAQ">
 		INSERT INTO faq(
 			faq_id,
-			faq_royal_id,
+			royal_id,
 			faq_title,
 			faq_result
 		)VALUES(
 			faq_id_seq.nextval,
-			#{faq_royal_id},
+			#{royal_id},
 			#{faq_title},
 			#{faq_result}
 		)
@@ -31,7 +31,7 @@
 	<!-- FAQ 수정 -->
 	<update id="updateFAQ">
 		UPDATE faq SET
-			faq_royal_id=#{faq_royal_id},
+			royal_id=#{royal_id},
 			faq_title=#{faq_title},
 			faq_result=#{faq_result}
 		WHERE

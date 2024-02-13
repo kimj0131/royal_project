@@ -16,8 +16,8 @@ import lombok.extern.log4j.Log4j;
 
 @Log4j
 @Controller
-@RequestMapping("/manage/main")
-public class CommunicateManageController {
+@RequestMapping("/manage/main/qna")
+public class QnaManageController {
 
 	@Autowired
 	QnaManageService qnaManageService;
@@ -25,21 +25,7 @@ public class CommunicateManageController {
 	@Autowired
 	MemberService memberService;
 
-	@GetMapping("/notice/*") // 관리자 공지사항 수정 페이지
-	public String manage_notice(HttpServletRequest request) {
-		String uri = request.getRequestURI();
-
-		if (uri.endsWith("insert"))
-			return "managerViews/main_views/notice/notice_insert";
-		else if (uri.endsWith("update"))
-			return "managerViews/main_views/notice/notice_update";
-		else if (uri.endsWith("delete"))
-			return "managerViews/main_views/notice/notice_delete";
-		else
-			return "";
-	}
-
-	@GetMapping("/qna") // 관리자 qna관리 페이지
+	@GetMapping("/form/*") // 관리자 qna관리 페이지
 	public String manage_qna(Model model) {
 		
 		// member 이름 map
@@ -52,7 +38,7 @@ public class CommunicateManageController {
 	}
 	
 
-	@PostMapping("/qna/answered") // 답변 추가
+	@PostMapping("/answered") // 답변 추가
 	public String manage_qna_update(HttpServletRequest request) {
 		String qna_idString = request.getParameter("qna_id");
 		String resultString = request.getParameter("qna_result");

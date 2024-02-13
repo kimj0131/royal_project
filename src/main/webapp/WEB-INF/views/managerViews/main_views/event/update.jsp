@@ -162,7 +162,7 @@
 							<div class="card mb-4">
 								<div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
 									<h6 class="m-0 font-weight-bold text-primary">행사 현황</h6>
-									<span style="font-size: 15px; font-weight: bold; ">※ 아래 각 행사를 클릭하시면 회차정보 등 상세정보를 보실 수 있습니다.</span>
+									<span style="font-size: 15px; font-weight: bold; ">※ 수정할 행사 ID를 선택해주세요.</span>
 								</div>
 								<div class="table-responsive p-3">
 									<table class="table align-items-center table-flush table-hover" id="dataTableHover">

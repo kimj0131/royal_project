@@ -39,7 +39,7 @@ public class FaqManageServiceImpl implements FaqManageService{
 	// FAQ 삭제
 	@Override
 	public int deleteFAQ(int delete_id) {
-		return 0;
+		return faqManageMapper.deleteFAQ(delete_id);
 	}
 
 	

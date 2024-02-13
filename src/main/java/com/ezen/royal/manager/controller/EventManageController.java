@@ -201,7 +201,8 @@ public class EventManageController {
 			
 			return "redirect:/manage/main/event/form/insert";
 		} else if (uri.endsWith("delete")) {
-			return "";
+			eventManageService.deleteEvent(Integer.parseInt(request.getParameter("faq_id")));
+			return "redirect:/manage/main/event/form/delete";
 		} else {
 			return "";
 		}
