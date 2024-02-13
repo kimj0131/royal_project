@@ -1,5 +1,6 @@
 package com.ezen.royal.client.mypage.service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,9 +34,11 @@ public class MypageServiceImpl implements MypageService{
 	}
 
 	@Override
-	public List<MypageDTO> getMyQna(String social_id) {
-		List<MypageDTO> myQnaList = mypageMapper.qnaList(social_id);
-		return myQnaList;
+	public List<MypageDTO> getMyqnaList(String social_id) {
+		List<MypageDTO> mypageQnAList = mypageMapper.qnaList(social_id);
+		
+		return mypageQnAList;
 	}
 
+	
 }

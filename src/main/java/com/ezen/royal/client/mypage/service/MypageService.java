@@ -10,8 +10,10 @@ public interface MypageService {
 
 	void getSelectedmypageDTO(Model model, String social_id);
 
-	List<MypageDTO> getMyreservList(String social_id);
+	List<MypageDTO> getMyreservList( String social_id);
 
-	List<MypageDTO> getMyQna(String social_id);
+	
+
+	List<MypageDTO> getMyqnaList(String social_id);
 	
 }

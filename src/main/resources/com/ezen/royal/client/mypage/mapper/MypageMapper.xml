@@ -8,18 +8,28 @@
 
 	<select id="getSelectedmypageDTO"
 		resultType="com.ezen.royal.client.mypage.dto.MypageDTO">
-		SELECT member_name, member_type FROM member WHERE social_id = #{social_id}
+		SELECT member_name, member_type FROM member WHERE social_id
+		= #{social_id}
 	</select>
-	
+
 	<select id="reservList"
 		resultType="com.ezen.royal.client.mypage.dto.MypageDTO">
-		SELECT resv_id,resv_num,(select event_name from event_list where event_id = reservation.event_id),
-		 resv_date, resv_people FROM reservation WHERE event_id = #{social_id}
+		SELECT
+			resv_id,
+			resv_num,
+			(select event_name from event_list where event_id = reservation.event_id) as event_name,
+			resv_date,
+			resv_people
+		FROM reservation
+		WHERE member_id = (select member_id from member where social_id = #{social_id})
+		ORDER BY resv_id desc
 	</select>
-	
+
 	<select id="qnaList"
 		resultType="com.ezen.royal.client.mypage.dto.MypageDTO">
-		SELECT qna_id ,qna_title, qna_content, qna_date, qna_result FROM qna WHERE member_id = #{social_id}
+		SELECT qna_id ,qna_title, qna_content, qna_date, qna_result
+		FROM qna WHERE member_id =(select member_id from member where social_id = #{social_id})
+		ORDER BY qna_id desc
 	</select>
 
 </mapper>

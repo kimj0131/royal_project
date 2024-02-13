@@ -15,10 +15,16 @@ public class MypageDTO {
 	private String social_id;
 	
 	// 예약정보
-	private String resvNum;
-	private String resvPeople;
-	private Date resvDate;
+	private String resv_num;
+	private String resv_people;
+	private Date resv_date;
+	private String event_name;
 	
-	private String eventName; 
+	//qna
+	private Integer qna_id;
+	private String qna_title;
+	private String qna_content;
+	private Date qna_date;
+	private String qna_result;
 	 
 }
