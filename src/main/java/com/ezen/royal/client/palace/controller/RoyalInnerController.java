@@ -3,7 +3,6 @@ package com.ezen.royal.client.palace.controller;
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -19,7 +18,7 @@ public class RoyalInnerController {
 	@Autowired
 	private RoyalInnerService innerService;
 
-    @GetMapping( value = "/royalInner", produces = MediaType.APPLICATION_JSON_VALUE)
+    @GetMapping("/royalInner")
     public String royalInnerPage(HttpServletRequest req, Model model) {
         // "royalName" 파라미터를 통해 선택한 궁 이름 가져옴
     	String palace = req.getParameter("palace");

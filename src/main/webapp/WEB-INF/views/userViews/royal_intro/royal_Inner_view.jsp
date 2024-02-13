@@ -5,11 +5,15 @@
 <html>
 <head>
 <c:url value="/resources/css/royal_intro/royal_inner_view.css" var="innerCSS" />
-<c:url value="/resources/js/royal_intro/royal_inner_view.js" var="innerJS" />
+<c:url value="/resources/js/royal_intro/royal_inner_slide.js" var="innerJS" />
+<c:url value="/resources/js/royal_intro/royal_innerName.js" var="innerNameJS" />
 <title>${palaceName} 내부 건축물</title>
 <link rel="stylesheet" href="${innerCSS}" />
 <script src="https://kit.fontawesome.com/2706cc5797.js" crossorigin="anonymous"></script>
-<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script>
+    // JSP 변수 값을 가져오기
+    const selectedInnerName  = "${innerDTO.royal_inner_name}";
+</script>
 </head>
 <body>
 	<jsp:include page="/WEB-INF/views/userViews/layout/header.jsp" />
@@ -23,7 +27,9 @@
     <a href="/royal/palace/royalInner?palace=종묘&royalId=5">종묘</a>
 	</div>
 
-	<h2>${palaceName}이야기</h2>
+	<h2>${palaceName}이야기</h2> 
+
+<%= request.getParameter("inner") %>
 
 
     <div class="grid-container">
@@ -77,6 +83,6 @@
 	
 	<jsp:include page="/WEB-INF/views/userViews/layout/footer.jsp" />
 	<script src="${innerJS}"></script>  
-	
+	<script src="${innerNameJS}"></script>
 </body>
 </html>
