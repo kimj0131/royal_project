@@ -23,7 +23,7 @@
 	
 	<select id="search" resultType="com.ezen.royal.client.communication.dto.NoticeDTO">
 		SELECT * FROM notice
-		WHERE #{type} LIKE '%' || #{searchString} || '%'
+		WHERE ${type} LIKE '%' || #{searchString} || '%'
 	</select>
 	
 	<!-- <select id="searchAll" resultType="com.ezen.royal.client.communication.dto.NoticeDTO">
