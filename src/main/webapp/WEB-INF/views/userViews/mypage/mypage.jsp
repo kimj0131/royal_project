@@ -52,7 +52,7 @@
 	<div class="reservboard_wrap">
 		<div class="reservboard_wrap_layout">
 			<div>예약번호</div>
-			<div>궁이름</div>
+			<div>행사명</div>
 			<div>날짜 및 시간</div>
 			<div>인원</div>
 			<div>비고</div>
