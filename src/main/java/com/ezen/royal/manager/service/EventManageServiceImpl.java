@@ -70,11 +70,14 @@ public class EventManageServiceImpl implements EventManageService {
 	// 이벤트 삭제
 	@Override
 	public int deleteEvent(int delete_id) {
+		
 		int roundResult = eventManageMapper.deleteEventRound(delete_id);
+		// 혹시라도 회차가 없을경우에도 삭제가 되도록
 		if (roundResult > 0) {
 			return eventManageMapper.deleteEvent(delete_id);
 		} else {
-			return 0;
+			log.error("[" + delete_id + "번] 이벤트의 회차삭제에 문제가 있었습니다.");
+			return eventManageMapper.deleteEvent(delete_id);
 		}
 	}
 
