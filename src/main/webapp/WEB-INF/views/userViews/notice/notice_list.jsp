@@ -9,13 +9,13 @@
 <c:url value="/resources/css/communication/notice_list.css" var="notice_listCSS" />
 <c:url value="/resources/css/communication/public_communication.css"
 	var="public_communicationCSS" />
-<c:url value="/resources/js/communication/public_communication.js"
-	var="public_communicationJS" />
+<c:url value="/resources/js/communication/communication_notice.js"
+	var="communication_noticeJS" />
 <c:url value="/resources/js/communication/notice.js"
 	var="noticeJS" />
 <link rel="stylesheet" href="${notice_listCSS}" />
 <link rel="stylesheet" href="${public_communicationCSS}" />
-<link rel="stylesheet" href="${public_communicationJS}" />
+<link rel="stylesheet" href="${communication_noticeJS}" />
 <link rel="stylesheet" href="${noticeJS}" />
 </head>
 <body>
@@ -62,12 +62,6 @@
 						<option>전체</option>
 						<option>제목</option>
 						<option>내용</option>
-					</select> <select name="search_select_id2" id="search_select_id2" title="구분">
-						<option>전체</option>
-						<option>경복궁</option>
-						<option>덕수궁</option>
-						<option>창경궁</option>
-						<option>종묘</option>
 					</select> <input type="text" name="search_input_id" id="search_input_id"
 						title="검색어를 입력해 주세요" placeholder="검색어를 입력해주세요.">
 					<button type="submit">검색</button>
@@ -117,7 +111,7 @@
 
 
 	<script src="${noticeJS}"></script>
-	<script src="${public_communicationJS}"></script>
+	<script src="${communication_noticeJS}"></script>
 	<jsp:include page="/WEB-INF/views/userViews/layout/footer.jsp" />
 
 </body>
