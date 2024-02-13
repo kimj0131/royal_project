@@ -29,15 +29,10 @@
 
 	<h2>${palaceName}이야기</h2> 
 
-<%= request.getParameter("inner") %>
-
-
     <div class="grid-container">
         <!-- innerNameList에 있는 각 내부 건물 이름에 대해 반복하여 폼 생성 -->
         <c:forEach items="${innerNameList}" var="innerName">
-            <!-- 폼을 제출할 경로를 설정하고, GET 메서드를 사용하여 데이터를 전송 -->
             <form action="/royal/palace/royalInner" method="get">
-                <!-- 각 폼에는 palaceName, innerName 및 royalId 값을 전송하는 숨겨진 입력 필드가 포함됨 -->
                 <input type="hidden" name="palace" value="${palaceName}" />
                 <input type="hidden" name="inner" value="${innerName}" />
                 <!-- palaceName에 따라 royalId 값을 설정 -->
