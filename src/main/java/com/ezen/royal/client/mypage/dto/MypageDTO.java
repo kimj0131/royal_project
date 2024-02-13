@@ -8,11 +8,11 @@ import lombok.Data;
 public class MypageDTO {
 
 	//마이페이지 내정보
-	private Integer memberId;
-	private String memberType;
-	private String memberName;
-	private String memberEmail;
-	private String socialId;
+	private Integer member_id;
+	private String member_type;
+	private String member_name;
+	private String member_email;
+	private String social_id;
 	
 	// 예약정보
 	private String resvNum;

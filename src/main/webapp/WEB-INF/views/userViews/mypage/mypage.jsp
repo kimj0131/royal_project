@@ -13,7 +13,7 @@
 
 </head>
 <body>
-	<jsp:include page="/WEB-INF/views/userViews/layout/header_top.jsp" />
+	<jsp:include page="/WEB-INF/views/userViews/layout/header.jsp" />
 
 	<div class="top_img_name">
 		<div>
@@ -30,12 +30,23 @@
 			
 		</div>
 	</div>
+	
+	<div class="commonInfo">
+		<div class = "commonInfo_layout">
+		<div class="commonInfo_wrap_layout">
+			<div id ="loginName">이 름</div>
+			<div id="loginNameValue"><input type="text" name="mypageDTO" value="${mypageDTO.member_name}"> </div>
+			<div id="loginType">로그인 종류</div>
+			<div id="loginTypeValue"><input type="text" name="mypageDTO" value="${mypageDTO.member_type}"></div>
+				
+		</div>
+	</div>
+	
 	<div class="reservationList">
 		<div id="reserv_title">
 			<h2 id="notice_title">예약내역</h2>
 			
 		</div>
-
 
 	</div>
 	<div class="reservboard_wrap">
