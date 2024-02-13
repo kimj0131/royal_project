@@ -45,8 +45,9 @@ uri="http://java.sun.com/jsp/jstl/core" %> <%@ taglib prefix="fmt" uri="http://j
 										class="card-header py-3 d-flex flex-row align-items-center justify-content-between"
 									>
 										<h6 class="m-0 font-weight-bold text-primary">QnA</h6>
-										<a class="m-0 float-right btn btn-danger btn-sm" href="/royal/YWRtaW5wYWdl/qna">
-											더보기
+										<h6 class="m-0 font-weight-bold text-primary">답변이 없는 질문 목록입니다</h6>
+										<a class="m-0 float-right btn btn-danger btn-sm" href="/royal/manage/main/qna">
+											답변 달기
 											<i class="fas fa-chevron-right"></i>
 										</a>
 									</div>
@@ -61,7 +62,7 @@ uri="http://java.sun.com/jsp/jstl/core" %> <%@ taglib prefix="fmt" uri="http://j
 												</tr>
 											</thead>
 											<tbody>
-												<c:forEach items="${QNAList}" var="qna" begin="0" end="9">
+												<c:forEach items="${emptyResultQNAList}" var="qna" begin="0" end="9">
 													<tr>
 														<td>${qna.qna_id}</td>
 														<td>${qna.qna_title}</td>

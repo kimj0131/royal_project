@@ -73,7 +73,7 @@
 									<h6 class="m-0 font-weight-bold text-primary">QnA 답변 추가</h6>
 								</div>
 								<div class="card-body">
-									<form id="qna_answer" action="/royal/YWRtaW5wYWdl/qna/"
+									<form id="qna_answer" action="/royal/manage/main/qna/answered/"
 										method="post">
 										<div class="fg_custom_wrapper">
 											<div class="fg_custom">

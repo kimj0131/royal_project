@@ -1,7 +1,5 @@
 package com.ezen.royal.manager.controller;
 
-import java.time.LocalDate;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
@@ -10,7 +8,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.ezen.royal.manager.service.ManagerLoginService;
 import com.ezen.royal.manager.service.QnaManageService;
@@ -80,12 +77,8 @@ public class ManagementController {
 	@GetMapping("/manage/main/index")
 	public String manage_index(Model model) {
 		
-		// topbar 날짜 노출
-		model.addAttribute("nowDate", LocalDate.now());
-		
-		// index 공용사용
+		// index qna리스트
 		qnaManageService.getQNAList(model);
-		qnaManageService.getQNAListResultEmpty(model);
 		
 		return "managerViews/main_views/index";
 	}

@@ -52,7 +52,7 @@ public class CommunicateManageController {
 	}
 	
 
-	@PostMapping("/qna") // 답변 추가
+	@PostMapping("/qna/answered") // 답변 추가
 	public String manage_qna_update(HttpServletRequest request) {
 		String qna_idString = request.getParameter("qna_id");
 		String resultString = request.getParameter("qna_result");

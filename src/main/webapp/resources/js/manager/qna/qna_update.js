@@ -5,8 +5,9 @@ $(".tableRowData").click(function (e) {
 	const title = $(this).find(".qnaTitle").html();
 	const content = $(this).find(".qnaContent").html();
 	const result = $(this).find(".qnaResult").html();
-	console.log(content);
-	console.log(result);
+	// console.log(content);
+	// console.log(result);
+
 	// 가져온 데이터를 적용
 	$("#selected_id").val(id);
 	$("#selected_title").val(title.trim());

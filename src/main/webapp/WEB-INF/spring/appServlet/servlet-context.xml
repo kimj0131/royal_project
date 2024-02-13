@@ -27,8 +27,17 @@
 	
 	<!-- 스케쥴러 파일이 있는 패키기 설정 -->
 	<context:component-scan base-package="com.ezen.royal.scheduler" />
-	<!-- 해당 태그들은 크론탭을 설정에 필요한 태그 -->
+	<!-- 해당 태그들은 스케쥴러 크론탭을 설정에 필요한 태그 -->
 		<task:scheduler id="jobScheduler" pool-size="10"/>
 		<task:annotation-driven scheduler="jobScheduler"/>
+		
+	
+	<!-- manage view에서 활용할 자원들을 추가해주는 intercepter -->
+	<interceptors>
+		<interceptor>
+			<mapping path="/manage/**"/>
+			<beans:bean id="manageIntercepter" class="com.ezen.royal.interceptor.ManageViewIntercepter"/>
+		</interceptor>
+	</interceptors>
 	
 </beans:beans>
