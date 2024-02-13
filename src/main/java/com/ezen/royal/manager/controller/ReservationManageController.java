@@ -15,7 +15,7 @@ import lombok.extern.log4j.Log4j;
 
 @Log4j
 @Controller
-@RequestMapping("/manage/reservation")
+@RequestMapping("/manage/main/reservation")
 public class ReservationManageController {
 	
 	@Autowired
@@ -41,7 +41,7 @@ public class ReservationManageController {
 		if (uri.endsWith("delete")) {
 			//resv_id
 			reservationManageService.deleteResv(Integer.parseInt(request.getParameter("resv_id")));
-			return "redirect:/manage/reservation/form/delete";
+			return "redirect:/manage/main/reservation/form/delete";
 		} else {
 			return "";
 		}

@@ -67,7 +67,7 @@
 									<h6 id="selected_event_title" class="m-0 font-weight-bold text-primary">수정할 행사 ID를 선택해주세요</h6>
 								</div>
 								<div class="card-body">
-									<form action="/royal/YWRtaW5wYWdl/event/post/update" method="post">
+									<form action="/royal/manage/main/event/post/update" method="post">
 										<input id="selected_event_hidden" name="selected_event" type="hidden">
 										<div class="fg_custom_wrapper">
 											<div class="fg_custom1">

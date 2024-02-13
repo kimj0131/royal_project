@@ -16,7 +16,7 @@ import lombok.extern.log4j.Log4j;
 
 @Log4j
 @Controller
-@RequestMapping("/manage")
+@RequestMapping("/manage/main")
 public class CommunicateManageController {
 
 	@Autowired
@@ -62,10 +62,10 @@ public class CommunicateManageController {
 		if (qna_idString != null && resultString != null) {
 			int qna_id = Integer.parseInt(qna_idString);
 			qnaManageService.updateQNA(resultString, qna_id);
-			return "redirect:/YWRtaW5wYWdl/qna";
+			return "redirect:/manage/main/qna";
 		} else {
 			log.warn("[WARNING] 답변을 추가하는데 문제가 있었습니다.");
-			return "redirect:/manage/qna";
+			return "redirect:/manage/main/qna";
 		}
 		
 		

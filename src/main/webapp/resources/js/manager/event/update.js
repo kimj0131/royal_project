@@ -80,7 +80,7 @@ rows.each(function (index, item) {
   item.addEventListener('click', (e) => {
 
     $.ajax(ajaxSettings = {
-      url: `/royal/YWRtaW5wYWdl/event/ajax/${item.id}`,
+      url: `/royal/manage/main/event/ajax/${item.id}`,
       method: 'GET',
       dataType: 'json',
       success: (object, state, xhttp) => {
@@ -172,9 +172,15 @@ rows.each(function (index, item) {
 
 
         //// 회차별 인원수 넣기 ////
+
         var selected_capacity = $('#selected_capacity');
-        var round_capacity = rounds[0].round_capacity;
-        selected_capacity.val(round_capacity);
+        // 행사에 회차가 설정 되어있을 경우와 없을 경우 모두 고려
+        if (rounds.length != 0) {
+          var round_capacity = rounds[0].round_capacity;
+          selected_capacity.val(round_capacity);
+        } else {
+          selected_capacity.val(0);
+        }
 
 
         //// 회차 정보 넣기 ////

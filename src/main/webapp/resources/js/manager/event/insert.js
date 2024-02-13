@@ -95,7 +95,7 @@ rows.each(function (index, item) {
     modal_rounds.empty();
 
     $.ajax(ajaxSettings = {
-      url: `/royal/YWRtaW5wYWdl/event/ajax/${item.id}`,
+      url: `/royal/manage/main/event/ajax/${item.id}`,
       method: 'GET',
       dataType: 'json',
       success: (object, state, xhttp) => {

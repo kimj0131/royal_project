@@ -27,7 +27,7 @@ uri="http://java.sun.com/jsp/jstl/core"%>
 		<c:if test="${!empty login_admin}">
 			<script>
 				alert("이미 로그인 중입니다.");
-				location.href='/royal/manage/index/';
+				location.href='/royal/manage/main/index/';
 			</script>
 		</c:if>
 	

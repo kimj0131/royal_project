@@ -29,19 +29,19 @@ public class ManagementController {
 	QnaManageService qnaManageService;
 
 	// 관리자 로그인 페이지 매핑
-	@GetMapping("/YWRtaW5wYWdl/") // 관리자 로그인 페이지
+	@GetMapping("/manage/") // 관리자 로그인 페이지
 	public String manager_login_view() {
-		return "redirect:/YWRtaW5wYWdl/login";
+		return "redirect:/manage/login";
 	}
 
-	@GetMapping("/YWRtaW5wYWdl/login") // 관리자 로그인 페이지
+	@GetMapping("/manage/login") // 관리자 로그인 페이지
 	public String manager_login_view2() {
 		return "managerViews/login_view";
 	}
 
 	// [TEST] id = royaladmin password = royaladmin
 	// 관리자 로그인
-	@PostMapping("/YWRtaW5wYWdl/login")
+	@PostMapping("/manage/login")
 	public String manager_login(HttpServletRequest request, HttpSession session) {
 
 		String id = request.getParameter("ID");
@@ -55,15 +55,15 @@ public class ManagementController {
 
 				// 로그인 유지, 확인을 위해 어트리뷰트 설정 (해쉬코드 아이디값)
 				session.setAttribute("login_admin", SecureTools.getHashedString(id));
-				return "redirect:/manage/index";
+				return "redirect:/manage/main/index";
 			} else {
 				// 관리자 계정 로그인에 실패했을 때
 				log.warn("[WARNING] 계정정보가 다릅니다");
-				return "redirect:/YWRtaW5wYWdl/login";
+				return "redirect:/manage/login";
 			}
 		} else {
 			log.warn("[WARNING] 관리자 로그인에 문제가 발생했습니다");
-			return "redirect:/YWRtaW5wYWdl/login";
+			return "redirect:/manage/login";
 		}
 	}
 
@@ -73,11 +73,11 @@ public class ManagementController {
 		// 세션초기화
 		session.invalidate();
 		// 초기화 후 로그인페이지로 리다이렉트
-		return "redirect:/YWRtaW5wYWdl/login";
+		return "redirect:/manage/login";
 	}
 
 	// [인덱스]
-	@GetMapping("/manage/index")
+	@GetMapping("/manage/main/index")
 	public String manage_index(Model model) {
 		
 		// topbar 날짜 노출

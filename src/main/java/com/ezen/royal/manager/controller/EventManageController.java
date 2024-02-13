@@ -27,7 +27,7 @@ import lombok.extern.log4j.Log4j;
 
 @Log4j
 @Controller
-@RequestMapping("/manage/event")
+@RequestMapping("/manage/main/event")
 public class EventManageController {
 
 	@Autowired
@@ -137,7 +137,7 @@ public class EventManageController {
 			log.info(eventRoundManageDTO_List);
 
 			eventManageService.insertEvent(eventManageDTO, eventRoundManageDTO_List);
-			return "redirect:/manage/event/form/insert";
+			return "redirect:/manage/main/event/form/insert";
 
 		} else if (uri.endsWith("update")) {
 			
@@ -199,7 +199,7 @@ public class EventManageController {
 			
 			eventManageService.updateEvent(eventManageDTO, eventRoundManageDTO_List);
 			
-			return "redirect:/manage/event/form/insert";
+			return "redirect:/manage/main/event/form/insert";
 		} else if (uri.endsWith("delete")) {
 			return "";
 		} else {

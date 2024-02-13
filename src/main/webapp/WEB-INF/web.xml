@@ -75,7 +75,7 @@
 	
 	<filter-mapping>
 		<filter-name>manageLoginCheckFilter</filter-name>
-		<url-pattern>/manage/*</url-pattern>
+		<url-pattern>/manage/main/*</url-pattern>
 	</filter-mapping>
 	
 	

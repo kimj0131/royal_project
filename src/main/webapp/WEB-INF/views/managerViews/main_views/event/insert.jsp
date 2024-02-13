@@ -67,7 +67,7 @@
 									<h6 class="m-0 font-weight-bold text-primary">행사 추가</h6>
 								</div>
 								<div class="card-body">
-									<form action="/royal/YWRtaW5wYWdl/event/post/insert" method="post">
+									<form action="/royal/manage/main/event/post/insert" method="post">
 										<div class="fg_custom_wrapper">
 											<div class="fg_custom1">
 												<div class="form-group">

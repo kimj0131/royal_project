@@ -58,7 +58,7 @@
 									<h6 class="m-0 font-weight-bold text-primary">예약 취소</h6>
 								</div>
 								<div class="card-body">
-									<form action="/royal/YWRtaW5wYWdl/reservation/post/delete" method="post">
+									<form action="/royal/manage/main/reservation/post/delete" method="post">
 										<div class="form-group">
 											<input type="text" class="form-control" id="resv_id" name="resv_id" placeholder="취소할 예약 ID">
 										</div>

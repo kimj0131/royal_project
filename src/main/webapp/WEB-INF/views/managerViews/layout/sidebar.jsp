@@ -9,7 +9,7 @@
 <c:if test="${empty login_admin}">
 	<script>
 		alert("정상적인 접근이 아닙니다");
-		location.href='/royal/YWRtaW5wYWdl/';
+		location.href='/royal/manage/login';
 	</script>
 </c:if>
 
@@ -21,7 +21,7 @@
 
 <!-- Sidebar -->
 <ul class="navbar-nav sidebar sidebar-light accordion" id="accordionSidebar">	
-	<a class="sidebar-brand d-flex align-items-center justify-content-center" href="/royal/YWRtaW5wYWdl/index">
+	<a class="sidebar-brand d-flex align-items-center justify-content-center" href="/royal/manage/main/index">
 		<div class="sidebar-brand-icon">
 			<img src="${logoIMG}">
 		</div>
@@ -31,7 +31,7 @@
 	<hr class="sidebar-divider my-0">
 	
 	<li class="nav-item active">
-		<a class="nav-link" href="/royal/YWRtaW5wYWdl/index"> 
+		<a class="nav-link" href="/royal/manage/main/index"> 
 			<i class="fas fa-fw fa-tachometer-alt" ></i> 
 			<span>관리자 페이지</span>
 		</a>
@@ -49,7 +49,7 @@
 		<div id="collapseReservation" class="collapse" aria-labelledby="headingForm" data-parent="#accordionSidebar">
 			<div class="bg-white py-2 collapse-inner rounded">
 				<h6 class="collapse-header">예약관리</h6>
-				<a class="collapse-item" href="/royal/YWRtaW5wYWdl/reservation/form/delete">취소</a>
+				<a class="collapse-item" href="/royal/manage/main/reservation/form/delete">취소</a>
 			</div>
 		</div>
 	</li>
@@ -62,9 +62,9 @@
 		<div id="collapseEvent" class="collapse" aria-labelledby="headingTable" data-parent="#accordionSidebar">
 			<div class="bg-white py-2 collapse-inner rounded">
 				<h6 class="collapse-header">행사관리</h6>
-				<a class="collapse-item" href="/royal/YWRtaW5wYWdl/event/form/insert">추가</a> 
-				<a class="collapse-item" href="/royal/YWRtaW5wYWdl/event/form/update">수정</a>
-				<a class="collapse-item" href="/royal/YWRtaW5wYWdl/event/form/delete">삭제</a>
+				<a class="collapse-item" href="/royal/manage/main/event/form/insert">추가</a> 
+				<a class="collapse-item" href="/royal/manage/main/event/form/update">수정</a>
+				<a class="collapse-item" href="/royal/manage/main/event/form/delete">삭제</a>
 			</div>
 		</div>
 	</li>
@@ -92,7 +92,7 @@
 		<div id="collapseQnA" class="collapse" aria-labelledby="headingTable" data-parent="#accordionSidebar">
 			<div class="bg-white py-2 collapse-inner rounded">
 				<h6 class="collapse-header">질문과 답변 관리</h6>
-				<a class="collapse-item" href="/royal/YWRtaW5wYWdl/qna">답변</a>
+				<a class="collapse-item" href="/royal/manage/main/qna">답변</a>
 			</div>
 		</div>
 	</li>

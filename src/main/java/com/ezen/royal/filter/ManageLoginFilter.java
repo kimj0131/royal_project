@@ -28,7 +28,7 @@ public class ManageLoginFilter implements Filter{
         HttpSession session = httpRequest.getSession(false);
         
         if (session == null || session.getAttribute("login_admin") == null) {
-        	httpResponse.sendRedirect("/royal/YWRtaW5wYWdl/login");
+        	httpResponse.sendRedirect("/royal/manage/login");
 
             return;
 		}
