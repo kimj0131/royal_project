@@ -52,12 +52,10 @@
 
 				<!-- Container Fluid-->
 				<div class="container-fluid" id="container-wrapper">
-					<div
-						class="d-sm-flex align-items-center justify-content-between mb-4">
+					<div class="d-sm-flex align-items-center justify-content-between mb-4">
 						<h1 class="h3 mb-0 text-gray-800">QnA 답변 추가</h1>
 						<ol class="breadcrumb">
-							<li class="breadcrumb-item"><a
-								href="/royal/YWRtaW5wYWdl/index">Home</a></li>
+							<li class="breadcrumb-item"><a href="/royal/manage/main/index">Home</a></li>
 							<li class="breadcrumb-item">QnA</li>
 							<li class="breadcrumb-item active" aria-current="page">답변</li>
 						</ol>
@@ -68,13 +66,11 @@
 						<!-- 답변 Form -->
 						<div class="col-lg-12">
 							<div class="card mb-4">
-								<div
-									class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+								<div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
 									<h6 class="m-0 font-weight-bold text-primary">QnA 답변 추가</h6>
 								</div>
 								<div class="card-body">
-									<form id="qna_answer" action="/royal/manage/main/qna/answered/"
-										method="post">
+									<form id="qna_answer" action="/royal/manage/main/qna/answered/" method="post">
 										<div class="fg_custom_wrapper">
 											<div class="fg_custom">
 												<div class="form-group">
@@ -106,13 +102,12 @@
 						<!-- DataTable with Hover -->
 						<div class="col-lg-12">
 							<div class="card mb-4">
-								<div
-									class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+								<div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
 									<h6 class="m-0 font-weight-bold text-primary">QnA 목록</h6>
+									<span style="font-size: 15px; font-weight: bold; ">※ 아래 질문을 클릭하면 답변을 달 수 있습니다.</span>
 								</div>
 								<div class="table-responsive p-3">
-									<table class="table align-items-center table-flush table-hover"
-										id="dataTableHover">
+									<table class="table align-items-center table-flush table-hover" id="dataTableHover">
 										<thead class="thead-light">
 											<tr>
 												<th>번호</th>
@@ -120,20 +115,17 @@
 												<th>제목</th>
 												<th>작성일</th>
 												<th>답변여부</th>
-												<th hidden></th>
-												<th hidden></th>
+												<th hidden>내용</th>
+												<th hidden>답변</th>
 											</tr>
 										</thead>
 										<tbody>
 											<c:forEach items="${QNAList}" var="qna">
 												<tr class="tableRowData">
 													<td class="qnaId" style="word-break: break-all">${qna.qna_id}</td>
-													<td class="qnaName" style="word-break: break-all">
-														${memberNameMap[qna.member_id]}</td>
-													<td class="qnaTitle" style="word-break: break-all">
-														${qna.qna_title}</td>
-													<fmt:formatDate value="${qna.qna_date}"
-														pattern="yyyy년 MM월 dd일" var="qnaDate" type="date" />
+													<td class="qnaName" style="word-break: break-all">${memberNameMap[qna.member_id]}</td>
+													<td class="qnaTitle" style="word-break: break-all">${qna.qna_title}</td>
+													<fmt:formatDate value="${qna.qna_date}" pattern="yyyy년 MM월 dd일" var="qnaDate" type="date" />
 													<td style="word-break: break-all">${qnaDate}</td>
 													<c:choose>
 														<c:when test="${empty qna.qna_result}">
@@ -143,8 +135,8 @@
 															<td><span class="badge badge-success">답변완료</span></td>
 														</c:otherwise>
 													</c:choose>
-													<td class="qnaContent" hidden>${qna.qna_content}</td>
-													<td class="qnaResult" hidden>${qna.qna_result}</td>
+													<td class="qnaContent" style="word-break: break-all" hidden>${qna.qna_content}</td>
+													<td class="qnaResult" style="word-break: break-all" hidden>${qna.qna_result}</td>
 												</tr>
 											</c:forEach>
 										</tbody>

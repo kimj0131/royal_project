@@ -32,7 +32,7 @@ uri="http://java.sun.com/jsp/jstl/core" %> <%@ taglib prefix="fmt" uri="http://j
 						<div class="d-sm-flex align-items-center justify-content-between mb-4">
 							<h1 class="h3 mb-0 text-gray-800">확인할 업무</h1>
 							<ol class="breadcrumb">
-								<li class="breadcrumb-item"><a href="/royal/YWRtaW5wYWdl/index">Home</a></li>
+								<li class="breadcrumb-item"><a href="/royal/manage/main/index">Home</a></li>
 							</ol>
 							
 						</div>
@@ -45,7 +45,7 @@ uri="http://java.sun.com/jsp/jstl/core" %> <%@ taglib prefix="fmt" uri="http://j
 										class="card-header py-3 d-flex flex-row align-items-center justify-content-between"
 									>
 										<h6 class="m-0 font-weight-bold text-primary">QnA</h6>
-										<h6 class="m-0 font-weight-bold text-primary">답변이 없는 질문 목록입니다</h6>
+										<h6 class="m-0 font-weight-bold text-primary">답변이 없는 질문 목록</h6>
 										<a class="m-0 float-right btn btn-danger btn-sm" href="/royal/manage/main/qna">
 											답변 달기
 											<i class="fas fa-chevron-right"></i>

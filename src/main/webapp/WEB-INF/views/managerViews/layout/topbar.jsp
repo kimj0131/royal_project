@@ -32,7 +32,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
 				<!-- 미확인 알람 -->
 				<h6 class="dropdown-header">알림</h6>
 
-				<a class="dropdown-item d-flex align-items-center" href="/royal/YWRtaW5wYWdl/qna">
+				<a class="dropdown-item d-flex align-items-center" href="/royal/manage/main/qna">
 					<div class="mr-3">
 						<div class="icon-circle bg-warning">
 							<i class="fas fa-exclamation-triangle text-white"></i>
@@ -60,7 +60,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
 				aria-expanded="false"
 			>
 				<img class="img-profile rounded-circle" src="${manIMG}" style="max-width: 60px" />
-				<span class="ml-2 d-none d-lg-inline text-white small">Manager</span>
+				<span class="ml-2 d-none d-lg-inline text-white small">관리자</span>
 			</a>
 			<div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
 				<a class="dropdown-item" href="javascript:void(0);" data-toggle="modal" data-target="#logoutModal">
@@ -94,7 +94,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
 			</div>
 			<div class="modal-footer">
 				<button type="button" class="btn btn-outline-primary" data-dismiss="modal">취소</button>
-				<a href="/royal/YWRtaW5wYWdl/logout" class="btn btn-primary">로그아웃</a>
+				<a href="/royal/manage/logout" class="btn btn-primary">로그아웃</a>
 			</div>
 		</div>
 	</div>
