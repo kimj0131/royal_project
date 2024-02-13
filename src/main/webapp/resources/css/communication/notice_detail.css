@@ -11,3 +11,30 @@
 #notice_title{
     margin-bottom: 20px;
 }
+
+.board_wrap_list{
+    padding: 0 450px;
+
+}
+
+#board_detail_title{
+    font-size: 25px;
+    font-weight: bold;
+    border-bottom: 1px solid #EAEAEA;
+    padding: 5px;
+
+}
+
+#board_detail_info{
+    color: #666666;
+    font-size: 25px;
+    display: flex;
+    flex-direction: row;
+    border-bottom: 1px solid #EAEAEA;
+    padding: 5px;
+    text-align: center;
+}
+
+#board_detail_info_space{
+    padding: 0 10px;
+}

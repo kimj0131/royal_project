@@ -35,9 +35,7 @@ public class NoticeController {
 	@GetMapping("/notice_detail")
 	public String notice_detail(int notice_id, Model model) {
 		
-		System.out.println(notice_id);
 		noticeService.getNoticeDTO(notice_id, model);
-	
 		
 		return "/userViews/notice/notice_detail";
 	}
