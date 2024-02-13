@@ -30,10 +30,10 @@
 	
 	<div class="container">
 		<div class="click">
-				<div class="click-row">경복궁</div>
-				<div class="click-row">덕수궁</div>
-				<div class="click-row">창경궁</div>
-				<div class="click-row">창덕궁</div>
+				<div class="click-row" id="GB_BTN">경복궁</div>
+				<div class="click-row" id="DS_BTN">덕수궁</div>
+				<div class="click-row" id="CG_BTN">창경궁</div>
+				<div class="click-row" id="CD_BTN">창덕궁</div>
 			</div>
 	</div>
 

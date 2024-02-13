@@ -1,4 +1,3 @@
-
 function prevMonth(date) {
     var target = new Date(date);
     target.setDate(1);
@@ -29,14 +28,10 @@ function fullDays(date) {
     var firstWeekDay = new Date(year, month, 1).getDay();
     var thisDays = new Date(year, month + 1, 0).getDate();
 
-    // 월 표시 달력이 가지는 셀 갯수는 3가지 가운데 하나이다.
-    // var cell = [28, 35, 42].filter(n => n >= (firstWeekDay + thisDays)).shift();
     var cell = [28, 35, 42].filter(function (n) {
             return n >= (firstWeekDay + thisDays);
         }).shift();
 
-    // 셀 초기화, IE에서 Array.fill()을 지원하지 않아서 변경
-    // var days = new Array(cell).fill({date: '', dayNum: '', today: false});
     var days = []
     for (var i = 0; i < cell; i++) {
         days[i] = {
@@ -102,14 +97,21 @@ $(document).ready(function() {
     }
     
     // 페이지가 로드되면 이번 달의 이벤트 이미지를 표시
+    var currentMonth = new Date().getMonth() + 1;
     displayEventImages(currentMonth);
     
 
     $('#month-prev').on('click', function() {
-      //  새 달에 대한 이벤트 이미지를 가져옴
-    });
+        var prevMonth = $('#month-prev').data('ym');
+        displayEventImages(prevMonth);
+      });
     
 
     $('#month-next').on('click', function() {
-    });
+        var nextMonth = $('#month-next').data('ym');
+        displayEventImages(nextMonth);
+      });
   });
+
+
+  

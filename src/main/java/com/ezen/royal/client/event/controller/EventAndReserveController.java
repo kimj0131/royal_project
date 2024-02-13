@@ -14,8 +14,8 @@ public class EventAndReserveController {
 	@GetMapping("/event") // 행사
 	public String event() {
 		return "/userViews/reservation/event";
+		
 	}
-	
 	
 	@GetMapping("/reservation") // 통합예약
 	public String reservation() {
