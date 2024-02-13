@@ -37,7 +37,7 @@
 		</div>
 
 		<div class="BTN_class">
-			<div id="all_BTN" class="all on">전 체</div>
+			<div id="all_BTN" class="all">전 체</div>
 			<div id="GB_BTN" class="GB">경복궁</div>
 			<div id="DS_BTN" class="DS">덕수궁</div>
 			<div id="CG_BTN" class="CG">창경궁</div>

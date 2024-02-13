@@ -61,16 +61,6 @@
 }
 
 
-.BTN_class > div > a{
-    width: 120px;
-    height: 35px;
-    font-size: 18px;
-    font-weight: bold;
-    margin-top: 5px;
-    text-align: center;
-    border-radius: 30px; 
-}
-
 .all{
     border: 0 solid transparent;
     border-radius: 20px;
@@ -118,6 +108,7 @@
 
 .BTN_class > [class="all"] {
 	color: #4f509e;
+    
 }
 
 .BTN_class > [class="GB"] {

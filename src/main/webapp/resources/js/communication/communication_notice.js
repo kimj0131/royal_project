@@ -87,7 +87,7 @@ console.log(location.href);
 let buttonChange = location.href.charAt(location.href.length - 1)
 console.dir(buttonChange);
 console.log(typeof (buttonChange));
-if (buttonChange == 'q') {
+if (buttonChange == 'e') {
     all_BTN.classList.add('on');
 } else if (buttonChange == 1) {
     GB_BTN.classList.add('on');

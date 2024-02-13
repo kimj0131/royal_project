@@ -43,8 +43,9 @@
 			<div class="board_wrap_list">
 				<div id="board_detail_title">${noticeDTO.notice_title}</div> 
 				<div id="board_detail_info">
-					<div style="padding-left: 10px ">
+					<div style="padding: 0 30px">
 					<img src="${royal_idIMG}" />
+						<span>
 						<c:choose>
 							<c:when test="${noticeDTO.royal_id == 1}">
 			                	경복궁
@@ -62,12 +63,20 @@
 			                	종묘
 			            	</c:when>
 						</c:choose>
+						</span>
 					</div>
-					<div id="board_detail_info_space">|</div>
-				<div><img src="${notice_dateIMG}" />${noticeDTO.notice_date}</div>
+					<div style="padding: 0 30px">
+						<img src="${notice_dateIMG}" /> 
+						<span>${noticeDTO.notice_date}</span>
+					</div>
 				</div>
-				<div>${noticeDTO.notice_content}</div>
+				<div id="board_detail_cotent">${noticeDTO.notice_content}</div>
 			</div>
+	</div>
+	
+	<div class="BTN_class">
+		<button type="button" onclick="location.href = '/royal/communication/notice';" 
+		class="goList">목록</button>
 	</div>
 
 	<jsp:include page="/WEB-INF/views/userViews/layout/footer.jsp" />
