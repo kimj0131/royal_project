@@ -12,15 +12,15 @@
 .outer {
   position: relative;
   /* width: 100%; */
-  max-width: 1214px;
-  max-height: 392px;
+  max-width: 1210px;
+  max-height: 400px;
   margin: 0 auto;
   overflow: hidden;
 }
 
 .inner-list {
   display: flex;
-  transition: 0.5s ease-out;
+  transition: 1s ease-out;
   height: 100%;
 }
 
@@ -31,9 +31,10 @@
 
 .inner img {
   width: 100%;
-  height: 392px;
+  height: auto;
   margin: 0 auto;
   display: block;
+  object-fit: cover;
 }
 
 .button1 a.back {
@@ -68,10 +69,6 @@
     flex-direction: row; /* 화면이 작을 때 세로로 배치 */
   }
 
-  /* .title1 {
-    width: 100%;
-  } */
-
   .inner {
     width: 100%;
     height: 100%;
@@ -81,7 +78,6 @@
     top: auto; /* 예시로 조절, 필요에 따라 변경 가능 */
   }
 }
-
 
 
 /* ---------- 메인 공지사항 CSS ---------- */
@@ -152,8 +148,10 @@
   padding: 3px 0px 0px 0px; 
 }
 
+/* --------- 알림판 CSS -------- */
+
 .right {
-  padding-left: 5%;
+  padding-left: 10%;
   position: relative;
 }
 
@@ -163,7 +161,13 @@
   padding-bottom: 5%;
 }
 
+.imgSlider {
+  max-width: 350px;
+  max-height: 400px;
+}
+
 .img {
-  max-width: 100%;
+  box-sizing: border-box;
+  width: 100%;
   height: 400px;
 }

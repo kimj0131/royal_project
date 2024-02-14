@@ -37,7 +37,7 @@ public class RoyalMainController {
 	@GetMapping("/home") // 메인페이지로 이동
 	public String main(Model model) {
 		noticeService.getNoticeList(model);	
-		System.out.println(model.getAttribute("noticeList"));
+		System.out.println(model.getAttribute("notice"));
 		return "/userViews/main/main";
 		
 	}

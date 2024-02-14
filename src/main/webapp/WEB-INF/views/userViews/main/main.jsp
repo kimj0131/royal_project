@@ -54,14 +54,14 @@
 					<a class="all" href="/royal/communication/notice">전체보기</a>
 				</div>
 				<div class="list">
-					<c:forEach var="notice" items="${noticeList}" begin="0" end="4">
+					<c:forEach var="noti" items="${notice}" begin="0" end="4">
 						<div class="item">
 							<div class="title">공지사항</div>
 							<div class="inner_title">
-								<c:set value="${notice.notice_id}" var="nid" />
-								<a href="/royal/communication/notice_detail?notice_id=${nid}">${notice.notice_title}</a>
+								<c:set value="${noti.notice_id}" var="nid" />
+								<a href="/royal/communication/notice_detail?notice_id=${nid}">${noti.notice_title}</a>
 							</div>
-							<div class="inner_date">${notice.notice_date}</div>
+							<div class="inner_date">${noti.notice_date}</div>
 						</div>
 					</c:forEach>
 				</div>
@@ -71,11 +71,11 @@
 			<div class="inform">
 				<div class="main_title">알림판</div>
 			</div>
-			<c:forEach var="event_list" items="${eventList}">
+			<c:forEach var="evt" items="${event_imgpath}">
 				<div class="imgSlider" id="imageSlider">
 					<div class="images">
-						<a class="imgtag" href="/royal/palace/event_list?event_id=${event_id}"><img alt="" class="img"
-							src="https://www.chf.or.kr/jnrepo/namo/img/images/000063/20240119205704416_TEOZXDIK.png" /></a>
+						<a class="imgtag" href="/royal/palace/event_list?event_id=${evt.event_id}"><img alt="" class="img"
+							src="$evt" /></a>
 					</div>
 				</div>
 			</c:forEach>
