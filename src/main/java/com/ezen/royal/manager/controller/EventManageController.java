@@ -177,7 +177,7 @@ public class EventManageController {
 			
 			eventManageService.updateEvent(eventManageDTO, eventRoundManageDTO_List);
 			
-			return "redirect:/manage/main/event/form/insert";
+			return "redirect:/manage/main/event/form/update";
 		} else if (uri.endsWith("delete")) {
 			eventManageService.deleteEvent(Integer.parseInt(request.getParameter("faq_id")));
 			return "redirect:/manage/main/event/form/delete";
