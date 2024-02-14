@@ -16,9 +16,7 @@
 	<jsp:include page="/WEB-INF/views/userViews/layout/header.jsp" />
 	<div class="sub">
 		<div class="mainImg">
-			<img
-				src="../resources/image/reservation/bg_sub04.jpg"
-				alt="">
+			<img src="../resources/image/reservation/bg_sub04.jpg" alt="">
 		</div>
 		<div>
 			<h1>행사</h1>
@@ -45,7 +43,22 @@
             </div>
      </div>
      
-     <div class="imageContainer"></div>
+     <div class="eventImg">
+		     <div class="event-container">
+		    	<button type="button" id="evnet-prev" class="event-move"> ← </button>
+		    	<div class="imageContainer">
+		    	<div id="eventImg"> </div>
+		    	<div id="detail">
+		    	 <p>행사명: </p>
+			     <p>장소: </p>
+			     <p>기간: </p>
+			     <p>링크: </p>
+			     <p>자세한설명</p>
+		    	</div>
+		    </div>
+	     		<button type="button" id="event-next" class="event-move"> → </button>
+		    </div>
+     </div>
        
 	<script src="${eventJS}"></script>
 	
