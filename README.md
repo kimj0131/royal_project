@@ -46,7 +46,6 @@
 ***
 
 ## 발생한 문제
-> * 장호동 : 검색기능을 구현하기 위해 mybatis mapper 에 like 적용시 검색이 되지않는 문제 (% 검색문자 % 가 제대로 검색하지 못함)
 > * 
 
 ## 해결한 문제
@@ -70,6 +69,9 @@
 >   + 자바 객체를 json으로 parsing하기 위해 ObjectMapper를 사용
 >   + Map을 만들어 두개의 List를 put
 >   + List가 담긴 Map을 ObjectMapper의 writeValueAsString(Map) 메서드의 인자로 넘기고 반환 되는 결과를 return
+> * 장호동 :  검색기능 구현중에 type이 쿼리문에 원하는 값으로 넘어오지 못함
+>   + 넘어오는 컬럼 값에서 ''가 붙어서 mapper.xml에 있는 쿼리문으로 넘어오는 문제가 발생함 
+>   + mapper.xml에 작성한 쿼리문을 #{type}에서 ${type}으로 변경후 값이 'type'에서 type으로 넘어오는것을 확인함 
 
 ***
 ## 기여자
