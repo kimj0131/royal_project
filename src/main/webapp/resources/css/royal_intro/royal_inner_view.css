@@ -8,7 +8,7 @@
 .grid-container {
     margin: 0 auto;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
     gap: 0;
     padding-bottom: 20px;
     width: 66%;
@@ -20,10 +20,9 @@
     grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
     align-items: center;
     text-align: center;
-    gap: 20px;
-    width: 60%;
-    padding: 15px;
- 
+    gap: 50px;
+    width: 62%;
+    padding: 5px; 
 }
 
 .royal-name > a {

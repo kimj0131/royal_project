@@ -7,17 +7,29 @@
 //console.log("id:",getRoyalId);
 const innerDivs = document.querySelectorAll('.innerNameDiv');
 
+
+innerDivs.forEach(innerDiv => {
+    const defaultIcon = document.createElement("i");
+    defaultIcon.classList.add("fa-solid", "fa-minus");
+    innerDiv.appendChild(defaultIcon);
+});
+
 const innerDiv = innerDivs.values;
 //console.log("2:",innerDiv);
 //console.log("3:",innerDivs);
 //console.log("param:",selectedInnerName);
 
+
+
 for(div of innerDivs){
   //  console.log(div);
   if(div.textContent === selectedInnerName){
     const arrowIcon = document.createElement("i");
-    arrowIcon.classList.add("fa-solid", "fa-angles-down");
+    arrowIcon.classList.add("fa-sharp", "fa-solid", "fa-caret-down");
     div.appendChild(arrowIcon);
+    div.style.backgroundColor = 'black';
+    div.style.color = 'white';
+    div.innerHTML = div.innerHTML.replace('fa-solid fa-minus', '');
   }
 }
 
