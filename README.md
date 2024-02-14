@@ -42,6 +42,7 @@
 > * 방혜미 : 지도 api 데이터 활용 - 관람안내 > 오시는길 페이지 [[Commit]](https://github.com/kimj0131/royal_project/commit/012c89358b6c041b1c05169f36b2536019a3889c)
 > * 김준형 : Event 테이블 데이터 회차 컬럼을 수정 시 Event_round 테이블 데이터 회차수 만큼 insert or delete 하는 service [[Commit]](https://github.com/kimj0131/royal_project/commit/f856a8d61cbe07e3e5bfee5becbc1c6204e3cc7c)
 > * 김준형 : user, manage 로그인 확인 방법을 servlet filter에서 확인하도록 설정 [[Commit]](https://github.com/kimj0131/royal_project/commit/b9f155d03e6ee038dc20391c5d381a317744250e)
+> * 장호동 : 조건을 정해 검색할 수 있는 servie[[Commit]](https://github.com/kimj0131/royal_project/commit/8fe27658d6cb29ba94be1aeedb7b85d5b7de13e6)
 
 ***
 
