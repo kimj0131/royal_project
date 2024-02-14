@@ -24,7 +24,6 @@
 ***
 
 ## mission
-> * 조현우 : 관리자 페이지에 각각의 뷰에서 DB데이터 CRUD를 GUI로 구성
 > * 김태형 : 마이페이지에 기본정보, 예약내역, QnA 내역 나오게 전체 Controller, DTO, Service, Mapper, JSP 제작
 > * 서빈   : 공지사항의 FAQ Q&A 페이지 DB에 데이터 보내는 코드 작성 및 CSS 제작
 > * 황진솔 : 메인페이지 공지사항 및 행사 클릭 시 해당 페이지 이동 구현, 행사 슬라이드 구현
@@ -43,6 +42,7 @@
 > * 김준형 : Event 테이블 데이터 회차 컬럼을 수정 시 Event_round 테이블 데이터 회차수 만큼 insert or delete 하는 service [[Commit]](https://github.com/kimj0131/royal_project/commit/f856a8d61cbe07e3e5bfee5becbc1c6204e3cc7c)
 > * 김준형 : user, manage 로그인 확인 방법을 servlet filter에서 확인하도록 설정 [[Commit]](https://github.com/kimj0131/royal_project/commit/b9f155d03e6ee038dc20391c5d381a317744250e)
 > * 장호동 : 조건을 정해 검색할 수 있는 servie[[Commit]](https://github.com/kimj0131/royal_project/commit/8fe27658d6cb29ba94be1aeedb7b85d5b7de13e6)
+> * 조현우 : 관리자app - 디자인 템플릿을 받아와서 현재 프로젝트에 맞게 수정하고 예약, 행사, 자주묻는질문, 공지사항 페이지에서 데이터를 DB에 쉽게 추가, 수정, 삭제할 수 있도록 GUI 구축 [[Commit](https://github.com/kimj0131/royal_project/commit/5e743f0d5beccebd4ed739dfcbc97d80c72fe651)
 
 ***
 
