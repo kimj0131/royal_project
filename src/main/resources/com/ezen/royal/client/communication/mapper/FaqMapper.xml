@@ -16,12 +16,6 @@
 		SELECT * FROM faq WHERE
 		faq_id=#{faq_id}
 	</select>
-
-	<select id="getUniqueValuesCount"
-		resultType="java.lang.Integer">
-		SELECT COUNT(DISTINCT faq_id) AS unique_values_count
-		FROM faq
-	</select>
 	
 	<select id="getPartAll" resultType="com.ezen.royal.client.communication.dto.FaqDTO">
     	SELECT * FROM faq WHERE royal_id = #{royal_id} ORDER BY faq_id DESC

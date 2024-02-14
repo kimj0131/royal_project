@@ -25,53 +25,47 @@ public class FaqqnaController {
 
 	@Autowired
 	FaqService faqService;
-	
+
 	@Autowired
 	QnaService qnaService;
-	
-	@Autowired
-	QnaMapper qnaMapper;
 
 	@GetMapping("/faq")
 	public String faq(Model model, Integer royal_id) {
-		
-		if(royal_id==null) {	
-			faqService.faq(model);
-		} else {
-			faqService.faq2(model, royal_id);			
-		}
-		Integer uniqueValuesCount = faqService.getUniqueValuesCount();
 
-		model.addAttribute("uniqueValuesCount", uniqueValuesCount);
-		
+		if (royal_id == null) {
+			faqService.getfaqList(model);
+		} else {
+			faqService.getfaqList_part(model, royal_id);
+		}
+//		Integer uniqueValuesCount = faqService.getUniqueValuesCount();
+//
+//		model.addAttribute("uniqueValuesCount", uniqueValuesCount);
 
 		return "/userViews/notice/faq_form";
 	}
 
-	
-	@PostMapping("/faq")
-	public String insert(QnaDTO dto, RedirectAttributes rattr, HttpServletRequest req) {
-			
-		HttpSession session = req.getSession();
-		
-		String social_id = (String) session.getAttribute("login_user");
-		
-//		System.out.println(social_id);
-		// 이런식으로 작성, member_id를 가져와야함
-		Integer member_id = qnaMapper.getMemberId(social_id);
-		
-//		System.out.println(member_id);
-		dto.setMember_id(member_id); 
-		
-		System.out.println(dto);
-		
-		int qna_id = qnaService.insert(dto);
-		System.out.println(qna_id);
-		
-		if (qna_id > 0) {
-			rattr.addAttribute("qna_id", qna_id);
-		}
-		return "redirect:/communication/faq";
+	// 사용자가 qna(질문과답변)추가한다
+	@PostMapping("/qna/add")
+	public String insert(QnaDTO dto, HttpSession session) {
 
+		String social_id = (String) session.getAttribute("login_user");
+
+		// 세션에 있는 소셜아이디를 가져와서 멤버 아이디를 구한다
+		int member_id = qnaService.getMemberId(social_id);
+
+		// 가져온 아이디를 dto에 적용시킨다.
+		dto.setMember_id(member_id);
+		System.out.println(dto);
+
+		int result = qnaService.qnaInsert(dto);
+
+		if (result > 0) {
+			// 리다이렉트 후 alert를 띄우기 위해 JavaScript로 redirect 및 alert 추가
+			return "redirect:/communication/faq?alert=success";
+		} else {
+			// 리다이렉트 후 alert를 띄우기 위해 JavaScript로 redirect 및 alert 추가
+			return "redirect:/main/home?alert=error";
+		}
 	}
+
 }

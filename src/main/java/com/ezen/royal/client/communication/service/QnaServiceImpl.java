@@ -13,7 +13,13 @@ public class QnaServiceImpl implements QnaService {
 	QnaMapper qnaMapper;
 
 	@Override
-	public int insert(QnaDTO dto) {
+	public int qnaInsert(QnaDTO dto) {
 		return qnaMapper.insert(dto);
+	}
+
+	@Override
+	public int getMemberId(String social_id) {
+		
+		return qnaMapper.getMemberId(social_id);
 	}
 }

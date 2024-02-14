@@ -6,21 +6,20 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>소 통</title>
+<title>소통</title>
 <c:url value="/resources/css/communication/faq.css" var="faqCSS" />
 <c:url value="/resources/css/communication/public_communication.css"
 	var="public_communicationCSS" />
-<c:url value="/resources/js/communication/public_communication.js"
-	var="public_communicationJS" />
+<c:url value="/resources/js/communication/communication_faq.js"
+	var="communication_faqJS" />
 <link rel="stylesheet" href="${faqCSS}" />
 <link rel="stylesheet" href="${public_communicationCSS}" />
-<link rel="stylesheet" href="${public_communicationJS}" />
+<link rel="stylesheet" href="${communication_faqJS}" />
 <script src="https://kit.fontawesome.com/a2b7421397.js"
 	crossorigin="anonymous"></script>
 </head>
 <body>
 	<jsp:include page="/WEB-INF/views/userViews/layout/header.jsp" />
-
 	<div class="wrap">
 		<div class="content_wrap" id="contents_wrap">
 			<div class="top_img_name">
@@ -38,7 +37,7 @@
 				</div>
 
 				<div class="BTN_class">
-					<div id="all_BTN" class="all">전 체</a></div>
+					<div id="all_BTN" class="all">전 체</div>
 					<div id="GB_BTN" class="GB">경복궁</div>
 					<div id="DS_BTN" class="DS">덕수궁</div>
 					<div id="CG_BTN" class="CG">창경궁</div>
@@ -48,13 +47,9 @@
 			</div>
 
 
-			<div class="inner">
 				<div class="search_div">
 					<div class="search_left">
-						<div class="count_div">
-							전체:
-							<%=request.getAttribute("uniqueValuesCount")%>개
-						</div>
+						<div class="count_div">게시글수 [${faq.size()}]</div>
 					</div>
 					<form name="listForm" id="listForm" method="post"
 						onsubmit="fn_search(); return false;">
@@ -69,16 +64,17 @@
 						</div>
 					</form>
 				</div>
-
+				
+			<div class="inner">
 				<div class="sub_con_section">
 					<div class="txt_section_tit">목록</div>
 					<div class="bd_wrap">
 						<c:if test="${!empty faq}">
 							<ul class="faq-list">
 								<c:forEach items="${faq}" var="faq" varStatus="status">
-									<li class="q_item">
-										<div>${faq.faq_id}</div>
-										<div>
+									<div class="q_item">
+										<div class="faq_id"> [${faq.faq_id}]</div>
+										<div class="royal_id">
 											<c:choose>
 												<c:when test="${faq.royal_id == 1}">
 							                경복궁
@@ -100,9 +96,9 @@
 										<div class="faq-title"
 											onclick="toggleContent(${status.index})">
 											${faq.faq_title}</div>
+									</div>
 										<div class="faq-result" id="faq-result-${status.index}">
 											${faq.faq_result}</div>
-									</li>
 								</c:forEach>
 							</ul>
 						</c:if>
@@ -120,23 +116,50 @@
 						</div>
 
 						<div class="input_wrap">
-							<form id="qnaForm" action="/royal/communication/faq/"
+
+							<form id="qnaForm" action="/royal/communication/qna/add"
 								method="POST">
 								<!-- 문의 제목 값을 담는 숨겨진 필드 -->
-								<input type="text" name="qna_title" value="${qna.qna_title}">
-								<textarea id="qnaContent" name="qna_content" rows="5" cols="80"></textarea>
-								<input type="text" name="royal_id" value="${qna.royal_id}">
-								<button class="btn" type="submit">보내기</button>
+								<input type="text" name="qna_title" value="${qna.qna_title}"
+									required>
+								<!-- royal_id 선택 필드 -->
+								<select id="royal_id" name="royal_id" required>
+									<option value="" selected disabled hidden>선택</option>
+									<option value="1"
+										<c:if test="${param.royal_id == 1}">selected</c:if>>경복궁</option>
+									<option value="2"
+										<c:if test="${param.royal_id == 2}">selected</c:if>>창덕궁</option>
+									<option value="3"
+										<c:if test="${param.royal_id == 3}">selected</c:if>>창경궁</option>
+									<option value="4"
+										<c:if test="${param.royal_id == 4}">selected</c:if>>덕수궁</option>
+									<option value="5"
+										<c:if test="${param.royal_id == 5}">selected</c:if>>종묘</option>
+								</select>
+								<!-- 컨텐츠 필드 -->
+								<textarea id="qnaContent" name="qna_content" rows="5" cols="80"
+									required></textarea>
+
+								<c:if test="${login_user == null}">
+									<button class="btn" type="button">
+										<a href="/royal/main/login" onclick="alert('로그인을 먼저 해주세요!')">보내기</a>
+									</button>
+								</c:if>
+								<c:if test="${login_user != null}">
+									<button class="btn" type="submit">보내기</button>
+								</c:if>
 							</form>
+
 						</div>
 					</div>
 				</div>
-
 			</div>
+
 		</div>
 	</div>
 
-	<script>
+	<!-- 상세 내용 열고 닫기 script -->
+	<script> 
 	  // 페이지 로딩시 faq-result 감추기
 	  window.onload = function() {
 	    var allResultElements = document.querySelectorAll('.faq-result');
@@ -164,7 +187,24 @@
 	  }
 	</script>
 
-	<script src="${public_communicationJS}"></script>
+	<script>
+    // DOMContentLoaded 이벤트 리스너 등록
+    document.addEventListener('DOMContentLoaded', function() {
+        // URL의 쿼리스트링에서 alert 타입을 가져옴
+        var alertType = new URLSearchParams(window.location.search).get('alert');
+        
+        // alert 타입에 따라 메시지를 설정하고 alert 창을 띄움
+        if (alertType === 'success') {
+            alert('문의가 정상적으로 접수되었습니다!');
+        } else if (alertType === 'error') {
+            alert('문의 접수가 실패했습니다!');
+        }
+    });
+</script>
+
+
+
+	<script src="${communication_faqJS}"></script>
 
 
 	<jsp:include page="/WEB-INF/views/userViews/layout/footer.jsp" />

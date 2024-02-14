@@ -18,13 +18,13 @@ public class FaqServiceImpl implements FaqService {
 	FaqMapper faqMapper;
 	
 	@Override
-	public void faq(Model model) {
+	public void getfaqList(Model model) {
 		model.addAttribute("faq", faqMapper.getAll());
 		
 	}
 	
 	@Override
-	public void faq2(Model model, Integer royal_id) {
+	public void getfaqList_part(Model model, Integer royal_id) {
 		model.addAttribute("faq", faqMapper.getPartAll(royal_id));
 		
 	}
@@ -40,11 +40,6 @@ public class FaqServiceImpl implements FaqService {
 		} else {
 			return false;
 		}
-	}
-
-	@Override
-	public Integer getUniqueValuesCount() {
-		return faqMapper.getUniqueValuesCount();
 	}
 
 }
