@@ -12,7 +12,7 @@
 	<meta name="description" content="">
 	<meta name="author" content="">
 	
-	<title>manager_faq_insert</title>
+	<title>manager_notice_update</title>
 
 	<!-- Icons -->
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
@@ -21,7 +21,7 @@
 	<%@ include file="/WEB-INF/views/managerViews/layout/jspf/commonCss.jspf" %>
 	
 	<!-- Individual CSS -->
-	<c:url value="/resources/css/manager/faq/update.css" var="updateCss" />
+	<c:url value="/resources/css/manager/notice/update.css" var="updateCss" />
 	<link href="${updateCss}" rel="stylesheet">
 	
 	<!-- Page level CSS -->
@@ -49,10 +49,10 @@
 				<!-- Container Fluid-->
 				<div class="container-fluid" id="container-wrapper">
 					<div class="d-sm-flex align-items-center justify-content-between mb-4">
-						<h1 class="h3 mb-0 text-gray-800">자주 묻는 질문 수정</h1>
+						<h1 class="h3 mb-0 text-gray-800">공지사항 수정</h1>
 						<ol class="breadcrumb">
 							<li class="breadcrumb-item"><a href="../index">Home</a></li>
-							<li class="breadcrumb-item">자주 묻는 질문</li>
+							<li class="breadcrumb-item">공지사항</li>
 							<li class="breadcrumb-item active" aria-current="page">수정</li>
 						</ol>
 					</div>
@@ -64,11 +64,11 @@
 						<div class="col-lg-12">
 							<div class="card mb-4">
 								<div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-									<h6 id="selected_faq_title" class="m-0 font-weight-bold text-primary">수정할 자주 묻는 질문 ID를 선택해주세요</h6>
+									<h6 id="selected_notice_title" class="m-0 font-weight-bold text-primary">수정할 공지사항 ID를 선택해주세요</h6>
 								</div>
 								<div class="card-body">
-									<form action="/royal/manage/main/faq/post/update" method="post">
-										<input id="selected_faq_hidden" name="selected_faq" type="hidden">
+									<form action="/royal/manage/main/notice/post/update" method="post">
+										<input id="selected_notice_hidden" name="selected_notice" type="hidden">
 										<div class="fg_custom1">
 											<div class="form-group">
 												<label for="royal_id">카테고리</label> 
@@ -81,13 +81,13 @@
 												</select>
 											</div>
 											<div class="form-group">
-												<label for="event_name">제목</label>
-												<textarea id="selected_title" class="form-control faq_title" name="faq_title"
+												<label for="notice_title">제목</label>
+												<textarea id="selected_title" class="form-control notice_title" name="notice_title"
 													id="exampleFormControlTextarea1" rows="2" maxlength="50" style="resize: none;"></textarea>
 											</div>
 											<div class="form-group">
-												<label for="event_name">내용</label>
-												<textarea id="selected_result" class="form-control faq_result" name="faq_result"
+												<label for="notice_content">내용</label>
+												<textarea id="selected_content" class="form-control notice_content" name="notice_content"
 													id="exampleFormControlTextarea1" rows="5" maxlength="2000" style="resize: none;"></textarea>
 											</div>
 										</div>
@@ -104,8 +104,8 @@
 						<div class="col-lg-12">
 							<div class="card mb-4">
 								<div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-									<h6 class="m-0 font-weight-bold text-primary">자주 묻는 질문 현황</h6>
-									<span style="font-size: 15px; font-weight: bold; ">※ 수정할 행사 ID를 선택해주세요.</span>
+									<h6 class="m-0 font-weight-bold text-primary">공지사항 현황</h6>
+									<span style="font-size: 15px; font-weight: bold; ">※ 수정할 공지사항 ID를 선택해주세요.</span>
 								</div>
 								<div class="table-responsive p-3">
 									<table class="table align-items-center table-flush table-hover" id="dataTableHover">
@@ -115,6 +115,7 @@
 												<th>카테고리</th>
 												<th>제목</th>
 												<th>내용</th>
+												<th>작성일</th>
 											</tr>
 										</thead>
 										<tfoot>
@@ -123,13 +124,14 @@
 												<th>카테고리</th>
 												<th>제목</th>
 												<th>내용</th>
+												<th>작성일</th>
 											</tr>
 										</tfoot>
 										<tbody>
-											<c:forEach items="${FAQList}" var="FAQ">
-												<tr id="${FAQ.faq_id}" class="tableRowData" data-toggle="modal" data-target="#detailModal">
-													<td style="word-break:break-all">${FAQ.faq_id}</td>	
-													<c:set var="royal_id" value="${FAQ.royal_id}"></c:set>
+											<c:forEach items="${noticeList}" var="notice">
+												<tr id="${notice.notice_id}" class="tableRowData" data-toggle="modal" data-target="#detailModal">
+													<td style="word-break:break-all">${notice.notice_id}</td>	
+													<c:set var="royal_id" value="${notice.royal_id}"></c:set>
 													<c:choose>
 														<c:when test="${royal_id eq 1}">
 															<c:set var="royal_type" value="경복궁"></c:set>
@@ -149,8 +151,10 @@
 													</c:choose>
 													
 													<td width="100px" style="word-break:break-all">${royal_type}</td>
-													<td style="word-break:break-all">${FAQ.faq_title}</td>
-													<td style="word-break:break-all">${FAQ.faq_result}</td>
+													<td style="word-break:break-all">${notice.notice_title}</td>
+													<td style="word-break:break-all">${notice.notice_content}</td>
+													<fmt:formatDate var="formatStartDate" value="${notice.notice_date}" pattern="yyyy/MM/dd"/>
+                                      				<td>${formatStartDate}</td>
 												</tr>
 											</c:forEach>
 										</tbody>
@@ -182,7 +186,7 @@
 	<%@ include file="/WEB-INF/views/managerViews/layout/jspf/commonJs.jspf" %>
 	
 	<!-- Individual JS -->
-	<c:url value="/resources/js/manager/faq/update.js" var="updateJS" />
+	<c:url value="/resources/js/manager/notice/update.js" var="updateJS" />
 	<script src="${updateJS}"></script>
 	
 	<!-- Page level plugins -->

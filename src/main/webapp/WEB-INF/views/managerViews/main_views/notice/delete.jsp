@@ -45,10 +45,10 @@
 				<!-- Container Fluid-->
 				<div class="container-fluid" id="container-wrapper">
 					<div class="d-sm-flex align-items-center justify-content-between mb-4">
-						<h1 class="h3 mb-0 text-gray-800">자주 묻는 질문 삭제</h1>
+						<h1 class="h3 mb-0 text-gray-800">공지사항 삭제</h1>
 						<ol class="breadcrumb">
 							<li class="breadcrumb-item"><a href="../index">Home</a></li>
-							<li class="breadcrumb-item">자주 묻는 질문</li>
+							<li class="breadcrumb-item">공지사항</li>
 							<li class="breadcrumb-item active" aria-current="page">삭제</li>
 						</ol>
 					</div>
@@ -60,12 +60,12 @@
 						<div class="col-lg-12">
 							<div class="card mb-4">
 								<div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-									<h6 class="m-0 font-weight-bold text-primary">자주 묻는 질문 삭제</h6>
+									<h6 class="m-0 font-weight-bold text-primary">공지사항 삭제</h6>
 								</div>
 								<div class="card-body">
-									<form action="/royal/manage/main/faq/post/delete" method="post">
+									<form action="/royal/manage/main/notice/post/delete" method="post">
 										<div class="form-group">
-											<input type="text" class="form-control" id="faq_id" name="faq_id" placeholder="삭제할 자주 묻는 질문 ID">
+											<input type="text" class="form-control" id="notice_id" name="notice_id" placeholder="삭제할 공지사항 ID">
 										</div>
 										<button type="button" id="submitBtn" class="btn btn-primary">삭제하기</button>
 										<input id="submitInput" type="submit" style="display: none;">
@@ -78,7 +78,7 @@
 						<div class="col-lg-12">
 							<div class="card mb-4">
 								<div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-									<h6 class="m-0 font-weight-bold text-primary">자주 묻는 질문 현황</h6>
+									<h6 class="m-0 font-weight-bold text-primary">공지사항 현황</h6>
 								</div>
 								<div class="table-responsive p-3">
 									<table class="table align-items-center table-flush table-hover" id="dataTableHover">
@@ -88,6 +88,7 @@
 												<th>카테고리</th>
 												<th>제목</th>
 												<th>내용</th>
+												<th>작성일</th>
 											</tr>
 										</thead>
 										<tfoot>
@@ -96,13 +97,14 @@
 												<th>카테고리</th>
 												<th>제목</th>
 												<th>내용</th>
+												<th>작성일</th>
 											</tr>
 										</tfoot>
 										<tbody>
-											<c:forEach items="${FAQList}" var="FAQ">
-												<tr id="${FAQ.faq_id}" class="tableRowData" data-toggle="modal" data-target="#detailModal">
-													<td style="word-break:break-all">${FAQ.faq_id}</td>	
-													<c:set var="royal_id" value="${FAQ.royal_id}"></c:set>
+											<c:forEach items="${noticeList}" var="notice">
+												<tr id="${notice.notice_id}" class="tableRowData" data-toggle="modal" data-target="#detailModal">
+													<td style="word-break:break-all">${notice.notice_id}</td>	
+													<c:set var="royal_id" value="${notice.royal_id}"></c:set>
 													<c:choose>
 														<c:when test="${royal_id eq 1}">
 															<c:set var="royal_type" value="경복궁"></c:set>
@@ -122,8 +124,10 @@
 													</c:choose>
 													
 													<td width="100px" style="word-break:break-all">${royal_type}</td>
-													<td style="word-break:break-all">${FAQ.faq_title}</td>
-													<td style="word-break:break-all">${FAQ.faq_result}</td>
+													<td style="word-break:break-all">${notice.notice_title}</td>
+													<td style="word-break:break-all">${notice.notice_content}</td>
+													<fmt:formatDate var="formatStartDate" value="${notice.notice_date}" pattern="yyyy/MM/dd"/>
+                                      				<td>${formatStartDate}</td>
 												</tr>
 											</c:forEach>
 										</tbody>
@@ -155,7 +159,7 @@
 	<%@ include file="/WEB-INF/views/managerViews/layout/jspf/commonJs.jspf" %>
 	
 	<!-- Individual JS -->
-	<c:url value="/resources/js/manager/faq/delete.js" var="deleteJS" />
+	<c:url value="/resources/js/manager/notice/delete.js" var="deleteJS" />
 	<script src="${deleteJS}"></script>
 	
 	<!-- Page level plugins -->

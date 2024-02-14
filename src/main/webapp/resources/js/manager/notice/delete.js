@@ -3,11 +3,11 @@ const submitBtn = document.querySelector('#submitBtn');
 const submitInput = document.querySelector('#submitInput');
 
 submitBtn.addEventListener('click', (e) => {
-  const faq_id = document.querySelector('#faq_id');
+  const notice_id = document.querySelector('#notice_id');
 
   // 삭제할 행사id를 입력하지 않으면 submit안됨
-  if (faq_id.value == null || faq_id.value == '') {
-    alert('삭제할 자주 묻는 질문 id를 설정해주세요');
+  if (notice_id.value == null || notice_id.value == '') {
+    alert('삭제할 공지사항 id를 설정해주세요');
   } else {
     submitInput.click();
   };

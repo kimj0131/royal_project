@@ -3,13 +3,10 @@ const submitBtn = document.querySelector('#submitBtn');
 const submitInput = document.querySelector('#submitInput');
 
 submitBtn.addEventListener('click', (e) => {
-  const faq_title = document.querySelector('.faq_title').value;
-  const faq_result = document.querySelector('.faq_result').value;
+  const notice_title = document.querySelector('.notice_title').value;
+  const notice_content = document.querySelector('.notice_content').value;
 
-  console.log(faq_title);
-  console.log(faq_result);
-
-  if (faq_title == null || faq_result == null || faq_title == '' || faq_result == '') {
+  if (notice_title == null || notice_content == null || notice_title == '' || notice_content == '') {
     alert('제목과 내용을 반드시 입력해주세요');
   } else {
     submitInput.click();
@@ -22,18 +19,16 @@ rows.each(function (index, item) {
   item.addEventListener('click', (e) => {
 
     $.ajax(ajaxSettings = {
-      url: `/royal/manage/main/faq/ajax/${item.id}`,
+      url: `/royal/manage/main/notice/ajax/${item.id}`,
       method: 'GET',
       dataType: 'json',
       success: (object, state, xhttp) => {
 
-        var faq = object.FAQ;
-
-        console.log(faq);
+        var notice = object.notice;
 
         //// 타입 넣기 ////
         var selected_royal = $('#selected_royal');
-        var royal_id = faq.royal_id;
+        var royal_id = notice.royal_id;
         // select태그 안에 있는 옵션 태그들의 인덱스는 
         // 이벤트리스트 테이블에있는 (royal_id - 1) 과 매치 된다는 것을 이용
         selected_royal.children().each(function (index, element) {
@@ -44,23 +39,22 @@ rows.each(function (index, item) {
           }
         });
 
-        //// faq 제목 넣기 ////
+        //// 공지사항 제목 넣기 ////
         var selected_title = $('#selected_title');
-        var faq_title = faq.faq_title;
-        selected_title.val(faq_title);
+        var notice_title = notice.notice_title;
+        selected_title.val(notice_title);
 
-        //// faq 내용 넣기 ////
-        var selected_result = $('#selected_result');
-        var faq_result = faq.faq_result;
-        selected_result.val(faq_result);
+        //// 공지사항 내용 넣기 ////
+        var selected_content = $('#selected_content');
+        var notice_content = notice.notice_content;
+        selected_content.val(notice_content);
 
+        //// 수정할 공지사항 아이디 넣기 ////
+        let selected_notice_title = document.querySelector('#selected_notice_title');
+        let selected_notice_hidden = document.querySelector('#selected_notice_hidden');
 
-        //// 수정할 faq 아이디 넣기 ////
-        let selected_event_title = document.querySelector('#selected_faq_title');
-        let selected_event_hidden = document.querySelector('#selected_faq_hidden');
-
-        selected_event_title.innerHTML = `수정할 자주 묻는 질문 ID - [${faq.faq_id}]`;
-        selected_event_hidden.value = faq.faq_id;
+        selected_notice_title.innerHTML = `수정할 공지사항 ID - [${notice.notice_id}]`;
+        selected_notice_hidden.value = notice.notice_id;
 
       }
     });

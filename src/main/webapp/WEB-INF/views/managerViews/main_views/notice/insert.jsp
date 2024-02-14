@@ -12,7 +12,7 @@
 	<meta name="description" content="">
 	<meta name="author" content="">
 	
-	<title>manager_faq_insert</title>
+	<title>manager_notice_insert</title>
 
 	<!-- Icons -->
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
@@ -21,7 +21,7 @@
 	<%@ include file="/WEB-INF/views/managerViews/layout/jspf/commonCss.jspf" %>
 	
 	<!-- Individual CSS -->
-	<c:url value="/resources/css/manager/faq/insert.css" var="insertCss" />
+	<c:url value="/resources/css/manager/notice/insert.css" var="insertCss" />
 	<link href="${insertCss}" rel="stylesheet">
 	
 	<!-- Page level CSS -->
@@ -67,7 +67,7 @@
 									<h6 class="m-0 font-weight-bold text-primary">공지사항 추가</h6>
 								</div>
 								<div class="card-body">
-									<form action="/royal/manage/main/faq/post/insert" method="post">
+									<form action="/royal/manage/main/notice/post/insert" method="post">
 										<div class="fg_custom1">
 											<div class="form-group">
 												<label for="royal_id">카테고리</label> 
@@ -80,13 +80,13 @@
 												</select>
 											</div>
 											<div class="form-group">
-												<label for="event_name">제목</label>
-												<textarea class="form-control faq_title" name="faq_title"
+												<label for="notice_title">제목</label>
+												<textarea class="form-control notice_title" name="notice_title"
 													id="exampleFormControlTextarea1" rows="2" maxlength="50" style="resize: none;"></textarea>
 											</div>
 											<div class="form-group">
-												<label for="event_name">내용</label>
-												<textarea class="form-control faq_result" name="faq_result"
+												<label for="notice_content">내용</label>
+												<textarea class="form-control notice_content" name="notice_content"
 													id="exampleFormControlTextarea1" rows="5" maxlength="2000" style="resize: none;"></textarea>
 											</div>
 										</div>
@@ -184,7 +184,7 @@
 	<%@ include file="/WEB-INF/views/managerViews/layout/jspf/commonJs.jspf" %>
 	
 	<!-- Individual JS -->
-	<c:url value="/resources/js/manager/faq/insert.js" var="insertJS" />
+	<c:url value="/resources/js/manager/notice/insert.js" var="insertJS" />
 	<script src="${insertJS}"></script>
 	
 	<!-- Page level plugins -->

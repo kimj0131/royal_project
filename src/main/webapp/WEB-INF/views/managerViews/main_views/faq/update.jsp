@@ -12,7 +12,7 @@
 	<meta name="description" content="">
 	<meta name="author" content="">
 	
-	<title>manager_faq_insert</title>
+	<title>manager_faq_update</title>
 
 	<!-- Icons -->
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
@@ -81,12 +81,12 @@
 												</select>
 											</div>
 											<div class="form-group">
-												<label for="event_name">제목</label>
+												<label for="faq_title">제목</label>
 												<textarea id="selected_title" class="form-control faq_title" name="faq_title"
 													id="exampleFormControlTextarea1" rows="2" maxlength="50" style="resize: none;"></textarea>
 											</div>
 											<div class="form-group">
-												<label for="event_name">내용</label>
+												<label for="faq_result">내용</label>
 												<textarea id="selected_result" class="form-control faq_result" name="faq_result"
 													id="exampleFormControlTextarea1" rows="5" maxlength="2000" style="resize: none;"></textarea>
 											</div>
