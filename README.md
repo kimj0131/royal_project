@@ -66,7 +66,10 @@
 > * 김준형 : mybatis Mapper에서 파라미터를 복수개로 받을때 파라미터를 인식하지 못하는 문제
 >   + 메소드 파라미터에 @Param("파라미터 이름") 으로 복수의 파라미터를 지정
 >   + mapper.xml에 #{파라미터 이름}으로 사용
-
+> * 조현우 : ajax로 EventManageDTO를 담은 List와 EventRoundManageDTO를 담은 List 총 두개의 객체 데이터를 받아와야 했던 문제
+>   + 자바 객체를 json으로 parsing하기 위해 ObjectMapper를 사용
+>   + Map을 만들어 두개의 List를 put
+>   + List가 담긴 Map을 ObjectMapper의 writeValueAsString(Map) 메서드의 인자로 넘기고 반환 되는 결과를 return
 
 ***
 ## 기여자
