@@ -10,25 +10,29 @@
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
     gap: 0;
+    padding-bottom: 20px;
     width: 66%;
 }
 
 .royal-name {
-    margin: 0 auto;
+    margin: 0 auto 20px;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
     align-items: center;
     text-align: center;
-    gap: 30px;
+    gap: 20px;
     width: 60%;
-    margin-bottom: 15px;
-    padding: 10px;
+    padding: 15px;
+ 
 }
 
 .royal-name > a {
-    border: 1px solid transparent;
+    border: 3px solid transparent;
     border-radius: 20px;
     text-align: center;
+    font-weight: bold;
+    font-size: 18px;
+    background-color :white;
 }
 
 .royal-name > :first-child {
@@ -56,6 +60,51 @@
     border-radius: 20px;
 }
 
+.royal-name  > [class="GB"] {
+	color: #604206;
+}
+
+.royal-name  > [class="DS"] {
+	color: #286d79;
+}
+
+.royal-name > [class="CG"] {
+	color: #14489c;
+}
+
+.royal-name  > [class="CD"] {
+	color: #b6383d;
+}
+
+.royal-name  > [class="JM"] {
+	color: #c14b35;
+}
+
+.royal-name  > [class="GB on"] {
+    background-color: #604206;
+    color: white;
+}
+
+.royal-name  > [class="DS on"] {
+    background-color: #286d79;
+    color: white;
+}
+
+.royal-name  > [class="CG on"] {
+    background-color: #14489c;
+    color: white;
+}
+
+.royal-name  > [class="CD on"] {
+    background-color: #b6383d;
+    color: white;
+}
+
+.royal-name  > [class="JM on"] {
+    background-color: #c14b35;
+    color: white;
+}
+
 h2 {
     width: 66%;
     margin: 0 auto;
@@ -66,26 +115,41 @@ h2 {
 .innerNameDiv {
     cursor: pointer;
     border: 1px solid #ccc;
-    width:130px;
+    width:100%;
 	height:60px;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
+    padding-right: 5px;
+    padding-left: 5px;
+    margin: 0;
+}
+
+.palaceInnerName{
+    width: 66%;
+    margin: 0 auto;
+    padding: 5px;
+    margin-bottom: 15px;
+    font-size: 25px;
+    font-weight: bold;
 }
 
 .mainImg {
-    align-items: center;
-    height: 574px;
+    /* height: auto;  */
+    max-height: 592px;
+    width: 66%; 
     margin: 0 auto;
-    padding: 10px 80px;
     display: block;
 }
 
+.mainImg > #imageSlider {
+    height: 100%;
+    width: 100%; 
+}
+
 #imageSlider > img {
-/* width: 840px; */
-    width: 100%;
-    height: 574px;
-    margin : 10px;
+    width: 100%; 
+    height: 100%;
 }
 
 .content {

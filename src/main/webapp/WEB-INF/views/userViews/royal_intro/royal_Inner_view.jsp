@@ -20,11 +20,11 @@
 	<jsp:include page="/WEB-INF/views/userViews/layout/navibar.jsp" />
 	
 	<div class="royal-name">
-    <a href="/royal/palace/royalInner?palace=경복궁&royalId=1">경복궁</a>
-    <a href="/royal/palace/royalInner?palace=덕수궁&royalId=4">덕수궁</a>
-    <a href="/royal/palace/royalInner?palace=창경궁&royalId=3">창경궁</a>
-    <a href="/royal/palace/royalInner?palace=창덕궁&royalId=2">창덕궁</a>
-    <a href="/royal/palace/royalInner?palace=종묘&royalId=5">종묘</a>
+    <a href="/royal/palace/royalInner?palace=경복궁&royalId=1" class="GB" id="GB_Btn">경복궁</a>
+    <a href="/royal/palace/royalInner?palace=덕수궁&royalId=4" class="DS" id="DS_Btn">덕수궁</a>
+    <a href="/royal/palace/royalInner?palace=창경궁&royalId=3" class="CG" id="CG_Btn">창경궁</a>
+    <a href="/royal/palace/royalInner?palace=창덕궁&royalId=2" class="CD" id="CD_Btn">창덕궁</a>
+    <a href="/royal/palace/royalInner?palace=종묘&royalId=5" class="JM" id="JM_Btn">종묘</a>
 	</div>
 
 	<h2>${palaceName}이야기</h2> 
@@ -57,7 +57,10 @@
                 <div class="innerNameDiv" onclick="this.parentNode.submit();">${innerName}</div>
             </form>
         </c:forEach>
-          
+    </div>
+    
+    <div class="palaceInnerName">
+    ${innerDTO.royal_inner_name}
     </div>
 
     <div class="mainImg">

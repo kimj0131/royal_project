@@ -91,27 +91,32 @@
 .GB_BTN{
     border: 3px solid #604206;
     border-radius: 20px;
+    color: #604206;
 }
 
 .DS_BTN{
     border: 3px solid #286d79;
     border-radius: 20px;
+    color: #286d79;
 }
 
 
 .CG_BTN{
     border: 3px solid #14489c;
     border-radius: 20px;
+    color: #14489c;
 }
 
 
 .CD_BTN{
     border: 3px solid #b6383d;
     border-radius: 20px;
+    color: #b6383d;
 }
 
 
 .JM_BTN{
     border: 3px solid #c14b35;
     border-radius: 20px;
+    color: #c14b35;
 }
