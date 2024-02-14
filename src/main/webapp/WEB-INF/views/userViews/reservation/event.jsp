@@ -9,6 +9,7 @@
 <meta charset="UTF-8">
 <title>행사</title>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://kit.fontawesome.com/879255b319.js" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="${eventCSS}" />
 </head>
 <body>
@@ -49,10 +50,10 @@
 		    	<div class="imageContainer">
 		    	<div id="eventImg"> </div>
 		    	<div id="detail">
-		    	 <p>행사명: </p>
-			     <p>장소: </p>
-			     <p>기간: </p>
-			     <p>링크: </p>
+		    	 <p><i class="fa-solid fa-map-pin"></i> 행사명: </p>
+			     <p><i class="fa-solid fa-location-dot"></i> 장소: </p>
+			     <p><i class="fa-regular fa-calendar"></i> 기간: </p>
+			     <p><i class="fa-solid fa-link" style="font-size: 12px"></i> 링크: </p>
 			     <p>자세한설명</p>
 		    	</div>
 		    </div>

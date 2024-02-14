@@ -155,7 +155,11 @@ h2 {
 
 .imageContainer {
 	display: grid;
-	border: 2px black solid;
+	border: 3px black solid;
+	border-top-width: thick;
+	border-bottom-width: thin;
+	border-left: none;
+	border-right: none;
     text-align: center;
     padding-top: 30px;
     width: 900px;
@@ -195,15 +199,28 @@ h2 {
 }
 
 #detail {
-	margin-top: 220px;
+	margin-top: 190px;
 	margin-left: 400px;
 	position: absolute;
 	line-height: 100%;
 	text-align: left;
 }
 
+@font-face {
+    font-family: 'GyeonggiBatang';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/GyeonggiBatang.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+#detail p{
+ 	font-family: 'GyeonggiBatang';
+ 	font-weight: bold;
+ 	font-size: 15px;
+}
+
 #eventImg {
-	border: 1px black solid;
+	border: 2px black solid;
 	margin-left: 30px;
 	margin-top: 30px;
 	margin-bottom: 50px;
