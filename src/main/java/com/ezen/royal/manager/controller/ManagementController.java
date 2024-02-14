@@ -9,6 +9,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import com.ezen.royal.manager.service.EventManageService;
 import com.ezen.royal.manager.service.ManagerLoginService;
 import com.ezen.royal.manager.service.QnaManageService;
 import com.ezen.royal.secure.SecureTools;
@@ -24,6 +25,9 @@ public class ManagementController {
 
 	@Autowired
 	QnaManageService qnaManageService;
+	
+	@Autowired
+	EventManageService eventManageService;
 
 	// 관리자 로그인 페이지 매핑
 	@GetMapping("/manage/") // 관리자 로그인 페이지
@@ -79,6 +83,8 @@ public class ManagementController {
 		
 		// index qna리스트
 		qnaManageService.getQNAList(model);
+		// 30일내 시작하는 event 리스트
+		eventManageService.getEventListBegin30Days(model);
 		
 		return "managerViews/main_views/index";
 	}

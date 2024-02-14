@@ -31,6 +31,12 @@ public class EventManageServiceImpl implements EventManageService {
 		model.addAttribute("event", eventManageMapper.getEventDetail(event_id));
 		model.addAttribute("event_rounds", eventManageMapper.getEventRoundList(event_id));
 	}
+	
+	// 30일 내로 시작하는 이벤트 리스트
+	@Override
+	public void getEventListBegin30Days(Model model) {
+		model.addAttribute("eventList30Days", eventManageMapper.getEventListBegin30Days());
+	}
 
 	// 이벤트 추가, 이벤트회차도 같이 추가한다
 	@Override

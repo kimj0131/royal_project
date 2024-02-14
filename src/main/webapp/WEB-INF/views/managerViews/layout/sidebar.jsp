@@ -96,7 +96,7 @@
 		<div id="collapseQnA" class="collapse" aria-labelledby="headingTable" data-parent="#accordionSidebar">
 			<div class="bg-white py-2 collapse-inner rounded">
 				<h6 class="collapse-header">질문과 답변 관리</h6>
-				<a class="collapse-item" href="/royal/manage/main/qna/form/">답변 달기</a>
+				<a class="collapse-item" href="/royal/manage/main/qna/form/add">답변 달기</a>
 			</div>
 		</div>
 	</li>

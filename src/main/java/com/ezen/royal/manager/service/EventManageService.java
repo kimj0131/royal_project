@@ -15,6 +15,7 @@ public interface EventManageService {
 	 *  ※ attribute name = eventList
 	 */
 	void getEventList(Model model);
+	
 	// event 상세정보 가져오기 
 	/**
 	 *  * 이벤트 테이블의 지정된 내용을 attribute에 싣는다. <br>
@@ -22,6 +23,13 @@ public interface EventManageService {
 	 *  ※ attribute name = event_rounds	<br>
 	 */
 	void getEventDetail(Model model, int event_id);
+	
+	// 30일 내로 시작하는 event 리스트 가져오기
+	/**
+	 *  * 이벤트 테이블에서 30일 내로시작하는 이벤트 목록을 attribute에 list로 싣는다. <br>
+	 *  ※ attribute name = eventList30Days
+	 */
+	void getEventListBegin30Days(Model model);
 	
 	// event 추가
 	/**

@@ -25,7 +25,7 @@ public class QnaManageController {
 	@Autowired
 	MemberService memberService;
 
-	@GetMapping("/form/*") // 관리자 qna관리 페이지
+	@GetMapping("/form/add") // 관리자 qna관리 페이지
 	public String manage_qna(Model model) {
 		
 		// member 이름 map

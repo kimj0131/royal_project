@@ -16,48 +16,28 @@ public class InnerDataFromOpenApiController {
 	@Autowired
 	InnerDataFromOpenApiService openApiService;
 
-	@GetMapping("manager/database/inner/openApi")
+	@GetMapping("manage/main/database/inner/openApi")
 	public String inputData() {
 
 		return "managerViews/common/royalInner/openApi";
 	}
 
-	@GetMapping("manager/database/inner/insert")
-	public String innerInsert(RedirectAttributes attributes) {
+	// 공공데이터 포털에서 api 활용 db에 넣는다
+	@GetMapping("manage/main/database/inner/insert")
+	public String innerUpsert(RedirectAttributes attributes) {
 
 		// upsert 방식
 		int upsertResult = openApiService.upsertApiDataList();
 		
 		if (upsertResult > 0) {
 			attributes.addAttribute("result", "upsertComplete");
-			return "redirect:/manager/database/inner/openApi";
+			return "redirect:/manage/main/database/inner/openApi";
 		} else {
 			attributes.addAttribute("result", "upsertFail");
 			log.error("Api Data Insert Fail..");
-			return "redirect:/manager/database/inner/openApi";
+			return "redirect:/manage/main/database/inner/openApi";
 		}
 		
-		/* 
-		// insert 방식
-		String chkResult = openApiService.cheakTableEmpty();
-
-		if (chkResult.equals("TRUE")) {
-			int insertResult = openApiService.insertApiDataList();
-			if (insertResult > 0) {
-				attributes.addAttribute("result", "insertComplete");
-				return "redirect:/manager/database/inner/openApi";
-			} else {
-				attributes.addAttribute("result", "insertFail");
-				log.error("Api Data Insert Fail..");
-				return "redirect:/manager/database/inner/openApi";
-			}
-		} else {
-			attributes.addAttribute("result", "alreadyExists");
-			log.error("Data already exists in the table..");
-			return "redirect:/manager/database/inner/openApi";
-		}
-		*/
-
 	}
 	
 }

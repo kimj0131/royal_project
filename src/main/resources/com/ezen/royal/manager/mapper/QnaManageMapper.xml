@@ -10,7 +10,7 @@
 	</select>
 	<!-- 답변이 비어있는 QnA 목록 -->
 	<select id="getQNAListResultEmpty">
-		SELECT * FROM qna WHERE qna_result IS NULL
+		SELECT * FROM qna WHERE qna_result IS NULL ORDER BY qna_id DESC
 	</select>
 	
 	<!-- QnA 상세 내용 -->

@@ -15,6 +15,9 @@ public interface EventManageMapper {
 	// Event_Round List
 	List<EventRoundManageDTO> getEventRoundList(int event_id);
 	
+	// Event List start in 30days
+	List<EventManageDTO> getEventListBegin30Days();
+	
 	// Event Insert
 	int insertEvent(EventManageDTO dto);
 	// Event_Round Insert
