@@ -43,7 +43,7 @@ public class NoticeServiceImpl implements NoticeService{
 		} else if(searchType.equals("내용")) {
 			model.addAttribute("notice", noticeMapper.search("notice_content", searchString));
 		} else {
-//			model.addAttribute("searchResult", noticeMapper.searchAll(searchString));
+			model.addAttribute("notice", noticeMapper.searchAll(searchString));
 		}
 	}
 }

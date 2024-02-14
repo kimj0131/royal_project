@@ -26,10 +26,10 @@
 		WHERE ${type} LIKE '%' || #{searchString} || '%'
 	</select>
 	
-	<!-- <select id="searchAll" resultType="com.ezen.royal.client.communication.dto.NoticeDTO">
+ 	<select id="searchAll" resultType="com.ezen.royal.client.communication.dto.NoticeDTO">
 		SELECT * FROM notice 
-		WHERE notice_content  LIKE '%#{searchString}%' AND notice_title LIKE '%#{searchString}%'
-	</select> -->
+		WHERE notice_content  LIKE '%' || #{searchString} || '%' AND notice_title LIKE '%' || #{searchString} || '%'
+	</select>
 	
 	
 </mapper>

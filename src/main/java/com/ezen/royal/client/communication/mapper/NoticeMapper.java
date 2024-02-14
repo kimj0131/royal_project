@@ -17,6 +17,6 @@ public interface NoticeMapper {
 	 
 	 List<NoticeDTO> search(@Param("type") String type, @Param("searchString") String searchString);
 	 
-//	 List<NoticeDTO> searchAll(String searchString);
+	 List<NoticeDTO> searchAll(String searchString);
 	
 }
