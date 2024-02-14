@@ -15,8 +15,8 @@
     background: #F8F8F8;
     border-top: 3px solid black;
     border-bottom: solid 1px #EAEAEA; 
-    font-size: 15px;
-    font-weight: 500;
+    font-size: 16px;
+    font-weight: bold;
     text-align: center;
     display: grid;
     grid-template-columns: 10% 23% 44% 23%;
@@ -27,7 +27,7 @@
 
 .board_wrap_list{
     border-bottom: solid 1px #EAEAEA; 
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 300;
     text-align: center;
     display: grid;

@@ -43,7 +43,7 @@
 			<div class="board_wrap_list">
 				<div id="board_detail_title">${noticeDTO.notice_title}</div> 
 				<div id="board_detail_info">
-					<div style="padding: 0 30px">
+					<div style="border-right: solid 1px #eaeaea">
 					<img src="${royal_idIMG}" />
 						<span>
 						<c:choose>
@@ -65,7 +65,7 @@
 						</c:choose>
 						</span>
 					</div>
-					<div style="padding: 0 30px">
+					<div>
 						<img src="${notice_dateIMG}" /> 
 						<span>${noticeDTO.notice_date}</span>
 					</div>
