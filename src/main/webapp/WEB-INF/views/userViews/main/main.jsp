@@ -7,9 +7,11 @@
 <c:url value="/resources/css/usermainviews/slider.css" var="sliderCSS" />
 <c:url value="/resources/js/usermainviews/slider.js" var="sliderJS" />
 <c:url value="/resources/image/slider/event1.jpg" var="banner1" />
-<c:url value="/resources/image/slider/event2.jpg" var="banner2" />
-<c:url value="/resources/image/royal_inner/main/jongmyo/jongmyo.jpg"
-	var="jongmyo" />
+<c:url value="/resources/image/royal_inner/main/gyeongbok/gyeongbokgung.jpg" var="gyeongbok" />
+<c:url value="/resources/image/royal_inner/main/deoksu/deoksugung.jpg" var="deoksu" />
+<c:url value="/resources/image/royal_inner/main/changgyeong/changgyeonggung.jpg" var="changgyeong" />
+<c:url value="/resources/image/royal_inner/main/changdeok/changdeokgung.jpg" var="changdeok" />
+<c:url value="/resources/image/royal_inner/main/jongmyo/jongmyo.jpg" var="jongmyo" />
 <meta charset="UTF-8">
 <title>메인페이지</title>
 <link rel="stylesheet" href="${sliderCSS}" />
@@ -25,7 +27,16 @@
 				<img alt="수문장 교대의식" src="${banner1}">
 			</div>
 			<div class="inner">
-				<img alt="궁능유적본부" src="${banner2}">
+				<img alt="경복궁" src="${gyeongbok}">
+			</div>
+			<div class="inner">
+				<img alt="덕수궁" src="${deoksu}">
+			</div>
+			<div class="inner">
+				<img alt="창경궁" src="${changgyeong}">
+			</div>
+			<div class="inner">
+				<img alt="창덕궁" src="${changdeok}">
 			</div>
 			<div class="inner">
 				<img alt="종묘" src="${jongmyo}">
@@ -43,12 +54,12 @@
 					<a class="all" href="/royal/communication/notice">전체보기</a>
 				</div>
 				<div class="list">
-
-					<c:forEach var="notice" items="${noticeList}" begin="0" end="5">
+					<c:forEach var="notice" items="${noticeList}" begin="0" end="4">
 						<div class="item">
 							<div class="title">공지사항</div>
 							<div class="inner_title">
-								<a href="/notice/get?notice_title=${notice.notice_title}">${notice.notice_title}</a>
+								<c:set value="${notice.notice_id}" var="nid" />
+								<a href="/royal/communication/notice_detail?notice_id=${nid}">${notice.notice_title}</a>
 							</div>
 							<div class="inner_date">${notice.notice_date}</div>
 						</div>
@@ -60,16 +71,15 @@
 			<div class="inform">
 				<div class="main_title">알림판</div>
 			</div>
-			<div class="imgSlider" id="imageSlider">
-				<div class="images">
-					<a class="imgtag" href="/event/"><img alt="" class="img"
-						src="https://www.chf.or.kr/jnrepo/namo/img/images/000063/20240119205704416_TEOZXDIK.png" /></a>
-					<a class="imgtag" href="/event/"><img alt="" class="img"
-						src="http://localhost:9000/royal/resources/image/slider/event2.jpg" /></a>
+			<c:forEach var="event_list" items="${eventList}">
+				<div class="imgSlider" id="imageSlider">
+					<div class="images">
+						<a class="imgtag" href="/royal/palace/event_list?event_id=${event_id}"><img alt="" class="img"
+							src="https://www.chf.or.kr/jnrepo/namo/img/images/000063/20240119205704416_TEOZXDIK.png" /></a>
+					</div>
 				</div>
-			</div>
+			</c:forEach>
 		</div>
-	</div>
 	</div>
 	<jsp:include page="/WEB-INF/views/userViews/layout/footer.jsp" />
 
