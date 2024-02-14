@@ -31,12 +31,14 @@ public class NoticeManageController {
 	@GetMapping("/form/*")
 	public String manage_event_form(HttpServletRequest request, Model model) {
 
+		String uri = request.getRequestURI();
+
 		// 행사 테이블 리스트 실어주기
 		noticeManageService.getNoticeList(model);
 
-		String uri = request.getRequestURI();
-
-		if (uri.endsWith("insert")) {
+		if (uri.endsWith("list")) {
+			return "managerViews/main_views/notice/list";
+		} else if (uri.endsWith("insert")) {
 			return "managerViews/main_views/notice/insert";
 		} else if (uri.endsWith("update")) {
 			return "managerViews/main_views/notice/update";

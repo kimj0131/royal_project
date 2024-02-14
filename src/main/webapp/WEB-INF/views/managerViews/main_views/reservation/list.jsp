@@ -12,7 +12,7 @@
 	<meta name="description" content="">
 	<meta name="author" content="">
 	
-	<title>manager_reservation_delete</title>
+	<title>manager_reservation_list</title>
 
 	<!-- Common CSS -->
 	<%@ include file="/WEB-INF/views/managerViews/layout/jspf/commonCss.jspf" %>
@@ -40,34 +40,16 @@
 				<!-- Container Fluid-->
 				<div class="container-fluid" id="container-wrapper">
 					<div class="d-sm-flex align-items-center justify-content-between mb-4">
-						<h1 class="h3 mb-0 text-gray-800">예약 취소</h1>
+						<h1 class="h3 mb-0 text-gray-800">예약 목록</h1>
 						<ol class="breadcrumb">
 							<li class="breadcrumb-item"><a href="../index">Home</a></li>
 							<li class="breadcrumb-item">예약</li>
-							<li class="breadcrumb-item active" aria-current="page">취소</li>
+							<li class="breadcrumb-item active" aria-current="page">목록</li>
 						</ol>
 					</div>
 
 					<!-- Row -->
 					<div class="row">
-
-						<!-- 취소창 -->
-						<div class="col-lg-12">
-							<div class="card mb-4">
-								<div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-									<h6 class="m-0 font-weight-bold text-primary">예약 취소</h6>
-								</div>
-								<div class="card-body">
-									<form action="/royal/manage/main/reservation/post/delete" method="post">
-										<div class="form-group">
-											<input type="text" class="form-control" id="resv_id" name="resv_id" placeholder="취소할 예약 ID">
-										</div>
-										<button type="button" id="submitBtn" class="btn btn-primary">취소하기</button>
-										<input id="submitInput" type="submit" style="display: none;">
-									</form>
-								</div>
-							</div>
-						</div>
 
 						<!-- DataTable with Hover -->
 						<div class="col-lg-12">
@@ -136,11 +118,7 @@
 
 	<!-- Common JS -->
 	<%@ include file="/WEB-INF/views/managerViews/layout/jspf/commonJs.jspf" %>
-	
-	<!-- Individual JS -->
-	<c:url value="/resources/js/manager/reservation/delete.js" var="deleteJS" />
-	<script src="${deleteJS}"></script>
-	
+
 	<!-- Page level plugins -->
 	<c:url value="/resources/vendor/manager/datatables/jquery.dataTables.js" var="dataTablesJs" />
 	<c:url value="/resources/vendor/manager/datatables/dataTables.bootstrap4.js" var="dataTablesBootstrap4Js" />

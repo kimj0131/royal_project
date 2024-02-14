@@ -44,7 +44,10 @@ public class FaqManageController {
 
 		String uri = request.getRequestURI();
 
-		if (uri.endsWith("insert")) {
+		
+		if (uri.endsWith("list")) {
+			return "managerViews/main_views/faq/list";
+		} else if (uri.endsWith("insert")) {
 			return "managerViews/main_views/faq/insert";
 		} else if (uri.endsWith("update")) {
 			return "managerViews/main_views/faq/update";

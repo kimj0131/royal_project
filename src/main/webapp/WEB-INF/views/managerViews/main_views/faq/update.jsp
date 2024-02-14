@@ -104,7 +104,7 @@
 						<div class="col-lg-12">
 							<div class="card mb-4">
 								<div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-									<h6 class="m-0 font-weight-bold text-primary">자주 묻는 질문 현황</h6>
+									<h6 class="m-0 font-weight-bold text-primary">자주 묻는 질문 목록</h6>
 									<span style="font-size: 15px; font-weight: bold; ">※ 수정할 행사 ID를 선택해주세요.</span>
 								</div>
 								<div class="table-responsive p-3">

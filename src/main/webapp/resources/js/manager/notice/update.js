@@ -1,15 +1,21 @@
-// 자주묻는질문 추가 할때 유효성 검사
+// 공지사항 추가 할때 유효성 검사
 const submitBtn = document.querySelector('#submitBtn');
 const submitInput = document.querySelector('#submitInput');
+let selected_notice_hidden = document.querySelector('#selected_notice_hidden');
 
 submitBtn.addEventListener('click', (e) => {
-  const notice_title = document.querySelector('.notice_title').value;
-  const notice_content = document.querySelector('.notice_content').value;
-
-  if (notice_title == null || notice_content == null || notice_title == '' || notice_content == '') {
-    alert('제목과 내용을 반드시 입력해주세요');
+  // 선택한 공지사항이 없다면 submit 불가
+  if (selected_notice_hidden.value == null || selected_notice_hidden.value == '') {
+    alert('수정하실 공지사항을 선택해주세요');
   } else {
-    submitInput.click();
+    // 제목 내용 입력을 하였는지
+    const notice_title = document.querySelector('.notice_title').value;
+    const notice_content = document.querySelector('.notice_content').value;
+    if (notice_title == null || notice_content == null || notice_title == '' || notice_content == '') {
+      alert('제목과 내용을 반드시 입력해주세요');
+    } else {
+      submitInput.click();
+    }
   }
 });
 

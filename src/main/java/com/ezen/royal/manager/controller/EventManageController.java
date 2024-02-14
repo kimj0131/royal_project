@@ -42,7 +42,9 @@ public class EventManageController {
 
 		String uri = request.getRequestURI();
 
-		if (uri.endsWith("insert")) {
+		if (uri.endsWith("list")) {
+			return "managerViews/main_views/event/list";
+		} else if (uri.endsWith("insert")) {
 			return "managerViews/main_views/event/insert";
 		} else if (uri.endsWith("update")) {
 			return "managerViews/main_views/event/update";
@@ -53,30 +55,6 @@ public class EventManageController {
 		}
 	}
 
-	@ResponseBody
-	@GetMapping("/ajax/{event_id}")
-	public String manage_event_ajax_get(@PathVariable("event_id") Integer event_id, HttpServletRequest request,
-			Model model) {
-
-		eventManageService.getEventDetail(model, event_id);
-
-		ObjectMapper mapper = new ObjectMapper();
-		Map<String, Object> data = new HashMap<>();
-		String result = null;
-
-		data.put("event", model.getAttribute("event"));
-		data.put("event_rounds", model.getAttribute("event_rounds"));
-
-		try {
-			result = mapper.writeValueAsString(data);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-
-		return result;
-	}
-
-	
 	/*
 	 * # 넘겨 받는 파라미터 값들의 키 - EventManagerDTO 관련 [royal_id] [event_type] [event_name]
 	 * [event_location] [start_date] [end_date] [event_link] [event_imgpath]
@@ -206,5 +184,28 @@ public class EventManageController {
 		} else {
 			return "";
 		}
+	}
+	
+	@ResponseBody
+	@GetMapping("/ajax/{event_id}")
+	public String manage_event_ajax_get(@PathVariable("event_id") Integer event_id, HttpServletRequest request,
+			Model model) {
+
+		eventManageService.getEventDetail(model, event_id);
+
+		ObjectMapper mapper = new ObjectMapper();
+		Map<String, Object> data = new HashMap<>();
+		String result = null;
+
+		data.put("event", model.getAttribute("event"));
+		data.put("event_rounds", model.getAttribute("event_rounds"));
+
+		try {
+			result = mapper.writeValueAsString(data);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		return result;
 	}
 }

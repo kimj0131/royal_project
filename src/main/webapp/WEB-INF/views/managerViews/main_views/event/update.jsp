@@ -161,7 +161,7 @@
 						<div class="col-lg-12">
 							<div class="card mb-4">
 								<div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-									<h6 class="m-0 font-weight-bold text-primary">행사 현황</h6>
+									<h6 class="m-0 font-weight-bold text-primary">행사 목록</h6>
 									<span style="font-size: 15px; font-weight: bold; ">※ 수정할 행사 ID를 선택해주세요.</span>
 								</div>
 								<div class="table-responsive p-3">
@@ -174,7 +174,6 @@
 												<th>행사장소</th>
 												<th>시작일</th>
 												<th>종료일</th>
-												<!-- <th>사이트</th> -->
 												<th>예약가능</th>
 											</tr>
 										</thead>
@@ -186,7 +185,6 @@
 												<th>행사장소</th>
 												<th>시작일</th>
 												<th>종료일</th>
-												<!-- <th>사이트</th> -->
 												<th>예약가능</th>
 											</tr>
 										</tfoot>
@@ -202,8 +200,7 @@
                                       				<td>${formatStartDate}</td>
                                        				<fmt:formatDate var="formatEndDate" value="${event.end_date}" pattern="yyyy/MM/dd"/>
                                        				<td>${formatEndDate}</td>
-				
-													<%-- <td width="200px" style="word-break:break-all">${event.event_link}</td> --%>
+	
 													<td width="100px" style="word-break:break-all">${event.reservable}</td>
 												</tr>
 											</c:forEach>

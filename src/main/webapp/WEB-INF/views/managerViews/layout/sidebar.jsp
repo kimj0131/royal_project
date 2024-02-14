@@ -50,6 +50,7 @@
 		<div id="collapseReservation" class="collapse" aria-labelledby="headingForm" data-parent="#accordionSidebar">
 			<div class="bg-white py-2 collapse-inner rounded">
 				<h6 class="collapse-header">예약관리</h6>
+				<a class="collapse-item" href="/royal/manage/main/reservation/form/list">목록</a>
 				<a class="collapse-item" href="/royal/manage/main/reservation/form/delete">취소</a>
 			</div>
 		</div>
@@ -63,6 +64,7 @@
 		<div id="collapseEvent" class="collapse" aria-labelledby="headingTable" data-parent="#accordionSidebar">
 			<div class="bg-white py-2 collapse-inner rounded">
 				<h6 class="collapse-header">행사관리</h6>
+				<a class="collapse-item" href="/royal/manage/main/event/form/list">목록</a> 
 				<a class="collapse-item" href="/royal/manage/main/event/form/insert">추가</a> 
 				<a class="collapse-item" href="/royal/manage/main/event/form/update">수정</a>
 				<a class="collapse-item" href="/royal/manage/main/event/form/delete">취소</a>
@@ -78,6 +80,7 @@
 		<div id="collapseFAQ" class="collapse" aria-labelledby="headingTable" data-parent="#accordionSidebar">
 			<div class="bg-white py-2 collapse-inner rounded">
 				<h6 class="collapse-header">자주 묻는 질문 관리</h6>
+				<a class="collapse-item" href="/royal/manage/main/faq/form/list">목록</a>
 				<a class="collapse-item" href="/royal/manage/main/faq/form/insert">추가</a>
 				<a class="collapse-item" href="/royal/manage/main/faq/form/update">수정</a>
 				<a class="collapse-item" href="/royal/manage/main/faq/form/delete">삭제</a>
@@ -106,6 +109,7 @@
 		<div id="collapseNotice" class="collapse" aria-labelledby="headingTable" data-parent="#accordionSidebar">
 			<div class="bg-white py-2 collapse-inner rounded">
 				<h6 class="collapse-header">공치사항 관리</h6>
+				<a class="collapse-item" href="/royal/manage/main/notice/form/list">목록</a>
 				<a class="collapse-item" href="/royal/manage/main/notice/form/insert">추가</a>
 				<a class="collapse-item" href="/royal/manage/main/notice/form/update">수정</a>
 				<a class="collapse-item" href="/royal/manage/main/notice/form/delete">삭제</a>

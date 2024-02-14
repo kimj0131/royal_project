@@ -26,11 +26,13 @@ public class ReservationManageController {
 	public String manage_reservation_form(HttpServletRequest request, Model model) {
 		String uri = request.getRequestURI();
 
-		if (uri.endsWith("delete")) {
+		if (uri.endsWith("list")) {
+			reservationManageService.getResvList(model);
+			return "managerViews/main_views/reservation/list";
+		} else if (uri.endsWith("delete")) {
 			reservationManageService.getResvList(model);
 			return "managerViews/main_views/reservation/delete";
-		}
-		else
+		} else
 			return "";
 	}
 	

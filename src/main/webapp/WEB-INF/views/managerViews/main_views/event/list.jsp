@@ -12,17 +12,13 @@
 	<meta name="description" content="">
 	<meta name="author" content="">
 	
-	<title>manager_event_insert</title>
+	<title>manager_event_list</title>
 
 	<!-- Icons -->
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 
 	<!-- Common CSS -->
 	<%@ include file="/WEB-INF/views/managerViews/layout/jspf/commonCss.jspf" %>
-	
-	<!-- Individual CSS -->
-	<c:url value="/resources/css/manager/event/event.css" var="eventCss" />
-	<link href="${eventCss}" rel="stylesheet">
 	
 	<!-- Page level CSS -->
 	<c:url value="/resources/vendor/manager/datatables/dataTables.bootstrap4.css" var="dataTablesBootstrap4Css" />
@@ -49,7 +45,7 @@
 				<!-- Container Fluid-->
 				<div class="container-fluid" id="container-wrapper">
 					<div class="d-sm-flex align-items-center justify-content-between mb-4">
-						<h1 class="h3 mb-0 text-gray-800">행사 추가</h1>
+						<h1 class="h3 mb-0 text-gray-800">행사 목록</h1>
 						<ol class="breadcrumb">
 							<li class="breadcrumb-item"><a href="../index">Home</a></li>
 							<li class="breadcrumb-item">행사</li>
@@ -59,108 +55,6 @@
 
 					<!-- Row -->
 					<div class="row">
-
-						<!-- 추가창 -->
-						<div class="col-lg-12">
-							<div class="card mb-4">
-								<div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-									<h6 class="m-0 font-weight-bold text-primary">행사 추가</h6>
-								</div>
-								<div class="card-body">
-									<form action="/royal/manage/main/event/post/insert" method="post">
-										<div class="fg_custom_wrapper">
-											<div class="fg_custom1">
-												<div class="form-group">
-													<label for="royal_id">궁</label>
-													<select name="royal_id" class="form-control fc_custom">
-														<option value="1">경복궁</option>
-														<option value="2">창덕궁</option>
-														<option value="3">창경궁</option>
-														<option value="4">덕수궁</option>
-														<option value="5">종묘</option>
-													</select>
-												</div>
-												<div class="form-group">
-													<label for="event_type">행사 유형</label>
-													<select name="event_type" class="form-control fc_custom">
-														<option value="해설">해설</option>
-														<option value="행사">행사</option>
-													</select>
-												</div>
-												<div class="form-group">
-													<label for="event_name">행사 이름</label>
-													<input type="text" class="form-control fc_custom" name="event_name" 
-														placeholder="이름">
-												</div>
-												<div class="form-group">
-													<label for="event_location">행사 장소</label>
-													<input type="text" class="form-control fc_custom" name="event_location" 
-														placeholder="주소">
-												</div>
-												<div class="form-group">
-													<label for="start_date">시작일</label>
-													<input type="date" class="form-control fc_custom" name="start_date" id="start_date">
-												</div>
-												<div class="form-group">
-													<label for="end_date">종료일</label>
-													<input type="date" class="form-control fc_custom" name="end_date" id="end_date">
-												</div>
-												<div class="form-group">
-													<label for="event_link">행사 사이트</label>
-													<input type="text" class="form-control fc_custom" name="event_link" 
-														placeholder="사이트 주소">
-												</div>
-												<div class="form-group">
-													<label for="event_imgpath">행사 사진</label>
-													<input type="text" class="form-control fc_custom" name="event_imgpath" 
-														placeholder="사진 경로">
-												</div>
-												<div class="form-group">
-													<label for="reservable">예약가능 여부</label>
-													<select name="reservable" class="form-control fc_custom">
-														<option value="Y">가능</option>
-														<option value="N">불가</option>
-													</select>
-												</div>
-												<div class="form-group">
-													<label for="reservable">회차별 인원수</label>
-													<input type="number" class="form-control fc_custom" name="round_capacity" min="0" value="0">
-												</div>
-											</div>
-											
-											<div class="fg_custom2">
-												<div class="form-group">
-													<label for="reservable" style="margin-right: 7px">회차 설정</label>
-													
-													<!-- 더하기 버튼 -->
-													<button type="button" class="btn btn-success mb-1 btn-custom plusBtn">
-														<span style="font-size: 20px;" class="material-symbols-outlined">add</span>
-													</button>
-									              	
-									              	<!-- 빼기 버튼 -->
-									              	<button type="button" class="btn btn-warning mb-1 btn-custom minusBtn">
-														<span style="font-size: 20px;" class="material-symbols-outlined">remove</span>
-													</button>
-													
-													<!-- 회차 칸 -->
-													<div class="input-group mb-3">
-														<div class="input-group-prepend">
-															<span class="input-group-text" id="basic-addon1">1회차</span>
-														</div>
-														<input value="09:00" name="round1" type="time" class="roundInput1 form-control" 
-															placeholder="운영시간" aria-label="time" aria-describedby="basic-addon1">
-													</div>
-												</div>
-											
-											</div>
-										</div>
-										<!-- js에서 유효성 검사 -->
-										<button type="button" id="submitBtn" class="btn btn-primary">추가하기</button>
-										<input id="submitInput" type="submit" style="display: none;">
-									</form>
-								</div>
-							</div>
-						</div>
 
 						<!-- modal -->
 						<div class="modal fade" id="detailModal" tabindex="-1"
@@ -274,6 +168,7 @@
                                        				<fmt:formatDate var="formatEndDate" value="${event.end_date}" pattern="yyyy/MM/dd"/>
                                        				<td>${formatEndDate}</td>
 				
+													<%-- <td width="200px" style="word-break:break-all">${event.event_link}</td> --%>
 													<td width="100px" style="word-break:break-all">${event.reservable}</td>
 												</tr>
 											</c:forEach>
@@ -306,8 +201,8 @@
 	<%@ include file="/WEB-INF/views/managerViews/layout/jspf/commonJs.jspf" %>
 	
 	<!-- Individual JS -->
-	<c:url value="/resources/js/manager/event/insert.js" var="insertJS" />
-	<script src="${insertJS}"></script>
+	<c:url value="/resources/js/manager/event/list.js" var="listJS" />
+	<script src="${listJS}"></script>
 	
 	<!-- Page level plugins -->
 	<c:url value="/resources/vendor/manager/datatables/jquery.dataTables.js" var="dataTablesJs" />

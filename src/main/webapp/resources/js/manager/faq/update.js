@@ -1,20 +1,24 @@
 // 자주묻는질문 추가 할때 유효성 검사
 const submitBtn = document.querySelector('#submitBtn');
 const submitInput = document.querySelector('#submitInput');
+let selected_faq_hidden = document.querySelector('#selected_faq_hidden');
 
 submitBtn.addEventListener('click', (e) => {
-  const faq_title = document.querySelector('.faq_title').value;
-  const faq_result = document.querySelector('.faq_result').value;
-
-  console.log(faq_title);
-  console.log(faq_result);
-
-  if (faq_title == null || faq_result == null || faq_title == '' || faq_result == '') {
-    alert('제목과 내용을 반드시 입력해주세요');
+  // 선택한 자주묻는질문이 없다면 submit 불가
+  if (selected_faq_hidden.value == null || selected_faq_hidden.value == '') {
+    alert('수정하실 자주묻는질문을 선택해주세요');
   } else {
-    submitInput.click();
+    // 제목 내용 입력을 하였는지
+    const faq_title = document.querySelector('.faq_title').value;
+    const faq_result = document.querySelector('.faq_result').value;
+    if (faq_title == null || faq_result == null || faq_title == '' || faq_result == '') {
+      alert('제목과 내용을 반드시 입력해주세요');
+    } else {
+      submitInput.click();
+    }
   }
 });
+
 
 // 테이블의 각 행을 눌렀을 때 비동기 방식으로 각 행사의 디테일 정보 가져오기
 const rows = $('.tableRowData');
@@ -28,9 +32,7 @@ rows.each(function (index, item) {
       success: (object, state, xhttp) => {
 
         var faq = object.FAQ;
-
-        console.log(faq);
-
+        
         //// 타입 넣기 ////
         var selected_royal = $('#selected_royal');
         var royal_id = faq.royal_id;
