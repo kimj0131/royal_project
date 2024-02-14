@@ -16,6 +16,6 @@ public class EventDTO {
 	private Date start_date;
 	private Date end_date;
 	private String event_link;
-	List<String> event_imgpath;
-	private String reservable;
+	private String event_imgpath;
+	private Character reservable;
 }
