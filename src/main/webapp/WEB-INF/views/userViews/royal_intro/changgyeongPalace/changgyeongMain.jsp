@@ -4,9 +4,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-<c:url value="/resources/css/royal_intro/changgyeonggung.css" var="CGCSS" />
+<c:url value="/resources/css/royal_intro/palaceMainIntro.css" var="introCSS" />
 <meta charset="UTF-8">
-<link rel="stylesheet" href="${CGCSS}" />
+<link rel="stylesheet" href="${introCSS}" />
 <title>${palaceName} 메인 페이지</title>
 </head>
 <body>
@@ -23,32 +23,25 @@
 	</div>
 	
 	<div class="banner">
-	<a href="/royal/palace/changgyeonghistory">
-		<div class="menu" style="margin:10px">
+		<a href="/royal/palace/changgyeonghistory" class="menu">
 			<img src="../resources/image/royal_inner/main/changgyeong/bg_menu03_01.jpg" alt="이미지" />
-			창경궁 소개, 역사
-		</div>
-	</a>
+			&nbsp; 창경궁 소개, 역사
+		</a> <br/>
+		
+		<a href="/royal/palace/royalInner?palace=창경궁&royalId=3" class="menu">
+			창경궁 내부 건축물 &nbsp;
+			<img src="../resources/image/royal_inner/main/changgyeong/bg_menu03_02.jpg" alt="이미지" />
+		</a> <br/>
 	
-	<a href="/royal/palace/royalInner?palace=창경궁&royalId=3">
-		<div class="menu" style="margin:10px">
-			창경궁 내부 건축물<img src="../resources/image/royal_inner/main/changgyeong/bg_menu03_02.jpg" alt="이미지" />
-		</div>
-	</a>
-
-	<a href="/royal/palace/viewing_time">
-		<div class="menu" style="margin:10px">
+		<a href="/royal/palace/viewing_time" class="menu">
 			<img src="../resources/image/royal_inner/main/changgyeong/bg_menu03_03.jpg" alt="이미지" />
-	   		관람안내
-		</div>
-	</a>
-	
-	<a href="/royal/palace/reservation">
-		<div class="menu" style="margin:10px">
-	   		해설*행사 예약
+		   	&nbsp; 관람안내
+		</a> <br/>
+		
+		<a href="/royal/palace/reservation" class="menu">
+		   	해설*행사 예약 &nbsp;
 			<img src="../resources/image/royal_inner/main/changgyeong/bg_menu03_04.jpg" alt="이미지" />
-		</div>
-	</a>
+		</a> <br/>
 	</div>
 	
 	<jsp:include page="/WEB-INF/views/userViews/layout/footer.jsp"/>

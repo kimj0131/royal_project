@@ -63,22 +63,23 @@
     ${innerDTO.royal_inner_name}
     </div>
 
-    <div class="mainImg">
-        <!-- 이미지 슬라이드를 표시할 div -->
-        <div id="imageSlider">
-            <!-- 이미지 경로를 가져와 슬라이드로 표시 -->
-            <c:forEach items="${innerDTO.royal_inner_imgpath}" var="imagePath">
-                <img src="${imagePath}" alt="건축물이미지" />
-            </c:forEach>
-        </div>
-    </div>
-    <div class="content">${innerDTO.royal_inner_detail}</div>
-	<!-- 
-	<p>Debug - Inner Name: ${innerDTO.royal_inner_name}</p>
-	<p>Debug - Inner Image Path: ${innerDTO.royal_inner_imgpath}</p>
-	<p>Debug - Inner Detail: ${innerDTO.royal_inner_detail}</p>
-	 -->
-	
+	<div class="main-container">
+	    <div class="mainImg">
+	        <!-- 이미지 슬라이드를 표시할 div -->
+	        <div id="imageSlider">
+	            <!-- 이미지 경로를 가져와 슬라이드로 표시 -->
+	            <c:forEach items="${innerDTO.royal_inner_imgpath}" var="imagePath">
+	                <img src="${imagePath}" alt="건축물이미지" />
+	            </c:forEach>
+	        </div>
+	    </div>
+	    <div class="content">${innerDTO.royal_inner_detail}</div>
+		<!-- 
+		<p>Debug - Inner Name: ${innerDTO.royal_inner_name}</p>
+		<p>Debug - Inner Image Path: ${innerDTO.royal_inner_imgpath}</p>
+		<p>Debug - Inner Detail: ${innerDTO.royal_inner_detail}</p>
+		 -->
+	</div>
 	<jsp:include page="/WEB-INF/views/userViews/layout/footer.jsp" />
 	<script src="${innerJS}"></script>  
 	<script src="${innerNameJS}"></script>

@@ -6,16 +6,16 @@
 }
 
 .grid-container {
-    margin: 0 auto;
+    margin: 0 auto 50px;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: 0;
     padding-bottom: 20px;
     width: 66%;
 }
 
 .royal-name {
-    margin: 0 auto 20px;
+    margin: 0 auto 50px;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
     align-items: center;
@@ -119,8 +119,8 @@ h2 {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding-right: 5px;
-    padding-left: 5px;
+    padding-right: 15px;
+    padding-left: 15px;
     margin: 0;
 }
 
@@ -135,10 +135,9 @@ h2 {
 
 .mainImg {
     /* height: auto;  */
-    max-height: 592px;
+    height: 592px;
     width: 66%; 
     margin: 0 auto;
-    display: block;
 }
 
 .mainImg > #imageSlider {
@@ -153,9 +152,8 @@ h2 {
 
 .content {
     width: 66%;
-    margin: 0 auto;
+    margin: 50px auto;
     padding: 6px;
-    margin-top: 40px;
     font-size: 13px;
 }
 
