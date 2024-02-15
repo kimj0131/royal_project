@@ -41,6 +41,7 @@
 > * 방혜미 : 지도 api 데이터 활용 - 관람안내 > 오시는길 페이지 [[Commit]](https://github.com/kimj0131/royal_project/commit/012c89358b6c041b1c05169f36b2536019a3889c)
 > * 김준형 : Event 테이블 데이터 회차 컬럼을 수정 시 Event_round 테이블 데이터 회차수 만큼 insert or delete 하는 service [[Commit]](https://github.com/kimj0131/royal_project/commit/f856a8d61cbe07e3e5bfee5becbc1c6204e3cc7c)
 > * 김준형 : user, manage 로그인 확인 방법을 servlet filter에서 확인하도록 설정 [[Commit]](https://github.com/kimj0131/royal_project/commit/b9f155d03e6ee038dc20391c5d381a317744250e)
+> * 김준형 : 관리자 페이지에 전체에 필요한 데이터(__알림수를 표시하기 위한 답변없는 Q&A리스트__)를 전달하기위해 spring intercepter 활용 [[Commit]](https://github.com/kimj0131/royal_project/commit/e2c1d534462ef27757f14a5147abf7fe4cbecea6)
 > * 장호동 : 조건을 정해 검색할 수 있는 servie[[Commit]](https://github.com/kimj0131/royal_project/commit/8fe27658d6cb29ba94be1aeedb7b85d5b7de13e6)
 > * 조현우 : 관리자app - 디자인 템플릿을 받아와서 현재 프로젝트에 맞게 수정하고 예약, 행사, 자주묻는질문, 공지사항 페이지에서 데이터를 DB에 쉽게 추가, 수정, 삭제할 수 있도록 GUI 구축 [[Commit]](https://github.com/kimj0131/royal_project/commit/5e743f0d5beccebd4ed739dfcbc97d80c72fe651)
 
@@ -66,6 +67,9 @@
 > * 김준형 : mybatis Mapper에서 파라미터를 복수개로 받을때 파라미터를 인식하지 못하는 문제
 >   + 메소드 파라미터에 @Param("파라미터 이름") 으로 복수의 파라미터를 지정
 >   + mapper.xml에 #{파라미터 이름}으로 사용
+> * 김준형 : filter에서 데이터를 넘기기위해 service를 호출했지만 에러발생
+>   + filter는 스프링 컨테이너가 자원을 점유하고 있지 않으므로 service 호출이 불가
+>   + spring intercepter를 사용해 데이터를 넘긴다.
 > * 조현우 : ajax로 EventManageDTO를 담은 List와 EventRoundManageDTO를 담은 List 총 두개의 객체 데이터를 받아와야 했던 문제
 >   + 자바 객체를 json으로 parsing하기 위해 ObjectMapper를 사용
 >   + Map을 만들어 두개의 List를 put
