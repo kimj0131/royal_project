@@ -52,16 +52,6 @@ body * {
 	padding: 0 15px;
 }
 
-.faq_id {
-	display: flex;
-}
-.royal_id {
-	display: flex;
-} 
-.faq_title {
-	display: flex;
-}
-
 .faq-result {
 	display: flex;
 	align-content: flex-start;
@@ -100,57 +90,99 @@ body * {
 	margin: 0;
 }
 
+/* qna css 영역 */
 .tit {
-	padding-top: 50px;
-	padding-bottom: 50px;
+	padding-top: 10px;
+	padding-bottom: 10px;
 }
 
-.sub_section_qna_wrap {
-	padding-top: 50px;
-}
-
+/* 새로운 디자인 추가 */
+/* 웹 페이지의 CSS 파일 */
 .qna_box {
-	width: 100%;
-	border: solid 1px #ECECEC;
-	padding: 45px 40px;
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+    margin-top: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.qna_box .tit_wrap {
-	display: flex;
-	align-items: baseline;
+.qna_box .top {
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
 }
-.tit {
-	font-size: 20px;
+
+.qna_box .top .tit_wrap {
+    display: flex;
+    align-items: center;
+    margin: 10px 0; /* 제목과 아이콘 간격 수정 */
+}
+
+.qna_box .top .tit_wrap .ic_q {
+    margin-right: 10px;
+}
+
+.qna_box .top .tit_wrap .tit {
+    font-size: 24px; 
+    font-weight: bold; 
 }
 
 .input_wrap {
-    max-width: 100%;
+    margin-top: 20px; 
+}
+
+.input_wrap form {
+    display: flex;
+    flex-direction: column;
+}
+
+.input_wrap form input[type="text"],
+.input_wrap form select,
+.input_wrap form textarea {
+    margin-bottom: 15px; 
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.input_wrap form select {
+    width: 50%; 
+    margin-bottom: 15px; 
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.input_wrap form textarea {
     width: 100%;
-    padding: 10px; /* 내부 여백 추가 */
-    box-sizing: border-box; /* 내부 여백 포함 */
+    height: 150px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    resize: none; /* 사용자 크기 조정 비활성화 */
+    margin-bottom: 15px; /* 입력 요소들 간의 간격 조정 */
 }
 
-#qnaContent {
-    width: 100%; /* 텍스트 영역 너비를 100%로 설정 */
-    height: 400px; /* 텍스트 영역의 기본 높이 설정 */
-    padding: 10px; /* 내부 여백 추가 */
-    box-sizing: border-box; /* 내부 여백 포함 */
-    resize: vertical; /* 사용자가 수직으로 크기 조정할 수 있도록 설정 */
-    border: 1px solid #ccc; /* 테두리 추가 */
-    border-radius: 5px; /* 모서리를 둥글게 만듦 */
-    font-size: 16px; /* 폰트 크기 설정 */
-    line-height: 1.5; /* 줄 간격 설정 */
-    resize: none;
+.input_wrap form .btn {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.input_wrap form .btn:hover {
+    background-color: #0056b3;
 }
 
 
-.btn {
 
-    padding: 10px 10px; /* 내부 여백 설정 */
-    font-size: 16px; /* 폰트 크기 설정 */
-    border: solid 1px black;
-    color: black;
-    cursor: pointer; /* 커서 모양 변경 */
 
+
+/* js를 간소화 시키기 위한 css */
+.hidden {
+    display: none;
 }
 

@@ -12,11 +12,11 @@
 	var="public_communicationCSS" />
 <c:url value="/resources/js/communication/communication_faq.js"
 	var="communication_faqJS" />
+<c:url value="/resources/js/communication/faq.js" var="faqJS" />
 <link rel="stylesheet" href="${faqCSS}" />
 <link rel="stylesheet" href="${public_communicationCSS}" />
 <link rel="stylesheet" href="${communication_faqJS}" />
-<script src="https://kit.fontawesome.com/a2b7421397.js"
-	crossorigin="anonymous"></script>
+
 </head>
 <body>
 	<jsp:include page="/WEB-INF/views/userViews/layout/header.jsp" />
@@ -47,24 +47,24 @@
 			</div>
 
 
-				<div class="search_div">
-					<div class="search_left">
-						<div class="count_div">게시글수 [${faq.size()}]</div>
-					</div>
-					<form name="listForm" id="listForm" method="post"
-						onsubmit="fn_search(); return false;">
-						<div class="search_right">
-							<select name="search_select_id" id="search_select_id" title="구분">
-								<option>전체</option>
-								<option>제목</option>
-								<option>내용</option>
-							</select> <input type="text" name="search_input_id" id="search_input_id"
-								value title="검색어를 입력해 주세요" placeholder="검색어를 입력해주세요.">
-							<button type="submit">검색</button>
-						</div>
-					</form>
+			<div class="search_div">
+				<div class="search_left">
+					<div class="count_div">게시글수 [${faq.size()}]</div>
 				</div>
-				
+				<form name="listForm" id="listForm" method="post"
+					onsubmit="fn_search(); return false;">
+					<div class="search_right">
+						<select name="search_select_id" id="search_select_id" title="구분">
+							<option>전체</option>
+							<option>제목</option>
+							<option>내용</option>
+						</select> <input type="text" name="search_input_id" id="search_input_id"
+							value title="검색어를 입력해 주세요" placeholder="검색어를 입력해주세요.">
+						<button type="submit">검색</button>
+					</div>
+				</form>
+			</div>
+
 			<div class="inner">
 				<div class="sub_con_section">
 					<div class="txt_section_tit">목록</div>
@@ -72,45 +72,44 @@
 						<c:if test="${!empty faq}">
 							<ul class="faq-list">
 								<c:forEach items="${faq}" var="faq" varStatus="status">
-									<div class="q_item">
-										<div class="faq_id"> [${faq.faq_id}]</div>
+									<li class="q_item">
+										<div class="faq_id">[${faq.faq_id}]</div>
 										<div class="royal_id">
 											<c:choose>
 												<c:when test="${faq.royal_id == 1}">
-							                경복궁
-							            </c:when>
+                                        경복궁
+                                    </c:when>
 												<c:when test="${faq.royal_id == 2}">
-							                창덕궁
-							            </c:when>
+                                        창덕궁
+                                    </c:when>
 												<c:when test="${faq.royal_id == 3}">
-							                창경궁
-							            </c:when>
+                                        창경궁
+                                    </c:when>
 												<c:when test="${faq.royal_id == 4}">
-							                덕수궁
-							            </c:when>
+                                        덕수궁
+                                    </c:when>
 												<c:when test="${faq.royal_id == 5}">
-							                종묘
-							            </c:when>
+                                        종묘
+                                    </c:when>
 											</c:choose>
 										</div>
 										<div class="faq-title"
 											onclick="toggleContent(${status.index})">
-											${faq.faq_title}</div>
-									</div>
-										<div class="faq-result" id="faq-result-${status.index}">
-											${faq.faq_result}</div>
+											${faq.faq_title}</div> <!-- faq-result에 hidden 클래스 추가 -->
+										<div class="faq-result hidden" id="faq-result-${status.index}">${faq.faq_result}</div>
+									</li>
 								</c:forEach>
 							</ul>
 						</c:if>
 					</div>
 				</div>
 
+
 				<div class="sub_section_qna_wrap">
 					<div class="qna_box">
 						<div class="top">
 							<div class="tit_wrap">
-								<span class="ic_q"><i class="fa-solid fa-q"
-									style="font-size: 40px"></i></span> &nbsp;&nbsp;
+								<span class="ic_q">
 								<div class="tit">문의하기</div>
 							</div>
 						</div>
@@ -121,10 +120,10 @@
 								method="POST">
 								<!-- 문의 제목 값을 담는 숨겨진 필드 -->
 								<input type="text" name="qna_title" value="${qna.qna_title}"
-									required>
+									required placeholder="제목을 입력해주세요.">
 								<!-- royal_id 선택 필드 -->
 								<select id="royal_id" name="royal_id" required>
-									<option value="" selected disabled hidden>선택</option>
+									<option value="" selected disabled hidden>카테고리를 선택해주세요.</option>
 									<option value="1"
 										<c:if test="${param.royal_id == 1}">selected</c:if>>경복궁</option>
 									<option value="2"
@@ -138,7 +137,7 @@
 								</select>
 								<!-- 컨텐츠 필드 -->
 								<textarea id="qnaContent" name="qna_content" rows="5" cols="80"
-									required></textarea>
+									required placeholder="문의하실 내용을 적어주세요."></textarea>
 
 								<c:if test="${login_user == null}">
 									<button class="btn" type="button">
@@ -154,57 +153,14 @@
 					</div>
 				</div>
 			</div>
-
 		</div>
 	</div>
 
-	<!-- 상세 내용 열고 닫기 script -->
-	<script> 
-	  // 페이지 로딩시 faq-result 감추기
-	  window.onload = function() {
-	    var allResultElements = document.querySelectorAll('.faq-result');
-	    allResultElements.forEach(function(element) {
-	      element.style.display = 'none';
-	    });
-	  };
-
-	  function toggleContent(index) {
-	    var resultElement = document.getElementById('faq-result-' + index);
-
-	    // 다른 모든 faq-result를 감추기
-	    var allResultElements = document.querySelectorAll('.faq-result');
-	    allResultElements.forEach(function(element) {
-	      if (element !== resultElement) {
-	        element.style.display = 'none';
-	      }
-	    });
-
-	    if (resultElement.style.display === 'none' || resultElement.style.display === '') {
-	      resultElement.style.display = 'block';
-	    } else {
-	      resultElement.style.display = 'none';
-	    }
-	  }
-	</script>
-
-	<script>
-    // DOMContentLoaded 이벤트 리스너 등록
-    document.addEventListener('DOMContentLoaded', function() {
-        // URL의 쿼리스트링에서 alert 타입을 가져옴
-        var alertType = new URLSearchParams(window.location.search).get('alert');
-        
-        // alert 타입에 따라 메시지를 설정하고 alert 창을 띄움
-        if (alertType === 'success') {
-            alert('문의가 정상적으로 접수되었습니다!');
-        } else if (alertType === 'error') {
-            alert('문의 접수가 실패했습니다!');
-        }
-    });
-</script>
 
 
 
 	<script src="${communication_faqJS}"></script>
+	<script src="${faqJS}"></script>
 
 
 	<jsp:include page="/WEB-INF/views/userViews/layout/footer.jsp" />
