@@ -71,11 +71,17 @@
 			<div class="inform">
 				<div class="main_title">알림판</div>
 			</div>
-			<c:forEach var="evt" items="${event_imgpath}">
+			<c:forEach var="evt" items="${event_list}" begin="0" end="2">
 				<div class="imgSlider" id="imageSlider">
 					<div class="images">
-						<a class="imgtag" href="/royal/palace/event_list?event_id=${evt.event_id}"><img alt="" class="img"
-							src="$evt" /></a>
+						<a class="imgtag" href="/royal/palace/event_list?event_link=${evt.event_link}">
+						<img alt="" class="img" src="/royal/palace/event_list?event_imgpath=${evt.event_imgpath}" />
+						
+						<!-- <a class="imgtag" href="${evt.event_link}"> -->
+						<!-- <img alt="" class="img" src="${evt.event_imgpath}" /> -->
+						
+						<!-- <a href="/royal/palace/event_list?event_link=${evt.event_link}" class="img">$evt.event_imgpath</a> -->
+						</a>
 					</div>
 				</div>
 			</c:forEach>
