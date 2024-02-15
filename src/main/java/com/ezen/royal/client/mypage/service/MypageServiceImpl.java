@@ -1,15 +1,16 @@
 package com.ezen.royal.client.mypage.service;
 
-import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
+import java.util.concurrent.CompletableFuture;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
 
 import com.ezen.royal.client.mypage.dto.MypageDTO;
 import com.ezen.royal.client.mypage.mapper.MypageMapper;
-import com.ezen.royal.client.palace.dto.InnerDTO;
 
 @Service
 public class MypageServiceImpl implements MypageService{
@@ -39,6 +40,20 @@ public class MypageServiceImpl implements MypageService{
 		
 		return mypageQnAList;
 	}
+
+	@Override
+	public boolean deleteReservation(String reservationNum) {
+		boolean result = mypageMapper.deleteReservation(reservationNum);
+		if(result ==true) {
+			return true;
+		}else {
+			
+			return false;
+		}
+	}
+
+	
+	
 
 	
 }

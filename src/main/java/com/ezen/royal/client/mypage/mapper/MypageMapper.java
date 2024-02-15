@@ -2,7 +2,11 @@ package com.ezen.royal.client.mypage.mapper;
 
 import java.util.List;
 
+import org.apache.ibatis.annotations.Delete;
+import org.apache.ibatis.annotations.Mapper;
+
 import com.ezen.royal.client.mypage.dto.MypageDTO;
+
 
 public interface MypageMapper {
 
@@ -15,4 +19,8 @@ public interface MypageMapper {
 
 	List<MypageDTO> qnaList(String social_id);
 
+	
+	 @Delete("DELETE FROM reservation WHERE resv_num=#{reservationNum}")
+	    boolean deleteReservation(String reservationNum);
+	
 }

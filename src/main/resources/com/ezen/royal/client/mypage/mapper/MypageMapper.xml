@@ -31,5 +31,6 @@
 		FROM qna WHERE member_id =(select member_id from member where social_id = #{social_id})
 		ORDER BY qna_id desc
 	</select>
+	
 
 </mapper>

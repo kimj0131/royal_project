@@ -12,8 +12,10 @@ public interface MypageService {
 
 	List<MypageDTO> getMyreservList( String social_id);
 
-	
-
 	List<MypageDTO> getMyqnaList(String social_id);
+
+	boolean deleteReservation(String reservationNum);
+
+	
 	
 }

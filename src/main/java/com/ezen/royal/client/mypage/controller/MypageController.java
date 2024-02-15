@@ -1,22 +1,22 @@
 package com.ezen.royal.client.mypage.controller;
 
-import java.util.List;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.ezen.royal.api.service.KakaoService;
-import com.ezen.royal.client.mypage.dto.MypageDTO;
 import com.ezen.royal.client.mypage.service.MypageService;
-import com.ezen.royal.client.palace.dto.InnerDTO;
 
 import lombok.extern.log4j.Log4j;
 
@@ -53,12 +53,28 @@ public class MypageController {
 			 return "/userViews/mypage/mypage";
 		}
 	}
-
-	//예약 취소
-	@PostMapping("/cancelResv")
-	public int cancleResv() {
-
-		return 0;
-
-	}
+	
+//	@PostMapping("/deleteReservation")
+//	public @ResponseBody void deleteReservation(HttpServletRequest request) {
+//	    String reservationNum = request.getParameter("reservationNum");
+//	  mypageService.deleteReservation(reservationNum);
+//		
+//		
+//	}
+	
+	@PostMapping("/deleteReservation")
+	@ResponseBody
+    public ResponseEntity<String> deleteReservation(@RequestParam String reservationNum ) {
+      
+		  boolean deleteSuccessful = mypageService.deleteReservation(reservationNum);
+		  
+	        if (deleteSuccessful==true){
+	        	
+	            return ResponseEntity.ok("Reservation deleted successfully.");
+	        } else {
+	            // Return error response
+	            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Failed to delete reservation.");
+	        }
+    }
+	
 }
