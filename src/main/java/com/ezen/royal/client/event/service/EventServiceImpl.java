@@ -18,11 +18,6 @@ public class EventServiceImpl implements EventService {
 	}
 
 	@Override
-	public void getCommentListInEventTable(Model model) {
-		model.addAttribute("typeCommentaryList", eventMapper.getEventListByType("해설"));
-	}
-
-	@Override
 	public void getMonthlyEventList(Model model, String yearStr, String monthStr) {
 		model.addAttribute("monthlyEventList", eventMapper.getMonthlyEventList(yearStr, monthStr));
 	}
@@ -31,7 +26,22 @@ public class EventServiceImpl implements EventService {
 	public void getCurrentMonthEventList(Model model) {
 		model.addAttribute("currentMonthEventList", eventMapper.getCurrentMonthEventList());
 	}
+	
 
+	@Override
+	public void getCommentListInEventTable(Model model) {
+		model.addAttribute("typeCommentaryList", eventMapper.getEventListByType("해설"));
+	}
+	
+	@Override
+	public void getEventDetail(Model model, int event_id) {
+		model.addAttribute("eventDetail", eventMapper.getEventDetail(event_id));
+	}
+
+	@Override
+	public void getEventRoundList(Model model, int event_id) {
+		model.addAttribute("eventRoundList", eventMapper.getEventRoundList(event_id));
+	}
 	
 	
 }

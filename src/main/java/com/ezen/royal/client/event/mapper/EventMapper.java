@@ -5,6 +5,7 @@ import java.util.List;
 import org.apache.ibatis.annotations.Param;
 
 import com.ezen.royal.client.event.dto.EventDTO;
+import com.ezen.royal.client.event.dto.EventRoundDTO;
 
 public interface EventMapper {
 
@@ -18,4 +19,9 @@ public interface EventMapper {
 	// 당월 event_type이 행사인 event_list
 	List<EventDTO> getCurrentMonthEventList();
 	
+	// event_id로 event detail을 가져온다
+	EventDTO getEventDetail(int event_id);
+	
+	// event_id로 event_round list를 가져온다
+	List<EventRoundDTO> getEventRoundList(int event_id);
 }

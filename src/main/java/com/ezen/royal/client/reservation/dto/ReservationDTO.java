@@ -1,12 +1,12 @@
-package com.ezen.royal.manager.dto;
+package com.ezen.royal.client.reservation.dto;
 
 import java.util.Date;
 
 import lombok.Data;
 
 @Data
-public class ReservationManageDTO {
-	
+public class ReservationDTO {
+
 	private Integer resv_id;		// 예약 ID
 	private Integer event_id;		// 연관된 이벤트 ID
 	private Integer member_id;		// 연관된 고객(member) ID
@@ -15,5 +15,4 @@ public class ReservationManageDTO {
 	private Integer resv_people;	// 예약 인원
 	private Date resv_eventdate; 	// 예약한 이벤트 날짜
 	private Integer round_num;		// event 회차
-	
 }

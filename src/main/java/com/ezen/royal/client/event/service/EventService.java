@@ -4,6 +4,9 @@ import org.springframework.ui.Model;
 
 public interface EventService {
 	
+	///////////////////////////////////////////////////////////
+	// main, event
+	
 	// event_type이 행사인 event_list
 	/**
 	 * event_type이 행사인 eventList를 가져온다 <br>
@@ -11,15 +14,6 @@ public interface EventService {
 	 * 
 	 */
 	void getEventListInEventTable(Model model);
-	
-	// event_type이 해설인 event_list
-	/**
-	 * event_type이 해설인 eventList를 가져온다 <br>
-	 * attribute name = typeCommentaryList
-	 * 
-	 */
-	void getCommentListInEventTable(Model model);
-	
 	
 	// 월별 event_type이 행사인 event_list
 	/**
@@ -36,6 +30,32 @@ public interface EventService {
 	 * 
 	 */
 	void getCurrentMonthEventList(Model model);
+	
+	
+	////////////////////////////////////////////////////////////
+	// reservation
+	
+	// event_type이 해설인 event_list
+	/**
+	 * event_type이 해설인 eventList를 가져온다 <br>
+	 * attribute name = typeCommentaryList
+	 * 
+	 */
+	void getCommentListInEventTable(Model model);
+	
+	// event 상세정보
+	/**
+	 * event_id로 event detail을 가져온다 <br>
+	 * attribute name = eventDetail
+	 */
+	void getEventDetail(Model model, int event_id);
+	
+	// event_id로 event_round list
+	/**
+	 * event_id로 event_round list를 가져온다 <br>
+	 * attribute name = eventRoundList
+	 */
+	void getEventRoundList(Model model, int event_id);
 	
 	
 }

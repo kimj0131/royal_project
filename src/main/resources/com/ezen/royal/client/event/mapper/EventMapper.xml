@@ -27,5 +27,15 @@
 		    AND 
 		    	EXTRACT(YEAR FROM start_date) = EXTRACT(YEAR FROM sysdate)
 	</select>
+	
+	<!-- event_id로 event detail을 가져온다 -->
+	<select id="getEventDetail">
+		SELECT * FROM event_list WHERE event_id=#{event_id}
+	</select>
+
+	<!-- event_id로 event_round list를 가져온다 -->
+	<select id="getEventRoundList">
+		SELECT * FROM event_round WHERE event_id=#{event_id}
+	</select>
 
 </mapper>
