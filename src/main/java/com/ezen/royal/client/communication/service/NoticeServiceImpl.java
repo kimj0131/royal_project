@@ -8,6 +8,7 @@ import org.springframework.ui.Model;
 
 import com.ezen.royal.client.communication.dto.NoticeDTO;
 import com.ezen.royal.client.communication.mapper.NoticeMapper;
+import com.ezen.royal.client.communication.util.NoticeListVO;
 
 @Service
 public class NoticeServiceImpl implements NoticeService{
@@ -35,7 +36,6 @@ public class NoticeServiceImpl implements NoticeService{
 		
 	}
 
-
 	@Override
 	public void search(Model model, String searchType, String searchString) {
 		if(searchType.equals("제목")) {
@@ -46,4 +46,30 @@ public class NoticeServiceImpl implements NoticeService{
 			model.addAttribute("notice", noticeMapper.searchAll(searchString));
 		}
 	}
+
+	@Override
+	public int countBoard() {
+		return noticeMapper.countBoard();
+	}
+
+	@Override
+	public void selectBoard(Model model, NoticeListVO vo, Integer nowPage, Integer pagePostCnt) {
+		int total = countBoard();
+		
+		if (nowPage == null && pagePostCnt == null) {
+			nowPage = 1;
+			pagePostCnt = 10;
+		} else if (nowPage == null) {
+			nowPage = 1;
+		} else if (pagePostCnt == null) {
+			pagePostCnt = 10;
+		}
+		List<NoticeDTO> list = noticeMapper.selectBoard(vo);
+		model.addAttribute("page", vo);
+		model.addAttribute("list", list);
+	}
+
+
+	
+	
 }

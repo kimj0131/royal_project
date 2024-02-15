@@ -3,9 +3,9 @@ package com.ezen.royal.client.communication.mapper;
 import java.util.List;
 
 import org.apache.ibatis.annotations.Param;
-import org.springframework.ui.Model;
 
 import com.ezen.royal.client.communication.dto.NoticeDTO;
+import com.ezen.royal.client.communication.util.NoticeListVO;
 
 public interface NoticeMapper {
 	
@@ -18,5 +18,10 @@ public interface NoticeMapper {
 	 List<NoticeDTO> search(@Param("type") String type, @Param("searchString") String searchString);
 	 
 	 List<NoticeDTO> searchAll(String searchString);
+
+	 int countBoard();
+
+	 List<NoticeDTO> selectBoard(NoticeListVO vo);
+	
 	
 }

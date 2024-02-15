@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.ezen.royal.client.communication.service.NoticeService;
+import com.ezen.royal.client.communication.util.NoticeListVO;
 
 import lombok.extern.log4j.Log4j;
 
@@ -24,13 +25,16 @@ public class NoticeController {
 	
 	
 	@GetMapping("/notice")
-	public String notice(Model model, Integer royal_id) {
+	public String notice(Model model, Integer royal_id, NoticeListVO vo,Integer nowPage, Integer pagePostCnt) {
 		
 		if (royal_id == null) {
-			noticeService.getNoticeList(model);
+	//		noticeService.getNoticeList(model);
 		} else {
 			noticeService.getNoticeList_part(model, royal_id);
 		}
+		
+		noticeService.countBoard();
+		noticeService.selectBoard(model, vo, nowPage, pagePostCnt);
 		
 		return "/userViews/notice/notice_list";
 	}
