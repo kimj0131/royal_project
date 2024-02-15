@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper
+	namespace="com.ezen.royal.client.event.mapper.EventMapper">
+	
+	<!-- event_type별로 event_list를 가져온다 -->
+	<select id="getEventListByType" resultType="com.ezen.royal.client.event.dto.EventDTO">
+		SELECT * FROM event_list WHERE event_type=#{event_type}
+	</select>
+	
+	<!-- 연월을 입력받아 event_list를 가져온다 -->
+	<select id="getMonthlyEventList" resultType="com.ezen.royal.client.event.dto.EventDTO">
+		SELECT * FROM event_list 
+			WHERE 
+				EXTRACT(MONTH FROM start_date) = #{year}
+		    AND 
+		    	EXTRACT(YEAR FROM start_date) = #{month}
+	</select>
+		
+	<!-- 당월 event_list를 가져온다 -->
+	<select id="getCurrentMonthEventList" resultType="com.ezen.royal.client.event.dto.EventDTO">
+		SELECT * FROM event_list
+			WHERE
+		        EXTRACT(MONTH FROM start_date) = EXTRACT(MONTH FROM sysdate)
+		    AND 
+		    	EXTRACT(YEAR FROM start_date) = EXTRACT(YEAR FROM sysdate)
+	</select>
+
+</mapper>

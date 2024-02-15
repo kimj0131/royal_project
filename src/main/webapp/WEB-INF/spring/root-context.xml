@@ -48,6 +48,9 @@
 	
 	<!-- qna&notice mapper -->
 	<mybatis-spring:scan base-package="com.ezen.royal.client.communication.mapper"/>
+	
+	<!-- event mapper -->
+	<mybatis-spring:scan base-package="com.ezen.royal.client.event.mapper"/>
 
 	<!-- Mypage mapper -->
 	<mybatis-spring:scan base-package="com.ezen.royal.client.mypage.mapper"/>
