@@ -153,7 +153,7 @@ h2 {
 }
 
 
-.imageContainer {
+.innerContainer {
 	display: grid;
 	border: 3px black solid;
 	border-top-width: thick;
@@ -163,16 +163,14 @@ h2 {
     text-align: center;
     padding-top: 30px;
     width: 900px;
-	height: 500px;
 	align-content: space-around;
 	position: relative;
 }
 
-.eventImg .event-container {
+.outer {
     display: flex;
 	padding-top: 30px;
     justify-content: center;
-    align-items: center;
     line-height: 78px;
 }
 
@@ -199,11 +197,13 @@ h2 {
 }
 
 #detail {
-	margin-top: 190px;
+	/*margin-top: 190px;*/
+	/*margin-bottom: 190px;*/
 	margin-left: 400px;
-	position: absolute;
+	/*position: absolute;*/
 	line-height: 100%;
 	text-align: left;
+	top: 40%;
 }
 
 @font-face {

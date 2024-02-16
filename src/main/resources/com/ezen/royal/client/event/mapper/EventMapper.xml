@@ -14,9 +14,9 @@
 	<select id="getMonthlyEventList" resultType="com.ezen.royal.client.event.dto.EventDTO">
 		SELECT * FROM event_list 
 			WHERE 
-				EXTRACT(MONTH FROM start_date) = #{year}
+				EXTRACT(MONTH FROM start_date) = #{month}
 		    AND 
-		    	EXTRACT(YEAR FROM start_date) = #{month}
+		    	EXTRACT(YEAR FROM start_date) = #{year}
 	</select>
 		
 	<!-- 당월 event_list를 가져온다 -->
