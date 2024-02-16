@@ -4,13 +4,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-<c:url value="/resources/css/event.css" var="eventCSS" />
-<c:url value="/resources/js/event.js" var="eventJS" />
+<c:url value="/resources/css/event/event.css" var="eventCSS" />
+<c:url value="/resources/js/event/event.js" var="eventJS" />
+<c:url value="/resources/css/event/slider.css" var="sliderCSS" />
+<c:url value="/resources/js/event/slider.js" var="sliderJS" />
 <meta charset="UTF-8">
 <title>행사</title>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://kit.fontawesome.com/879255b319.js" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="${eventCSS}" />
+<link rel="stylesheet" href="${sliderCSS}" />
 </head>
 <body>
 	
@@ -43,25 +46,59 @@
                 <button type="button" id="month-next" class="month-move"> 〉 </button>     
             </div>
      </div>
-     
-     <div class="eventImg">
-		     <div class="event-container">
-		    	<button type="button" id="evnet-prev" class="event-move"> ← </button>
-		    	<div class="imageContainer">
-		    	<div id="eventImg"> </div>
-		    	<div id="detail">
-		    	 <p><i class="fa-solid fa-map-pin"></i> 행사명: </p>
-			     <p><i class="fa-solid fa-location-dot"></i> 장소: </p>
-			     <p><i class="fa-regular fa-calendar"></i> 기간: </p>
-			     <p><i class="fa-solid fa-link" style="font-size: 12px"></i> 링크: </p>
-			     <p>자세한설명</p>
-		    	</div>
-		    </div>
-	     		<button type="button" id="event-next" class="event-move"> → </button>
-		    </div>
-     </div>
+     <!-- 
+	<button type="button" id="evnet-prev" class="event-move"> ← </button>
+	<button type="button" id="event-next" class="event-move"> → </button>     
+      -->
+
+	<div class="outer"> <!-- eventImg -->
+		<div class="innerContainer"> <!-- imageContainer -->
+			
+			<div class="inner">
+				<div id="eventImg"></div>
+				<div id="detail">
+					<p>
+						<i class="fa-solid fa-map-pin"></i> 행사명:
+					</p>
+					<p>
+						<i class="fa-solid fa-location-dot"></i> 장소:
+					</p>
+					<p>
+						<i class="fa-regular fa-calendar"></i> 기간:
+					</p>
+					<p>
+						<i class="fa-solid fa-link" style="font-size: 12px"></i> 링크:
+					</p>
+					<p>자세한설명</p>
+				</div>
+			</div>
+			
+
+			<div class="button1">
+				<a class="back" title="이전이미지">back</a> <a class="next" title="다음이미지">next</a>
+			</div>
+		</div>
+		
+		
+		
+	</div>
+
+	<!-- 
+	<div class="outer">
+		<div class="inner-list">
+		
+		</div>
+			<div class="button1">
+				<a class="back" title="이전이미지">back</a> <a class="next" title="다음이미지">next</a>
+			</div>
+	</div>
+ -->
+
+
+
        
 	<script src="${eventJS}"></script>
+	<script src="${sliderJS}"></script>
 	
 	<jsp:include page="/WEB-INF/views/userViews/layout/footer.jsp" />
 </body>

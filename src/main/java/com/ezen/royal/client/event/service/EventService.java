@@ -1,6 +1,10 @@
 package com.ezen.royal.client.event.service;
 
+import java.util.List;
+
 import org.springframework.ui.Model;
+
+import com.ezen.royal.client.event.dto.EventDTO;
 
 public interface EventService {
 	
@@ -21,7 +25,7 @@ public interface EventService {
 	 * attribute name = monthlyEventList
 	 * 
 	 */
-	void getMonthlyEventList(Model model, String yearStr, String monthStr);
+	List<EventDTO> getMonthlyEventList(String yearStr, String monthStr);
 	
 	// 당월 event_type이 행사인 event_list
 	/**

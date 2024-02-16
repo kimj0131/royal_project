@@ -1,0 +1,149 @@
+*{
+  font-family: "Noto Snas KR";
+}
+
+.title1 {
+  margin-left: 150px;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+/* 기본 스타일 */
+.outer {
+  position: relative;
+  /* width: 100%; */
+  max-width: 1210px;
+  max-height: 400px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.inner-list {
+  display: flex;
+  transition: 1s ease-out;
+  height: 100%;
+}
+
+.inner {
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.inner img {
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+  display: block;
+  object-fit: cover;
+}
+
+.button1 a.back {
+  left: 0px;
+}
+.button1 a.next {
+  right: 0px;
+}
+
+.button1 a {
+  position: absolute;
+  top: 50%;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  background-color: #000000;
+  color: #fff;
+  transition: all 0.3s ease;
+}
+
+.button1 a:hover {
+  border-radius: 50%;
+  background-color: black;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* 반응형 스타일 */
+@media (max-width: 767px) {
+  .inner-list {
+    flex-direction: row; /* 화면이 작을 때 세로로 배치 */
+  }
+
+  .inner {
+    width: 100%;
+    height: 100%;
+  }
+
+  .button1 a {
+    top: auto; /* 예시로 조절, 필요에 따라 변경 가능 */
+  }
+}
+
+
+/* ---------- 메인 공지사항 CSS ---------- */
+
+.alarm { /* 공지사항, 알림판 전체적인 레이아웃 */
+  padding-top: 5%;
+  display: flex;
+  height: auto;
+}
+.left,
+.right {
+  width: calc(50% - 10px);
+  box-sizing: border-box;
+}
+
+.left {
+  width: 60%;
+  height: 100%;
+}
+
+.notice { /* 공지사항 레이아웃 */
+  margin-left: 20%;
+  height: 100%;
+}
+
+.title_top { /* 공지사항, 전제보기 틀 */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: solid 1px black;
+  padding-bottom: 5%;
+}
+.notice_title { /* 공지사항 제목 */
+  font-weight: bold;
+  font-size: 22px;
+}
+.all {  /* 전체보기 */
+  text-decoration: none;
+}
+.list {
+  list-style: none;
+  position: relative;
+  height: 100%;
+}
+.item {
+  border-bottom: dashed 1px gainsboro;
+  align-items: center;
+  display: grid;
+  grid-template-columns: 30% 50% 20%;
+  padding: 20px 0;
+  justify-content: space-between;
+}
+
+.inner_title,
+.inner_date {
+  display: inline-block;
+  width: 100%;
+}
+
+.title {
+  background-color: black;
+  color: white;
+  font-size: 15px;
+  height: 30px;
+  width: 90px;
+  text-align: center;
+  border-radius: 15px;
+  padding: 3px 0px 0px 0px; 
+}
