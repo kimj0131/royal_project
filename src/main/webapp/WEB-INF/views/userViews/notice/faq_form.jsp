@@ -16,7 +16,10 @@
 <link rel="stylesheet" href="${faqCSS}" />
 <link rel="stylesheet" href="${public_communicationCSS}" />
 <link rel="stylesheet" href="${communication_faqJS}" />
-
+<link rel="stylesheet"
+	href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+<link rel="stylesheet"
+	href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
 </head>
 <body>
 	<jsp:include page="/WEB-INF/views/userViews/layout/header.jsp" />
@@ -47,75 +50,64 @@
 			</div>
 
 
-			<div class="search_div">
-				<div class="search_left">
-					<div class="count_div">게시글수 [${faq.size()}]</div>
-				</div>
-				<form name="listForm" id="listForm" method="post"
-					onsubmit="fn_search(); return false;">
-					<div class="search_right">
-						<select name="search_select_id" id="search_select_id" title="구분">
-							<option>전체</option>
-							<option>제목</option>
-							<option>내용</option>
-						</select> <input type="text" name="search_input_id" id="search_input_id"
-							value title="검색어를 입력해 주세요" placeholder="검색어를 입력해주세요.">
-						<button type="submit">검색</button>
-					</div>
-				</form>
-			</div>
+
+
 
 			<div class="inner">
 				<div class="sub_con_section">
 					<div class="txt_section_tit">목록</div>
+					<div class="count_div"><B>전체 : ${faq.size()} 개</B></div>
 					<div class="bd_wrap">
 						<c:if test="${!empty faq}">
-							<ul class="faq-list">
-								<c:forEach items="${faq}" var="faq" varStatus="status">
-									<li class="q_item">
-										<div class="faq_id">[${faq.faq_id}]</div>
-										<div class="royal_id">
-											<c:choose>
-												<c:when test="${faq.royal_id == 1}">
-                                        경복궁
-                                    </c:when>
-												<c:when test="${faq.royal_id == 2}">
-                                        창덕궁
-                                    </c:when>
-												<c:when test="${faq.royal_id == 3}">
-                                        창경궁
-                                    </c:when>
-												<c:when test="${faq.royal_id == 4}">
-                                        덕수궁
-                                    </c:when>
-												<c:when test="${faq.royal_id == 5}">
-                                        종묘
-                                    </c:when>
-											</c:choose>
+							<div class="faq-wrapper">
+								<ul class="faq-list">
+									<c:forEach items="${faq}" var="faq" varStatus="status">
+
+										<div class="faq-details">
+											<div class="BTN_class2">
+												<c:choose>
+													<c:when test="${faq.royal_id == 1}">
+														<div id="GB_BTN2" class="GB">경복궁</div>
+													</c:when>
+													<c:when test="${faq.royal_id == 2}">
+														<div id="CD_BTN2" class="CD">창덕궁</div>
+													</c:when>
+													<c:when test="${faq.royal_id == 3}">
+														<div id="CG_BTN2" class="CG">창경궁</div>
+													</c:when>
+													<c:when test="${faq.royal_id == 4}">
+														<div id="DS_BTN2" class="DS">덕수궁</div>
+													</c:when>
+													<c:when test="${faq.royal_id == 5}">
+														<div id="JM_BTN2" class="JM">종 묘</div>
+													</c:when>
+												</c:choose>
+											</div>
+											<!-- 제목만 눌렀을때 내용열리는 script와 눌렀을떄 내용 열리는 script 포함 -->
+											<div class="faq-title"
+												onclick="toggleContent(${status.index})">
+												<span class="clickable-text">${faq.faq_title}</span> <span
+													class="material-symbols-outlined"
+													id="arrow-icon-${status.index}"> arrow_drop_down </span>
+											</div>
 										</div>
-										<div class="faq-title"
-											onclick="toggleContent(${status.index})">
-											${faq.faq_title}</div> <!-- faq-result에 hidden 클래스 추가 -->
-										<div class="faq-result hidden" id="faq-result-${status.index}">${faq.faq_result}</div>
-									</li>
-								</c:forEach>
-							</ul>
+										<div class="faq-result hidden" id="faq-result-${status.index}">
+											<div class="answer-text">답변</div>
+											<br> &nbsp;${faq.faq_result}
+										</div>
+
+									</c:forEach>
+								</ul>
+							</div>
 						</c:if>
 					</div>
 				</div>
 
 
-				<div class="sub_section_qna_wrap">
+
+				<div class="tit">문의하기</div>
 					<div class="qna_box">
-						<div class="top">
-							<div class="tit_wrap">
-								<span class="ic_q">
-								<div class="tit">문의하기</div>
-							</div>
-						</div>
-
 						<div class="input_wrap">
-
 							<form id="qnaForm" action="/royal/communication/qna/add"
 								method="POST">
 								<!-- 문의 제목 값을 담는 숨겨진 필드 -->
@@ -123,7 +115,8 @@
 									required placeholder="제목을 입력해주세요.">
 								<!-- royal_id 선택 필드 -->
 								<select id="royal_id" name="royal_id" required>
-									<option value="" selected disabled hidden>카테고리를 선택해주세요.</option>
+									<option value="" selected disabled hidden>카테고리를
+										선택해주세요.</option>
 									<option value="1"
 										<c:if test="${param.royal_id == 1}">selected</c:if>>경복궁</option>
 									<option value="2"
@@ -140,9 +133,8 @@
 									required placeholder="문의하실 내용을 적어주세요."></textarea>
 
 								<c:if test="${login_user == null}">
-									<button class="btn" type="button">
-										<a href="/royal/main/login" onclick="alert('로그인을 먼저 해주세요!')">보내기</a>
-									</button>
+									<a href="/royal/main/login" class="btn"
+										onclick="alert('로그인을 먼저 해주세요!')">보내기</a>
 								</c:if>
 								<c:if test="${login_user != null}">
 									<button class="btn" type="submit">보내기</button>
@@ -151,7 +143,6 @@
 
 						</div>
 					</div>
-				</div>
 			</div>
 		</div>
 	</div>

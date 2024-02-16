@@ -17,10 +17,10 @@
 
 .bd_wrap {
 	border-top: solid 2px #0a134f;
-	border-bottom: solid 1px #aeaeae;
+	border-bottom: solid 1px #ccc;
 }
 
-.faq_list .q_item {
+.faq_list {
 	display: flex;
 	width: 100%;
 	font-size: 1.125rem;
@@ -53,20 +53,14 @@ body * {
 }
 
 .faq-result {
-	display: flex;
-	align-content: flex-start;
 	margin-top: 10px;
-	padding-top: 15px;
-	padding-bottom: 15px;
+	margin-bottom: 10px;
+	padding: 15px; /* 상단 및 하단 패딩 통합 */
 	border: 1px solid #ccc;
 	background-color: #f9f9f9;
-} 
+	border-radius: 10px; /* 테두리를 둥글게 만듦 */
+	
 
-.q_item {
-	display: flex;
-	border-bottom: solid 2px black;
-	padding-top: 50px;
-	padding-bottom: 50px
 }
 
 .contents_sub #lnbInclude+.contents_inn, .contents_sub .lnb_wrap+.contents_inn
@@ -90,99 +84,234 @@ body * {
 	margin: 0;
 }
 
+.faq-details {
+	display: grid;
+	grid-template-columns: 1fr 5fr; 
+	align-items: center;
+	border-bottom: 1px solid #ccc;
+	padding: 5px 0;
+	width: 100%;
+}
+
+.faq-details>div {
+	text-align: start;
+	font-size: 18px;
+	/* border-right: 1px solid #ccc;*/
+}
+/*
+.faq-details > div:first-child {
+   border-left: 1px solid #ccc;
+}
+*/
+
+/* 제목에 관련된 css */
+.faq-title {
+	font-weight: bold;
+	display: flex;
+	justify-content: space-between;
+	width: 98%;
+	cursor:pointer;
+}
+
+
+/* 답변 */
+.answer-text {
+	color: blue;
+}
+
+.count_div {
+	font-size: 17px;
+	font-weight: bold;
+	margin-bottom:20px;
+	
+}
+
 /* qna css 영역 */
 .tit {
 	padding-top: 10px;
 	padding-bottom: 10px;
+	font-size: 24px;
+	font-weight: bold;
+	margin-top: 60px;
+	margin-bottom: 10px;
 }
 
 /* 새로운 디자인 추가 */
 /* 웹 페이지의 CSS 파일 */
 .qna_box {
-    background-color: #f9f9f9;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    padding: 20px;
-    margin-top: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	background-color: #f9f9f9;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	padding: 20px;
+	margin-top: 20px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	border-bottom: 1px solid #ccc;
+	padding-bottom: 20px;
+	margin-bottom: 20px;
+
 }
 
-.qna_box .top {
-    border-bottom: 1px solid #ccc;
-    padding-bottom: 20px;
-    margin-bottom: 20px;
+.qna_box .tit_wrap {
+	display: flex;
+	align-items: center;
+	margin: 10px 0; /* 제목과 아이콘 간격 수정 */
 }
 
-.qna_box .top .tit_wrap {
-    display: flex;
-    align-items: center;
-    margin: 10px 0; /* 제목과 아이콘 간격 수정 */
-}
-
-.qna_box .top .tit_wrap .ic_q {
-    margin-right: 10px;
-}
-
-.qna_box .top .tit_wrap .tit {
-    font-size: 24px; 
-    font-weight: bold; 
-}
 
 .input_wrap {
-    margin-top: 20px; 
+	margin-top: 10px;
 }
 
 .input_wrap form {
-    display: flex;
-    flex-direction: column;
+	display: flex;
+	flex-direction: column;
 }
 
-.input_wrap form input[type="text"],
-.input_wrap form select,
-.input_wrap form textarea {
-    margin-bottom: 15px; 
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+.input_wrap form input[type="text"], .input_wrap form select,
+	.input_wrap form textarea {
+	margin-bottom: 15px;
+	padding: 10px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
 }
 
 .input_wrap form select {
-    width: 50%; 
-    margin-bottom: 15px; 
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+	width: 50%;
+	margin-bottom: 15px;
+	padding: 10px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
 }
 
 .input_wrap form textarea {
-    width: 100%;
-    height: 150px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    padding: 10px;
-    resize: none; /* 사용자 크기 조정 비활성화 */
-    margin-bottom: 15px; /* 입력 요소들 간의 간격 조정 */
+	width: 100%;
+	height: 150px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	padding: 10px;
+	resize: none; /* 사용자 크기 조정 비활성화 */
+	margin-bottom: 15px; /* 입력 요소들 간의 간격 조정 */
 }
 
 .input_wrap form .btn {
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+	padding: 10px 20px;
+	background-color: #007bff;
+	color: #fff;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	text-align: center;
+	font-size: 15px;
 }
 
 .input_wrap form .btn:hover {
-    background-color: #0056b3;
+	background-color: #0056b3;
 }
-
-
-
-
 
 /* js를 간소화 시키기 위한 css */
 .hidden {
-    display: none;
+	display: none;
 }
 
+/* 카테고리 버튼 css */
+.BTN_class2 {
+	width: 100%;
+	height: auto;
+	text-align: center;
+	margin: 10px 10px 10px 20px;
+}
+
+.BTN_class2>div {
+	width: 80px;
+	height: 40px;
+	padding: 7px;
+	font-size: 16px;
+	font-weight: bold;
+	margin-top: 5px;
+	text-align: center;
+}
+
+#GB_BTN2 {
+	border: 2px solid #604206;
+	border-radius: 20px;
+}
+
+#DS_BTN2 {
+	border: 2px solid #286d79;
+	border-radius: 20px;
+}
+
+#CG_BTN2 {
+	border: 2px solid #14489c;
+	border-radius: 20px;
+}
+
+#CD_BTN2 {
+	border: 2px solid #b6383d;
+	border-radius: 20px;
+}
+
+#JM_BTN2 {
+	border: 2px solid #c14b35;
+	border-radius: 20px;
+}
+
+.BTN_class2>div {
+	background-color: white;
+}
+
+.BTN_class2>[class="all"] {
+	color: #4f509e;
+}
+
+.BTN_class2>[class="GB"] {
+	color: #604206;
+}
+
+.BTN_class2>[class="DS"] {
+	color: #286d79;
+}
+
+.BTN_class2>[class="CG"] {
+	color: #14489c;
+}
+
+.BTN_class2>[class="CD"] {
+	color: #b6383d;
+}
+
+.BTN_class2>[class="JM"] {
+	color: #c14b35;
+}
+
+.BTN_class2>[class="all on"] {
+	background-image: linear-gradient(to right, #C1457E, rgb(152, 133, 195),
+		#1B66B9), linear-gradient(to right, #C1457E, rgb(152, 133, 195),
+		#1B66B9);
+	color: white;
+}
+
+.BTN_class2>[class="GB on"] {
+	background-color: #604206;
+	color: white;
+}
+
+.BTN_class2>[class="DS on"] {
+	background-color: #286d79;
+	color: white;
+}
+
+.BTN_class2>[class="CG on"] {
+	background-color: #14489c;
+	color: white;
+}
+
+.BTN_class2>[class="CD on"] {
+	background-color: #b6383d;
+	color: white;
+}
+
+.BTN_class2>[class="JM on"] {
+	background-color: #c14b35;
+	color: white;
+}

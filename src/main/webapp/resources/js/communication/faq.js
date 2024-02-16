@@ -7,6 +7,7 @@ window.onload = function () {
 
 function toggleContent(index) {
     var resultElement = document.getElementById('faq-result-' + index);
+    var arrowIcon = document.querySelector('.faq-title #arrow-icon-' + index);
 
     // 다른 모든 faq-result를 감추기
     var allResultElements = document.querySelectorAll('.faq-result');
@@ -18,6 +19,13 @@ function toggleContent(index) {
 
     // 선택한 요소의 클래스를 토글
     resultElement.classList.toggle('hidden');
+
+    // arrow icon 변경
+    if (!resultElement.classList.contains('hidden')) {
+        arrowIcon.innerHTML = 'arrow_drop_up'; // 열렸을 때 화살표를 위로 변경
+    } else {
+        arrowIcon.innerHTML = 'arrow_drop_down'; // 닫혔을 때 화살표를 아래로 변경
+    }
 }
 
 document.addEventListener('DOMContentLoaded', function () {
