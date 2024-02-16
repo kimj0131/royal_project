@@ -5,10 +5,18 @@
 <mapper
 	namespace="com.ezen.royal.client.reservation.mapper.ReservationMapper">
 
-	<!-- 예약페이지에 필요한 데이터를 list<DTO>로 가져온다 -->
-	<select id="getSelectedCommentaryDTOList" resultType="com.ezen.royal.client.reservation.dto.SelectedCommentaryMapper">
+    <!-- 해당 event_id에 대한 해설 목록을 가져온다 -->
+    <select id="findCommentaryDTOList" resultType="com.ezen.royal.client.reservation.dto.SelectedCommentaryDTO">
+        SELECT *
+        FROM event_round
+        WHERE event_id = #{event_id}
+    </select>
+    
+    
+	<!-- 예약페이지에 필요한 데이터를 list<DTO>로 가져온다
+	<select id="getSelectedCommentaryDTOList" resultType="com.ezen.royal.client.reservation.dto.SelectedCommentaryDTO">
 		
-	</select>
+	</select> -->
 
 	<!-- 예약등록 -->
 	<insert id="regReservation">
