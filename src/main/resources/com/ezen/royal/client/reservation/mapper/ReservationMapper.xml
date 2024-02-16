@@ -13,10 +13,10 @@
     </select>
     
     
-	<!-- 예약페이지에 필요한 데이터를 list<DTO>로 가져온다
+	<!-- 예약페이지에 필요한 데이터를 list<DTO>로 가져온다-->
 	<select id="getSelectedCommentaryDTOList" resultType="com.ezen.royal.client.reservation.dto.SelectedCommentaryDTO">
 		
-	</select> -->
+	</select> 
 
 	<!-- 예약등록 -->
 	<insert id="regReservation">

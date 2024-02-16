@@ -16,4 +16,6 @@ public interface ReservationMapper {
 	// 예약 등록
 	int regReservation(ReservationDTO dto);
 	
+	 List<SelectedCommentaryDTO>findCommentaryDTOList(@Param("event_id") int event_id);
+	
 }

@@ -24,10 +24,11 @@ for (const palaceName of palaceNames) {
                 console.log("dateText", selectedDate);
         
                 $.ajax({
-                    url:'/getEventList',
+                    url:'/royal/palace/getEventList',
                     method: 'GET',
                     data: { event_id: event_id },
                     success: (events)=>{
+                        console.log("AJAX 요청 성공 - 서버 응답:", events);
                     // 첫 번째 이벤트(경복궁 해설)의 회차 ID를 가져온다
                        const firstEventId = events[0].event_id;
                     },

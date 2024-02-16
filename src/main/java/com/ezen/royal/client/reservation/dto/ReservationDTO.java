@@ -8,6 +8,7 @@ import lombok.Data;
 public class ReservationDTO {
 
 	private Integer resv_id;		// 예약 ID
+	private Integer royal_id;		// 궁id
 	private Integer event_id;		// 연관된 이벤트 ID
 	private Integer member_id;		// 연관된 고객(member) ID
 	private String resv_num;		// 예약번호
