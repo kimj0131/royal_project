@@ -28,6 +28,7 @@
 > * 서빈   : 공지사항의 FAQ Q&A 페이지 DB에 데이터 보내는 코드 작성 및 CSS 제작
 > * 황진솔 : 메인페이지 공지사항 및 행사 클릭 시 해당 페이지 이동 구현, 행사 슬라이드 구현
 > * 김민주, 조현우 : 행사페이지 구현
+> * 방혜미 : 통합예약페이지 달력에 날짜 클릭 시 해당 해설예약 리스트 구현
 
 ## done
 > * 김준형, 조현우 : 공공 API 연계 후 데이터 캐싱(DB) [[Commit]](https://github.com/kimj0131/royal_project/commit/b2bce768f3d814af2542e768a4397b3d1be525f8)
@@ -45,6 +46,7 @@
 > * 김준형 : 관리자 페이지에 전체에 필요한 데이터(__알림수를 표시하기 위한 답변없는 Q&A리스트__)를 전달하기위해 spring intercepter 활용 [[Commit]](https://github.com/kimj0131/royal_project/commit/e2c1d534462ef27757f14a5147abf7fe4cbecea6)
 > * 장호동 : 조건을 정해 검색할 수 있는 servie[[Commit]](https://github.com/kimj0131/royal_project/commit/8fe27658d6cb29ba94be1aeedb7b85d5b7de13e6)
 > * 조현우 : 관리자app - 디자인 템플릿을 받아와서 현재 프로젝트에 맞게 수정하고 예약, 행사, 자주묻는질문, 공지사항 페이지에서 데이터를 DB에 쉽게 추가, 수정, 삭제할 수 있도록 GUI 구축 [[Commit]](https://github.com/kimj0131/royal_project/commit/5e743f0d5beccebd4ed739dfcbc97d80c72fe651)
+> * 방혜미 : 통합예약페이지 달력 생성 - jQuery UI Datepicker의 위젯으로 진행[[Commit](https://github.com/kimj0131/royal_project/commit/5fc18c07c3f1e50a4e91a4b381fbd41b2d0a4bf2)
 
 ***
 
