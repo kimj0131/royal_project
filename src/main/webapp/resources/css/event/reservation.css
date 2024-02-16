@@ -43,7 +43,7 @@
 	margin:0 50px;
 }
 
-#click {
+#royalNames {
 	display: flex;
 	justify-content: space-evenly;
 	flex-direction: row;
@@ -51,7 +51,7 @@
     padding-top: 29px;
 }
 
-.click-row {
+.royalname {
 	display: flex;
 	border: 3px solid;
 	font-weight: bold;
@@ -62,47 +62,58 @@
 	border-radius: 20px;
 }
 
-.click-row:first-child{
+.royalname:first-child{
 	border: 3px solid #604206;
 	background-color: white;
 	color: #683A0D;
 }
 
-.click-row:nth-child(2){
+.royalname:nth-child(2){
 	border: 3px solid #286d79;
 	background-color: white;
 	color: #286d79;
 }
 
-.click-row:nth-child(3){
+.royalname:nth-child(3){
 	border: 3px solid #14489c;
 	background-color: white;
 	color: #14489c;
 }
 
-.click-row:last-child{
+.royalname:nth-child(4){
 	border: 3px solid #b6383d;
 	background-color: white;
 	color: #b6383d;
 }
 
+.royalname:last-child{
+	border: 3px solid #c14b35;
+	background-color: white;
+	color: #c14b35;
+}
 
-.click-row:first-child:hover {
+
+.royalname:first-child:hover {
 	background-color: #683A0D;
 	color: white;
 }
 
-.click-row:nth-child(2):hover {
+.royalname:nth-child(2):hover {
 	background-color: #286d79;
 	color: white;
 }
 
-.click-row:nth-child(3):hover {
+.royalname:nth-child(3):hover {
 	background-color: #14489c;
 	color: white;
 }
 
-.click-row:last-child:hover {
+.royalname:nth-child(4):hover {
+	background-color: #b6383d;
+	color: white;
+}
+
+.royalname:last-child:hover {
 	background-color: #b6383d;
 	color: white;
 }
@@ -124,67 +135,21 @@
 	text-align: justify;
 }
 
-.list {
+
+.list-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+	margin: 30px;
+}
+
+.click-date{
+	border: 1px solid black;
 	display: grid;
-	grid-template-columns: 1fr 2fr 2fr 1fr;
+    gap: 10px;
 }
 
-.click-container {
+.commentary-list{
+	border: 1px solid black;
 	display: grid;
-	gap: 10px;
-	grid-template-rows: 50px 150px 150px;
-}
-
-.click-container b{
- 	padding-top: 30px;
-	padding-left: 20px;
-	font-size: 20px;
-}
-
-.events p {
-	padding-left: 20px;
-	font-size: 14px;
-}
-
-.events {
-	border: 1px solid #F1F1F1;
-	background-color:#F8F8F8;
-	margin: 5px;
-	padding: 5px;
-	display: grid;
-	flex-wrap: nowrap;
-	grid-template-rows: auto 1fr;
-	position: relative;
-}
-
-#booking {
-	position: absolute;
-	bottom: 0;
-	left: 20px;
-	bottom: 5px;
-	margin: 5px;
-	padding: 5px;
-	border: 1px solid #604206;
-	background-color:white;
-	cursor: pointer;
-	width: 80px;
-	height: 30px;
-	font-size: 12px;
-	text-align: center;
-}
-
-#eventPage {
-	position: absolute;
-	bottom: 0;
-	left: 110px;
-	bottom: 5px;
-	margin: 5px;
-	padding: 5px;
-	border: 1px solid #604206;
-	background-color:white;
-	cursor: pointer;
-	width: 80px;
-	height: 30px;
-	font-size: 12px;
-	text-align: center;
+    gap: 10px;
 }
