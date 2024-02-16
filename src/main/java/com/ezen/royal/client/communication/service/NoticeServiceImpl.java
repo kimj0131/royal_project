@@ -55,6 +55,7 @@ public class NoticeServiceImpl implements NoticeService{
 	@Override
 	public void selectBoard(Model model, NoticeListVO vo, Integer nowPage, Integer pagePostCnt) {
 		int total = countBoard();
+		System.out.println(total);
 		
 		if (nowPage == null && pagePostCnt == null) {
 			nowPage = 1;
@@ -63,10 +64,14 @@ public class NoticeServiceImpl implements NoticeService{
 			nowPage = 1;
 		} else if (pagePostCnt == null) {
 			pagePostCnt = 10;
+
 		}
+		vo = new NoticeListVO(total, nowPage, pagePostCnt);
+		System.out.println("impl : "+vo);
 		List<NoticeDTO> list = noticeMapper.selectBoard(vo);
 		model.addAttribute("page", vo);
 		model.addAttribute("list", list);
+		
 	}
 
 

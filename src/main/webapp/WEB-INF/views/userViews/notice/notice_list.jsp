@@ -6,13 +6,13 @@
 <head>
 <meta charset="UTF-8">
 <title>notice_list</title>
-<c:url value="/resources/css/communication/notice_list.css" var="notice_listCSS" />
+<c:url value="/resources/css/communication/notice_list.css"
+	var="notice_listCSS" />
 <c:url value="/resources/css/communication/public_communication.css"
 	var="public_communicationCSS" />
 <c:url value="/resources/js/communication/communication_notice.js"
 	var="communication_noticeJS" />
-<c:url value="/resources/js/communication/notice.js"
-	var="noticeJS" />
+<c:url value="/resources/js/communication/notice.js" var="noticeJS" />
 <link rel="stylesheet" href="${notice_listCSS}" />
 <link rel="stylesheet" href="${public_communicationCSS}" />
 <link rel="stylesheet" href="${communication_noticeJS}" />
@@ -50,20 +50,18 @@
 
 	<div class="search_div">
 		<div class="search_left">
-			<div class="count_div">
-				전체:
-				${notice.size()}개
-			</div>
+			<div class="count_div">전체: ${notice.size()}개</div>
 		</div>
 		<div class="search_div">
-			<form id="searchForm" action="/royal/communication/notice" method="POST">
+			<form id="searchForm" action="/royal/communication/notice"
+				method="POST">
 				<div class="search_right">
-					<select name="search_select_id" id="search_select_id" >
-						<option >전체</option>
+					<select name="search_select_id" id="search_select_id">
+						<option>전체</option>
 						<option>제목</option>
 						<option>내용</option>
 					</select> <input type="text" name="search_input_id" id="search_input_id"
-						 placeholder="검색어를 입력해주세요.">
+						placeholder="검색어를 입력해주세요.">
 					<button type="submit">검색</button>
 				</div>
 			</form>
@@ -76,11 +74,11 @@
 			<div>번호</div>
 			<div>담당부서</div>
 			<div>제목</div>
-			<div>등록일</div>          
+			<div>등록일</div>
 		</div>
 		<c:forEach items="${notice}" var="notice">
 			<div class="board_wrap_list">
-				<c:set value="${notice.notice_id}" var="nid"/>
+				<c:set value="${notice.notice_id}" var="nid" />
 				<div>${notice.notice_id}</div>
 				<div>
 					<c:choose>
@@ -106,10 +104,11 @@
 			</div>
 		</c:forEach>
 	</div>
-	
-		<div>		
+
+	<div>
 		<c:if test="${page.startPage != 1}">
-			<a href="/royal/communication/notice?nowPage=${page.startPage-1}&pagePostCnt=${page.pagePostCnt}">&lt;</a>
+			<a
+				href="/royal/communication/notice?nowPage=${page.startPage-1}&pagePostCnt=${page.pagePostCnt}">&lt;</a>
 		</c:if>
 		<c:forEach begin="${page.startPage}" end="${page.endPage}" var="p">
 			<c:choose>
@@ -117,12 +116,14 @@
 					<b>${p}</b>
 				</c:when>
 				<c:when test="${p != page.nowPage}">
-					<a class="pageNumber" href="/royal/communication/notice?nowPage=${p}&pagePostCnt=${page.pagePostCnt}">${p}</a>
+					<a class="pageNumber"
+						href="/royal/communication/notice?nowPage=${p}&pagePostCnt=${page.pagePostCnt}">${p}</a>
 				</c:when>
 			</c:choose>
 		</c:forEach>
 		<c:if test="${page.endPage != page.lastPage}">
-			<a href="/royal/communication/notice?nowPage=${page.endPage+1}&pagePostCnt=${page.pagePostCnt}">&gt;</a>
+			<a
+				href="/royal/communication/notice?nowPage=${page.endPage+1}&pagePostCnt=${page.pagePostCnt}">&gt;</a>
 		</c:if>
 	</div>
 
