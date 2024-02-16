@@ -71,15 +71,19 @@
 			<div class="inform">
 				<div class="main_title">알림판</div>
 			</div>
-			<c:forEach var="evt" items="${currentMonthEventList}" begin="0" end="2">
 				<div class="imgSlider" id="imageSlider">
+				<div class="images">
+					<c:url value="/resources/image/slider/main_inform_default_img.png" var="informDefaultImg"/>
+					<img alt="informDefaultImg" class="img" src="${informDefaultImg}" />
+				</div>
+				<c:forEach var="evt" items="${currentMonthEventList}" begin="0" end="2">
 					<div class="images">
-						<a class="imgtag" href="${evt.event_link}">
-							<img alt="${evt.event_name}" class="img" src="${evt.event_imgpath}" />
+						<a class="imgtag" href="${evt.event_link}"> <img
+							alt="${evt.event_name}" class="img" src="${evt.event_imgpath}" />
 						</a>
 					</div>
-				</div>
-			</c:forEach>
+				</c:forEach>
+			</div>
 		</div>
 	</div>
 	<jsp:include page="/WEB-INF/views/userViews/layout/footer.jsp" />
