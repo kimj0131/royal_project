@@ -34,15 +34,15 @@
 	<div class="container">
 		<div id="royalNames">
 			<div class="royalname">
-			 <input type="hidden" name="event_id" value="1" />경복궁</div>
+			 <input type="hidden" name="royal_id" value="1" />경복궁</div>
 			<div class="royalname">
-			 <input type="hidden" name="event_id" value="4" />덕수궁</div>
+			 <input type="hidden" name="royal_id" value="4" />덕수궁</div>
 			<div class="royalname">
-			 <input type="hidden" name="event_id" value="3" />창경궁</div>
+			 <input type="hidden" name="royal_id" value="3" />창경궁</div>
 			<div class="royalname">
-			 <input type="hidden" name="event_id" value="2" />창덕궁</div>
+			 <input type="hidden" name="royal_id" value="2" />창덕궁</div>
 			<div class="royalname">
-			 <input type="hidden" name="event_id" value="5" />종묘</div>
+			 <input type="hidden" name="royal_id" value="5" />종묘</div>
 		</div>
 	</div>
 
@@ -68,10 +68,8 @@
 		</div>
 		<div class="commentary-list">
 			<h2>2. 예약 시간 선택</h2>
-			<div id="commentary-list"></div>
 			<p>선택한 날짜에 대한 해설 예약 가능한 시간을 선택하세요.</p>
-			list 행사회차
-			1~5개 div들 또는 table 
+			<div id="event-list"></div>
 		</div>
 	</div>
 	
