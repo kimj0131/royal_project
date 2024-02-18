@@ -25,10 +25,8 @@ public class EventController {
 	
 	@GetMapping("/event") // 행사
 	public String event() {
-		return "/userViews/reservation/event";
-		
+		return "/userViews/event/event";
 	}
-	
 	
 	@GetMapping("/event/ajax/get")
 	@ResponseBody
@@ -36,8 +34,6 @@ public class EventController {
 
 		String year = request.getParameter("year");
 		String month = request.getParameter("month");
-		
-		
 		
 	    return eventService.getMonthlyEventList(year, month);
 	}
