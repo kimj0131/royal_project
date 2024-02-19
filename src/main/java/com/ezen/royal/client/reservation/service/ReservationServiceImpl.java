@@ -4,7 +4,6 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.ui.Model;
 
 import com.ezen.royal.client.reservation.dto.ReservationDTO;
 import com.ezen.royal.client.reservation.dto.SelectedCommentaryDTO;
@@ -16,9 +15,15 @@ public class ReservationServiceImpl implements ReservationService{
 	@Autowired
 	ReservationMapper reservationMapper;
 	
+	
+//	@Override
+//	public List<SelectedCommentaryDTO> getCommentaryDetails(Integer event_id) {
+//		return reservationMapper.findCommentaryDTOList(event_id);
+//	}
+	
 	@Override
-    public void getSelectedCommentaryDTOList(Model model, int event_id, String date) {
-        model.addAttribute("", reservationMapper.getSelectedCommentaryDTOList(event_id, date));
+	public List<SelectedCommentaryDTO> getCommentaryDetails(int royal_id, String date) {
+		return reservationMapper.findCommentaryDTOList(royal_id, date);
 	}
 
 	@Override
@@ -26,9 +31,5 @@ public class ReservationServiceImpl implements ReservationService{
 		return reservationMapper.regReservation(dto);
 	}
 
-	@Override
-	public List<SelectedCommentaryDTO> getCommentaryDetails(Integer event_id) {
-		return reservationMapper.findCommentaryDTOList(event_id);
-	}
 	
 }

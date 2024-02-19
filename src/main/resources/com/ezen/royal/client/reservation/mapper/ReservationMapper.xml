@@ -5,18 +5,33 @@
 <mapper
 	namespace="com.ezen.royal.client.reservation.mapper.ReservationMapper">
 
+	
     <!-- 해당 event_id에 대한 해설 목록을 가져온다 -->
+    <!-- <select id="findCommentaryDTOList" resultType="com.ezen.royal.client.reservation.dto.SelectedCommentaryDTO">
+        SELECT * FROM event_round WHERE event_id = #{event_id}
+    </select> -->
+    
+    <!-- royal_id와 date를 받고 해설 회차리스트를 리턴한다 -->
     <select id="findCommentaryDTOList" resultType="com.ezen.royal.client.reservation.dto.SelectedCommentaryDTO">
-        SELECT *
-        FROM event_round
-        WHERE event_id = #{event_id}
+		SELECT 
+		    e.event_id,
+		    er.round_id,
+		    er.round_num,
+		    er.round_time,
+		    NVL(SUM(r.resv_people), 0) AS curr_resv_people,
+		    er.round_capacity
+		FROM 
+		    event_round er
+		LEFT JOIN 
+		    reservation r ON er.event_id = r.event_id AND er.round_num = r.round_num AND r.resv_eventdate = to_date(#{date},'MM/DD/YYYY')
+		INNER JOIN 
+		    event_list e ON e.event_id = er.event_id
+		WHERE 
+		    e.event_id = (SELECT event_id FROM event_list WHERE royal_id=#{royal_id} AND event_type='해설')
+		GROUP BY 
+		    e.event_id, er.round_id, er.round_num, er.round_time, er.round_capacity
+		ORDER BY round_num
     </select>
-    
-    
-	<!-- 예약페이지에 필요한 데이터를 list<DTO>로 가져온다-->
-	<select id="getSelectedCommentaryDTOList" resultType="com.ezen.royal.client.reservation.dto.SelectedCommentaryDTO">
-		
-	</select> 
 
 	<!-- 예약등록 -->
 	<insert id="regReservation">
@@ -39,4 +54,7 @@
 			#{round_num}
 		)
 	</insert>
+	
+	
+    
 </mapper>

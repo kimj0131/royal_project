@@ -33,10 +33,11 @@ public class ReservationController {
 
 	@GetMapping(value ="/getEventList", produces = MediaType.APPLICATION_JSON_VALUE) // 궁이름 클릭시 해당 서비스 반환
 	@ResponseBody
-	public List<SelectedCommentaryDTO> getEventList(@RequestParam("event_id") Integer event_id){
+	public List<SelectedCommentaryDTO> getEventList(@RequestParam("royal_id") int royal_id, @RequestParam("date")String date){
 		
-		List<SelectedCommentaryDTO> events = reservationService.getCommentaryDetails(event_id);
-		log.info("Requested event_id: " + event_id);
+		// SelectedCommentaryDTO 리스트를 받아온다
+		List<SelectedCommentaryDTO> events = reservationService.getCommentaryDetails(royal_id, date);
+		
 		if (events.isEmpty()) {
 	        // 빈 객체 반환
 	        return Collections.emptyList();
