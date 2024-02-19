@@ -8,10 +8,14 @@
 <meta charset="UTF-8">
 <title>마이페이지</title>
 <c:url value="/resources/css/mypage/mypage.css" var="mypageCSS" />
-
-
 <link rel="stylesheet" href="${mypageCSS}" />
 
+<c:url value="/resources/js/mypage/mypage.js" var="mypageJS" />
+<link rel="stylesheet" href="${mypageJS}" />
+<link rel="stylesheet"
+	href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+<link rel="stylesheet"
+	href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
 </head>
 <body>
 	<jsp:include page="/WEB-INF/views/userViews/layout/header.jsp" />
@@ -70,7 +74,9 @@
 				</div>
 				<div>${reserv.resv_people}</div>
 				<div>
-					<button class="deleteBtn" ><input type="hidden" value="${reserv.resv_num }">예약취소</button>
+					<button class="deleteBtn">
+						<input type="hidden" value="${reserv.resv_num }">예약취소
+					</button>
 				</div>
 			</div>
 		</c:forEach>
@@ -92,56 +98,40 @@
 			<div>내용</div>
 			<div>작성일</div>
 		</div>
-		<c:forEach items="${qnaList}" var="qna">
+		<c:forEach items="${qnaList}" var="qna" varStatus="status">
 			<div class="board_wrap_list">
 				<div>${qna.qna_id}</div>
+
+				<!-- 제목만 눌렀을때 내용열리는 script와 눌렀을떄 내용 열리는 script 포함 -->
 				<div>${qna.qna_title}</div>
-				<div>${qna.qna_content}</div>
+				
+				<div class="qna-title" onclick="toggleContent(${status.index})">
+					<span class="clickable-text">${qna.qna_content}</span> <span
+						class="material-symbols-outlined" id="arrow-icon-${status.index}">
+						arrow_drop_down </span>
+				</div>
 				<div>
 					<fmt:formatDate value="${qna.qna_date}" pattern="yyyy-MM-dd HH:mm" />
 				</div>
 
+			</div>
+			<div class="qna-result hidden" id="qna-result-${status.index}">
+				<div id="innerQna">
+				<div class="answer-text">Q&A 답변</div>
+				<br> &nbsp;${qna.qna_result}
+				</div>
 			</div>
 		</c:forEach>
 
 	</div>
 
 
+	
 
 	<jsp:include page="/WEB-INF/views/userViews/layout/footer.jsp" />
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-	<script>
-	$(document).ready(function() {
-        $(".deleteBtn").click(function() {
-           
-            var reservationNum = $(this).find('input[type="hidden"]').val();
-  
-            $.ajax({
-                type: 'POST',
-                url: 'deleteReservation',
-                data: { 'reservationNum': reservationNum },
-                dataType: 'text',
-                success: function(response) {
-                    if (response) {
-                        alert('예약이 취소되었습니다.');
-                        location.reload();
-                    } else {
-                        console.error(response);
-                        alert('예약취소 실패되었습니다 ' + response);
-                    }
-                },
-                error: function(xhr, status, error) {
-                    console.error('Error:', xhr.responseText); // 서버에서 전달된 오류 응답 확인
-                    console.error('Status:', status); // HTTP 상태 코드 확인
-                    console.error('Error:', error); // 에러 객체 확인
-                    alert('에러발생');
-                    
-                }
-            });
-        });
-    });
-    </script>
-	
-	
+	<script src="${mypageJS}"></script>
+
+
 </body>
 </html>
