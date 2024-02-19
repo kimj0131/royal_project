@@ -1,55 +1,116 @@
 @charset "UTF-8";
 
 * {
-    box-sizing: border-box;
+	box-sizing: border-box;
+	font-family: "Noto Snas KR";
 }
 
-.mainPic{
+.mainPic {
 	position: relative;
 	width: 100%;
 }
 
-.mainImage img{
+.mainImage img {
+	width: 100%;
+	max-height: 540px;
+}
+.mainImage:after {
+    content: "";
+    background: linear-gradient(to top, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
     width: 100%;
-    height: auto;
-    max-height: 540px;
+    height: 30%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: 1;
 }
 
-.mainText{
+.mainText {
 	position: absolute;
-    top: 40%;
-    left: 40%;
-	color:white;
-	text-shadow: 2px 2px 1px black;
+	left: 0;
+	top: 25%;
+	color: #fff;
+	width: 100%;
+	padding: 0 20px;
 	text-align: center;
+	z-index: 2;
+	text-shadow: 2px 2px 1px #000;
 }
 
 #smallText {
-   font-size: 1.2vw;
-    margin-bottom: 30px;
-    letter-spacing: 5px;
+	font-size: 1.2vw;
+	margin-bottom: 30px;
+	letter-spacing: 5px;
 }
 
-#bigText{
+#bigText {
 	font-size: 4.8vw;
-    font-weight: bold;
+	font-weight: bold;
 }
 
-.banner {
-    margin: 40px auto;
-    padding-left: 50px;
-    text-align: center;
+/* 아래쪽 css */
+.inner {
+	width: 1430px;
+	max-width: 100%;
+	height: auto;
+	position: relative;
+	margin: 30px auto;
+	padding: 0 15px;
 }
 
-.menu {
+.banner_img {
+	vertical-align: middle;
+	max-width: 100%;
+}
+
+.banner_txt {
+	width: 380px;
+	flex-shrink: 0;
+	padding: 10px 20px
+}
+
+.menu a {
+	width: 100%;
+	display: flex;
+	align-items: flex-end;
+}
+
+a {
+	margin: 0;
+	padding: 0;
 	display: inline-block;
-    font-size:  2vw;
-    font-weight: bold;
-    margin-right: 1.4vw; 
-    text-decoration-line: none;
-    color: black;
+	background: transparent;
 }
 
-.banner .menu img {
-    height: auto;
+.sub_section {
+	padding: 70px 0 0;
+	margin-bottom: 70px;
+	margin-top: 70px;
+}
+
+.sub_main_menu {
+	background: #F7F7F7;
+	padding-bottom: 70px;
+	margin-bottom: 0;
+}
+
+.sub_main_menu .menu:nth-child(even) a {
+	flex-direction: row-reverse;
+	text-align: right;
+}
+
+.sub_main_menu .menu .banner_txt .txt_small {
+	font-size: 15px;
+	font-weight: 300;
+	color: #333;
+	margin-bottom: 5px;
+}
+
+.sub_main_menu .menu .banner_txt .txt_big {
+	font-size: 2.250rem;
+	font-weight: bold;
+}
+
+.sub_main_menu .menu {
+	margin-bottom: 50px;
 }
