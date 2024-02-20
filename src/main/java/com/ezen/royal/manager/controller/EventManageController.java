@@ -22,6 +22,7 @@ import com.ezen.royal.manager.dto.EventManageDTO;
 import com.ezen.royal.manager.dto.EventRoundManageDTO;
 import com.ezen.royal.manager.service.EventManageService;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.sun.org.apache.bcel.internal.generic.IF_ACMPEQ;
 
 import lombok.extern.log4j.Log4j;
 
@@ -167,8 +168,14 @@ public class EventManageController {
 			} catch (ParseException e) {
 				e.printStackTrace();
 			}
-			eventManageDTO.setEvent_link(event_link);
-			eventManageDTO.setEvent_imgpath(event_imgpath);
+			
+			if(event_link != null) {
+				eventManageDTO.setEvent_link(event_link);
+			}
+			if(event_imgpath != null) {
+				eventManageDTO.setEvent_imgpath(event_imgpath);
+			}
+			
 			eventManageDTO.setReservable(reservable.charAt(0));
 
 			// log
@@ -179,7 +186,7 @@ public class EventManageController {
 			
 			return "redirect:/manage/main/event/form/update";
 		} else if (uri.endsWith("delete")) {
-			eventManageService.deleteEvent(Integer.parseInt(request.getParameter("faq_id")));
+			eventManageService.deleteEvent(Integer.parseInt(request.getParameter("event_id")));
 			return "redirect:/manage/main/event/form/delete";
 		} else {
 			return "";

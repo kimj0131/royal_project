@@ -48,10 +48,10 @@ public class QnaManageController {
 		if (qna_idString != null && resultString != null) {
 			int qna_id = Integer.parseInt(qna_idString);
 			qnaManageService.updateQNA(resultString, qna_id);
-			return "redirect:/manage/main/qna";
+			return "redirect:/manage/main/qna/form/add";
 		} else {
 			log.warn("[WARNING] 답변을 추가하는데 문제가 있었습니다.");
-			return "redirect:/manage/main/qna";
+			return "redirect:/manage/main/qna/form/add";
 		}
 		
 		
