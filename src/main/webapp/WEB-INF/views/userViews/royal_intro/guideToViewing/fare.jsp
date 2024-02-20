@@ -9,7 +9,7 @@
 <c:url value="/resources/css/royalInfoCSS/fare.css" var="fareCSS" />
 <c:url value="/resources/css/royalInfoCSS/lnb.css" var="lnbCSS" />
 <c:url value="/resources/image/royalInfo/right.png" var="rightIMG" />
-<c:url value="/resources/image/royalInfo/royalInfo.jpg"
+<c:url value="/resources/image/royalInfo/royalInfo.png"
 	var="royalInfoIMG" />
 <link rel="stylesheet" href="${fareCSS}" />
 <link rel="stylesheet" href="${lnbCSS}" />
@@ -20,7 +20,6 @@
 
 	<jsp:include page="/WEB-INF/views/userViews/layout/header.jsp" />
 
-	<div class="contents_wrap" id="contents_wrap">
 		<div class="contents contents_sub">
 			<div class="sub_visual">
 				<div class="img_wrap">

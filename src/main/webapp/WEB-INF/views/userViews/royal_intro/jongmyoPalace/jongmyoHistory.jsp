@@ -16,7 +16,7 @@
 	<jsp:include page="/WEB-INF/views/userViews/layout/navibar.jsp"/>
 	<br>
 	<div>
-		<div class="palace_title">종묘 소개.역사</div>
+		<div class="palace_title">종묘 소개 ·역사</div>
 		<hr width="70%">
 		<div>
 			<div class="container">
@@ -31,6 +31,7 @@
 			종묘(宗廟)는 조선과 대한제국의 역대 왕과 왕비, <br> 황제와 황후의 신주를 모시고 제사를 지내는 국가
 			사당이다.
 		</div>
+		<br>
 		<div class="title_text">조선 건국 후 1395년(태조 4) ‘궁궐을 기준으로 왼쪽에 종묘,
 			오른쪽에 사직을 세운다’는 예에 따라 현재의 자리에 종묘를 창건하였다. 창건 당시에는 현재의 정전만 있어서 대묘, 태묘,
 			종묘라고 불렀다. 조선은 제후국으로 5묘제(五廟制)의 예에 따라 개국시조(태조)와 재위 중인 왕의 4대
@@ -45,7 +46,7 @@
 			제사의 음식을 마련하는 곳) 등의 건물이 있다.</div>
 		<br>
 	</div>
-
+		<div class="history">역사</div>
 		<div>
 			<table class="history_table" border="1">
 				<thead>

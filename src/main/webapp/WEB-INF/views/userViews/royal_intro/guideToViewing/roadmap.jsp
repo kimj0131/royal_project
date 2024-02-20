@@ -10,7 +10,7 @@
 	var="roadmapCSS" />
 <c:url value="/resources/css/royalInfoCSS/lnb.css" var="lnbCSS" />
 <c:url value="/resources/js/royalInfo/roadmap.js" var="roadmapJS" />
-<c:url value="/resources/image/royalInfo/royalInfo.jpg"
+<c:url value="/resources/image/royalInfo/royalInfo.png"
 	var="royalInfoIMG" />
 
 <link rel="stylesheet" href="${lnbCSS}" />

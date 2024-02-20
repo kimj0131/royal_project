@@ -4,19 +4,22 @@
 <!DOCTYPE html>
 <html>
 <head>
-<c:url value="/resources/css/royal_intro/historyCSS.css" var="historyCSS" />
-<c:url value="/resources/image/royal_inner/history/deoksu/ds.png" var="deoksuimage" />
-<c:url value="/resources/image/royal_inner/history/deoksu/dsicon.png" var="deoksuicon" />
+<c:url value="/resources/css/royal_intro/historyCSS.css"
+	var="historyCSS" />
+<c:url value="/resources/image/royal_inner/history/deoksu/ds.png"
+	var="deoksuimage" />
+<c:url value="/resources/image/royal_inner/history/deoksu/dsicon.png"
+	var="deoksuicon" />
 <meta charset="UTF-8">
 <title>덕수궁 소개 및 역사 페이지</title>
 <link rel="stylesheet" href="${historyCSS}" />
 </head>
 <body>
 	<jsp:include page="/WEB-INF/views/userViews/layout/header.jsp" />
-	<jsp:include page="/WEB-INF/views/userViews/layout/navibar.jsp"/>
+	<jsp:include page="/WEB-INF/views/userViews/layout/navibar.jsp" />
 	<br>
 	<div>
-		<div class="palace_title">덕수궁 소개.역사</div>
+		<div class="palace_title">덕수궁 소개 ·역사</div>
 		<hr width="70%">
 		<div>
 			<div class="container">
@@ -27,9 +30,8 @@
 			</div>
 		</div>
 		<br>
-		<div class="title_wrap">
-			덕수궁은 1897년에 선포된 황제국, 대한제국의 황궁으로 옛 이름은 경운궁입니다.
-		</div>
+		<div class="title_wrap">덕수궁은 1897년에 선포된 황제국, 대한제국의 황궁으로 옛 이름은
+			경운궁입니다.</div>
 		<br>
 		<div class="title_text">
 			덕수궁은 원래 조선 제 9대 성종의 형인 월산대군의 사저였고, 그 후에도 월산대군의 후손이 살던 곳이었다. 1592년(선조
@@ -45,6 +47,7 @@
 		</div>
 	</div>
 	<div>
+		<div class="history">역사</div>
 		<div>
 			<table class="history_table" border="1">
 				<thead class="history_table caption">

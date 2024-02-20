@@ -24,7 +24,6 @@
 <body>
 	<jsp:include page="/WEB-INF/views/userViews/layout/header.jsp" />
 	<div class="wrap">
-		<div class="content_wrap" id="contents_wrap">
 			<div class="top_img_name">
 				<div>
 					<img id="top_bg_Img"

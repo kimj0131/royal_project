@@ -6,11 +6,12 @@
 }
 
 .palace_title {
-	font-size: 25px;
+	font-size: 33px;
 	font-weight: bold;
 	text-align: justify;
-	width: 66%;
-	margin: 0 auto;	
+	width: 70%;
+	margin: 0 auto;
+	margin-bottom: 30px;	
 	top: 200px;
 	
 }
@@ -27,7 +28,7 @@
 }
 
 .title_wrap {
-	font-size: 15px;
+	font-size: 23px;
 	font-weight: bold;
 	text-align: center;
 	margin-bottom: 30px;
@@ -37,7 +38,7 @@
 
 .title_text {
 	margin: 0 auto;
-	font-size: 13px;
+	font-size: 15px;
     font-weight: normal;
     text-align: justify;
     /* margin-left: 260px;
@@ -47,7 +48,7 @@
 
 .history {
 	margin: 0 auto;
-	font-size: 22px;
+	font-size: 27px;
 	font-weight: bold;
 	margin-top: 5%;
 	margin-bottom: 10px;
@@ -73,7 +74,7 @@
 	border: 1px solid #ced4da;
 	padding: 10px;
 	text-align: center;
-    font-size: 13px;
+    font-size: 15px;
 }
 
 .history_table th {

@@ -71,8 +71,8 @@
 								alt="이미지" />
 						</div>
 						<div class="banner_txt">
-							<div class="txt_small">관람에 관련된 내용을 확인해보세요.</div>
-							<div class="txt_big">관람안내</div>
+							<div class="txt_small">예약 서비스를 이용해보세요.</div>
+							<div class="txt_big">해설 ·행사 예약</div>
 						</div>
 				</a></li>
 			</ul>
