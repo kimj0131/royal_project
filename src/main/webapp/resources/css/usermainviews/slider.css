@@ -20,13 +20,12 @@
 
 .inner-list {
   display: flex;
-  transition: 1s ease-out;
+  transition: 0.5s ease-out;
   height: 100%;
 }
 
 .inner {
   box-sizing: border-box;
-  width: 100%;
 }
 
 .inner img {
@@ -51,15 +50,15 @@
   height: 50px;
   line-height: 50px;
   text-align: center;
-  background-color: #000000;
-  color: #fff;
-  transition: all 0.3s ease;
+  background-color: black;
+  color: white;
+  transition: all 0.1s ease;
 }
 
 .button1 a:hover {
   border-radius: 50%;
-  background-color: black;
-  color: #fff;
+  background-color: white;
+  color: black;
   cursor: pointer;
 }
 
@@ -77,13 +76,18 @@
   .button1 a {
     top: auto; /* 예시로 조절, 필요에 따라 변경 가능 */
   }
+
+  .button2 a {
+    top: auto; /* 예시로 조절, 필요에 따라 변경 가능 */
+  }
+  
 }
 
 
 /* ---------- 메인 공지사항 CSS ---------- */
 
 .alarm { /* 공지사항, 알림판 전체적인 레이아웃 */
-  padding-top: 5%;
+  padding-top: 8%;
   display: flex;
   height: auto;
 }
@@ -117,6 +121,10 @@
 .all {  /* 전체보기 */
   text-decoration: none;
 }
+.all a:hover {
+  font-weight: bold;
+}
+
 .list {
   list-style: none;
   position: relative;
@@ -148,10 +156,16 @@
   padding: 3px 0px 0px 0px; 
 }
 
+.inner_title a:hover {
+  font-weight: bold;
+  border-bottom: 2px solid black;
+}
+
 /* --------- 알림판 CSS -------- */
 
 .right {
   padding-left: 10%;
+  padding-right: 10%;
   position: relative;
 }
 
@@ -161,13 +175,33 @@
   padding-bottom: 5%;
 }
 
-.imgSlider {
-  max-width: 350px;
+.out {
+  position: relative;
+  max-width: 370px;
   max-height: 400px;
+  margin: 0 auto;
+  overflow: hidden;
 }
 
-.img {
+
+.imgSlider {
+  display: flex;
+  transition: 0.5s ease-out;
+}
+
+
+
+.images {
   box-sizing: border-box;
-  width: 100%;
+
+}
+
+.images img {
+  margin: 0 auto;
+  display: block;
+}
+
+img{
+  width: 370px;
   height: 400px;
 }

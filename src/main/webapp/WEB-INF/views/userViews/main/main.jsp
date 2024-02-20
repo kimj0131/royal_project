@@ -19,8 +19,7 @@
 <body>
 	<jsp:include page="/WEB-INF/views/userViews/layout/header.jsp" />
 	<jsp:include page="/WEB-INF/views/userViews/layout/navibar.jsp" />
-	<div class="title1" style="font-size: 25px;">서울고궁안내</div>
-
+	<div class="title1" style="font-size: 23px;">서울고궁안내</div>
 	<div class="outer">
 		<div class="inner-list">
 			<div class="inner">
@@ -51,7 +50,7 @@
 			<div class="notice">
 				<div class="title_top">
 					<div class="notice_title">공지사항</div>
-					<a class="all" href="/royal/communication/notice">전체보기</a>
+					<div class="all"><a href="/royal/communication/notice">전체보기</a></div>
 				</div>
 				<div class="list">
 					<c:forEach var="noti" items="${notice}" begin="0" end="4">
@@ -71,18 +70,21 @@
 			<div class="inform">
 				<div class="main_title">알림판</div>
 			</div>
+			<div class="out">
 				<div class="imgSlider" id="imageSlider">
-				<div class="images">
-					<c:url value="/resources/image/slider/main_inform_default_img.png" var="informDefaultImg"/>
-					<img alt="informDefaultImg" class="img" src="${informDefaultImg}" />
-				</div>
-				<c:forEach var="evt" items="${currentMonthEventList}" begin="0" end="2">
 					<div class="images">
-						<a class="imgtag" href="${evt.event_link}"> <img
-							alt="${evt.event_name}" class="img" src="${evt.event_imgpath}" />
-						</a>
+						<c:url value="/resources/image/slider/main_inform_default_img.png"
+							var="informDefaultImg" />
+						<img alt="informDefaultImg" class="img" src="${informDefaultImg}" />
 					</div>
-				</c:forEach>
+					<c:forEach var="evt" items="${currentMonthEventList}" begin="0" end="2">
+						<div class="images">
+							<a href="${evt.event_link}"> <img alt="${evt.event_name}"
+								class="img" src="${evt.event_imgpath}" />
+							</a>
+						</div>
+					</c:forEach>
+				</div>
 			</div>
 		</div>
 	</div>
