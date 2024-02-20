@@ -34,5 +34,13 @@
     grid-template-columns: 10% 23% 44% 23%;
     padding: 5px;
     width: 100%;
+}
 
+.bottom_paging{
+    display: flex;
+    justify-content: center;
+}
+
+.bottom_paging > a{
+    padding-left: 15px;
 }

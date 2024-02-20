@@ -22,6 +22,11 @@ public interface NoticeMapper {
 	 int countBoard(Integer royal_id);
 
 	 List<NoticeDTO> selectBoardList(NoticeListVO vo);
+	 
+	 // 검색한 공지사항 개수
+	 int countSearchResult(@Param("type") String type, @Param("searchString") String searchString);
+	 // 검색결과 페이징
+	 List<NoticeDTO> searchListPaging(@Param("vo") NoticeListVO vo, @Param("type") String type, @Param("searchString") String searchString);
 	
 	
 }

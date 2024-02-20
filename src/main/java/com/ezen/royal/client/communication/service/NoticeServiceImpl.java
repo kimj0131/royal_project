@@ -23,13 +23,10 @@ public class NoticeServiceImpl implements NoticeService{
 		NoticeDTO noticeDTO = noticeMapper.get(notice_id); 
 		model.addAttribute("noticeDTO", noticeDTO);
 	}
-	
 	@Override
 	public void getNoticeList(Model model) {
 		model.addAttribute("notice", noticeMapper.getAll());
 	}
-
-
 	@Override
 	public void getNoticeList_part(Model model, Integer royal_id) {
 		model.addAttribute("notice", noticeMapper.getPartAll(royal_id));
@@ -75,7 +72,33 @@ public class NoticeServiceImpl implements NoticeService{
 		model.addAttribute("list", list);
 		
 	}
-
+	
+	@Override
+	public int countSearchResult(String searchType, String searchString) {
+		return noticeMapper.countSearchResult(searchType, searchString);
+	}
+	
+	@Override
+	public void searchListPaging(Model model, String searchType, String searchString, NoticeListVO vo, Integer nowPage,
+			Integer pagePostCnt) {
+		
+		
+		// 검색한 공지사항 수
+		int total = countSearchResult(searchType, searchString);
+		
+		// 속성 기본값 설정
+		if (nowPage == null) {
+			nowPage = 1;
+		}
+		if (pagePostCnt == null) {
+			pagePostCnt = 10;
+		}
+		vo = new NoticeListVO(total, nowPage, pagePostCnt);
+		List<NoticeDTO> list = noticeMapper.searchListPaging(vo, searchType, searchString);
+//		System.out.println("list : " + list);
+		model.addAttribute("page", vo);
+		model.addAttribute("list", list);
+	}
 
 	
 	

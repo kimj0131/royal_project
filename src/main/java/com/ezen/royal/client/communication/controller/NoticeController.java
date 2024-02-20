@@ -46,18 +46,29 @@ public class NoticeController {
 	}
 	
 	@PostMapping("/notice")
-	public String searchNotice(Model model, HttpServletRequest req) {
+	public String searchNotice(Model model, HttpServletRequest req, NoticeListVO vo, Integer nowPage, 
+			Integer pagePostCnt) {
 		
 //		System.out.println("form test");
 //		// req.getParameter("search_input_id");
 //		System.out.println(req.getParameter("search_input_id"));
 //		System.out.println(req.getParameter("search_select_id"));
 		
-		String searchType = req.getParameter("search_select_id");
+		String searchTypeStr = req.getParameter("search_select_id");
 		String searchString = req.getParameter("search_input_id");
 		
+		if(searchTypeStr.equals("제목")) {
+			String searchType = "notice_title";
+			noticeService.searchListPaging(model, searchType, searchString, vo, nowPage, pagePostCnt);
+		} else if(searchTypeStr.equals("내용")) {
+			String searchType = "notice_content";
+			noticeService.searchListPaging(model, searchType, searchString, vo, nowPage, pagePostCnt);
+		} else {
+			String searchType = "all";
+			noticeService.searchListPaging(model, searchType, searchString, vo, nowPage, pagePostCnt);
+		}
 		
-		noticeService.search(model, searchType, searchString);
+//		noticeService.search(model, searchType, searchString);
 		
 		return "/userViews/notice/notice_list";
 	}

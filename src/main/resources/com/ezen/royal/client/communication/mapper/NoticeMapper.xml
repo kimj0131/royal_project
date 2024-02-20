@@ -21,17 +21,16 @@
 	<select id="search"
 		resultType="com.ezen.royal.client.communication.dto.NoticeDTO">
 		SELECT * FROM notice
-		WHERE ${type} LIKE '%' ||
-		#{searchString} || '%'
+		WHERE ${type} LIKE '%' || #{searchString} || '%'
 	</select>
 
 	<select id="searchAll"
 		resultType="com.ezen.royal.client.communication.dto.NoticeDTO">
 		SELECT * FROM notice
-		WHERE notice_content LIKE '%' ||
-		#{searchString} || '%' AND notice_title
-		LIKE '%' || #{searchString} ||
-		'%'
+		WHERE 
+			notice_content LIKE '%' || #{searchString} || '%' 
+		AND 
+			notice_title LIKE '%' || #{searchString} || '%'
 	</select>
 
 	<!-- 총 게시글 갯수 출력 -->
@@ -61,7 +60,44 @@
 		 	num BETWEEN #{start} AND #{end} 
 		
 	</select>
-
-
+	
+	<!-- 검색결과 갯수 출력 -->
+	<select id="countSearchResult" resultType="int">
+		SELECT COUNT(*) FROM
+			notice
+        WHERE 
+        <choose>
+	        <when test="type == 'all'">
+	       		notice_content LIKE '%' || #{searchString} || '%' 
+			AND 
+				notice_title LIKE '%' || #{searchString} || '%'
+	        </when>
+			<otherwise>
+			${type} LIKE '%' || #{searchString} || '%'
+			</otherwise>
+        </choose>
+	</select>
+	
+	<!-- 검색결과 페이징 -->
+	<select id="searchListPaging" resultType="com.ezen.royal.client.communication.dto.NoticeDTO">
+		SELECT * FROM 
+			(
+			SELECT ROWNUM AS num, n.* FROM
+				 notice n 
+			WHERE 
+		<choose>
+			<when test="type == 'all'">
+	       		notice_content LIKE '%' || #{searchString} || '%' 
+			AND 
+				notice_title LIKE '%' || #{searchString} || '%'
+	        </when>
+	        <otherwise>
+				${type} LIKE '%' || #{searchString} || '%'
+	        </otherwise>
+		</choose>
+			)
+		WHERE 
+			num BETWEEN #{vo.start} AND #{vo.end} 
+	</select>
 
 </mapper>

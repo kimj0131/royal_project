@@ -105,14 +105,15 @@
 		</c:forEach>
 	</div>
 
-	<div>
+	<div class="bottom_paging">
+		<!-- 검색이 아닐경우 -->
 		<c:if test="${page.nowPage > 1}">
 			<a href="/royal/communication/notice?royal_id=${page.royal_id}&nowPage=${page.nowPage - 1}&pagePostCnt=${page.pagePostCnt}">&lt;</a>
 		</c:if>
 		<c:forEach begin="${page.startPage}" end="${page.endPage}" var="p">
 			<c:choose>
 				<c:when test="${p == page.nowPage}">
-					<b>${p}</b>
+					<a><b>${p}</b></a>
 				</c:when>
 				<c:when test="${p != page.nowPage}">
 					<a class="pageNumber"
@@ -120,9 +121,10 @@
 				</c:when>
 			</c:choose>
 		</c:forEach>
-		<c:if test="${page.nowPage < page.endPage}">
+		<c:if test="${page.nowPage < page.lastPage}">
 			<a href="/royal/communication/notice?royal_id=${page.royal_id}&nowPage=${page.nowPage + 1}&pagePostCnt=${page.pagePostCnt}">&gt;</a>
 		</c:if>
+		<!-- 검색일경우 -->
 	</div>
 
 	<script src="${noticeJS}"></script>
