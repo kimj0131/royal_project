@@ -17,6 +17,7 @@
 <link rel="stylesheet" href="${public_communicationCSS}" />
 <link rel="stylesheet" href="${communication_noticeJS}" />
 <link rel="stylesheet" href="${noticeJS}" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
 <body>
 	<jsp:include page="/WEB-INF/views/userViews/layout/header.jsp" />
@@ -108,7 +109,9 @@
 	<div class="bottom_paging">
 		<!-- 검색이 아닐경우 -->
 		<c:if test="${page.nowPage > 1}">
-			<a href="/royal/communication/notice?royal_id=${page.royal_id}&nowPage=${page.nowPage - 1}&pagePostCnt=${page.pagePostCnt}">&lt;</a>
+			<a href="/royal/communication/notice?nowPage=${page.nowPage - 1}&pagePostCnt=${page.pagePostCnt}&royal_id=${page.royal_id}">
+				<span class="material-symbols-outlined">chevron_left</span>
+			</a>
 		</c:if>
 		<c:forEach begin="${page.startPage}" end="${page.endPage}" var="p">
 			<c:choose>
@@ -117,14 +120,15 @@
 				</c:when>
 				<c:when test="${p != page.nowPage}">
 					<a class="pageNumber"
-						href="/royal/communication/notice?royal_id=${page.royal_id}&nowPage=${p}&pagePostCnt=${page.pagePostCnt}">${p}</a>
+						href="/royal/communication/notice?nowPage=${p}&pagePostCnt=${page.pagePostCnt}&royal_id=${page.royal_id}">${p}</a>
 				</c:when>
 			</c:choose>
 		</c:forEach>
 		<c:if test="${page.nowPage < page.lastPage}">
-			<a href="/royal/communication/notice?royal_id=${page.royal_id}&nowPage=${page.nowPage + 1}&pagePostCnt=${page.pagePostCnt}">&gt;</a>
+			<a href="/royal/communication/notice?nowPage=${page.nowPage + 1}&pagePostCnt=${page.pagePostCnt}&royal_id=${page.royal_id}">
+				<span class="material-symbols-outlined">chevron_right</span>
+			</a>
 		</c:if>
-		<!-- 검색일경우 -->
 	</div>
 
 	<script src="${noticeJS}"></script>

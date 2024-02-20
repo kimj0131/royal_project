@@ -228,3 +228,13 @@
     width: 130px;
 }
 
+.BTN_class > div{
+    cursor: pointer; 
+}
+
+.BTN_class > div:hover{
+    transform: scale(0.9);
+    transition-duration: 1s;
+}
+
+

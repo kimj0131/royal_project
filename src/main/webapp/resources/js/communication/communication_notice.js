@@ -99,6 +99,8 @@ if (buttonChange == 'e') {
     CG_BTN.classList.add('on');
 } else if (buttonChange == 5) {
     JM_BTN.classList.add('on');
+} else {
+    all_BTN.classList.add('on');
 }
 
 
