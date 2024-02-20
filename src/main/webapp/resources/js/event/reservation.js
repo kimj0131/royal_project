@@ -1,33 +1,39 @@
 const palaceNames = document.querySelectorAll(".royalname");
 
+
 for (const palaceName of palaceNames) {
-	palaceName.addEventListener("click", () => {
+	palaceName.addEventListener("click", (e) => {
+		// 궁을 클릭할때 마다 event_round_list 초기화
+		$("#event_round_list").empty();
+		
 		const royal_id = palaceName.querySelector('input[name="royal_id"]').value;
-		console.log("Royal ID:", royal_id);
+
+		// 궁 클릭 유지
+		console.log(e.currentTarget);
+		//palaceName.id = "gbBtn_active";
+		for (const palaceName of palaceNames) {
+			if(e.currentTarget == palaceName){
+				var innerText = e.currentTarget.innerText;
+				//console.log(e.target.innerText);
+				if(innerText == '경복궁'){
+					e.target.id = 'gbBtn_active';
+				} else if(innerText == '덕수궁'){
+					e.target.id = 'dsBtn_active';
+				} else if(innerText == '창경궁'){
+					e.target.id = 'chBtn_active';
+
+				} else if(innerText == '창덕궁'){
+					e.target.id = 'cdBtn_active';
+
+				} else if (innerText == '종묘'){
+					e.target.id = 'gmBtn_active';
+				}
+			} else {
+				palaceName.id = '';
+			}
+		}
 
 		// AJAX를 통해 선택한 궁의 모든 해설 이벤트를 가져온다
-
-		// db에 저장된이벤트들중 각 궁에 대한 이벤트 ID
-		// let event_id;
-		// switch (royal_id) {
-		// 	case "1":
-		// 		event_id = 40;
-		// 		break; // 경복궁
-		// 	case "4":
-		// 		event_id = 41;
-		// 		break; // 덕수궁
-		// 	case "3":
-		// 		event_id = 42;
-		// 		break; // 창경궁
-		// 	case "2":
-		// 		event_id = 43;
-		// 		break; // 창덕궁
-		// 	case "5":
-		// 		event_id = 44;
-		// 		break; // 종묘
-		// 	default:
-		// 		break;
-		// }
 		$("#datepicker")
 			.datepicker("destroy")
 			.datepicker({
@@ -40,7 +46,7 @@ for (const palaceName of palaceNames) {
 					let selectedDate = dateText;
 					console.log("선택된 날짜:", selectedDate);
 					// 기존의 이벤트를 모두 제거
-					$("#event-list").empty();
+					$("#event_round_list").empty();
 					$.ajax({
 						url: "/royal/palace/getEventList",
 						method: "GET",
@@ -56,26 +62,65 @@ for (const palaceName of palaceNames) {
 							// console.log("파싱한 eventData:", eventData);
 
 							// 회차를 표시할 Div 선택
-							const eventContainer = document.getElementById("event-list");
+							const event_round_list = document.getElementById("event_round_list");
+
+							// 제목 추가
+							const event_round_num_header = document.createElement("div");
+							event_round_num_header.classList.add("eventRoundHeader");
+							event_round_num_header.textContent = "회차";
+
+							const event_round_time_header = document.createElement("div");
+							event_round_time_header.classList.add("eventRoundHeader");
+							event_round_time_header.textContent = "시간";
+
+							const event_round_resvNum_header = document.createElement("div");
+							event_round_resvNum_header.classList.add("eventRoundHeader");
+							event_round_resvNum_header.textContent = "예약인원";
+
+							const event_round_stat_header = document.createElement("div");
+							event_round_stat_header.classList.add("eventRoundHeader");
+							event_round_stat_header.textContent = "상태";
+
+							event_round_list.appendChild(event_round_num_header);
+							event_round_list.appendChild(event_round_time_header);
+							event_round_list.appendChild(event_round_resvNum_header);
+							event_round_list.appendChild(event_round_stat_header);
 
 							// 각 회차 정보를 Div에 추가
 							eventData.forEach((event) => {
-								const eventDiv = document.createElement("div");
-								eventDiv.classList.add("event");
+								//const eventDiv = document.createElement("div");
+
+								var round_num = event.round_num; // 회차
+								var round_time = event.round_time; 
+								var curr_resv_people = event.curr_resv_people;
+								var round_capacity = event.round_capacity;
 
 								// 회차 정보를 Div에 추가
-								const roundNumber = document.createElement("p");
-								roundNumber.textContent = `회차 번호: ${event.round_num}`;
-								const time = document.createElement("p");
-								time.textContent = `시간: ${event.round_time}`;
-								const reservationInfo = document.createElement("p");
-								reservationInfo.textContent = `예약 인원: ${event.curr_resv_people}/${event.round_capacity}`;
+								const event_round_num_data = document.createElement("div");
+								event_round_num_data.textContent = `${round_num}`;
 
-								eventDiv.appendChild(roundNumber);
-								eventDiv.appendChild(time);
-								eventDiv.appendChild(reservationInfo);
+								const event_round_time_data = document.createElement("div");
+								event_round_time_data.textContent = `${round_time}`;
 
-								eventContainer.appendChild(eventDiv);
+								const event_round_resvNum_data = document.createElement("div");
+								event_round_resvNum_data.textContent = `${curr_resv_people}/${round_capacity}`;
+								
+								const event_round_stat_btn = document.createElement("button");
+
+								if(round_capacity - curr_resv_people < 10){
+									event_round_stat_btn.classList.add('deactiveBtn');
+							
+								} else{
+									event_round_stat_btn.classList.add('activeBtn');
+								}
+								
+								event_round_stat_btn.textContent = '예약하기';
+
+								event_round_list.appendChild(event_round_num_data);
+								event_round_list.appendChild(event_round_time_data);
+								event_round_list.appendChild(event_round_resvNum_data);
+								event_round_list.appendChild(event_round_stat_btn);
+
 							});
 						},
 						error: (error) => {
@@ -87,11 +132,5 @@ for (const palaceName of palaceNames) {
 	});
 }
 
-// 해당하는 이벤트의 회차 정보를 가져와서 리스트로 뿌린다
-//필요한정보: 회차번호 (1회차~5회차 )/ 시간  / 예약인원 (예약한인원/총예약가능인원) / 상태 (예약가능/예약마감)
-// 이벤트 회차 리스트 (event_round)
-// round_id 1~5
-// event_id (경복궁 40, 덕수궁 41, 창경궁 42, 창덕궁 43, 종묘 44)
-// round_time (10:00, 11:00, 13:00, 14:00, 15:00)
-// round_capacity 30명
-// 받은 이벤트 정보를 화면에 표시하는 함수
+
+function addEventListenerToBtn() {}
