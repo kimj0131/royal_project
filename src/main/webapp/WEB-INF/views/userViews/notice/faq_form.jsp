@@ -39,12 +39,12 @@
 				</div>
 
 				<div class="BTN_class">
-					<div id="all_BTN" class="all">전 체</div>
-					<div id="GB_BTN" class="GB">경복궁</div>
-					<div id="DS_BTN" class="DS">덕수궁</div>
-					<div id="CG_BTN" class="CG">창경궁</div>
-					<div id="CD_BTN" class="CD">창덕궁</div>
-					<div id="JM_BTN" class="JM">종 묘</div>
+					<div id="all_BTN" class="all" style="cursor: pointer">전 체</div>
+					<div id="GB_BTN" class="GB" style="cursor: pointer">경복궁</div>
+					<div id="DS_BTN" class="DS" style="cursor: pointer">덕수궁</div>
+					<div id="CG_BTN" class="CG" style="cursor: pointer">창경궁</div>
+					<div id="CD_BTN" class="CD" style="cursor: pointer">창덕궁</div>
+					<div id="JM_BTN" class="JM" style="cursor: pointer">종 묘</div>
 				</div>
 			</div>
 
