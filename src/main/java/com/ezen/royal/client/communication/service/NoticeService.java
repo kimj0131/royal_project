@@ -14,11 +14,9 @@ public interface NoticeService {
 	
 	void search(Model model, String searchType, String searchString);
 
-	int countBoard();
+	int countBoard(Integer royal_id);
 
-	void selectBoard(Model model, NoticeListVO vo, Integer nowPage, Integer pagePostCnt);
-	
-	
+	void selectBoard(Model model, Integer royal_id, NoticeListVO vo, Integer nowPage, Integer pagePostCnt);
 	
 
 }

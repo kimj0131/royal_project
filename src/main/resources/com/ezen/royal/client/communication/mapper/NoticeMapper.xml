@@ -6,15 +6,10 @@
 	namespace="com.ezen.royal.client.communication.mapper.NoticeMapper">
 
 	<select id="getAll" resultType="com.ezen.royal.client.communication.dto.NoticeDTO"> 
-		SELECT * FROM (SELECT n.*, ROWNUM num FROM notice n ORDER BY notice_id DESC) 
-		WHERE num BETWEEN 1 AND 10 
-		<!--  
-		 SELECT * FROM (SELECT n.*, ROWNUM num FROM notice 
-		n ORDER BY notice_id DESC) WHERE num BETWEEN #{start} AND #{end} 
-		 -->
-		</select> 
-		 
-		<select id="get" resultType="com.ezen.royal.client.communication.dto.NoticeDTO"> 
+		SELECT * FROM notice ORDER BY notice_id DESC
+	</select> 
+	 
+	<select id="get" resultType="com.ezen.royal.client.communication.dto.NoticeDTO"> 
 		SELECT * FROM notice WHERE notice_id=#{notice_id} </select> 
 
 	<select id="getPartAll"
@@ -42,14 +37,29 @@
 	<!-- 총 게시글 갯수 출력 -->
 	<select id="countBoard" resultType="int">
 		SELECT COUNT(*) FROM notice
+			<if test="royal_id != null and royal_id != ''">
+                WHERE royal_id = #{royal_id}
+            </if>
 	</select>
 
-	<!-- 페이징 처리 후 게시글 조회 -->
-	<select id="selectBoard"
-		resultType="com.ezen.royal.client.communication.dto.NoticeDTO">
-		SELECT * FROM (
+	<!-- 페이징 처리된 후 게시글 조회 -->
+	<select id="selectBoardList" resultType="com.ezen.royal.client.communication.dto.NoticeDTO">
+		<!-- SELECT * FROM (
 		SELECT n.*, ROWNUM AS num FROM notice n ORDER BY notice_id DESC
-		) WHERE num BETWEEN 1 AND 5
+		) WHERE num BETWEEN 1 AND 5 -->
+		 SELECT * FROM 
+		 	(
+		 	SELECT n.*, ROWNUM num FROM 
+		 		notice n 
+		 	WHERE 1 = 1
+            <if test="royal_id != null and royal_id != ''">
+                AND royal_id = #{royal_id}
+            </if>
+		 	ORDER BY notice_id DESC
+		 	)
+		 WHERE 
+		 	num BETWEEN #{start} AND #{end} 
+		
 	</select>
 
 

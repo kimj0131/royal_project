@@ -14,6 +14,8 @@ public class NoticeListVO {
 	private Integer end; // 해당 페이지에서 불러올 마지막 게시글의 번호
 	private Integer maxTap = 5; // 최대 5개의 탭을 보여줌
 	
+	private Integer royal_id;	// 궁번호
+	
 	public NoticeListVO() {
 	}
 	

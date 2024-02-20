@@ -50,7 +50,7 @@
 
 	<div class="search_div">
 		<div class="search_left">
-			<div class="count_div">전체: ${notice.size()}개</div>
+			<div class="count_div">전체: ${page.total}개</div>
 		</div>
 		<div class="search_div">
 			<form id="searchForm" action="/royal/communication/notice"
@@ -76,7 +76,7 @@
 			<div>제목</div>
 			<div>등록일</div>
 		</div>
-		<c:forEach items="${notice}" var="notice">
+		<c:forEach items="${list}" var="notice">
 			<div class="board_wrap_list">
 				<c:set value="${notice.notice_id}" var="nid" />
 				<div>${notice.notice_id}</div>
@@ -106,9 +106,8 @@
 	</div>
 
 	<div>
-		<c:if test="${page.startPage != 1}">
-			<a
-				href="/royal/communication/notice?nowPage=${page.startPage-1}&pagePostCnt=${page.pagePostCnt}">&lt;</a>
+		<c:if test="${page.nowPage > 1}">
+			<a href="/royal/communication/notice?royal_id=${page.royal_id}&nowPage=${page.nowPage - 1}&pagePostCnt=${page.pagePostCnt}">&lt;</a>
 		</c:if>
 		<c:forEach begin="${page.startPage}" end="${page.endPage}" var="p">
 			<c:choose>
@@ -117,13 +116,12 @@
 				</c:when>
 				<c:when test="${p != page.nowPage}">
 					<a class="pageNumber"
-						href="/royal/communication/notice?nowPage=${p}&pagePostCnt=${page.pagePostCnt}">${p}</a>
+						href="/royal/communication/notice?royal_id=${page.royal_id}&nowPage=${p}&pagePostCnt=${page.pagePostCnt}">${p}</a>
 				</c:when>
 			</c:choose>
 		</c:forEach>
-		<c:if test="${page.endPage != page.lastPage}">
-			<a
-				href="/royal/communication/notice?nowPage=${page.endPage+1}&pagePostCnt=${page.pagePostCnt}">&gt;</a>
+		<c:if test="${page.nowPage < page.endPage}">
+			<a href="/royal/communication/notice?royal_id=${page.royal_id}&nowPage=${page.nowPage + 1}&pagePostCnt=${page.pagePostCnt}">&gt;</a>
 		</c:if>
 	</div>
 

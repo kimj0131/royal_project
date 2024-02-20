@@ -26,21 +26,22 @@ public class NoticeController {
 	
 	
 	@GetMapping("/notice")
-	public String notice(Model model, Integer royal_id, NoticeListVO vo,Integer nowPage, 
+	public String notice(Model model, Integer royal_id, NoticeListVO vo, Integer nowPage, 
 			Integer pagePostCnt) {
 		
-		if (royal_id == null) {
-			noticeService.getNoticeList(model);
-		} else {
-			noticeService.getNoticeList_part(model, royal_id);
-		}
+		// 페이징 처리 하기 전의 로직
+//		if (royal_id == null) {
+//			noticeService.getNoticeList(model);
+//		} else {
+//			noticeService.getNoticeList_part(model, royal_id);
+//		}
 		
-	      
-		noticeService.countBoard();
-		noticeService.selectBoard(model, vo, nowPage, pagePostCnt);
-		System.out.println("vo: " + vo);
-		System.out.println("nowPage: " + nowPage);
-		System.out.println("pagePostCnt: " + pagePostCnt);
+	    // 페이징 처리 서비스
+		noticeService.countBoard(royal_id);
+		noticeService.selectBoard(model, royal_id, vo, nowPage, pagePostCnt);
+//		System.out.println("vo: " + vo);	
+//		System.out.println("nowPage: " + nowPage);
+//		System.out.println("pagePostCnt: " + pagePostCnt);
 		return "/userViews/notice/notice_list";
 	}
 	

@@ -19,9 +19,9 @@ public interface NoticeMapper {
 	 
 	 List<NoticeDTO> searchAll(String searchString);
 
-	 int countBoard();
+	 int countBoard(Integer royal_id);
 
-	 List<NoticeDTO> selectBoard(NoticeListVO vo);
+	 List<NoticeDTO> selectBoardList(NoticeListVO vo);
 	
 	
 }

@@ -48,27 +48,29 @@ public class NoticeServiceImpl implements NoticeService{
 	}
 
 	@Override
-	public int countBoard() {
-		return noticeMapper.countBoard();
+	public int countBoard(Integer royal_id) {
+		return noticeMapper.countBoard(royal_id);
 	}
 
 	@Override
-	public void selectBoard(Model model, NoticeListVO vo, Integer nowPage, Integer pagePostCnt) {
-		int total = countBoard();
-		System.out.println(total);
+	public void selectBoard(Model model, Integer royal_id, NoticeListVO vo, Integer nowPage, Integer pagePostCnt) {
+		// 전체 공지사항 수
+		int total = countBoard(royal_id);
 		
-		if (nowPage == null && pagePostCnt == null) {
+		// 속성 기본값 설정
+		if (nowPage == null) {
 			nowPage = 1;
-			pagePostCnt = 10;
-		} else if (nowPage == null) {
-			nowPage = 1;
-		} else if (pagePostCnt == null) {
-			pagePostCnt = 10;
-
 		}
+		if (pagePostCnt == null) {
+			pagePostCnt = 10;
+		}
+		
 		vo = new NoticeListVO(total, nowPage, pagePostCnt);
-		System.out.println("impl : "+vo);
-		List<NoticeDTO> list = noticeMapper.selectBoard(vo);
+		vo.setRoyal_id(royal_id);
+		
+//		System.out.println("impl : " + vo);
+		
+		List<NoticeDTO> list = noticeMapper.selectBoardList(vo);
 		model.addAttribute("page", vo);
 		model.addAttribute("list", list);
 		
