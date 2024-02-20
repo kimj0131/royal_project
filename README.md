@@ -26,7 +26,6 @@
 ## mission
 > * 김태형 : 마이페이지에 기본정보, 예약내역, QnA 내역 나오게 전체 Controller, DTO, Service, Mapper, JSP 제작
 > * 서빈   : 공지사항의 FAQ Q&A 페이지 DB에 데이터 보내는 코드 작성 및 CSS 제작
-> * 황진솔 : 메인페이지 공지사항 및 행사 클릭 시 해당 페이지 이동 구현, 행사 슬라이드 구현
 > * 김민주, 조현우 : 행사페이지 구현
 
 ## done
@@ -48,8 +47,9 @@
 > * 방혜미 : 통합예약페이지 - 달력 생성 - jQuery UI Datepicker의 위젯으로 진행[[Commit]](https://github.com/kimj0131/royal_project/commit/5fc18c07c3f1e50a4e91a4b381fbd41b2d0a4bf2)
 > * 방혜미 : 통합예약페이지 - 달력에 해당하는 날짜 클릭 시 해당 해설 예약 리스트 구현(js switch 구문으로 궁id별 해설id 매칭, 요청 성공 시 받은 이벤트 데이터를 HTML로 화면에 표시되도록 구현함)[[Commit]](https://github.com/kimj0131/royal_project/commit/0f3b0e5d954c4804e922910b9a6c8a76fc95974f)
 > * 김민주, 조현우 : 유저app(행사페이지) - 상단에 년/월을 선택할수 있는 달력이 있고 하단에는 선택한 년/월에 진행 중인 행사 목록을 비동기방식으로 DB에서 가져와 슬라이드 형식으로 출력함 [[Commit]](https://github.com/kimj0131/royal_project/commit/8c85ad7ef50ec330a74b6e1d53d0f037b9549a35)
-
-
+> * 황진솔 :  행사 슬라이드 구현 - 이미지와 레이아웃 div 크기를 정해놓고 슬라이드 형식으로 구현 [[Commit]](https://github.com/kimj0131/royal_project/commit/610337a53065fe81f837647c619b85ed21def18f)
+> * 황진솔 : 메인페이지 공지사항 및 행사 클릭 시 해당 페이지 이동 구현 - Controller에 있는 파라미터를 가져와서 페이지 이동 구현 후 list를 받아와서 상세페이지 넘어가게 구현
+[[Commit]](https://github.com/kimj0131/royal_project/commit/e43e436821bedf01d52a573015520a0424d3d278)
 ***
 
 ## 발생한 문제
