@@ -61,10 +61,9 @@
 		<url-pattern>/mypage/*</url-pattern>
 	</filter-mapping>
 	
-		<!-- 추가예정 -->
 	<filter-mapping>
 		<filter-name>userLoginCheckFilter</filter-name>
-		<url-pattern>/communication/qna</url-pattern>
+		<url-pattern>/palace/reservation</url-pattern>
 	</filter-mapping>
 	
 	<!-- 관리자 로그인 필터 -->

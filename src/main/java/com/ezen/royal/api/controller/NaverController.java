@@ -48,7 +48,7 @@ public class NaverController {
 	@PostMapping("/user/login/naver")
 	public String naver_login_compl(HttpServletRequest request, HttpSession session) {
 
-		System.out.println("social_id : "+request.getParameter("social_id"));
+		// System.out.println("social_id : "+request.getParameter("social_id"));
 		
 		MemberDTO dto = new MemberDTO();
 
@@ -57,7 +57,7 @@ public class NaverController {
 		dto.setMember_email(request.getParameter("user_email"));
 		dto.setMember_type(request.getParameter("social_type"));
 		
-		log.info("[TEST LOG] 요청해서 받은 유저 데이터 : " + dto);
+		// log.info("[TEST LOG] 요청해서 받은 유저 데이터 : " + dto);
 
 		// 멤버 데이터 add or update
 		int result = naverService.upsertMember(dto);
@@ -73,7 +73,7 @@ public class NaverController {
 			// 로그인상태에서 다시 로그인 버튼을 누르는 것을 막기위한 어트리뷰트 설정 (필요 X?)
 			// session.setAttribute("logging_in", true);
 
-			log.info("[TEST LOG] 로그인한 유저 ID : " + session.getAttribute("login_user"));
+			// log.info("[TEST LOG] 로그인한 유저 ID : " + session.getAttribute("login_user"));
 			// log.info("[TEST LOG] 유저 로그인 상태 : " + session.getAttribute("logging_in"));
 
 			return "redirect:/main/home";
