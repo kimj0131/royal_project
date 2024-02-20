@@ -47,6 +47,8 @@
 > * 조현우 : 관리자app - 디자인 템플릿을 받아와서 현재 프로젝트에 맞게 수정하고 예약, 행사, 자주묻는질문, 공지사항 페이지에서 데이터를 DB에 쉽게 추가, 수정, 삭제할 수 있도록 GUI 구축 [[Commit]](https://github.com/kimj0131/royal_project/commit/5e743f0d5beccebd4ed739dfcbc97d80c72fe651)
 > * 방혜미 : 통합예약페이지 - 달력 생성 - jQuery UI Datepicker의 위젯으로 진행[[Commit]](https://github.com/kimj0131/royal_project/commit/5fc18c07c3f1e50a4e91a4b381fbd41b2d0a4bf2)
 > * 방혜미 : 통합예약페이지 - 달력에 해당하는 날짜 클릭 시 해당 해설 예약 리스트 구현(js switch 구문으로 궁id별 해설id 매칭, 요청 성공 시 받은 이벤트 데이터를 HTML로 화면에 표시되도록 구현함)[[Commit]](https://github.com/kimj0131/royal_project/commit/0f3b0e5d954c4804e922910b9a6c8a76fc95974f)
+> * 김민주, 조현우 : 유저app(행사페이지) - 상단에 년/월을 선택할수 있는 달력이 있고 하단에는 선택한 년/월에 진행 중인 행사 목록을 비동기방식으로 DB에서 가져와 슬라이드 형식으로 출력함 [[Commit]](https://github.com/kimj0131/royal_project/commit/8c85ad7ef50ec330a74b6e1d53d0f037b9549a35)
+
 
 ***
 
