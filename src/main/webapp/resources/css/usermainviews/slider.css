@@ -139,6 +139,10 @@
   justify-content: space-between;
 }
 
+.item:hover {
+  background-color: ghostwhite;
+}
+
 .inner_title,
 .inner_date {
   display: inline-block;
