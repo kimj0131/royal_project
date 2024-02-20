@@ -1,92 +1,123 @@
 @charset "UTF-8";
 
-body{
-	background-color: rgb(215 230 240);
+body {
+	background-color: rgb(215, 230, 240);
 	padding-top: 100px;
-
 }
 
-
 /* 전체 화면 3분할*/
-#divfull{
-	width:100%;
+#divfull {
+	width: 100%;
 	height: 100%;
 	display: grid;
-    grid-template-columns: 2fr 1fr 2fr; /* 3 columns */
-  
+	grid-template-columns: 2fr 1fr 2fr;
+	margin-top: 20px;
 }
 
 /* 그리드 3개 중 왼쪽 그리드*/
-#leftDiv{
-     margin-right: 80px;	
-		padding-left: 50px;
-		padding-bottom :10px;
+#leftDiv {
+	margin-right: 80px;
+	padding-left: 50px;
+	padding-bottom: 10px;
 }
 
-#left1{
-	display: flex;  	
-	 flex-direction: row;
-	 padding-bottom: 50px;
-
+#left1 {
+	display: flex;
+	flex-direction: row;
+	padding-bottom: 50px;
 }
 
- #leftImg1{
-	margin-right: 10px;
-}
- 
-
-#left2{
-	display: flex;  	
-	 flex-direction: row;
-	
-}
-
-#leftImg2{
+.leftImg {
 	margin-right: 10px;
 }
 
-#left4{
-	margin-top:10px;
-	border : 2px solid white;
-	display: flex;  	
-	 flex-direction: row;
+#left2 {
+	display: flex;
+	flex-direction: row;
+	margin-top: 50px;
 }
 
-#centerImg{
-  padding-top: 100px;
- 	
+#left3 {
+	margin-top: 140px;
 }
 
-#rightDiv {
-	padding-bottom: 100px;
-}
-#right1{
-	display: grid;  	
-	 grid-template-columns: 1fr 1fr;
-	
-}
-#right2{
-	display: grid;  	
-	 grid-template-columns: 1fr 1fr;
-	
-}
-#right3{
-	display: grid;  	
-	 grid-template-columns: 1fr 1fr;
-	
+#left4 {
+	margin-top: 17px;
+	border: 2px solid black;
+	display: flex;
+	flex-direction: column;
+	width: 61%;
+	padding: 5px;
 }
 
+#centerImg {
+	padding-top: 100px;
+}
 
-#palaceImg{
-	width: 300px;
-	height: auto;
+.rightDiv {
+	margin-left: 80px;
+	padding-right: 50px;
+	padding-bottom: 10px;
+}
+
+#right {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	margin-bottom:25px;
+}
+
+.right_image {
 	margin-left: 10px;
 }
 
 
-span{
-	font-size: 13px;
-	color:  : white;
+#palaceImg {
+	width: 300px;
+	height: 160px;
 }
 
+#palaceImg_Main {
+	width: 300px;
+	height: auto;
+}
 
+.main {
+	width: 100%;
+}
+
+.main_name {
+	width: 100%;
+	font-weight: bold;
+}
+
+.introduce {
+	margin-top: 10px; width : 100%;
+	font-size: 14px;
+	color: rgb(3, 40, 69);
+	width: 100%;
+}
+
+/* 궁 여행 */
+.palace_tour {
+	font-weight: bold;
+}
+
+.tour_intro {
+	margin-top: 10px;
+	width: 100%;
+	font-size: 14px;
+	color: rgb(3, 40, 69);
+}
+
+/* Tip */
+.tip {
+	font-weight: bold;
+	width:100%;
+}
+
+.tip_intro {
+	margin-top: 10px;
+	width: 100%;
+	font-size: 14px;
+	color: rgb(3, 40, 69);
+}
