@@ -2,7 +2,11 @@
 
 body {
 	background-color: rgb(215, 230, 240);
-	padding-top: 100px;
+	padding-top: 50px;
+}
+
+* {
+	font-family: "Noto Snas KR";
 }
 
 /* 전체 화면 3분할*/
@@ -12,6 +16,11 @@ body {
 	display: grid;
 	grid-template-columns: 2fr 1fr 2fr;
 	margin-top: 20px;
+}
+
+.centerDiv {
+	display: flex;
+	justify-content: center;
 }
 
 /* 그리드 3개 중 왼쪽 그리드*/
@@ -43,11 +52,11 @@ body {
 
 #left4 {
 	margin-top: 17px;
-	border: 2px solid black;
+	border: 2px solid #939393;
 	display: flex;
 	flex-direction: column;
 	width: 61%;
-	padding: 5px;
+	padding: 10px;
 }
 
 #centerImg {
@@ -57,23 +66,21 @@ body {
 .rightDiv {
 	margin-left: 80px;
 	padding-right: 50px;
-	padding-bottom: 10px;
 }
 
 #right {
 	display: grid;
 	grid-template-columns: 1fr 1fr;
-	margin-bottom:25px;
+	margin-bottom: 102px;
 }
 
 .right_image {
 	margin-left: 10px;
 }
 
-
 #palaceImg {
 	width: 300px;
-	height: 160px;
+	height: 180px;
 }
 
 #palaceImg_Main {
@@ -85,16 +92,38 @@ body {
 	width: 100%;
 }
 
+.main_plus {
+	display: flex;
+}
+
 .main_name {
 	width: 100%;
 	font-weight: bold;
 }
 
+.material-symbols-outlined {
+	vertical-align: middle;
+	margin-bottom: 3px;
+	font-size: 21px;
+}
+
+.main_icon {
+	margin-left: 130px;
+}
+
+.icon {
+	vertical-align: middle;
+	margin-bottom: 3px;
+	width: 19%;
+}
+
 .introduce {
-	margin-top: 10px; width : 100%;
+	margin-top: 20px;
+	width: 100%;
 	font-size: 14px;
 	color: rgb(3, 40, 69);
 	width: 100%;
+	font-weight: 900;
 }
 
 /* 궁 여행 */
@@ -107,12 +136,13 @@ body {
 	width: 100%;
 	font-size: 14px;
 	color: rgb(3, 40, 69);
+	font-weight: 900;
 }
 
 /* Tip */
 .tip {
 	font-weight: bold;
-	width:100%;
+	width: 100%;
 }
 
 .tip_intro {
@@ -120,4 +150,5 @@ body {
 	width: 100%;
 	font-size: 14px;
 	color: rgb(3, 40, 69);
+	font-weight: 900;
 }
