@@ -70,7 +70,7 @@
 						<span>${noticeDTO.notice_date}</span>
 					</div>
 				</div>
-				<div id="board_detail_cotent">${noticeDTO.notice_content}</div>
+				<textarea id="board_detail_cotent" readonly>${noticeDTO.notice_content}</textarea>
 			</div>
 	</div>
 	

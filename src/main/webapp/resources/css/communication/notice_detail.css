@@ -61,8 +61,16 @@
     vertical-align: baseline;
     line-height: +1.3;
     font-weight: 400;
+    width: 100%;
+    height: auto;
+    border: none;
     border-bottom: 3px solid black;
+    resize: none;
 }
+
+#board_detail_cotent:focus {
+    outline: none;
+  }
 
 .BTN_class{
     margin-top: 80px;
@@ -76,5 +84,5 @@
     font-size: 15px;
     width: 130px;
     height: 50px;
-
 }
+
