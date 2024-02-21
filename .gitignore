@@ -100,3 +100,6 @@ naver.properties
 
 # admin 계정정보
 adminAcc.properties
+
+# gmail 정보
+gmail.properties

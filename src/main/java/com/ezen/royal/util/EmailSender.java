@@ -1,20 +1,29 @@
 package com.ezen.royal.util;
 
 
-import javax.mail.*;
-import javax.mail.internet.*;
 import java.util.Properties;
+
+import javax.mail.Authenticator;
+import javax.mail.Message;
+import javax.mail.PasswordAuthentication;
+import javax.mail.Session;
+import javax.mail.Transport;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeMessage;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.PropertySource;
+import org.springframework.core.env.Environment;
+
+
 
 public class EmailSender {
 	
-	public void EmailSender() {
+	public static void emailSender(Environment env,String reservationNum, String userEmail, String userName,String eventName, String eventDate, int eventRound, String eventTime, int reservPeople) throws Exception {
 		
-	}
-
-	public static void emailSender(String userEmail, String userName,String eventName, String eventDate, int round, String reservTime, int reservPeople) throws Exception {
 		String to = userEmail; // 받는 사람의 이메일 주소
-        String from = "rlaxogud4637@gmail.com"; // 보내는 사람의 이메일 주소
-        String password = "suld hwul fuxu phla"; // 보내는 사람의 이메일 계정 비밀번호
+        String from = env.getProperty("gmail.emailAddress"); // 보내는 사람의 이메일 주소
+        String password = env.getProperty("gmail.password"); // 보내는 사람의 이메일 계정 앱비밀번호
         String host = "smtp.gmail.com"; // 구글 메일 서버 호스트 이름
 
         // SMTP 프로토콜 설정
@@ -42,12 +51,18 @@ public class EmailSender {
         //제목
         msg.setSubject(userName+"님의 궁 행사예약 안내 메일입니다");
         
+        String mailContent = "<h2>"+userName+"고객님의 궁 행사 예약 정보입니다 </h2>" + 
+        		"<h2><span>"+userName+"</span>님의 예약번호는<span style='color:red;'>"+ reservationNum +"</span>입니다</h2>"+
+        		"<h2><p><<예약 상세 내용>></p></h2>"+
+        		"<p style='font-size:20px;'>행사명 : <span>"+eventName+"</span></p>"+
+        		"<p style='font-size:20px;'>행사 예약일 : <span>" + eventDate+"</span></p>"+
+        		"<p style='font-size:20px;'>행사 회차 / 시간 : <span>" +eventRound+"회 / " +eventTime+"</span></p>"+
+        		"<p style='font-size:20px;'>예약 인원 : <span>" +reservPeople+ "명</span></p>";
+       
         // 메일내용
-        msg.setText(userName+"님의 예약 내역은"+ eventName +"/" +eventDate+"일"+reservTime+"시" +round+"회차 "+ reservPeople+" 명 입니다" );
-
+        msg.setContent(mailContent, "text/html; charset=utf-8");
+        
         // 메일 보내기
         Transport.send(msg);
-		
 	}
-
 }
