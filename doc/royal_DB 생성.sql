@@ -1,9 +1,4 @@
---------------------------------------------------------------------------------
--- Oracle 새접속
 
--- NAME  : 2차프로젝트
--- 사용자 이름 : royal
--- 비밀번호 : 
 -------------------------------------------------------------------------------
 -- 만들어진 royal 계정 접속 후 실행 
 
@@ -21,20 +16,10 @@ CREATE TABLE royal(
     CONSTRAINT royal_name_nn NOT NULL
 );
 
--- 궁(royal)테이블 시퀀스 생성
-CREATE SEQUENCE royal_seq
-                    START WITH 1 -- 시작 번호 설정
-                    INCREMENT BY 1  -- 증가 숫자 설정
-                     NOCYCLE -- 숫자 순환 여부 설정
-                     NOCACHE; -- 번호를 미리 만들어놓을 양을 설정
-
 -- SELECT * FROM royal;
  --DROP TABLE royal;
--- DROP SEQUENCE royal_id_seq;
 -- TRUNCATE TABLE royal;                         
               
-
-
 
 
 -- 2. 궁 내부 부속 건축물 테이블 (공공API데이터 담아둘 테이블)
@@ -52,7 +37,6 @@ CREATE TABLE royal_inner (
                      
 -- SELECT * FROM royal_inner;
 -- DROP TABLE royal_inner;
--- DROP SEQUENCE royal_inner_id_seq;
 -- TRUNCATE TABLE royal_inner;                         
               
                      
@@ -69,6 +53,7 @@ CREATE TABLE member(
     member_type VARCHAR2(10)  --네이버/카카오
     CONSTRAINT member_type_nn NOT NULL -- 
 );
+
 CREATE SEQUENCE member_id_seq
                     START WITH 1 -- 시작 번호 설정
                     INCREMENT BY 1  -- 증가 숫자 설정
@@ -126,25 +111,23 @@ CREATE TABLE event_list(
     CONSTRAINT start_date_nn  NOT NULL,
     end_date DATE --행사 종료일
     CONSTRAINT end_date_nn  NOT NULL,
-    event_link VARCHAR2(1000) --행사관련사이트 링크
-    CONSTRAINT event_link_nn NOT NULL , 
-    event_imgpath VARCHAR2(500)
-    CONSTRAINT event_imgpath_nn NOT NULL ,
+    event_link VARCHAR2(1000), --행사관련 사이트 링크
+    event_imgpath VARCHAR2(500), -- 행사관련 이미지 링크
     reservable CHAR(2) -- 예약가능 여부
     CONSTRAINT reservable_nn  NOT NULL
 );
 
 --행사리스트 시퀀스 생성
-CREATE SEQUENCE eventlist_id_seq
+CREATE SEQUENCE event_list_id_seq
                     START WITH 1 -- 시작 번호 설정
                     INCREMENT BY 1  -- 증가 숫자 설정
                      NOCYCLE -- 숫자 순환 여부 설정
                      NOCACHE; -- 번호를 미리 만들어놓을 양을 설정
 
--- SELECT * FROM eventlist;
--- DROP TABLE eventlist;
--- DROP SEQUENCE eventlist_id_seq;
--- TRUNCATE TABLE eventlist;
+-- SELECT * FROM event_list;
+-- DROP TABLE event_list;
+-- DROP SEQUENCE event_list_id_seq;
+-- TRUNCATE TABLE event_list;
 
 
 
@@ -158,7 +141,7 @@ CREATE TABLE event_round(
     CONSTRAINT round_num_nn NOT NULL,
     round_time VARCHAR2(20)  -- 회차 별 시간
     CONSTRAINT round_time_nn NOT NULL,
-    round_capacity NUMBER(3) 
+    round_capacity NUMBER(5) 
     CONSTRAINT round_capacity_nn NOT NULL
     CONSTRAINT round_capacity_chk  CHECK(round_capacity >=0)
 );
@@ -171,7 +154,7 @@ CREATE SEQUENCE event_round_id_seq
                      NOCACHE; -- 번호를 미리 만들어놓을 양을 설정
 -- SELECT * FROM event_round;
 -- DROP TABLE event_round;
--- DROP SEQUENCE event_round_id_seq_id_seq;
+-- DROP SEQUENCE event_round_id_seq;
 -- TRUNCATE TABLE event_round;
 
 
@@ -191,21 +174,27 @@ CREATE TABLE reservation (
     DEFAULT sysdate, --(date)
     resv_people NUMBER(5) -- 예약한 인원
     CONSTRAINT resv_people_nn NOT NULL
-    CONSTRAINT resv_people_chk  CHECK(resv_people >=0)
+    CONSTRAINT resv_people_chk  CHECK(resv_people >=0),
+    resv_eventdate DATE 
+    CONSTRAINT resv_eventdate_nn NOT NULL,-- 예약한날짜 (선택날짜) 저장
+    round_num Number(5) 
+    CONSTRAINT resv_round_num_nn NOT NULL -- 행사 회차
 );
-
--- SELECT * FROM reservation;
- --DROP TABLE reservation;
--- DROP SEQUENCE reservation_id_seq;
--- TRUNCATE TABLE reservation;
 
 
 -- 예약 시퀀스 생성
-CREATE SEQUENCE resv_id_seq
+CREATE SEQUENCE reservation_id_seq
                     START WITH 1 -- 시작 번호 설정
                     INCREMENT BY 1  -- 증가 숫자 설정
                      NOCYCLE -- 숫자 순환 여부 설정
                      NOCACHE; -- 번호를 미리 만들어놓을 양을 설정
+
+
+-- SELECT * FROM reservation;
+-- DROP TABLE reservation;
+-- DROP SEQUENCE reservation_id_seq;
+-- TRUNCATE TABLE reservation;
+
 
 
 
@@ -234,6 +223,10 @@ CREATE TABLE qna (
                     NOCYCLE -- 숫자 순환 여부 설정
                     NOCACHE; -- 번호를 미리 만들어놓을 양을 설정
 
+-- SELECT * FROM qna;
+-- DROP TABLE qna;
+-- DROP SEQUENCE qna_id_seq;
+-- TRUNCATE TABLE qna;
 
 
 -- 9. 자주하는 질문 테이블
@@ -254,6 +247,15 @@ CREATE SEQUENCE faq_id_seq
                     INCREMENT BY 1  -- 증가 숫자 설정
                     NOCYCLE -- 숫자 순환 여부 설정
                     NOCACHE; -- 번호를 미리 만들어놓을 양을 설정
+                    
+-- SELECT * FROM faq;
+-- DROP TABLE faq;
+-- DROP SEQUENCE faq_id_seq;
+-- TRUNCATE TABLE faq;
+
+
+
+--------------------------------------------------------------------------------
 
 
 -- 계정 내 모든 테이블 보기
@@ -265,5 +267,11 @@ CREATE SEQUENCE faq_id_seq
 --
 --select * from user_sequences;
 --drop sequence royal_inner_seq;
+
+--------------------------------------------------------------------------------
+
+
+
+
 
 
