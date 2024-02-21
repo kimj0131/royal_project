@@ -36,17 +36,16 @@ body * {
 }
 
 .inner {
-	width: 1030px;
-	max-width: 100%;
+	/* width: 1030px; */
+	/* max-width: 100%; */
 	height: auto;
 	position: relative;
 	margin: 0 auto;
-	padding: 0 15px;
+	padding: 0 20%;
 }
 
-
-.contents_sub #lnbInclude+.contents_inn, .contents_sub .lnb_wrap+.contents_inn
-	{
+.contents_sub #lnbInclude + .contents_inn,
+.contents_sub .lnb_wrap + .contents_inn {
 	width: calc(100% - 390px);
 }
 
@@ -59,7 +58,8 @@ body * {
 	box-sizing: border-box;
 }
 
-:visited, body * {
+:visited,
+body * {
 	color: inherit;
 	font-family: inherit;
 	padding: 0;
@@ -68,14 +68,14 @@ body * {
 
 .faq-details {
 	display: grid;
-	grid-template-columns: 1fr 5fr; 
+	grid-template-columns: 1fr 5fr;
 	align-items: center;
 	border-bottom: 1px solid #ccc;
 	padding: 5px 0;
 	width: 100%;
 }
 
-.faq-details>div {
+.faq-details > div {
 	text-align: start;
 	font-size: 18px;
 	/* border-right: 1px solid #ccc;*/
@@ -92,7 +92,7 @@ body * {
 	display: flex;
 	justify-content: space-between;
 	width: 98%;
-	cursor:pointer;
+	cursor: pointer;
 }
 
 .faq-result {
@@ -102,22 +102,19 @@ body * {
 	border: 1px solid #ccc;
 	background-color: #f9f9f9;
 	border-radius: 10px; /* 테두리를 둥글게 만듦 */
-	resize:none;
-	width:100%;
+	resize: none;
+	width: 100%;
 	height: 300px;
 	font-size: 15px;
 	text-align: left;
 	outline: none;
 }
 
-
-
 /* 게시글 카운트 */
 .count_div {
 	font-size: 17px;
 	font-weight: bold;
-	margin-bottom:20px;
-	
+	margin-bottom: 20px;
 }
 
 /* qna css 영역 */
@@ -142,7 +139,6 @@ body * {
 	border-bottom: 1px solid #ccc;
 	padding-bottom: 20px;
 	margin-bottom: 20px;
-
 }
 
 .qna_box .tit_wrap {
@@ -150,7 +146,6 @@ body * {
 	align-items: center;
 	margin: 10px 0; /* 제목과 아이콘 간격 수정 */
 }
-
 
 .input_wrap {
 	margin-top: 10px;
@@ -161,8 +156,9 @@ body * {
 	flex-direction: column;
 }
 
-.input_wrap form input[type="text"], .input_wrap form select,
-	.input_wrap form textarea {
+.input_wrap form input[type="text"],
+.input_wrap form select,
+.input_wrap form textarea {
 	margin-bottom: 15px;
 	padding: 10px;
 	border: 1px solid #ccc;
@@ -215,7 +211,7 @@ body * {
 	margin: 10px 10px 10px 20px;
 }
 
-.BTN_class2>div {
+.BTN_class2 > div {
 	width: 80px;
 	height: 40px;
 	padding: 7px;
@@ -250,62 +246,61 @@ body * {
 	border-radius: 20px;
 }
 
-.BTN_class2>div {
+.BTN_class2 > div {
 	background-color: white;
 }
 
-.BTN_class2>[class="all"] {
+.BTN_class2 > [class="all"] {
 	color: #4f509e;
 }
 
-.BTN_class2>[class="GB"] {
+.BTN_class2 > [class="GB"] {
 	color: #604206;
 }
 
-.BTN_class2>[class="DS"] {
+.BTN_class2 > [class="DS"] {
 	color: #286d79;
 }
 
-.BTN_class2>[class="CG"] {
+.BTN_class2 > [class="CG"] {
 	color: #14489c;
 }
 
-.BTN_class2>[class="CD"] {
+.BTN_class2 > [class="CD"] {
 	color: #b6383d;
 }
 
-.BTN_class2>[class="JM"] {
+.BTN_class2 > [class="JM"] {
 	color: #c14b35;
 }
 
-.BTN_class2>[class="all on"] {
-	background-image: linear-gradient(to right, #C1457E, rgb(152, 133, 195),
-		#1B66B9), linear-gradient(to right, #C1457E, rgb(152, 133, 195),
-		#1B66B9);
+.BTN_class2 > [class="all on"] {
+	background-image: linear-gradient(to right, #c1457e, rgb(152, 133, 195), #1b66b9),
+		linear-gradient(to right, #c1457e, rgb(152, 133, 195), #1b66b9);
 	color: white;
 }
 
-.BTN_class2>[class="GB on"] {
+.BTN_class2 > [class="GB on"] {
 	background-color: #604206;
 	color: white;
 }
 
-.BTN_class2>[class="DS on"] {
+.BTN_class2 > [class="DS on"] {
 	background-color: #286d79;
 	color: white;
 }
 
-.BTN_class2>[class="CG on"] {
+.BTN_class2 > [class="CG on"] {
 	background-color: #14489c;
 	color: white;
 }
 
-.BTN_class2>[class="CD on"] {
+.BTN_class2 > [class="CD on"] {
 	background-color: #b6383d;
 	color: white;
 }
 
-.BTN_class2>[class="JM on"] {
+.BTN_class2 > [class="JM on"] {
 	background-color: #c14b35;
 	color: white;
 }

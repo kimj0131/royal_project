@@ -1,177 +1,186 @@
-*{
-  font-family: "Noto Snas KR";
+* {
+	font-family: "Noto Snas KR";
 }
 
 .title1 {
-  padding-left: 10%;
-  margin-bottom: 2%;
-  font-weight: bold;
+	padding-left: 7%;
+	margin-bottom: 2%;
+	font-weight: bold;
+	font-size: 45px;
 }
 
 /* ---------- 메인 슬라이드 ---------- */
 .outer {
-  position: relative;
-  margin: 0 auto;
-  overflow: hidden;
-  max-width: 80%;
-  max-height: 30%;
+	position: relative;
+	margin: 0 auto;
+	overflow: hidden;
+	max-width: 80%;
+	max-height: 30%;
 }
 
 .inner-list {
-  display: flex;
-  transition: 0.5s ease-out;
-  height: 100%;
-  width: 100%;
+	display: flex;
+	transition: 0.5s ease-out;
+	height: 100%;
+	width: 100%;
 }
 
-.inner .gung{
-  width: 100%;
-  margin: 0 auto;
-  object-fit: cover;
+.inner .gung {
+	width: 100%;
+	margin: 0 auto;
+	object-fit: cover;
 }
 
 .button1 a.back {
-  left: 0px;
+	left: 0px;
 }
 .button1 a.next {
-  right: 0px;
+	right: 0px;
 }
 
 .button1 a {
-  position: absolute;
-  top: 50%;
-  width: 50px;
-  height: 50px;
-  line-height: 50px;
-  text-align: center;
-  background-color: black;
-  color: white;
-  transition: all 0.1s ease;
+	position: absolute;
+	top: 50%;
+	width: 50px;
+	height: 50px;
+	line-height: 50px;
+	text-align: center;
+	background-color: black;
+	color: white;
+	transition: all 0.1s ease;
 }
 
 .button1 a:hover {
-  border-radius: 50%;
-  background-color: white;
-  color: black;
-  cursor: pointer;
+	border-radius: 50%;
+	background-color: white;
+	color: black;
+	cursor: pointer;
 }
 
-
 /* ---------- 메인 공지사항 ---------- */
-.alarm { 
-  padding-top: 8%;
-  display: flex;
-  height: auto;
+.alarm {
+	padding-top: 8%;
+	display: flex;
+	height: auto;
 }
 .left,
 .right {
-  width: calc(50% - 10px);
-  box-sizing: border-box;
+	width: calc(50% - 10px);
+	box-sizing: border-box;
 }
 
 .left {
-  width: 60%;
-  height: 100%;
+	width: 60%;
+	height: 100%;
 }
 
-.notice { /* 공지사항 레이아웃 */
-  margin-left: 22%;
-  height: 100%;
+.notice {
+	/* 공지사항 레이아웃 */
+	margin-left: 22%;
+	height: 100%;
 }
 
-.title_top { /* 공지사항, 전제보기 틀 */
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-bottom: solid 1px black;
-  padding-bottom: 5%;
+.title_top {
+	/* 공지사항, 전제보기 틀 */
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	border-bottom: solid 1px black;
+	padding-bottom: 5%;
 }
-.notice_title { /* 공지사항 제목 */
-  font-weight: bold;
-  font-size: 22px;
+.notice_title {
+	/* 공지사항 제목 */
+	font-weight: bold;
+	font-size: 22px;
 }
-.all {  /* 전체보기 */
-  text-decoration: none;
+.all {
+	/* 전체보기 */
+	text-decoration: none;
 }
 .all a:hover {
-  font-weight: bold;
+	font-weight: bold;
 }
 
 .list {
-  list-style: none;
-  position: relative;
-  height: 100%;
+	list-style: none;
+	position: relative;
+	height: 100%;
 }
 .item {
-  border-bottom: dashed 1px gainsboro;
-  align-items: center;
-  display: grid;
-  grid-template-columns: 30% 50% 20%;
-  padding: 20px 0;
-  justify-content: space-between;
+	border-bottom: dashed 1px gainsboro;
+	align-items: center;
+	display: grid;
+	grid-template-columns: 30% 50% 20%;
+	padding: 20px 0;
+	justify-content: space-between;
 }
 
 .item:hover {
-  background-color: rgb(247, 246, 246);
-  font-weight: bold;
+	background-color: rgb(247, 246, 246);
+	font-weight: bold;
 }
 
 .inner_title,
 .inner_date {
-  display: inline-block;
-  width: 100%;
+	display: inline-block;
+	width: 100%;
 }
 
 .title {
-  background-color: black;
-  color: white;
-  font-size: 15px;
-  height: 30px;
-  width: 90px;
-  text-align: center;
-  border-radius: 15px;
-  padding: 5px 0px 0px 0px; 
+	background-color: black;
+	color: white;
+	font-size: 15px;
+	height: 30px;
+	width: 90px;
+	text-align: center;
+	border-radius: 15px;
+	padding: 5px 0px 0px 0px;
 }
-
 
 /* --------- 알림판 -------- */
 .right {
-  margin-left: 5%;
-  margin-right: 10%;
-  position: relative;
+	margin-left: 5%;
+	margin-right: 10%;
+	position: relative;
 }
 
-.main_title{
-  font-weight: bold;
-  font-size: 22px;
-  padding-bottom: 5%;
-  margin-left: 17%;
+.main_title {
+	font-weight: bold;
+	font-size: 22px;
+	padding-bottom: 5%;
+	margin-left: 17%;
 }
 
 .out {
-  position: relative;
-  max-width: 370px;
-  max-height: 400px;
-  margin: 0 auto;
-  overflow: hidden;
+	position: relative;
+	max-width: 370px;
+	max-height: 400px;
+	margin: 0 auto;
+	overflow: hidden;
 }
 
 .imgSlider {
-  display: flex;
-  transition: 0.5s ease-out;
+	display: flex;
+	transition: 0.5s ease-out;
 }
 
 .images {
-  box-sizing: border-box;
+	box-sizing: border-box;
 }
 
 .images img {
-  margin: 0 auto;
-  display: block;
+	margin: 0 auto;
+	display: block;
 }
 
-img{
-  width: 370px;
-  height: 400px;
-  object-fit: cover;
+img {
+	width: 370px;
+	height: 400px;
+	object-fit: cover;
+}
+
+@media (max-width: 767px) {
+	#navibar {
+		display: none;
+	}
 }

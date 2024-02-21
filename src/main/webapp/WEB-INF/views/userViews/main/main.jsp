@@ -19,8 +19,8 @@
 <body>
 	<jsp:include page="/WEB-INF/views/userViews/layout/header.jsp" />
 	<jsp:include page="/WEB-INF/views/userViews/layout/navibar.jsp" />
-	<div class="title1" style="font-size: 23px;">서울고궁안내</div>
 	<div class="outer">
+	<div class="title1">서울 고궁안내</div>
 		<div class="inner-list">
 			<div class="inner">
 				<img class="gung" alt="수문장 교대의식" src="${banner1}">
@@ -41,7 +41,7 @@
 				<img class="gung" alt="종묘" src="${jongmyo}">
 			</div>
 			<div class="button1">
-				<a class="back" title="이전이미지">back</a> <a class="next" title="다음이미지">next</a>
+				<a class="back" title="이전이미지">&lt;</a> <a class="next" title="다음이미지">&gt;</a>
 			</div>
 		</div>
 	</div>
