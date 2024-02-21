@@ -50,6 +50,8 @@
 > * 황진솔 :  행사 슬라이드 구현 - 이미지와 레이아웃 div 크기를 정해놓고 슬라이드 형식으로 구현 [[Commit]](https://github.com/kimj0131/royal_project/commit/610337a53065fe81f837647c619b85ed21def18f)
 > * 황진솔 : 메인페이지 공지사항 및 행사 클릭 시 해당 페이지 이동 구현 - Controller에 있는 파라미터를 가져와서 페이지 이동 구현 후 list를 받아와서 상세페이지 넘어가게 구현
 [[Commit]](https://github.com/kimj0131/royal_project/commit/e43e436821bedf01d52a573015520a0424d3d278)
+> * 김태형 : 마이페이지에 기본정보, 예약내역, QnA 내역 나오게 전체 Controller, DTO, Service, Mapper, JSP 제작
+> * 김태형 : 이메일 발송 기능 구현 (구글 API 사용) 
 ***
 
 ## 발생한 문제
