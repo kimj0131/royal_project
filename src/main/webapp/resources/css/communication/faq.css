@@ -95,11 +95,6 @@ body * {
 	cursor:pointer;
 }
 
-
-/* 답변 */
-.answer-text {
-	color: blue;
-}
 .faq-result {
 	margin-top: 10px;
 	margin-bottom: 10px;
@@ -107,8 +102,11 @@ body * {
 	border: 1px solid #ccc;
 	background-color: #f9f9f9;
 	border-radius: 10px; /* 테두리를 둥글게 만듦 */
-	
-
+	resize:none;
+	width:100%;
+	min-height:400px;
+	font-size: 15px;
+	text-align: left;
 }
 
 /* 게시글 카운트 */
