@@ -10,8 +10,8 @@
 	font-weight: bold;
 	text-align: justify;
 	width: 70%;
-	margin: 0 auto;
-	margin-bottom: 30px;	
+	margin-bottom: 30px;
+	margin-left: 16%;	
 	top: 200px;
 	
 }
@@ -20,10 +20,16 @@
 	text-align: center;
 	margin: 0 auto;
 	padding: 20px;
+	max-width: 70%;
+}
+.icon {
+	max-width: 8%;
+	text-align: center;
+	margin: 0 auto;
 }
 
 .img {
-	max-width: 70%;
+	width: 100%;
 	height: auto;
 }
 
@@ -41,8 +47,6 @@
 	font-size: 15px;
     font-weight: normal;
     text-align: justify;
-    /* margin-left: 260px;
-    margin-right: 260px; */
 	width: 66%;
 } 
 

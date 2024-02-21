@@ -23,22 +23,22 @@
 	<div class="outer">
 		<div class="inner-list">
 			<div class="inner">
-				<img alt="수문장 교대의식" src="${banner1}">
+				<img class="gung" alt="수문장 교대의식" src="${banner1}">
 			</div>
 			<div class="inner">
-				<img alt="경복궁" src="${gyeongbok}">
+				<img class="gung" alt="경복궁" src="${gyeongbok}">
 			</div>
 			<div class="inner">
-				<img alt="덕수궁" src="${deoksu}">
+				<img class="gung" alt="덕수궁" src="${deoksu}">
 			</div>
 			<div class="inner">
-				<img alt="창경궁" src="${changgyeong}">
+				<img class="gung" alt="창경궁" src="${changgyeong}">
 			</div>
 			<div class="inner">
-				<img alt="창덕궁" src="${changdeok}">
+				<img class="gung" alt="창덕궁" src="${changdeok}">
 			</div>
 			<div class="inner">
-				<img alt="종묘" src="${jongmyo}">
+				<img class="gung" alt="종묘" src="${jongmyo}">
 			</div>
 			<div class="button1">
 				<a class="back" title="이전이미지">back</a> <a class="next" title="다음이미지">next</a>

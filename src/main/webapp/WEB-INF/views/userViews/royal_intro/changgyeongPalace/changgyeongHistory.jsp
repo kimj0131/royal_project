@@ -22,7 +22,7 @@
 			<div class="container">
 				<img class="img" alt="창경궁메인이미지" src="${changgyeongimage}" />
 			</div>
-			<div class="container">
+			<div class="icon">
 				<img class="img" src="${changgyeongicon}" alt="창경궁아이콘" />
 			</div>
 			<div>

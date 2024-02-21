@@ -22,7 +22,7 @@
 			<div class="container">
 				<img class="img" alt="종묘메인이미지" src="${jongmyoimage}" />
 			</div>
-			<div class="container">
+			<div class="icon">
 				<img class="img" src="${jongmyoicon}" alt="종묘아이콘" />
 			</div>
 		</div>

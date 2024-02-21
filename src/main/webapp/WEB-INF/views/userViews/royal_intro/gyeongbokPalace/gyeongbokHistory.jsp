@@ -22,7 +22,7 @@
 			<div class="container">
 				<img class="img" alt="경복궁메인이미지" src="${gyeongbokimage}" />
 			</div>
-			<div class="container">
+			<div class="icon">
 				<img class="img" src="${gyeongbokicon}" alt="경복궁아이콘" />
 			</div>
 			<div>

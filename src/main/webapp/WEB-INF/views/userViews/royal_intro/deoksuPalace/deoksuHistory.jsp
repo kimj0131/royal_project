@@ -25,7 +25,7 @@
 			<div class="container">
 				<img class="img" alt="덕수궁메인이미지" src="${deoksuimage}" />
 			</div>
-			<div class="container">
+			<div class="icon">
 				<img class="img" src="${deoksuicon}" alt="덕수궁아이콘" />
 			</div>
 		</div>
