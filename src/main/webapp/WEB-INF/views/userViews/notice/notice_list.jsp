@@ -16,7 +16,6 @@
 <link rel="stylesheet" href="${notice_listCSS}" />
 <link rel="stylesheet" href="${public_communicationCSS}" />
 <link rel="stylesheet" href="${communication_noticeJS}" />
-<link rel="stylesheet" href="${noticeJS}" />
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
 <body>
@@ -53,20 +52,18 @@
 		<div class="search_left">
 			<div class="count_div">전체: ${page.total}개</div>
 		</div>
-		<div class="search_div">
-			<form id="searchForm" action="/royal/communication/notice"
-				method="POST">
-				<div class="search_right">
-					<select name="search_select_id" id="search_select_id">
-						<option>전체</option>
-						<option>제목</option>
-						<option>내용</option>
-					</select> <input type="text" name="search_input_id" id="search_input_id"
-						placeholder="검색어를 입력해주세요.">
-					<button type="submit">검색</button>
-				</div>
-			</form>
-		</div>
+		<form id="searchForm" action="/royal/communication/notice"
+			method="POST">
+			<div class="search_right">
+				<select name="search_select_id" id="search_select_id">
+					<option>전체</option>
+					<option>제목</option>
+					<option>내용</option>
+				</select> <input type="text" name="search_input_id" id="search_input_id"
+					placeholder="검색어를 입력해주세요.">
+				<button type="submit">검색</button>
+			</div>
+		</form>
 	</div>
 
 

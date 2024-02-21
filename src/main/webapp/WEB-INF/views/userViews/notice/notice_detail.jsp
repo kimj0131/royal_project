@@ -14,11 +14,12 @@
 	var="notice_dateIMG" />
 <c:url value="/resources/image/communication/royal_idIMG.png"
 	var="royal_idIMG" />
+<c:url value="/resources/js/communication/notice.js" var="noticeJS" />
 	<link rel="stylesheet" href="${public_communicationCSS}" />
 	<link rel="stylesheet" href="${notice_detailCSS}" />
 	<link rel="stylesheet" href="${notice_dateIMG}" />
 	<link rel="stylesheet" href="${royal_idIMG}" />
-</head>
+	</head>
 <body>
 	<jsp:include page="/WEB-INF/views/userViews/layout/header.jsp" />
 	
@@ -72,13 +73,14 @@
 				</div>
 				<textarea id="board_detail_cotent" readonly>${noticeDTO.notice_content}</textarea>
 			</div>
-	</div>
+	
 	
 	<div class="BTN_class">
 		<button type="button" onclick="location.href = '/royal/communication/notice';" 
 		class="goList">목록</button>
 	</div>
 
+	<script src="${noticeJS}"></script>
 	<jsp:include page="/WEB-INF/views/userViews/layout/footer.jsp" />
 </body>
 </html>
