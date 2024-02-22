@@ -52,7 +52,7 @@
 
 > * 방혜미 : 해설예약페이지 - 날짜 클릭 시 해당 해설의 회차 리스트 표시(js switch 구문으로 궁id별 해설id 매칭, 요청한 데이터를 페이지에 표시) [[Commit]](https://github.com/kimj0131/royal_project/commit/0f3b0e5d954c4804e922910b9a6c8a76fc95974f)
 
-> * 김민주, 조현우 : 행사페이지 - 상단에 년/월을 선택하고 하단에는 선택한 년/월의 행사 목록을 비동기로 요청해 슬라이드 형식으로 출력 [[Commit]](https://github.com/kimj0131/royal_project/commit/8c85ad7ef50ec330a74b6e1d53d0f037b9549a35)
+> * 김민주, 조현우 : 행사페이지 - 상단에 년/월을 선택하고 하단에는 선택한 년/월의 행사 목록을 비동기로 요청해 슬라이드 형식으로 출력하는 페이지 완성 [[Commit]](https://github.com/kimj0131/royal_project/commit/8c85ad7ef50ec330a74b6e1d53d0f037b9549a35)
 
 > * 황진솔 : 메인 페이지- 이미지데이터를 가져와 슬라이드 형식으로 구현 [[Commit]](https://github.com/kimj0131/royal_project/commit/610337a53065fe81f837647c619b85ed21def18f)
 
