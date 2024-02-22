@@ -31,9 +31,7 @@
 			<ul class="list">
 				<li class="menu"><a href="/royal/palace/jongmyohistory">
 						<div class="banner_img">
-							<img
-								src="../resources/image/royal_inner/main/jongmyo/bg_menu05_01.jpg"
-								alt="이미지" />
+							<img src="../resources/image/royal_inner/main/jongmyo/bg_menu05_01.jpg" alt="이미지" />
 						</div>
 						<div class="banner_txt">
 							<div class="txt_small">신성한 왕실의 사당인 종묘를 소개합니다.</div>
@@ -43,9 +41,7 @@
 				<li class="menu"><a
 					href="/royal/palace/royalInner?palace=종묘&royalId=5">
 						<div class="banner_img">
-							<img
-								src="../resources/image/royal_inner/main/jongmyo/bg_menu05_02.jpg"
-								alt="이미지" />
+							<img src="../resources/image/royal_inner/main/jongmyo/bg_menu05_02.jpg" alt="이미지" />
 						</div>
 						<div class="banner_txt">
 							<div class="txt_small">종묘가 품고 있는 다양한 이야기를 살펴보세요.</div>
@@ -54,9 +50,7 @@
 				</a></li>
 				<li class="menu"><a href="/royal/palace/viewing_time">
 						<div class="banner_img">
-							<img
-								src="../resources/image/royal_inner/main/jongmyo/bg_menu05_03.jpg"
-								alt="이미지" />
+							<img src="../resources/image/royal_inner/main/jongmyo/bg_menu05_03.jpg" alt="이미지" />
 						</div>
 						<div class="banner_txt">
 							<div class="txt_small">관람에 관련된 내용을 확인해보세요.</div>
@@ -65,13 +59,11 @@
 				</a></li>
 				<li class="menu"><a href="/royal/palace/reservation">
 						<div class="banner_img">
-							<img
-								src="../resources/image/royal_inner/main/jongmyo/bg_menu05_04.jpg"
-								alt="이미지" />
+							<img src="../resources/image/royal_inner/main/jongmyo/bg_menu05_04.jpg" alt="이미지" />
 						</div>
 						<div class="banner_txt">
 							<div class="txt_small">예약 서비스를 이용해보세요.</div>
-							<div class="txt_big">해설 ·행사 예약</div>
+							<div class="txt_big">해설 · 행사 예약</div>
 						</div>
 				</a></li>
 			</ul>

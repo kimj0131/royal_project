@@ -32,9 +32,7 @@
 			<ul class="list">
 				<li class="menu"><a href="/royal/palace/gyeongbokhistory">
 						<div class="banner_img">
-							<img
-								src="../resources/image/royal_inner/main/gyeongbok/bg_menu01_01.jpg"
-								alt="이미지" />
+							<img src="../resources/image/royal_inner/main/gyeongbok/bg_menu01_01.jpg" alt="이미지" />
 						</div>
 						<div class="banner_txt">
 							<div class="txt_small">조선의 법궁 경복궁을 소개합니다.</div>
@@ -44,9 +42,7 @@
 				<li class="menu"><a
 					href="/royal/palace/royalInner?palace=경복궁&royalId=1">
 						<div class="banner_img">
-							<img
-								src="../resources/image/royal_inner/main/gyeongbok/bg_menu01_02.jpg"
-								alt="이미지" />
+							<img src="../resources/image/royal_inner/main/gyeongbok/bg_menu01_02.jpg" alt="이미지" />
 						</div>
 						<div class="banner_txt">
 							<div class="txt_small">경복궁이 품고 있는 다양한 이야기를 살펴보세요.</div>
@@ -55,9 +51,7 @@
 				</a></li>
 				<li class="menu"><a href="/royal/palace/viewing_time">
 						<div class="banner_img">
-							<img
-								src="../resources/image/royal_inner/main/gyeongbok/bg_menu01_03.jpg"
-								alt="이미지" />
+							<img src="../resources/image/royal_inner/main/gyeongbok/bg_menu01_03.jpg" alt="이미지" />
 						</div>
 						<div class="banner_txt">
 							<div class="txt_small">관람에 관련된 내용을 확인해보세요.</div>
@@ -66,13 +60,11 @@
 				</a></li>
 				<li class="menu"><a href="/royal/palace/reservation">
 						<div class="banner_img">
-							<img
-								src="../resources/image/royal_inner/main/gyeongbok/bg_menu01_04.jpg"
-								alt="이미지" />
+							<img src="../resources/image/royal_inner/main/gyeongbok/bg_menu01_04.jpg" alt="이미지" />
 						</div>
 						<div class="banner_txt">
 							<div class="txt_small">예약 서비스를 이용해보세요.</div>
-							<div class="txt_big">해설 ·행사 예약</div>
+							<div class="txt_big">해설 · 행사 예약</div>
 						</div>
 				</a></li>
 			</ul>
