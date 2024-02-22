@@ -33,7 +33,7 @@
 					<li style="line-height:170%;"><a href="/royal/communication/notice">공지사항</a></li>
 					<li style="line-height:170%;"><a href="/royal/communication/faq">자주묻는질문</a></li>
 				</ul></li>
-			<li><a id="category_name" href="#">팀소개</a></li>
+			<li><a id="category_name" href="https://github.com/kimj0131/royal_project">프로젝트 정보</a></li>
 		</ul>
 	</div>
 	
