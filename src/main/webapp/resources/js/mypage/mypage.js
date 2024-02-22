@@ -37,17 +37,19 @@
 	    });
 
 			var toggleCount = 0;
-	    function toggleContent(index) {
-	        var resultElement = $('#qna-result-' + index);
-	        var arrowIcon = $('#arrow-icon-' + index);
-	        // FAQ 결과 토글
-	        resultElement.toggle();
-	        ++toggleCount;
-	        
-	        if(toggleCount%2 ==1){
-		        arrowIcon.toggleClass('arrow_down');	        	
-	        }else{	
-	        	arrowIcon.toggleClass('arrow_up');
-	        } 
-	        
-	    }
+
+function toggleContent(index) {
+    var resultElement = $('#qna-result-' + index);
+    var arrowIcon = $('#arrow-icon-' + index);
+
+    // FAQ 결과 토글
+    resultElement.toggle();
+    toggleCount++;
+
+    // toggleCount가 홀수일 때는 아래쪽 화살표로, 짝수일 때는 위쪽 화살표로 변경
+    if (toggleCount % 2 == 1) {
+       arrowIcon.html('arrow_drop_up'); // 열린 상태를 나타내는 위쪽 화살표
+    } else {
+         arrowIcon.html('arrow_drop_down'); // 닫힌 상태를 나타내는 아래쪽 화살표
+    }
+}

@@ -199,3 +199,18 @@ body {
 	margin-left: 30px;
 	margin-right: 30px;
 }
+
+
+.deleteBtn{
+	border: none;
+	color: white;
+	background-color: black;
+	cursor: pointer;
+}
+.deleteBtn:active {
+
+	  background-color: white;
+	  color:black;
+	  border: 2px solid black;
+
+	}
