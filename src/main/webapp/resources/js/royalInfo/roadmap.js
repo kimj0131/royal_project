@@ -1,24 +1,24 @@
 // 각 궁 이름에 해당하는 정보를 담은 객체
 const palaceInfo = {
     "경복궁": {
-        "address": "주소 /n(03045) 서울 종로구 사직로 161",
-        "phone": "연락처 /n대표전화 02-3700-3900 팩스 02-3700-3909"
+        "address": "주소 <br>(03045) 서울 종로구 사직로 161",
+        "phone": "연락처 <br>대표전화 02-3700-3900 팩스 02-3700-3909"
     },
     "창덕궁": {
-        "address": "주소 /n(03072) 서울 종로구 율곡로 99",
-        "phone": "연락처 /n대표전화 02-3668-2300 팩스 02-762-2070"
+        "address": "주소 <br>(03072) 서울 종로구 율곡로 99",
+        "phone": "연락처 <br>대표전화 02-3668-2300 팩스 02-762-2070"
     },
     "덕수궁": {
-        "address": "주소 /n(04519) 서울 중구 세종대로 99",
-        "phone": "연락처 /n대표전화 02-771-9951(사무실) 팩스 02-771-9953"
+        "address": "주소 <br>(04519) 서울 중구 세종대로 99",
+        "phone": "연락처 <br>대표전화 02-771-9951(사무실) 팩스 02-771-9953"
     },
     "창경궁": {
-        "address": "주소 /n(03072) 서울 종로구 창경궁로 185",
-        "phone": "연락처 /n대표전화 02-762-4868 팩스 02-762-9514"
+        "address": "주소 <br>(03072) 서울 종로구 창경궁로 185",
+        "phone": "연락처 <br>대표전화 02-762-4868 팩스 02-762-9514"
     },
     "종묘": {
-        "address": "주소 /n(03135) 서울 종로구 종로 157",
-        "phone": "연락처 /n대표전화 02-765-0195 팩스 02-3672-4332"
+        "address": "주소 <br>(03135) 서울 종로구 종로 157",
+        "phone": "연락처 <br>대표전화 02-765-0195 팩스 02-3672-4332"
     }
 };
 
@@ -54,9 +54,9 @@ const defaultAddressIcon = addressIcon.cloneNode(true);
 const defaultPhoneIcon = phoneIcon.cloneNode(true);
 
 defaultPalaceAddress.appendChild(defaultAddressIcon);
-defaultPalaceAddress.innerHTML += palaceInfo[defaultPalace].address.replace('/n', '<br>');
+defaultPalaceAddress.innerHTML += palaceInfo[defaultPalace].address;
 defaultPalacePhone.appendChild(defaultPhoneIcon);
-defaultPalacePhone.innerHTML += palaceInfo[defaultPalace].phone.replace('/n', '<br>');
+defaultPalacePhone.innerHTML += palaceInfo[defaultPalace].phone;
 
 // 각 palace-link 클래스를 가진 요소에 대해 클릭 이벤트 리스너 추가
 document.querySelectorAll('.palace-link').forEach( (link)=> {
@@ -90,13 +90,9 @@ document.querySelectorAll('.palace-link').forEach( (link)=> {
         palaceInfoPhone.innerHTML = '';
 
         palaceInfoAddress.appendChild(addressIcon);
-		palaceInfoAddress.insertAdjacentHTML('beforeend', palaceInfo[palaceName].address.replace('/n', '<br>'));
+		palaceInfoAddress.insertAdjacentHTML('beforeend', palaceInfo[palaceName].address);
 		palaceInfoPhone.appendChild(phoneIcon);
-		palaceInfoPhone.insertAdjacentHTML('beforeend', palaceInfo[palaceName].phone.replace('/n', '<br>'));
+		palaceInfoPhone.insertAdjacentHTML('beforeend', palaceInfo[palaceName].phone);
 	});
-
-    
-
-
 });
 
