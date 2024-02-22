@@ -20,7 +20,7 @@
 	<br>
 	<div>
 		<div class="palace_title">덕수궁 소개 ·역사</div>
-		<hr width="70%">
+		<hr width="65%">
 		<div>
 			<div class="container">
 				<img class="img" alt="덕수궁메인이미지" src="${deoksuimage}" />

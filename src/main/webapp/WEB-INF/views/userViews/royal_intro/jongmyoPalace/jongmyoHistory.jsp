@@ -17,7 +17,7 @@
 	<br>
 	<div>
 		<div class="palace_title">종묘 소개 ·역사</div>
-		<hr width="70%">
+		<hr width="65%">
 		<div>
 			<div class="container">
 				<img class="img" alt="종묘메인이미지" src="${jongmyoimage}" />

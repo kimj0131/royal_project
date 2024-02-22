@@ -17,7 +17,7 @@
 	<br>
 	<div>
 		<div class="palace_title">창경궁 소개 ·역사</div>
-		<hr width="70%">
+		<hr width="65%">
 		<div>
 			<div class="container">
 				<img class="img" alt="창경궁메인이미지" src="${changgyeongimage}" />
