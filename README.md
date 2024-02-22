@@ -6,7 +6,7 @@
 
 # 목표
 * OpenApi와 Database를 사용해 데이터들을 관리하고, 적절한 곳에 데이터를 활용한다.
-* Database에 저장된 데이터들을 활용, 웹 페이지 적재적소에 활용한다.
+* Database에 저장된 데이터를 웹 페이지 적재적소에 활용한다.
 * 사용자(user, manager)들이 사용하기 쉽게 설계 및 제작하는 것을 목표로한다.
 
 # 라이브러리
@@ -21,16 +21,9 @@
 > * 유저는 로그인기능을 통해 QnA 질문작성, 행사 혹은 궁궐해설 예약을 진행할 수 있음
 > * 관리자는 공지사항, QnA 답변, FAQ, 등을 직접 작성하고 수정 및 삭제할 수 있음
 
-# 사용한 저작물
-> *
-
 ***
 
 ## mission
-> * 서빈   : 공지사항의 FAQ Q&A 페이지 DB에 데이터 보내는 코드 작성 및 CSS 제작
-> *
-
-## done
 > * 김준형, 조현우 : 공공 API 연계 후 데이터 캐싱(DB) [[Commit]](https://github.com/kimj0131/royal_project/commit/b2bce768f3d814af2542e768a4397b3d1be525f8)
 
 > * 김준형 : Spring scheduler로 공공 API 갱신주기 설정 [[Commit]](https://github.com/kimj0131/royal_project/commit/33482572463fdb34d4146daf1298d9ea5e3bc5da)
@@ -64,8 +57,6 @@
 > * 황진솔 : 행사 슬라이드 구현 - 이미지데이터를 가져와 슬라이드 형식으로 구현 [[Commit]](https://github.com/kimj0131/royal_project/commit/610337a53065fe81f837647c619b85ed21def18f)
 
 > * 김태형 : 이메일 발송 기능 구현 (구글 API 사용), 이메일 발송기능 gmail 계정정보 properties 파일화
-
-> * 
 
 ***
 
@@ -110,8 +101,6 @@
 > * 김민주, 조현우 : 행사페이지에서 날짜가 바뀔때 span태그에 날짜 값을 가져와야했는데 바뀐 날짜가 아닌 바뀌기전 날짜 값이 나왔던 문제
 >   + 처음 자바스크립트에서 버튼을 누르면 날짜가 변경되는 메서드는 $(document).ready(); <축약형 : $(function(){})> 안에 들어있었고 버튼을 누르면 바뀐 날짜를 뽑아내는 메서드는 밖에 있었기 때문에 발생한 문제
 >   + 버튼을 누르면 날짜 데이터를 뽑아내는 메서드를 $(document).ready(); <축약형 : $(function(){})> 안에 넣는 것으로 해결
-
-> * 
 
 ***
 ## 기여자
