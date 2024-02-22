@@ -22,7 +22,6 @@ import com.ezen.royal.manager.dto.EventManageDTO;
 import com.ezen.royal.manager.dto.EventRoundManageDTO;
 import com.ezen.royal.manager.service.EventManageService;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.sun.org.apache.bcel.internal.generic.IF_ACMPEQ;
 
 import lombok.extern.log4j.Log4j;
 

@@ -2,8 +2,6 @@ package com.ezen.royal.client.reservation.service;
 
 import java.util.List;
 
-import org.springframework.ui.Model;
-
 import com.ezen.royal.client.reservation.dto.ReservationDTO;
 import com.ezen.royal.client.reservation.dto.SelectedCommentaryDTO;
 

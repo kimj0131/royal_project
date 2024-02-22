@@ -1,7 +1,6 @@
 package com.ezen.royal.client.event.dto;
 
 import java.sql.Date;
-import java.util.List;
 
 import lombok.Data;
 

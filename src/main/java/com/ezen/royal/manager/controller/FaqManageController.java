@@ -1,10 +1,6 @@
 package com.ezen.royal.manager.controller;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
@@ -18,9 +14,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.ezen.royal.client.communication.dto.FaqDTO;
-import com.ezen.royal.manager.dto.EventManageDTO;
-import com.ezen.royal.manager.dto.EventRoundManageDTO;
 import com.ezen.royal.manager.dto.FAQManageDTO;
 import com.ezen.royal.manager.service.FaqManageService;
 import com.fasterxml.jackson.databind.ObjectMapper;

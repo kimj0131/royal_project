@@ -7,7 +7,6 @@ import org.springframework.ui.Model;
 import com.ezen.royal.client.communication.dto.FaqDTO;
 import com.ezen.royal.client.communication.mapper.FaqMapper;
 
-import jdk.internal.org.jline.utils.Log;
 import lombok.extern.log4j.Log4j;
 
 @Log4j

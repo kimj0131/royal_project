@@ -10,6 +10,7 @@ public class ManageMapperTest {
 		EventManageDTO dto = new EventManageDTO();
 		dto.setEvent_rounds(6);
 		
+		@SuppressWarnings("unused")
 		EventManageServiceImpl eventManageService = new EventManageServiceImpl();
 		
 //		eventManageService.insertEvent(dto, 50);
