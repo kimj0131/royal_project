@@ -14,10 +14,10 @@ import javax.mail.internet.MimeMessage;
 import org.springframework.core.env.Environment;
 
 
-
 public class EmailSender {
 	
-	public static void emailSender(Environment env,String reservationNum, String userEmail, String userName,String eventName, String eventDate, int eventRound, String eventTime, int reservPeople) throws Exception {
+	public static void emailSender(Environment env, String userName, String userEmail, String reservationNum,
+			String eventName, String eventDate, int eventRound, String eventTime, int reservPeople) throws Exception {
 		
 		String to = userEmail; // 받는 사람의 이메일 주소
         String from = env.getProperty("gmail.emailAddress"); // 보내는 사람의 이메일 주소

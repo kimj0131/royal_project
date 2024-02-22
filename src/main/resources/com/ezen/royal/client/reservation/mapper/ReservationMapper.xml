@@ -15,6 +15,7 @@
     <select id="findCommentaryDTOList" resultType="com.ezen.royal.client.reservation.dto.SelectedCommentaryDTO">
 		SELECT 
 		    e.event_id,
+		    e.event_name,
 		    er.round_id,
 		    er.round_num,
 		    er.round_time,
@@ -29,7 +30,7 @@
 		WHERE 
 		    e.event_id = (SELECT event_id FROM event_list WHERE royal_id=#{royal_id} AND event_type='해설')
 		GROUP BY 
-		    e.event_id, er.round_id, er.round_num, er.round_time, er.round_capacity
+		    e.event_id, e.event_name, er.round_id, er.round_num, er.round_time, er.round_capacity
 		ORDER BY round_num
     </select>
 
@@ -55,6 +56,10 @@
 		)
 	</insert>
 	
-	
+	<!-- social_id를 받고 memberDTO 반환 -->
+    <select id="getMemberInfoDTO" resultType="com.ezen.royal.client.reservation.dto.MemberInfoDTO">
+		SELECT * FROM member WHERE social_id = #{social_id}
+    </select>
+
     
 </mapper>

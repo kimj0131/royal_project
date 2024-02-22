@@ -22,7 +22,7 @@
 	<jsp:include page="/WEB-INF/views/userViews/layout/header.jsp" />
 	<div class="top_img_name">
 		<div>
-			<img id="top_bg_Img" src="../resources/image/reservation/bg_sub04.jpg">
+			<img id="top_bg_Img" src="../resources/image/event/bg_sub04.jpg">
 		</div>
 		<div id="sub_category_name">
 			<h2>행사정보</h2>
