@@ -27,7 +27,7 @@
 				src="https://royal.cha.go.kr/resource/templete/royal/img/sub/bg_sub06.jpg">
 		</div>
 		<div id="sub_category_name">
-			<h2>소 통</h2>
+			<h2>소통마당</h2>
 		</div>
 	</div>
 

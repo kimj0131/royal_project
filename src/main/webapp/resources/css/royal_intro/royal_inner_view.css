@@ -1,69 +1,69 @@
 @charset "UTF-8";
 
 * {
-    font-family: "Noto Sans KR";
-    box-sizing: border-box;
+	font-family: "Noto Sans KR";
+	box-sizing: border-box;
 }
 
 .grid-container {
-    margin: 0 auto 50px;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 0;
-    padding-bottom: 20px;
-    width: 66%;
+	margin: 0 auto 50px;
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+	gap: 0;
+	padding-bottom: 20px;
+	width: 66%;
 }
 
 .royal-name {
-    margin: 0 auto 50px;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
-    align-items: center;
-    text-align: center;
-    gap: 50px;
-    width: 62%;
-    padding: 5px; 
+	margin: 0 auto 50px;
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+	align-items: center;
+	text-align: center;
+	gap: 50px;
+	width: 62%;
+	padding: 5px;
 }
 
 .royal-name > a {
-    border: 3px solid transparent;
-    border-radius: 20px;
-    text-align: center;
-    font-weight: bold;
-    font-size: 18px;
-    background-color :white;
+	border: 3px solid transparent;
+	border-radius: 20px;
+	text-align: center;
+	font-weight: bold;
+	font-size: 18px;
+	background-color: white;
 }
 
 .royal-name > :first-child {
-    border: 3px solid #604206;
-    border-radius: 20px;
+	border: 3px solid #604206;
+	border-radius: 20px;
 }
 
 .royal-name > :nth-child(2) {
-    border: 3px solid #286d79;
-    border-radius: 20px;
+	border: 3px solid #286d79;
+	border-radius: 20px;
 }
 
 .royal-name > :nth-child(3) {
-    border: 3px solid #14489c;
-    border-radius: 20px;
+	border: 3px solid #14489c;
+	border-radius: 20px;
 }
 
 .royal-name > :nth-child(4) {
-    border: 3px solid #b6383d;
-    border-radius: 20px;
+	border: 3px solid #b6383d;
+	border-radius: 20px;
 }
 
 .royal-name > :nth-child(5) {
-    border: 3px solid #c14b35;
-    border-radius: 20px;
+	border: 3px solid #c14b35;
+	border-radius: 20px;
 }
 
-.royal-name  > [class="GB"] {
+.royal-name > [class="GB"] {
 	color: #604206;
 }
 
-.royal-name  > [class="DS"] {
+.royal-name > [class="DS"] {
 	color: #286d79;
 }
 
@@ -71,89 +71,94 @@
 	color: #14489c;
 }
 
-.royal-name  > [class="CD"] {
+.royal-name > [class="CD"] {
 	color: #b6383d;
 }
 
-.royal-name  > [class="JM"] {
+.royal-name > [class="JM"] {
 	color: #c14b35;
 }
 
-.royal-name  > [class="GB on"] {
-    background-color: #604206;
-    color: white;
+.royal-name > [class="GB on"] {
+	background-color: #604206;
+	color: white;
 }
 
-.royal-name  > [class="DS on"] {
-    background-color: #286d79;
-    color: white;
+.royal-name > [class="DS on"] {
+	background-color: #286d79;
+	color: white;
 }
 
-.royal-name  > [class="CG on"] {
-    background-color: #14489c;
-    color: white;
+.royal-name > [class="CG on"] {
+	background-color: #14489c;
+	color: white;
 }
 
-.royal-name  > [class="CD on"] {
-    background-color: #b6383d;
-    color: white;
+.royal-name > [class="CD on"] {
+	background-color: #b6383d;
+	color: white;
 }
 
-.royal-name  > [class="JM on"] {
-    background-color: #c14b35;
-    color: white;
+.royal-name > [class="JM on"] {
+	background-color: #c14b35;
+	color: white;
 }
 
 h2 {
-    width: 66%;
-    margin: 0 auto;
-    padding: 5px;
-    margin-bottom: 15px;
+	width: 66%;
+	margin: 0 auto;
+	padding: 5px;
+	margin-bottom: 15px;
 }
 
 .innerNameDiv {
-    cursor: pointer;
-    border: 1px solid #ccc;
-    width:100%;
-	height:60px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding-right: 15px;
-    padding-left: 15px;
-    margin: 0;
+	cursor: pointer;
+	border: 1px solid #ccc;
+	width: 100%;
+	height: 60px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding-right: 15px;
+	padding-left: 15px;
+	margin: 0;
 }
 
-.palaceInnerName{
-    width: 66%;
-    margin: 0 auto;
-    padding: 5px;
-    margin-bottom: 15px;
-    font-size: 25px;
-    font-weight: bold;
+.palaceInnerName {
+	width: 66%;
+	margin: 0 auto;
+	padding: 5px;
+	margin-bottom: 15px;
+	font-size: 25px;
+	font-weight: bold;
 }
 
 .mainImg {
-    /* height: auto;  */
-    height: 592px;
-    width: 66%; 
-    margin: 0 auto;
+	/* height: auto;  */
+	height: 592px;
+	width: 66%;
+	margin: 0 auto;
 }
 
 .mainImg > #imageSlider {
-    height: 100%;
-    width: 100%; 
+	height: 100%;
+	width: 100%;
 }
 
 #imageSlider > img {
-    width: 100%; 
-    height: 100%;
+	width: 100%;
+	height: 100%;
 }
 
 .content {
-    width: 66%;
-    margin: 50px auto;
-    padding: 6px;
-    font-size: 13px;
+	width: 66%;
+	margin: 50px auto;
+	padding: 6px;
+	font-size: 13px;
 }
 
+.copy_container {
+	text-align: right;
+	font-size: 12px;
+	padding: 0 17%;
+}

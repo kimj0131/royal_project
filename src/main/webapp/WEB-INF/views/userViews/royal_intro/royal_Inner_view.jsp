@@ -7,6 +7,7 @@
 <c:url value="/resources/css/royal_intro/royal_inner_view.css" var="innerCSS" />
 <c:url value="/resources/js/royal_intro/royal_inner_slide.js" var="innerJS" />
 <c:url value="/resources/js/royal_intro/royal_innerName.js" var="innerNameJS" />
+<c:url value="/resources/image/copyright_img/kogl_openApi_resize.png" var="copyrightIMG" />
 <title>${palaceName} 내부 건축물</title>
 <link rel="stylesheet" href="${innerCSS}" />
 <script src="https://kit.fontawesome.com/2706cc5797.js" crossorigin="anonymous"></script>
@@ -73,12 +74,12 @@
 	            </c:forEach>
 	        </div>
 	    </div>
+	    <div class="copy_container">
+	        <img alt="copyright" src="${copyrightIMG}"> <br>
+	        <i>본 저작물은 공공누리 제1유형으로 개방한 '문화재청 4대궁 및 종묘 문화재 해설 정보'을 이용하였으며,</i> <br>
+	        <i>해당 저작물은 '문화재청, <a href="https://www.cha.go.kr/html/HtmlPage.do?pg=/publicinfo/pbinfo3_0301.jsp&mn=NS_04_04_02">궁궐ㆍ종묘 목록 조회</a>'에서 무료로 다운받으실 수 있습니다.</i>
+	    </div>
 	    <div class="content">${innerDTO.royal_inner_detail}</div>
-		<!-- 
-		<p>Debug - Inner Name: ${innerDTO.royal_inner_name}</p>
-		<p>Debug - Inner Image Path: ${innerDTO.royal_inner_imgpath}</p>
-		<p>Debug - Inner Detail: ${innerDTO.royal_inner_detail}</p>
-		 -->
 	</div>
 	<jsp:include page="/WEB-INF/views/userViews/layout/footer.jsp" />
 	<script src="${innerJS}"></script>  

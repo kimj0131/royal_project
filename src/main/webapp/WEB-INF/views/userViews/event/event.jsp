@@ -25,7 +25,7 @@
 			<img id="top_bg_Img" src="../resources/image/reservation/bg_sub04.jpg">
 		</div>
 		<div id="sub_category_name">
-			<h2>행 사</h2>
+			<h2>행사정보</h2>
 		</div>
 	</div>
 
