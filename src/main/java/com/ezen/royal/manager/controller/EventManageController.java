@@ -111,8 +111,8 @@ public class EventManageController {
 			eventManageDTO.setReservable(reservable.charAt(0));
 
 			// log
-			log.info(eventManageDTO);
-			log.info(eventRoundManageDTO_List);
+			// log.info(eventManageDTO);
+			// log.info(eventRoundManageDTO_List);
 
 			eventManageService.insertEvent(eventManageDTO, eventRoundManageDTO_List);
 			return "redirect:/manage/main/event/form/insert";
@@ -178,8 +178,8 @@ public class EventManageController {
 			eventManageDTO.setReservable(reservable.charAt(0));
 
 			// log
-			log.info(eventManageDTO);
-			log.info(eventRoundManageDTO_List);
+			// log.info(eventManageDTO);
+			// log.info(eventRoundManageDTO_List);
 			
 			eventManageService.updateEvent(eventManageDTO, eventRoundManageDTO_List);
 			

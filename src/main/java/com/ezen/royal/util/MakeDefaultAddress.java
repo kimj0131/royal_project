@@ -12,7 +12,7 @@ public class MakeDefaultAddress {
 				+ req.getServerPort() 
 				+ req.getContextPath();
 		
-		System.out.println(defaultAddress);
+//		System.out.println(defaultAddress);
 		return  defaultAddress;
 	}
 }

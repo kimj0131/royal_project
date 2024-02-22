@@ -21,13 +21,13 @@
 	</select>
 	
 	<!-- 30일 내에 시작되는 행사 목록 -->
-	<!-- <select id="getEventListBegin30Days">
-		SELECT * FROM event_list WHERE start_date BETWEEN sysdate AND sysdate + 30
-	</select> -->
-	<!-- 테스트용 -->
 	<select id="getEventListBegin30Days">
-		SELECT * FROM event_list WHERE start_date BETWEEN to_date('23/10/01', 'YY/MM/DD') AND to_date('23/10/01', 'YY/MM/DD') + 30
+		SELECT * FROM event_list WHERE start_date BETWEEN sysdate AND sysdate + 30
 	</select>
+	<!-- 테스트용 -->
+	<!-- <select id="getEventListBegin30Days">
+		SELECT * FROM event_list WHERE start_date BETWEEN to_date('23/10/01', 'YY/MM/DD') AND to_date('23/10/01', 'YY/MM/DD') + 30
+	</select> -->
 		
 	
 	<!-- INSERT -->

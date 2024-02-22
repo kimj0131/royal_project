@@ -77,43 +77,16 @@ public class NaverController {
 		}
 
 	}
-//	@PostMapping("/user/login/naver")
-//	public ResponseEntity<MemberDTO> naver_login_compl(@RequestBody MemberDTO dto, HttpSession session) {
-//		
-//		log.info("[TEST LOG] 요청해서 받은 유저 데이터 : " + dto);
-//		
-//		// 멤버 데이터 add or update
-//		int result = naverService.upsertMember(dto);
-//		
-//		if (result > 0) {
-//			// 로그인상태 유지를 위해 session에 어트리뷰트 설정
-//			session.setAttribute("login_user", dto.getSocial_id());
-//			// 로그인을 한 소셜타입 설정(naver)
-//			session.setAttribute("login_type ", dto.getMember_type());
-//			
-//			// 로그인상태에서 다시 로그인 버튼을 누르는 것을 막기위한 어트리뷰트 설정 (필요 X?)
-//			// session.setAttribute("logging_in", true);
-//			
-//			log.info("[TEST LOG] 로그인한 유저 ID : " + session.getAttribute("login_user"));
-//			// log.info("[TEST LOG] 유저 로그인 상태 : " + session.getAttribute("logging_in"));
-//			
-//			return ResponseEntity.status(HttpStatus.OK).contentType(MediaType.APPLICATION_JSON).body(dto);			
-//		} else {
-//			log.warn("[TEST LOG] 유저정보를 처리하는데 문제가 발생했습니다");
-//			return ResponseEntity.status(HttpStatus.OK).contentType(MediaType.APPLICATION_JSON).body(null);			
-//		}
-//		
-//	}
 
-	// 테스트) 로그아웃 버튼 매핑
+	// 로그아웃 매핑
 	@GetMapping("/user/logout")
 	public String naver_logout(HttpSession session) {
 		if (session != null && session.getAttribute("login_user") != null) {
 			// 세션 초기화
 			session.invalidate();
-			log.info("[TEST LOG] 로그아웃 되었습니다");
+			// log.info("[TEST LOG] 로그아웃 되었습니다");
 		} else {
-			log.warn("[TEST LOG] 로그인 상태가 아닙니다");
+			// log.warn("[TEST LOG] 로그인 상태가 아닙니다");
 		}
 
 		return "redirect:/main/home";
