@@ -178,9 +178,3 @@ img {
 	height: 400px;
 	object-fit: cover;
 }
-
-@media (max-width: 767px) {
-	#navibar {
-		display: none;
-	}
-}

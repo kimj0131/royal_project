@@ -17,6 +17,8 @@
 				EXTRACT(MONTH FROM start_date) = #{month}
 		    AND 
 		    	EXTRACT(YEAR FROM start_date) = #{year}
+		    AND
+		    	event_type='행사'
 	</select>
 		
 	<!-- 당월 event_list를 가져온다 -->

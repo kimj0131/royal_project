@@ -33,8 +33,9 @@ public class RoyalInnerServiceImpl implements RoyalInnerService {
 	
 	@Override
 	public InnerDTO getSelectedInnerDTO(String innerName, Integer royalId) {
-		
-		return royalInnerMapper.getSelectedInnerDTO(innerName,royalId);
+		InnerDTO dto = royalInnerMapper.getSelectedInnerDTO(innerName,royalId);
+		dto.setRoyal_inner_detail(dto.getRoyal_inner_detail().replace(". ", ".<br/>"));
+		return dto;
 	}
 
 /*

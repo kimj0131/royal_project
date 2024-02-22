@@ -1,53 +1,53 @@
 @charset "UTF-8";
 
-
-*{
-    font-family: "Noto Snas KR";
-    box-sizing: border-box;
+* {
+	font-family: "Noto Snas KR";
+	box-sizing: border-box;
 }
 
-
-#navibar{
-    width: 80px;
-    height: 450px;
-    color: white;
-    position: fixed;
-    left:30px;
-    top:170px;
-    z-index: 100;
-    border-radius: 15px;
-    background-color: #052644;
-    border:solid 10px #052644;
+#navibar {
+	width: 80px;
+	height: 450px;
+	color: white;
+	position: fixed;
+	left: 30px;
+	top: 170px;
+	z-index: 100;
+	border-radius: 15px;
+	background-color: #052644;
+	border: solid 10px #052644;
 }
 
-#navibar > ul > li{
-    list-style: none;
-    border-bottom: solid 1px rgb(233, 233, 233); 
-    text-align: center;
+#navibar > ul > li {
+	list-style: none;
+	border-bottom: solid 1px rgb(233, 233, 233);
+	text-align: center;
 }
-#navibar > ul > li:first-child{
-    list-style: none;
-    border-top: solid 1px rgb(233, 233, 233); 
-    text-align: center;
+#navibar > ul > li:first-child {
+	list-style: none;
+	border-top: solid 1px rgb(233, 233, 233);
+	text-align: center;
 }
 
-#navibar > ul > li > a{
-    text-decoration: none;
-    color: inherit;
-    font-size: 15px;
-    font-weight: 600;
-    display: inline-block;
-    transition: .3s;
-    -webkit-transform: scale(1);
-    transform: scale(1);
+#navibar > ul > li > a {
+	text-decoration: none;
+	color: inherit;
+	font-size: 15px;
+	font-weight: 600;
+	display: inline-block;
+	transition: 0.3s;
+	-webkit-transform: scale(1);
+	transform: scale(1);
 }
 
 #navibar > ul > li > a:hover {
-    -webkit-transform: scale(1.1);
-  transform: scale(1.1);
-  color: bisque;
+	-webkit-transform: scale(1.1);
+	transform: scale(1.1);
+	color: bisque;
 }
 
-
-
-
+@media (max-width: 767px) {
+	#navibar {
+		display: none;
+	}
+}
