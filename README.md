@@ -41,15 +41,11 @@
 
 > * 조현우 : 각각의 궁 내부 건축물 페이지 테스트 코드 작성 [[Commit]](https://github.com/kimj0131/royal_project/commit/1ca63792ed713a0112a4760b8fe12210915a52e3)
 
-> * 방혜미 : 테스트코드를 활용 공공API 데이터활용, 4대궁궐 및 종묘 내부 건축물 정보 데이터 표시 [[Commit]](https://github.com/kimj0131/royal_project/commit/4d064e4af6bbd1177c85bf19ec7aa69d7ccdcd76)
+> * 방혜미 : 테스트코드 및 공공API 데이터활용, 4대궁궐 및 종묘 내부 건축물 정보 데이터 표시 [[Commit]](https://github.com/kimj0131/royal_project/commit/4d064e4af6bbd1177c85bf19ec7aa69d7ccdcd76)
 
 > * 김태형 : 카카오 지도 api 연계
 
 > * 조현우, 김준형 : Event 테이블 데이터 추가 시 회차만큼 Event_round 테이블 데이터 추가하는 service [[Commit_1]](https://github.com/kimj0131/royal_project/commit/df13ec3e732f5fa6803c16d42b58d2afc91e42a9) [[Commit_2]](https://github.com/kimj0131/royal_project/commit/f856a8d61cbe07e3e5bfee5becbc1c6204e3cc7c)
-
-> * 방혜미 : 내부 건축물 이미지 (DB의 이미지path추가 및 js슬라이드 작업) [[Commit]](https://github.com/kimj0131/royal_project/commit/3c24505a14fb54638071ae06171c8d312f8c1c31)
-
-> * 방혜미 : 지도 api 데이터 활용 - 관람안내 > 오시는길 페이지 [[Commit]](https://github.com/kimj0131/royal_project/commit/012c89358b6c041b1c05169f36b2536019a3889c)
 
 > * 김준형 : user, manage 로그인 확인 방법을 servlet filter에서 확인하도록 설정 [[Commit]](https://github.com/kimj0131/royal_project/commit/b9f155d03e6ee038dc20391c5d381a317744250e)
 
@@ -66,8 +62,6 @@
 > * 김민주, 조현우 : 행사페이지 - 상단에 년/월을 선택하고 하단에는 선택한 년/월의 행사 목록을 비동기로 요청해 슬라이드 형식으로 출력 [[Commit]](https://github.com/kimj0131/royal_project/commit/8c85ad7ef50ec330a74b6e1d53d0f037b9549a35)
 
 > * 황진솔 : 행사 슬라이드 구현 - 이미지데이터를 가져와 슬라이드 형식으로 구현 [[Commit]](https://github.com/kimj0131/royal_project/commit/610337a53065fe81f837647c619b85ed21def18f)
-
-> * 황진솔 : 메인페이지 공지사항 및 행사 클릭 시 해당 페이지 이동 - 해당하는 파라미터값을 가져와 상세페이지로 이동 [[Commit]](https://github.com/kimj0131/royal_project/commit/e43e436821bedf01d52a573015520a0424d3d278)
 
 > * 김태형 : 이메일 발송 기능 구현 (구글 API 사용), 이메일 발송기능 gmail 계정정보 properties 파일화
 
@@ -93,8 +87,8 @@
 >   + ~~관리자페이지 include jsp 페이지에 검증하는 로직을 추가~~ >>> __※ filter에서 확인하도록 변경__
 >   + session에 로그인 정보가 없으면 로그인 페이지로 되돌려 보낸다
 
-> * 방혜미 : 내부 건축물 정보 가져오는 도중 파라미터 2개의 값을 넘기지 못함
->   + 서비스단 및 매퍼에서 @Param으로 해결
+> * 방혜미 : 내부 건축물 정보 가져오는 도중 파라미터 2개의 값을 복수개로 인지하지 못하는 문제
+>   + 서비스단 및 매퍼에서 @Param으로 각각의 파라미터를 지정해주어 해결
 
 > * 김준형 : mybatis Mapper에서 파라미터를 복수개로 받을때 파라미터를 인식하지 못하는 문제
 >   + 메소드 파라미터에 @Param("파라미터 이름") 으로 복수의 파라미터를 지정
