@@ -46,7 +46,7 @@
 			resv_eventdate,
 			round_num
 		) VALUES (
-			resv_id_seq.nextval,
+			reservation_id_seq.nextval,
 			#{event_id},
 			#{member_id},
 			#{resv_num},
