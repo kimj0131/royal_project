@@ -37,7 +37,7 @@
 						</div>
 						<div class="banner_txt">
 							<div class="txt_small">신성한 왕실의 사당인 종묘를 소개합니다.</div>
-							<div class="txt_big">종묘 소개 ·역사</div>
+							<div class="txt_big">종묘 소개 · 역사</div>
 						</div>
 				</a></li>
 				<li class="menu"><a

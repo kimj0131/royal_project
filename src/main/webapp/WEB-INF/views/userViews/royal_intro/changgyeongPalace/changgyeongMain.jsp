@@ -38,7 +38,7 @@
 						</div>
 						<div class="banner_txt">
 							<div class="txt_small">효의 궁궐 창경궁을 소개합니다.</div>
-							<div class="txt_big">창경궁 소개 ·역사</div>
+							<div class="txt_big">창경궁 소개 · 역사</div>
 						</div>
 				</a></li>
 				<li class="menu"><a

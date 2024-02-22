@@ -37,7 +37,7 @@
 						</div>
 						<div class="banner_txt">
 							<div class="txt_small">전통과 근대가 만난 덕수궁을 소개합니다.</div>
-							<div class="txt_big">덕수궁 소개 ·역사</div>
+							<div class="txt_big">덕수궁 소개 · 역사</div>
 						</div>
 				</a></li>
 				<li class="menu"><a

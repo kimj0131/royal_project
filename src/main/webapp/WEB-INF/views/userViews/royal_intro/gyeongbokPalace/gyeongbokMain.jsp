@@ -38,7 +38,7 @@
 						</div>
 						<div class="banner_txt">
 							<div class="txt_small">조선의 법궁 경복궁을 소개합니다.</div>
-							<div class="txt_big">경복궁 소개 ·역사</div>
+							<div class="txt_big">경복궁 소개 · 역사</div>
 						</div>
 				</a></li>
 				<li class="menu"><a
