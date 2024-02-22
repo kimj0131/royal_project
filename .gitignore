@@ -88,18 +88,20 @@ buildNumber.properties
 
 # End of https://www.toptal.com/developers/gitignore/api/eclipse,maven
 
-# database 정보
+#################################
+# ignore Properties List
+# database login info
 database.properties
 
-# kakao 정보
+# kakao login API info
 kakao.properties
 
-# naver 정보
+# naver login API info
 naver_login_config.js
 naver.properties
 
-# admin 계정정보
+# manage login info
 adminAcc.properties
 
-# gmail 정보
+# gmail API info
 gmail.properties
