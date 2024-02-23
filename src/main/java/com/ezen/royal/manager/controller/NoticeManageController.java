@@ -28,6 +28,17 @@ public class NoticeManageController {
 	@Autowired
 	NoticeManageService noticeManageService;
 
+	// 작업성공을 확인하는 변수
+	private boolean processingResult = false;
+	private void checkingProcess(HttpServletRequest request, String alertType) {
+		// 작업성공여부 확인 후 데이터를 싣는다
+		if (processingResult == true) {
+			request.setAttribute("alertType", alertType);
+			processingResult = false;
+		}
+	}
+
+	
 	@GetMapping("/form/*")
 	public String manage_event_form(HttpServletRequest request, Model model) {
 
@@ -39,10 +50,13 @@ public class NoticeManageController {
 		if (uri.endsWith("list")) {
 			return "managerViews/main_views/notice/list";
 		} else if (uri.endsWith("insert")) {
+			checkingProcess(request, "공지사항 추가");
 			return "managerViews/main_views/notice/insert";
 		} else if (uri.endsWith("update")) {
+			checkingProcess(request, "공지사항 수정");
 			return "managerViews/main_views/notice/update";
 		} else if (uri.endsWith("delete")) {
+			checkingProcess(request, "공지사항 삭제");
 			return "managerViews/main_views/notice/delete";
 		} else {
 			return "";
@@ -63,7 +77,10 @@ public class NoticeManageController {
 			dto.setNotice_title(notice_title);
 			dto.setNotice_content(notice_content);
 			
-			noticeManageService.insertNotice(dto);
+			int result = noticeManageService.insertNotice(dto);
+			if(result > 0) {
+				processingResult = true;
+			}
 			
 			return "redirect:/manage/main/notice/form/insert";
 			
@@ -80,12 +97,20 @@ public class NoticeManageController {
 			dto.setNotice_title(notice_title);
 			dto.setNotice_content(notice_content);
 			
-			noticeManageService.updateNotice(dto);
+			int result = noticeManageService.updateNotice(dto);
+			if(result > 0) {
+				processingResult = true;
+			}
+			
 			
 			return "redirect:/manage/main/notice/form/update";
 			
 		} else if (uri.endsWith("delete")) {
-			noticeManageService.deleteNotice(Integer.parseInt(request.getParameter("notice_id")));
+			int result = noticeManageService.deleteNotice(Integer.parseInt(request.getParameter("notice_id")));
+			if(result > 0) {
+				processingResult = true;
+			}
+			
 			return "redirect:/manage/main/notice/form/delete";
 		} else {
 			return "";
