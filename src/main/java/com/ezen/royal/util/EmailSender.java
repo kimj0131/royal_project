@@ -51,7 +51,7 @@ public class EmailSender {
         
         String mailContent = "<h2>"+userName+"고객님의 궁 행사 예약 정보입니다 </h2>" + 
         		"<h2><span>"+userName+"</span>님의 예약번호는<span style='color:red;'>"+ reservationNum +"</span>입니다</h2>"+
-        		"<h2><p><<예약 상세 내용>></p></h2>"+
+        		"<h2><p>&lt;&lt;예약 상세 내용&gt;&gt;</p></h2>"+
         		"<p style='font-size:20px;'>행사명 : <span>"+eventName+"</span></p>"+
         		"<p style='font-size:20px;'>행사 예약일 : <span>" + eventDate+"</span></p>"+
         		"<p style='font-size:20px;'>행사 회차 / 시간 : <span>" +eventRound+"회 / " +eventTime+"</span></p>"+

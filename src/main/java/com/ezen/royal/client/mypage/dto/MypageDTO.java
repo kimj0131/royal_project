@@ -17,8 +17,9 @@ public class MypageDTO {
 	// 예약정보
 	private String resv_num;
 	private String resv_people;
-	private Date resv_date;
+	private Date resv_eventdate;
 	private String event_name;
+	private String event_time;
 	
 	//qna
 	private Integer qna_id;

@@ -66,8 +66,8 @@
 							<div>${reserv.resv_num}</div>
 							<div>${reserv.event_name}</div>
 							<div>
-								<fmt:formatDate value="${reserv.resv_date}"
-									pattern="yyyy-MM-dd HH:mm" />
+								<fmt:formatDate value="${reserv.resv_eventdate}"
+									pattern="yyyy-MM-dd" /> <span>${reserv.event_time} </span>
 							</div>
 							<div>${reserv.resv_people}</div>
 							<div>

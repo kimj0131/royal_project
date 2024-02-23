@@ -18,7 +18,8 @@
 			resv_id,
 			resv_num,
 			(select event_name from event_list where event_id = reservation.event_id) as event_name,
-			resv_date,
+			 (select round_time from event_round where event_id = reservation.event_id and round_num = reservation.round_num )as event_time,
+			resv_eventdate,
 			resv_people
 		FROM reservation
 		WHERE member_id = (select member_id from member where social_id = #{social_id})
