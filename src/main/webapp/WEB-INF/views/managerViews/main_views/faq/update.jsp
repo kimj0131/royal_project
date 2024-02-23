@@ -51,7 +51,7 @@
 					<div class="d-sm-flex align-items-center justify-content-between mb-4">
 						<h1 class="h3 mb-0 text-gray-800">자주 묻는 질문 수정</h1>
 						<ol class="breadcrumb">
-							<li class="breadcrumb-item"><a href="../index">Home</a></li>
+							<li class="breadcrumb-item"><a href="/royal/manage/main/index">Home</a></li>
 							<li class="breadcrumb-item">자주 묻는 질문</li>
 							<li class="breadcrumb-item active" aria-current="page">수정</li>
 						</ol>
@@ -105,7 +105,7 @@
 							<div class="card mb-4">
 								<div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
 									<h6 class="m-0 font-weight-bold text-primary">자주 묻는 질문 목록</h6>
-									<span style="font-size: 15px; font-weight: bold; ">※ 수정할 행사 ID를 선택해주세요.</span>
+									<span style="font-size: 15px; font-weight: bold; ">※ 수정할 FAQ를 아래 목록에서 선택해주세요.</span>
 								</div>
 								<div class="table-responsive p-3">
 									<table class="table align-items-center table-flush table-hover" id="dataTableHover">

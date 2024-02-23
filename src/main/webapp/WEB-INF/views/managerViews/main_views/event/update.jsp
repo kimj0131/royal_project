@@ -51,7 +51,7 @@
 					<div class="d-sm-flex align-items-center justify-content-between mb-4">
 						<h1 class="h3 mb-0 text-gray-800">행사 수정</h1>
 						<ol class="breadcrumb">
-							<li class="breadcrumb-item"><a href="../index">Home</a></li>
+							<li class="breadcrumb-item"><a href="/royal/manage/main/index">Home</a></li>
 							<li class="breadcrumb-item">행사</li>
 							<li class="breadcrumb-item active" aria-current="page">수정</li>
 						</ol>
@@ -64,7 +64,7 @@
 						<div class="col-lg-12">
 							<div class="card mb-4">
 								<div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-									<h6 id="selected_event_title" class="m-0 font-weight-bold text-primary">수정할 행사 ID를 선택해주세요</h6>
+									<h6 id="selected_event_title" class="m-0 font-weight-bold text-primary">수정할 행사를 아래 목록에서 선택해주세요</h6>
 								</div>
 								<div class="card-body">
 									<form action="/royal/manage/main/event/post/update" method="post">

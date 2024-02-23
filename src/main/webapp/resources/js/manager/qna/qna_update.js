@@ -13,7 +13,8 @@ $(".tableRowData").click(function (e) {
 	$("#selected_title").val(title.trim());
 	$("#selected_content").val(content);
 	$("#qna_result").val(result);
-	location.href = "#page-top";
+	// location.href = "#page-top";
+	window.scrollTo({ top: 0, behavior: "smooth" });
 });
 
 // submit 전 체크사항
