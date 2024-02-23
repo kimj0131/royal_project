@@ -38,7 +38,7 @@ if (RoyalIdParameter == 1) {
 } else if (RoyalIdParameter == 2) {
     palaceNames.item(3).id = 'cdBtn_active';
 } else if (RoyalIdParameter == 5) {
-    palaceNames.item(4).id = 'jmBtn_active';
+    palaceNames.item(4).id = 'gmBtn_active';
 }
 
 /**
