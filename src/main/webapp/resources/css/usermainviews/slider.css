@@ -3,8 +3,11 @@
 }
 
 .subtitle {
- color: rgba(64, 64, 64, 0.931);
- font-size: 18px;
+	color: rgb(100, 100, 100);
+    font-size: 18px;
+    font-weight: 600;
+    padding-left: 3px;
+    padding-bottom: 3px;
 }
 
 .title1 {
