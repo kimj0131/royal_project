@@ -293,6 +293,7 @@ function createEvent(imgPath, royal_id, event_name, event_location, start_date, 
 	content3.classList.add("content");
 
 	const link = document.createElement("a");
+	link.target = "_blank";
 	link.href = event_link;
 	link.textContent = event_link;
 

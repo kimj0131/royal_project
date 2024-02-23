@@ -78,7 +78,17 @@ function resvBtnEvent(royal_id, event_id, event_name, dateText, round_num, round
 	round_time_input.val(round_time_value);
 }
 
-
+// datepicker에서 지난 날짜와 휴무일을 비활성 하기 위한 function
+// 월요일: 창덕궁2, 창경궁3, 덕수궁4  /  화요일: 경복궁1, 종묘5
+function preventSelection(date, royal_id) {
+	let today = new Date();
+	today.setHours(0, 0, 0, 0);
+	if (royal_id == 2 || royal_id == 3 || royal_id == 4) {
+		return date.valueOf() >= today.valueOf() && date.getDay() != 1 ? [true, ""] : [false, ""];
+	} else if (royal_id == 1 || royal_id == 5) {
+		return date.valueOf() >= today.valueOf() && date.getDay() != 2 ? [true, ""] : [false, ""];
+	}
+}
 
 const palaceNames = document.querySelectorAll(".royalname");
 
@@ -118,12 +128,11 @@ for (const palaceName of palaceNames) {
 		$("#datepicker")
 			.datepicker("destroy")
 			.datepicker({
-				beforeShowDay: (date) => {
-					let today = new Date();
-					today.setHours(0, 0, 0, 0);
-					return date.valueOf() >= today.valueOf() ? [true, ""] : [false, ""];
-				},
+
+				// 지난 날짜 비활성화
+				beforeShowDay: (date) => preventSelection(date, royal_id),
 				onSelect: (dateText) => {
+
 
 					// 사용자가 달력에서 선택한 날짜
 					let selectedDate = dateText;
@@ -132,7 +141,6 @@ for (const palaceName of palaceNames) {
 					$('.default_event_round').remove();
 					// 달력에서 날짜를 바꾸면 기존의 event_round를 모두 제거
 					$("#event_round_list").empty();
-
 
 					$.ajax({
 						url: "/royal/palace/getEventList",
@@ -209,8 +217,8 @@ for (const palaceName of palaceNames) {
 								} else {
 									event_round_stat_btn.classList.add('activeBtn');
 								}
-								
-								
+
+
 								// 당일 해설을 예약할 때 시간이 지났다면 예약 불가
 								var nowDate = new Date();
 								var month = nowDate.getMonth() < 9 ? `0${nowDate.getMonth() + 1}` : nowDate.getMonth() + 1;

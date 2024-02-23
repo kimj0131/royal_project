@@ -90,19 +90,4 @@ public class RoyalInnerController {
         return "/userViews/royal_intro/royal_Inner_view";
     }
     
-    /*
-      @GetMapping("/details")
-   	public String details(@RequestParam("royal_id") Integer royalId, Model model)  {
-       List<String> innerNames = royalInnerService.details(royalId);
-       String royalName = royalInnerService.getRoyalNameById(royalId);
-       model.addAttribute("royal_name", royalName);
-       model.addAttribute("innerNames", innerNames);
-
-       System.out.println("royal_id: " + royalId);
-       System.out.println("royalName: " + royalName);
-       
-       return "userViews/royal_intro/royal_Inner_view";
-   }
-   
-   */
 }

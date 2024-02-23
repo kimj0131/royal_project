@@ -114,21 +114,47 @@
 .royalname:first-child:hover {
 	background-color: #683A0D;
 	color: white;
+	cursor: pointer;
 }
 .royalname:nth-child(2):hover {
 	background-color: #286d79;
 	color: white;
+	cursor: pointer;
 }
 .royalname:nth-child(3):hover {
 	background-color: #14489c;
 	color: white;
+	cursor: pointer;
 }
 .royalname:nth-child(4):hover {
 	background-color: #b6383d;
 	color: white;
+	cursor: pointer;
 }
 .royalname:last-child:hover {
+	background-color: #c14b35;
+	color: white;
+	cursor: pointer;
+}
+/*  royal_id  active/deactive  */
+#gbBtn_active{
+	background-color: #683A0D;
+	color: white;
+}
+#dsBtn_active{
+	background-color: #286d79;
+	color: white;
+}
+#chBtn_active{
+	background-color: #14489c;
+	color: white;
+}
+#cdBtn_active{
 	background-color: #b6383d;
+	color: white;
+}
+#gmBtn_active{
+	background-color: #c14b35;
 	color: white;
 }
 
@@ -220,27 +246,6 @@
 		pointer-events : none;
 }
 
-/*  royal_id  active/deactive  */
-#gbBtn_active{
-	background-color: #683A0D;
-	color: white;
-}
-#dsBtn_active{
-	background-color: #286d79;
-	color: white;
-}
-#chBtn_active{
-	background-color: #14489c;
-	color: white;
-}
-#cdBtn_active{
-	background-color: #b6383d;
-	color: white;
-}
-#gmBtn_active{
-	background-color: #b6383d;
-	color: white;
-}
 
 
 #white_space_middle {

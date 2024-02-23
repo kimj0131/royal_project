@@ -102,6 +102,6 @@ public class ReservationController {
 				resvDTO.getResv_people(), 
 				social_id);
 
-		return "redirect:/palace/reservation";
+		return "redirect:/mypage/myPageView";
 	}
 }
