@@ -46,7 +46,7 @@
 			event_imgpath, 
 			reservable
 		)VALUES(
-			eventlist_id_seq.nextval, 
+			event_list_id_seq.nextval, 
 			#{royal_id}, 
 			#{event_type}, 
 			#{event_name}, 
