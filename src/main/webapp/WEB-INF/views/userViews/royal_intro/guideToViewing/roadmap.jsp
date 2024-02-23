@@ -22,6 +22,7 @@
 </head>
 <body>
 	<jsp:include page="/WEB-INF/views/userViews/layout/header.jsp" />
+	<jsp:include page="/WEB-INF/views/userViews/layout/navibar.jsp" />
 
 	<div class="contents_sub">
 		<div class="sub_visual">

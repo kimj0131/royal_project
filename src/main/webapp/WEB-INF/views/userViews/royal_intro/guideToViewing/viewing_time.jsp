@@ -27,6 +27,7 @@
 <body>
 
 	<jsp:include page="/WEB-INF/views/userViews/layout/header.jsp" />
+	<jsp:include page="/WEB-INF/views/userViews/layout/navibar.jsp" />
 
 	<div class="contents contents_sub">
 		<div class="sub_visual">
@@ -77,8 +78,7 @@
 								<div class="txt_wrap">경복궁, 종묘</div>
 							</li>
 						</ul>
-						<div class="info_txt">※ 단, 정기휴일이 공휴일 및 대체공휴일과 겹칠 경우에는 개방하며,
-							그 다음의 첫 번째 비공휴일이 정기휴일임</div>
+					
 					</div>
 					<div class="sub_con_section">
 						<div class="txt_section_tit">일반관람시간</div>

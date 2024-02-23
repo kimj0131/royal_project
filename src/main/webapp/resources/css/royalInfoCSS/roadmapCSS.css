@@ -1,120 +1,123 @@
 @charset "UTF-8";
 
-*{
-    font-family: "Noto Snas KR";
+* {
+	font-family: "Noto Snas KR";
 }
 
-
 .contents_sub {
-    font-size: 144px;
-    font-weight: bold;
+	font-size: 144px;
+	font-weight: bold;
 }
 
 .sub_visual {
-    width: 100%;
-    height: 185px;
-    position: relative;
+	width: 100%;
+	height: 185px;
+	position: relative;
 }
 
-.sub_visual .img_wrap{
-    width: 100%;
-    height: 100%;
+.sub_visual .img_wrap {
+	width: 100%;
+	height: 100%;
 }
 
 .img_wrap > img {
-    width: 100%;
-    height: 100%;
+	width: 100%;
+	height: 100%;
 }
 
 .sub_visual .txt_wrap {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    left: 0;
-    top: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	left: 0;
+	top: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
-.search_tit_wrap .sub_tit, .sub_visual .sub_tit {
-    color: #fff;
-    font-size: 2.250rem;
-    font-weight: bold;
+.search_tit_wrap .sub_tit,
+.sub_visual .sub_tit {
+	color: #fff;
+	font-size: 2.25rem;
+	font-weight: bold;
 }
 
 .inner {
-    width: 1430px;
-    max-width: 100%;
-    height: auto;
-    position: relative;
-    margin: 0 auto;
-    padding: 0 15px;
-    display:flex;
+	width: 1430px;
+	max-width: 100%;
+	height: auto;
+	position: relative;
+	margin: 0 auto;
+	padding: 0 15px;
+	display: flex;
+}
+@media (max-width: 1650px) {
+	.inner {
+		padding-left: 15px;
+		margin: 0 100px;
+	}
 }
 
 .right-container {
-    width: 163%;
+	width: 163%;
 }
 
 .map {
-    width: 100%;
-    height: 600px;
+	width: 100%;
+	height: 600px;
 }
 
 .map-container {
-	width:100%;
+	width: 100%;
 }
 
 .royal-name {
-    text-align: center;
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    width: 100%;
-    margin-top: 40px;
-    margin-bottom: 20px;
+	text-align: center;
+	display: flex;
+	justify-content: space-around;
+	flex-wrap: wrap;
+	width: 100%;
+	margin-top: 40px;
+	margin-bottom: 20px;
 }
 
 .royal-name > div {
-    width: 130px;
-    height: 40px;
-    padding: 3px ;
-    font-size: 18px;
-    font-weight: bold;
-    margin-top: 5px;
-    text-align: center; 
+	width: 130px;
+	height: 40px;
+	padding: 3px;
+	font-size: 18px;
+	font-weight: bold;
+	margin-top: 5px;
+	text-align: center;
 }
 
-.GB_BTN{
-    border: 3px solid #604206;
-    border-radius: 20px;
-    color: #604206;
+.GB_BTN {
+	border: 3px solid #604206;
+	border-radius: 20px;
+	color: #604206;
 }
 
-.DS_BTN{
-    border: 3px solid #286d79;
-    border-radius: 20px;
-    color: #286d79;
+.DS_BTN {
+	border: 3px solid #286d79;
+	border-radius: 20px;
+	color: #286d79;
 }
 
-
-.CG_BTN{
-    border: 3px solid #14489c;
-    border-radius: 20px;
-    color: #14489c;
+.CG_BTN {
+	border: 3px solid #14489c;
+	border-radius: 20px;
+	color: #14489c;
 }
 
-
-.CD_BTN{
-    border: 3px solid #b6383d;
-    border-radius: 20px;
-    color: #b6383d;
+.CD_BTN {
+	border: 3px solid #b6383d;
+	border-radius: 20px;
+	color: #b6383d;
 }
 
-
-.JM_BTN{
-    border: 3px solid #c14b35;
-    border-radius: 20px;
-    color: #c14b35;
+.JM_BTN {
+	border: 3px solid #c14b35;
+	border-radius: 20px;
+	color: #c14b35;
 }
