@@ -178,12 +178,12 @@
 }
 /* datepicker css */
 .ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default, .ui-button, html .ui-button.ui-state-disabled:hover, html .ui-button.ui-state-disabled:active {
-    height: 45px;
+    height: 40px;
 }
 .ui-datepicker{ 
 	font-size: 20px; 
 	width: 100%;
-	height: 340px;
+	height: 100%;
 };
 .commentary-list{
 	display: flex;
@@ -221,7 +221,7 @@
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	height: 340px;
+	height: 290px;
 }
 .default_event_round_img {
 	width: 100px;
