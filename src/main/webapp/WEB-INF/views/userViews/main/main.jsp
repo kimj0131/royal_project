@@ -20,6 +20,7 @@
 	<jsp:include page="/WEB-INF/views/userViews/layout/header.jsp" />
 	<jsp:include page="/WEB-INF/views/userViews/layout/navibar.jsp" />
 	<div class="outer">
+	<div class="subtitle">서울의 궁궐과 종묘를 소개하고 그 가치의 체험을 공유하는</div>
 	<div class="title1">서울 고궁안내</div>
 		<div class="inner-list">
 			<div class="inner">
@@ -79,7 +80,7 @@
 					</div>
 					<c:forEach var="evt" items="${currentMonthEventList}" begin="0" end="2">
 						<div class="images">
-							<a href="${evt.event_link}"> <img alt="${evt.event_name}"
+							<a href="${evt.event_link}" target="_blank"> <img alt="${evt.event_name}"
 								class="img" src="${evt.event_imgpath}" />
 							</a>
 						</div>

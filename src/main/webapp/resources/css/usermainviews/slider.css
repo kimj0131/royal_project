@@ -2,8 +2,12 @@
 	font-family: "Noto Snas KR";
 }
 
+.subtitle {
+ color: rgba(64, 64, 64, 0.931);
+ font-size: 18px;
+}
+
 .title1 {
-	padding-left: 7%;
 	margin-bottom: 2%;
 	font-weight: bold;
 	font-size: 45px;
@@ -14,7 +18,7 @@
 	position: relative;
 	margin: 0 auto;
 	overflow: hidden;
-	max-width: 80%;
+	width: 80%;
 	max-height: 30%;
 }
 
@@ -25,7 +29,8 @@
 	width: 100%;
 }
 
-.inner .gung {
+.gung {
+	height: 450px;
 	width: 100%;
 	margin: 0 auto;
 	object-fit: cover;
@@ -40,7 +45,7 @@
 
 .button1 a {
 	position: absolute;
-	top: 50%;
+	top: 55%;
 	width: 50px;
 	height: 50px;
 	line-height: 50px;
@@ -59,7 +64,7 @@
 
 /* ---------- 메인 공지사항 ---------- */
 .alarm {
-	padding-top: 8%;
+	padding-top: 4%;
 	display: flex;
 	height: auto;
 }
@@ -70,14 +75,15 @@
 }
 
 .left {
-	width: 60%;
+	width: 90%;
 	height: 100%;
 }
 
 .notice {
 	/* 공지사항 레이아웃 */
-	margin-left: 22%;
+	margin-left: 19%;
 	height: 100%;
+	width: 90%;
 }
 
 .title_top {
@@ -110,7 +116,7 @@
 	border-bottom: dashed 1px gainsboro;
 	align-items: center;
 	display: grid;
-	grid-template-columns: 30% 50% 20%;
+	grid-template-columns: 15% 60% 15%;
 	padding: 20px 0;
 	justify-content: space-between;
 }
@@ -139,7 +145,7 @@
 
 /* --------- 알림판 -------- */
 .right {
-	margin-left: 5%;
+	margin-left: 10%;
 	margin-right: 10%;
 	position: relative;
 }
@@ -148,7 +154,7 @@
 	font-weight: bold;
 	font-size: 22px;
 	padding-bottom: 5%;
-	margin-left: 17%;
+	margin-left: 15%;
 }
 
 .out {
@@ -173,7 +179,7 @@
 	display: block;
 }
 
-img {
+.img {
 	width: 370px;
 	height: 400px;
 	object-fit: cover;
