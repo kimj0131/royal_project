@@ -105,7 +105,7 @@
 							<div class="card mb-4">
 								<div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
 									<h6 class="m-0 font-weight-bold text-primary">공지사항 목록</h6>
-									<span style="font-size: 15px; font-weight: bold; ">※ 수정할 공지사항 ID를 선택해주세요.</span>
+									<span style="font-size: 15px; font-weight: bold; ">※ 수정할 공지사항을 아래 목록에서 선택해주세요.</span>
 								</div>
 								<div class="table-responsive p-3">
 									<table class="table align-items-center table-flush table-hover" id="dataTableHover">

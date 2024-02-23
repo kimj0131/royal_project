@@ -64,7 +64,7 @@
 						<div class="col-lg-12">
 							<div class="card mb-4">
 								<div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-									<h6 id="selected_faq_title" class="m-0 font-weight-bold text-primary">수정할 자주 묻는 질문 ID를 선택해주세요</h6>
+									<h6 id="selected_faq_title" class="m-0 font-weight-bold text-primary">수정할 자주 묻는 질문을 아래 목록에서 선택해주세요</h6>
 								</div>
 								<div class="card-body">
 									<form action="/royal/manage/main/faq/post/update" method="post">
@@ -105,7 +105,7 @@
 							<div class="card mb-4">
 								<div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
 									<h6 class="m-0 font-weight-bold text-primary">자주 묻는 질문 목록</h6>
-									<span style="font-size: 15px; font-weight: bold; ">※ 수정할 FAQ를 아래 목록에서 선택해주세요.</span>
+									<span style="font-size: 15px; font-weight: bold; ">※ 수정할 자주 묻는 질문을 아래 목록에서 선택해주세요.</span>
 								</div>
 								<div class="table-responsive p-3">
 									<table class="table align-items-center table-flush table-hover" id="dataTableHover">
