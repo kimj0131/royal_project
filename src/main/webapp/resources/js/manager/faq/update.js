@@ -66,5 +66,6 @@ rows.each(function (index, item) {
 
       }
     });
+    window.scrollTo({ top: 0, behavior: "smooth" });
   });
 });

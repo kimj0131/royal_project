@@ -51,7 +51,7 @@
 					<div class="d-sm-flex align-items-center justify-content-between mb-4">
 						<h1 class="h3 mb-0 text-gray-800">행사 취소</h1>
 						<ol class="breadcrumb">
-							<li class="breadcrumb-item"><a href="../index">Home</a></li>
+							<li class="breadcrumb-item"><a href="/royal/manage/main/index">Home</a></li>
 							<li class="breadcrumb-item">행사</li>
 							<li class="breadcrumb-item active" aria-current="page">취소</li>
 						</ol>
