@@ -27,6 +27,16 @@ public class FaqManageController {
 
 	@Autowired
 	FaqManageService faqManageService;
+	
+	// 작업성공을 확인하는 변수
+	private boolean processingResult = false;
+	private void checkingProcess(HttpServletRequest request, String alertType) {
+		// 작업성공여부 확인 후 데이터를 싣는다
+		if (processingResult == true) {
+			request.setAttribute("alertType", alertType);
+			processingResult = false;
+		}
+	}
 
 	
 	@GetMapping("/form/*")
@@ -41,10 +51,13 @@ public class FaqManageController {
 		if (uri.endsWith("list")) {
 			return "managerViews/main_views/faq/list";
 		} else if (uri.endsWith("insert")) {
+			checkingProcess(request, "FAQ추가");
 			return "managerViews/main_views/faq/insert";
 		} else if (uri.endsWith("update")) {
+			checkingProcess(request, "FAQ수정");
 			return "managerViews/main_views/faq/update";
 		} else if (uri.endsWith("delete")) {
+			checkingProcess(request, "FAQ삭제");
 			return "managerViews/main_views/faq/delete";
 		} else {
 			return "";
@@ -65,7 +78,10 @@ public class FaqManageController {
 			dto.setFaq_title(faq_title);
 			dto.setFaq_result(faq_result);
 			
-			faqManageService.insertFAQ(dto);
+			int result = faqManageService.insertFAQ(dto);
+			if(result > 0) {
+				processingResult = true;
+			}
 			
 			return "redirect:/manage/main/faq/form/insert";
 			
@@ -82,12 +98,18 @@ public class FaqManageController {
 			dto.setFaq_title(faq_title);
 			dto.setFaq_result(faq_result);
 			
-			faqManageService.updateFAQ(dto);
+			int result = faqManageService.updateFAQ(dto);
+			if(result > 0) {
+				processingResult = true;
+			}
 			
 			return "redirect:/manage/main/faq/form/update";
 		} else if (uri.endsWith("delete")) {
 			System.out.println(request.getParameter("faq_id"));
-			faqManageService.deleteFAQ(Integer.parseInt(request.getParameter("faq_id")));
+			int result = faqManageService.deleteFAQ(Integer.parseInt(request.getParameter("faq_id")));
+			if(result > 0) {
+				processingResult = true;
+			}
 			return "redirect:/manage/main/faq/form/delete";
 		} else {
 			return "";

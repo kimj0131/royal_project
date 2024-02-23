@@ -32,7 +32,16 @@ public class EventManageController {
 
 	@Autowired
 	EventManageService eventManageService;
-
+	
+	// 작업성공을 확인하는 변수
+	private boolean processingResult = false;
+	private void checkingProcess(HttpServletRequest request, String alertType) {
+		// 작업성공여부 확인 후 데이터를 싣는다
+		if (processingResult == true) {
+			request.setAttribute("alertType", alertType);
+			processingResult = false;
+		}
+	}
 	
 	@GetMapping("/form/*")
 	public String manage_event_form(HttpServletRequest request, Model model) {
@@ -45,10 +54,13 @@ public class EventManageController {
 		if (uri.endsWith("list")) {
 			return "managerViews/main_views/event/list";
 		} else if (uri.endsWith("insert")) {
+			checkingProcess(request, "행사추가");
 			return "managerViews/main_views/event/insert";
 		} else if (uri.endsWith("update")) {
+			checkingProcess(request, "행사수정");
 			return "managerViews/main_views/event/update";
 		} else if (uri.endsWith("delete")) {
+			checkingProcess(request, "행사취소");
 			return "managerViews/main_views/event/delete";
 		} else {
 			return "";
@@ -114,7 +126,11 @@ public class EventManageController {
 			// log.info(eventManageDTO);
 			// log.info(eventRoundManageDTO_List);
 
-			eventManageService.insertEvent(eventManageDTO, eventRoundManageDTO_List);
+			int result = eventManageService.insertEvent(eventManageDTO, eventRoundManageDTO_List);
+			
+			if(result > 0) {
+				processingResult = true;
+			}
 			return "redirect:/manage/main/event/form/insert";
 
 		} else if (uri.endsWith("update")) {
@@ -181,11 +197,20 @@ public class EventManageController {
 			// log.info(eventManageDTO);
 			// log.info(eventRoundManageDTO_List);
 			
-			eventManageService.updateEvent(eventManageDTO, eventRoundManageDTO_List);
+			int result = eventManageService.updateEvent(eventManageDTO, eventRoundManageDTO_List);
+			
+			if(result > 0) {
+				processingResult = true;
+			}
 			
 			return "redirect:/manage/main/event/form/update";
 		} else if (uri.endsWith("delete")) {
-			eventManageService.deleteEvent(Integer.parseInt(request.getParameter("event_id")));
+			int result = eventManageService.deleteEvent(Integer.parseInt(request.getParameter("event_id")));
+			
+			if(result > 0) {
+				processingResult = true;
+			}
+			
 			return "redirect:/manage/main/event/form/delete";
 		} else {
 			return "";

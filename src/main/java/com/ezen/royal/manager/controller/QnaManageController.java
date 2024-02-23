@@ -25,6 +25,16 @@ public class QnaManageController {
 	@Autowired
 	MemberService memberService;
 
+	// 작업성공을 확인하는 변수
+	private boolean processingResult = false;
+	private void checkingProcess(Model model, String alertType) {
+		// 작업성공여부 확인 후 데이터를 싣는다
+		if (processingResult == true) {
+			model.addAttribute("alertType", alertType);
+			processingResult = false;
+		}
+	}
+		
 	@GetMapping("/form/add") // 관리자 qna관리 페이지
 	public String manage_qna(Model model) {
 		
@@ -34,6 +44,8 @@ public class QnaManageController {
 		// index 공용사용
 		qnaManageService.getQNAList(model);
 		qnaManageService.getQNAListResultEmpty(model);
+		
+		checkingProcess(model, "답변 추가");
 		return "managerViews/main_views/qna/qna_answer_update";
 	}
 	
@@ -47,7 +59,10 @@ public class QnaManageController {
 		
 		if (qna_idString != null && resultString != null) {
 			int qna_id = Integer.parseInt(qna_idString);
-			qnaManageService.updateQNA(resultString, qna_id);
+			int result = qnaManageService.updateQNA(resultString, qna_id);
+			if(result > 0) {
+				processingResult = true;
+			}
 			return "redirect:/manage/main/qna/form/add";
 		} else {
 			// log.warn("[WARNING] 답변을 추가하는데 문제가 있었습니다.");
