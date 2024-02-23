@@ -202,10 +202,14 @@ body {
 
 
 .deleteBtn{
-	border: none;
+	border-radius: 20px;
+    border: none;
 	color: white;
 	background-color: black;
 	cursor: pointer;
+	height: auto;
+	padding: 3px;
+	width: 100px;
 }
 .deleteBtn:active {
 

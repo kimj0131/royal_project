@@ -59,20 +59,20 @@
 						<div class="boldStyle">행사명</div>
 						<div class="boldStyle">날짜 및 시간</div>
 						<div class="boldStyle">인원</div>
-						<div class="boldStyle">비고</div>
+						<div class="boldStyle">예약취소</div>
 					</div>
 					<c:forEach items="${reservList}" var="reserv">
 						<div class="reservboard_wrap_list">
 							<div>${reserv.resv_num}</div>
 							<div>${reserv.event_name}</div>
 							<div>
-								<fmt:formatDate value="${reserv.resv_eventdate}"
-									pattern="yyyy-MM-dd" /> <span>${reserv.event_time} </span>
+								<span class = "resv_eventdate"><fmt:formatDate value="${reserv.resv_eventdate}"
+									pattern="yyyy-MM-dd" /></span> <span class="event_time">${reserv.event_time} </span>
 							</div>
 							<div>${reserv.resv_people}</div>
 							<div>
 								<button class="deleteBtn" style="font-size:18px;">
-									<input type="hidden" value="${reserv.resv_num }">예약취소
+									<input type="hidden" value="${reserv.resv_num }">예약 취소 
 								</button>
 							</div>
 						</div>
