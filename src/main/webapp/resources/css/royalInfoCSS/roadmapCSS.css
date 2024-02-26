@@ -59,10 +59,6 @@
 	}
 }
 
-.right-container {
-	width: 163%;
-}
-
 .map {
 	width: 100%;
 	height: 600px;
@@ -72,52 +68,153 @@
 	width: 100%;
 }
 
-.royal-name {
-	text-align: center;
-	display: flex;
-	justify-content: space-around;
-	flex-wrap: wrap;
-	width: 100%;
-	margin-top: 40px;
+.contents_inn {
+	width: 1060px;
+}
+
+.sub_tit_wrap .tit {
+	padding-top: 30px;
+    font-size: 3rem;
+    font-weight: bold;
+}
+.contents_sub .contents_inn {
+    width: 100%;
+    padding-top: 80px;
+}
+
+/* resv_title css */
+#resv_title {
+    margin: 80px 0 10px 0;
+    font-size: 36px;
+    display: flex;
+    flex-direction: row;
+    min-width: 900px;
+}
+#resv_title_sub {
+    font-weight: 900;
+    font-size: 17px;
+    padding-left: 3px;
 	margin-bottom: 20px;
 }
 
-.royal-name > div {
-	width: 130px;
+/* royalNames css */
+#royalNames {
+	width: 100%;
+    height: auto;
+    padding-right: 5px;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    min-width: 900px;
+}
+.royalname {
+    width: 130px;
+    height: 40px;
+    padding: 4px;
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 5px;
+    text-align: center;
+	border-radius: 20px;
+}
+#white_space {
+	width: 100%;
 	height: 40px;
-	padding: 3px;
-	font-size: 18px;
-	font-weight: bold;
-	margin-top: 5px;
-	text-align: center;
+	border-bottom: solid 1px #EAEAEA;
+	margin-bottom: 50px;
 }
-
-.GB_BTN {
+.royalname:first-child{
 	border: 3px solid #604206;
-	border-radius: 20px;
-	color: #604206;
+	background-color: white;
+	color: #683A0D;
 }
-
-.DS_BTN {
+.royalname:nth-child(2){
 	border: 3px solid #286d79;
-	border-radius: 20px;
+	background-color: white;
 	color: #286d79;
 }
-
-.CG_BTN {
+.royalname:nth-child(3){
 	border: 3px solid #14489c;
-	border-radius: 20px;
+	background-color: white;
 	color: #14489c;
 }
-
-.CD_BTN {
+.royalname:nth-child(4){
 	border: 3px solid #b6383d;
-	border-radius: 20px;
+	background-color: white;
 	color: #b6383d;
 }
-
-.JM_BTN {
+.royalname:last-child{
 	border: 3px solid #c14b35;
-	border-radius: 20px;
+	background-color: white;
 	color: #c14b35;
+}
+.royalname:first-child:hover {
+	background-color: #683A0D;
+	color: white;
+	cursor: pointer;
+}
+.royalname:nth-child(2):hover {
+	background-color: #286d79;
+	color: white;
+	cursor: pointer;
+}
+.royalname:nth-child(3):hover {
+	background-color: #14489c;
+	color: white;
+	cursor: pointer;
+}
+.royalname:nth-child(4):hover {
+	background-color: #b6383d;
+	color: white;
+	cursor: pointer;
+}
+.royalname:last-child:hover {
+	background-color: #c14b35;
+	color: white;
+	cursor: pointer;
+}
+/*  royal_id  active/deactive  */
+#gbBtn_active{
+	background-color: #683A0D;
+	color: white;
+}
+#dsBtn_active{
+	background-color: #286d79;
+	color: white;
+}
+#chBtn_active{
+	background-color: #14489c;
+	color: white;
+}
+#cdBtn_active{
+	background-color: #b6383d;
+	color: white;
+}
+#gmBtn_active{
+	background-color: #c14b35;
+	color: white;
+}
+
+/* xxx오시는 길 서브 타이틀 */
+.subTitle {
+	font-size: 30px;
+}
+
+/* 주소 연락처 CSS */
+.palace-info {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	margin-top: 30px;
+}
+.palace-info_title {
+	font-size: 20px;
+	font-weight: 900;
+	padding-bottom: 12px;
+}
+.palace-info_content {
+	font-size: 17px;
+}
+#palace-info_white_space {
+	height: 47px;
+	border-bottom: 2px solid black;
 }
