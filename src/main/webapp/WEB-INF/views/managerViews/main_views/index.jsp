@@ -9,7 +9,7 @@ uri="http://java.sun.com/jsp/jstl/core" %> <%@ taglib prefix="fmt" uri="http://j
 		<meta name="description" content="" />
 		<meta name="author" content="" />
 
-		<title>서울고궁안내 - 관리자>메인</title>
+		<title>manager_index</title>
 
 		<!-- Common CSS -->
 		<%@ include file="/WEB-INF/views/managerViews/layout/jspf/commonCss.jspf" %>

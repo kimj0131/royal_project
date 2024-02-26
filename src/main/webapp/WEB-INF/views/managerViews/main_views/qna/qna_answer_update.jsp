@@ -13,7 +13,7 @@
 	<meta name="description" content="" />
 	<meta name="author" content="" />
 	
-	<title>서울고궁안내 - 관리자>질문과답변>답변</title>
+	<title>질문과 답변</title>
 	
 	<!-- Icons -->
 	<link rel="stylesheet"

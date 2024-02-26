@@ -14,7 +14,7 @@ uri="http://java.sun.com/jsp/jstl/core"%>
 <html>
 	<head>
 		<meta charset="UTF-8" />
-		<title>서울고궁안내 - 관리자>로그인</title>
+		<title>관리자 로그인</title>
 		<link rel="stylesheet" href="${loginCSS}" />
 		<link
 			rel="stylesheet"
