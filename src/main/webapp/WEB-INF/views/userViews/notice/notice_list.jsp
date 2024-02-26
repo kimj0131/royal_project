@@ -17,9 +17,10 @@
 <link rel="stylesheet" href="${public_communicationCSS}" />
 <link rel="stylesheet" href="${communication_noticeJS}" />
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+	<jsp:include page="/WEB-INF/views/userViews/layout/header.jsp" />
 </head>
 <body>
-	<jsp:include page="/WEB-INF/views/userViews/layout/header.jsp" />
 
 	<div class="top_img_name">
 		<div>

@@ -15,10 +15,10 @@
 <meta charset="UTF-8">
 <title>서울고궁안내 > 메인</title>
 <link rel="stylesheet" href="${sliderCSS}" />
-</head>
-<body>
 	<jsp:include page="/WEB-INF/views/userViews/layout/header.jsp" />
 	<jsp:include page="/WEB-INF/views/userViews/layout/navibar.jsp" />
+</head>
+<body>
 	<div class="outer">
 	<div class="subtitle">서울의 궁궐과 종묘를 소개하고 그 가치의 체험을 공유하는</div>
 	<div class="title1">서울 고궁안내</div>

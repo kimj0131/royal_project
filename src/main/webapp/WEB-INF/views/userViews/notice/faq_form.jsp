@@ -20,9 +20,10 @@
 	href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
 <link rel="stylesheet"
 	href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+	
+	<jsp:include page="/WEB-INF/views/userViews/layout/header.jsp" />
 </head>
 <body>
-	<jsp:include page="/WEB-INF/views/userViews/layout/header.jsp" />
 	<div class="wrap">
 		<div class="top_img_name">
 			<div>

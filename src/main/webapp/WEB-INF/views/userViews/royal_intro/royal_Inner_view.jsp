@@ -15,10 +15,11 @@
     // JSP 변수 값을 가져오기
     const selectedInnerName  = "${innerDTO.royal_inner_name}";
 </script>
-</head>
-<body>
+
 	<jsp:include page="/WEB-INF/views/userViews/layout/header.jsp" />
 	<jsp:include page="/WEB-INF/views/userViews/layout/navibar.jsp" />
+</head>
+<body>
 
 	<div id="inner">
 		<div class="container">

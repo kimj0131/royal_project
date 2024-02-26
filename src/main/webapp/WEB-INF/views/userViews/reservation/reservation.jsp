@@ -12,10 +12,11 @@
 <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
 <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
 <link rel="stylesheet" href="${reserveCSS}" />
+
+	<jsp:include page="/WEB-INF/views/userViews/layout/header.jsp" />
 </head>
 <body>
 
-	<jsp:include page="/WEB-INF/views/userViews/layout/header.jsp" />
 	
 	<div class="sub">
 		<div class="mainImg">

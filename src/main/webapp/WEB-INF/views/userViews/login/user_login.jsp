@@ -22,9 +22,9 @@ uri="http://java.sun.com/jsp/jstl/core"%>
 			charset="utf-8"
 		></script>
 		<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+		<jsp:include page="/WEB-INF/views/userViews/layout/header.jsp"/>
 	</head>
 	<body>
-		<jsp:include page="/WEB-INF/views/userViews/layout/header.jsp"/>
 
 		<div id="login_wrapper">
 			<div id="login_title">간편 로그인</div>

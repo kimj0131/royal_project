@@ -22,12 +22,13 @@
 <link rel="stylesheet" href="${royalInfoIMG}" />
 <link rel="stylesheet" href="${monIMG}" />
 <link rel="stylesheet" href="${tueIMG}" />
+
+	<jsp:include page="/WEB-INF/views/userViews/layout/header.jsp" />
+	<jsp:include page="/WEB-INF/views/userViews/layout/navibar.jsp" />
 </head>
 
 <body>
 
-	<jsp:include page="/WEB-INF/views/userViews/layout/header.jsp" />
-	<jsp:include page="/WEB-INF/views/userViews/layout/navibar.jsp" />
 
 	<div class="contents contents_sub">
 		<div class="sub_visual">

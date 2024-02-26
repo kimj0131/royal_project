@@ -34,10 +34,10 @@
 	
 	<!-- test -->
 	<!-- royal_inner test mapper -->
-	<mybatis-spring:scan base-package="com.ezen.royal.client.palace.test_inner.mapper"/>
+	<!-- <mybatis-spring:scan base-package="com.ezen.royal.client.palace.test_inner.mapper"/> -->
 	
 	<!-- inner image update test mapper -->
-	<mybatis-spring:scan base-package="com.ezen.royal.api.innerImgpathTest.mapper"/>
+	<!-- <mybatis-spring:scan base-package="com.ezen.royal.api.innerImgpathTest.mapper"/> -->
 	
 	
 	

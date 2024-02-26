@@ -5,3 +5,6 @@
 <link href="${allCss}" rel="stylesheet" type="text/css">
 <link href="${bootstrapCss}" rel="stylesheet" type="text/css">
 <link href="${ruangAdminCss}" rel="stylesheet">
+<!-- add favicon -->
+<link rel="shortcut icon" href="<c:url value="/resources/favicon.ico"/>" type="image/x-icon"/>
+<link rel="icon" href="<c:url value="/resources/favicon.ico"/>" type="image/x-icon"/>

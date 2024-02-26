@@ -9,12 +9,11 @@
 <meta charset="UTF-8">
 <link rel="stylesheet" href="${introCSS}" />
 <title>서울고궁안내 - 덕수궁</title>
-</head>
-<body>
 
 	<jsp:include page="/WEB-INF/views/userViews/layout/header.jsp" />
 	<jsp:include page="/WEB-INF/views/userViews/layout/navibar.jsp" />
-
+</head>
+<body>
 	<div class="mainPic">
 		<div class="mainImage">
 			<img src="../resources/image/royal_inner/main/deoksu/deoksugung.jpg"

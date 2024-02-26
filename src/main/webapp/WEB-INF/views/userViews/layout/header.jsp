@@ -11,6 +11,8 @@
 <link rel="stylesheet" href="${headerCSS}" />
 <link rel="stylesheet" href="${logoIMG}" />
 
+<link rel="shortcut icon" href="<c:url value="/resources/favicon.ico"/>" type="image/x-icon"/>
+<link rel="icon" href="<c:url value="/resources/favicon.ico"/>" type="image/x-icon"/>
 </head>
 <body>
 	<jsp:include page="./header_top.jsp"></jsp:include>

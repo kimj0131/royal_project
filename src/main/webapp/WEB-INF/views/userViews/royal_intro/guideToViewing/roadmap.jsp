@@ -19,10 +19,11 @@
 <link rel="stylesheet" href="${royalInfoIMG}" />
 <script src="https://kit.fontawesome.com/2706cc5797.js"
 	crossorigin="anonymous"></script>
-</head>
-<body>
+	
 	<jsp:include page="/WEB-INF/views/userViews/layout/header.jsp" />
 	<jsp:include page="/WEB-INF/views/userViews/layout/navibar.jsp" />
+</head>
+<body>
 
 	<div class="contents_sub">
 		<div class="sub_visual">

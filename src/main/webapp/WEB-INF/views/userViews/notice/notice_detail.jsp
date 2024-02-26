@@ -19,9 +19,10 @@
 	<link rel="stylesheet" href="${notice_detailCSS}" />
 	<link rel="stylesheet" href="${notice_dateIMG}" />
 	<link rel="stylesheet" href="${royal_idIMG}" />
-	</head>
-<body>
+	
 	<jsp:include page="/WEB-INF/views/userViews/layout/header.jsp" />
+</head>
+<body>
 	
 	<div class="top_img_name">
 		<div>

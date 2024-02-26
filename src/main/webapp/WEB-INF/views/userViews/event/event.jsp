@@ -16,10 +16,10 @@
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 	<link rel="stylesheet" href="${eventCSS}" />
+	<jsp:include page="/WEB-INF/views/userViews/layout/header.jsp" />
 </head>
 <body>
 
-	<jsp:include page="/WEB-INF/views/userViews/layout/header.jsp" />
 	<div class="top_img_name">
 		<div>
 			<img id="top_bg_Img" src="../resources/image/event/bg_sub04.jpg">

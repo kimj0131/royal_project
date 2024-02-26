@@ -13,10 +13,11 @@
 <meta charset="UTF-8">
 <title>서울고궁안내 - 덕수궁>소개 및 역사</title>
 <link rel="stylesheet" href="${historyCSS}" />
-</head>
-<body>
+
 	<jsp:include page="/WEB-INF/views/userViews/layout/header.jsp" />
 	<jsp:include page="/WEB-INF/views/userViews/layout/navibar.jsp" />
+</head>
+<body>
 	<br>
 	<div>
 		<div class="palace_title">덕수궁 소개 ·역사</div>
