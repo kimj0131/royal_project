@@ -12,7 +12,7 @@
 	<meta name="description" content="">
 	<meta name="author" content="">
 	
-	<title>manager_notice_insert</title>
+	<title>서울고궁안내 - 관리자>공지사항>추가</title>
 
 	<!-- Icons -->
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />

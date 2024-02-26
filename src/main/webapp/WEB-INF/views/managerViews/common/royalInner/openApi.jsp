@@ -20,7 +20,7 @@ uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 	</c:choose>
 	<head>
 		<meta charset="UTF-8" />
-		<title>공공 api 데이터 추가 페이지</title>
+		<title>공공API 데이터갱신</title>
 	</head>
 	<body>
 		<button id="input-btn" onclick="location.href = '/royal/manage/main/database/inner/insert'">Database Insert</button>

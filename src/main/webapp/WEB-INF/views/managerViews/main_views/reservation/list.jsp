@@ -12,7 +12,7 @@
 	<meta name="description" content="">
 	<meta name="author" content="">
 	
-	<title>manager_reservation_list</title>
+	<title>서울고궁안내 - 관리자>예약관리>목록</title>
 
 	<!-- Common CSS -->
 	<%@ include file="/WEB-INF/views/managerViews/layout/jspf/commonCss.jspf" %>
