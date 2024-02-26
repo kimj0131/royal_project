@@ -2,9 +2,7 @@
 uri="http://java.sun.com/jsp/jstl/core" %>
 
 <!-- IMG -->
-<c:url value="/resources/image/manager/man.png" var="manIMG" />
 <c:url value="/resources/image/manager/boy.png" var="boyIMG" />
-<c:url value="/resources/image/manager/girl.png" var="girlIMG" />
 
 <nav class="navbar navbar-expand navbar-light bg-navbar topbar mb-4 static-top">
 	<!-- Topbar -->
@@ -59,7 +57,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
 				aria-haspopup="true"
 				aria-expanded="false"
 			>
-				<img class="img-profile rounded-circle" src="${manIMG}" style="max-width: 60px" />
+				<img class="img-profile rounded-circle" src="${boyIMG}" style="max-width: 60px" />
 				<span class="ml-2 d-none d-lg-inline text-white small">관리자</span>
 			</a>
 			<div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
