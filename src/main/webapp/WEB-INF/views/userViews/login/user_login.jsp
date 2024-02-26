@@ -14,7 +14,7 @@ uri="http://java.sun.com/jsp/jstl/core"%>
 <html>
 	<head>
 		<meta charset="UTF-8" />
-		<title>Login</title>
+		<title>서울고궁안내 - 로그인</title>
 		<link rel="stylesheet" href="${user_loginCSS}" />
 		<script
 			type="text/javascript"

@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>notice_list</title>
+<title>서울고궁안내 - 소통마당>공지사항</title>
 <c:url value="/resources/css/communication/notice_list.css"
 	var="notice_listCSS" />
 <c:url value="/resources/css/communication/public_communication.css"

@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>오시는길</title>
+<title>서울고궁안내 - 관람안내>오시는길</title>
 <c:url value="/resources/css/royalInfoCSS/roadmapCSS.css"
 	var="roadmapCSS" />
 <c:url value="/resources/css/royalInfoCSS/lnb.css" var="lnbCSS" />

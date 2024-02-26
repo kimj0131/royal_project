@@ -12,7 +12,7 @@
 	<c:url value="/resources/js/event/slider.js" var="sliderJS" />
 	
 	<meta charset="UTF-8">
-	<title>행사</title>
+	<title>서울고궁안내 - 행사정보</title>
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 	<link rel="stylesheet" href="${eventCSS}" />

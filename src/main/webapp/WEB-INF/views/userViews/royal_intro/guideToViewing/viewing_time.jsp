@@ -7,7 +7,7 @@
 
 <head>
 <meta charset="UTF-8">
-<title>관람시간</title>
+<title>서울고궁안내 - 관람안내>관람시간</title>
 
 <c:url value="/resources/css/royalInfoCSS/viewing_time.css"
 	var="viewing_timeCSS" />

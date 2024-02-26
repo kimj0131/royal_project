@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>소통</title>
+<title>서울고궁안내 - 소통마당>자주묻는질문</title>
 <c:url value="/resources/css/communication/faq.css" var="faqCSS" />
 <c:url value="/resources/css/communication/public_communication.css"
 	var="public_communicationCSS" />
@@ -35,7 +35,7 @@
 		</div>
 		<div class="notice_title_BTN">
 			<div id="notice_title_div">
-				<h2 id="notice_title">자주 묻는 질문</h2>
+				<h2 id="notice_title">자주묻는질문</h2>
 			</div>
 
 			<div class="BTN_class">

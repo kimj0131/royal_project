@@ -8,7 +8,7 @@
 <c:url value="/resources/image/royal_inner/history/changdeok/cd.png" var="changdeokimage" />
 <c:url value="/resources/image/royal_inner/history/changdeok/cdicon.png" var="changdeokicon" />
 <meta charset="UTF-8">
-<title>창덕궁 소개 및 역사 페이지</title>
+<title>서울고궁안내 - 창덕궁>소개 및 역사</title>
 <link rel="stylesheet" href="${historyCSS}" />
 </head>
 <body>

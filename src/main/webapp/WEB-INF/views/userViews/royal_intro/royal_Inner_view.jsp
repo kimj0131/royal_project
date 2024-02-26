@@ -8,7 +8,7 @@
 <c:url value="/resources/js/royal_intro/royal_inner_slide.js" var="innerJS" />
 <c:url value="/resources/js/royal_intro/royal_innerName.js" var="innerNameJS" />
 <c:url value="/resources/image/royal_inner/img_opentype.png" var="opentypeIMG" />
-<title>${palaceName} 내부 건축물</title>
+<title>서울고궁안내 - ${palaceName}>내부건축물>${innerDTO.royal_inner_name}</title>
 <link rel="stylesheet" href="${innerCSS}" />
 <script src="https://kit.fontawesome.com/2706cc5797.js" crossorigin="anonymous"></script>
 <script>

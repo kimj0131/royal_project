@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>CoverPage</title>
+<title>서울고궁안내</title>
 <c:url value="/resources/css/layout/coverpage.css" var="coverpageCSS" />
 <c:url value="/resources/image/layout/cover/coverMainBtn.png"
 	var="coverMainBtn" />

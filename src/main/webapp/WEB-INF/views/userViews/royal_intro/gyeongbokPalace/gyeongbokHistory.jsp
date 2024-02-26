@@ -8,7 +8,7 @@
 <c:url value="/resources/image/royal_inner/history/gyeongbok/gb.png" var="gyeongbokimage" />
 <c:url value="/resources/image/royal_inner/history/gyeongbok/gbicon.png" var="gyeongbokicon" />
 <meta charset="UTF-8">
-<title>경복궁 소개 및 역사 페이지</title>
+<title>서울고궁안내 - 경복궁>소개 및 역사</title>
 <link rel="stylesheet" href="${historyCSS}" />
 </head>
 <body>

@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>마이페이지</title>
+<title>서울고궁안내 > 마이페이지</title>
 <c:url value="/resources/css/mypage/mypage.css" var="mypageCSS" />
 <link rel="stylesheet" href="${mypageCSS}" />
 

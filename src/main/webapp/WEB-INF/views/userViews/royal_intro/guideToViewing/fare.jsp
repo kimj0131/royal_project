@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>관람요금</title>
+<title>서울고궁안내 - 관람안내>관람요금</title>
 <c:url value="/resources/css/royalInfoCSS/fare.css" var="fareCSS" />
 <c:url value="/resources/css/royalInfoCSS/lnb.css" var="lnbCSS" />
 <c:url value="/resources/image/royalInfo/right.png" var="rightIMG" />

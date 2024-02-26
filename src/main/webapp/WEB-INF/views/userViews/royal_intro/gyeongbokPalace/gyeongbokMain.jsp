@@ -8,7 +8,7 @@
 	var="introCSS" />
 <meta charset="UTF-8">
 <link rel="stylesheet" href="${introCSS}" />
-<title>${palaceName}메인페이지</title>
+<title>서울고궁안내 - 경복궁</title>
 </head>
 <body>
 

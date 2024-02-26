@@ -13,7 +13,7 @@
 <c:url value="/resources/image/royal_inner/main/changdeok/changdeokgung.jpg" var="changdeok" />
 <c:url value="/resources/image/royal_inner/main/jongmyo/jongmyo.jpg" var="jongmyo" />
 <meta charset="UTF-8">
-<title>메인페이지</title>
+<title>서울고궁안내 > 메인</title>
 <link rel="stylesheet" href="${sliderCSS}" />
 </head>
 <body>

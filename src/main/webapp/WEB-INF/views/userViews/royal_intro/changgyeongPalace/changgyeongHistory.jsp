@@ -8,7 +8,7 @@
 <c:url value="/resources/image/royal_inner/history/changgyeong/cg.png" var="changgyeongimage" />
 <c:url value="/resources/image/royal_inner/history/changgyeong/cgicon.png" var="changgyeongicon" />
 <meta charset="UTF-8">
-<title>창경궁 소개 및 역사 페이지</title>
+<title>서울고궁안내 - 창경궁>소개 및 역사</title>
 <link rel="stylesheet" href="${historyCSS}" />
 </head>
 <body>

@@ -8,7 +8,7 @@
 <c:url value="/resources/image/royal_inner/history/jongmyo/jm.png" var="jongmyoimage" />
 <c:url value="/resources/image/royal_inner/history/jongmyo/jmicon.png" var="jongmyoicon" />
 <meta charset="UTF-8">
-<title>종묘 소개 및 역사 페이지</title>
+<title>서울고궁안내 - 종묘>소개 및 역사</title>
 <link rel="stylesheet" href="${historyCSS}" />
 </head>
 <body>
