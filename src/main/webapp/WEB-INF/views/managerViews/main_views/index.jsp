@@ -135,11 +135,5 @@ uri="http://java.sun.com/jsp/jstl/core" %> <%@ taglib prefix="fmt" uri="http://j
 
 		<!-- Common JS -->
 		<%@ include file="/WEB-INF/views/managerViews/layout/jspf/commonJs.jspf" %>
-
-		<!-- Chart JS -->
-		<c:url value="/resources/vendor/manager/chart.js/Chart.min.js" var="ChartMinJs" />
-		<c:url value="/resources/js/manager/demo/chart-area-demo.js" var="chartAreaDemoJs" />
-		<script src="${ChartMinJs}"></script>
-		<script src="${chartAreaDemoJs}"></script>
 	</body>
 </html>
