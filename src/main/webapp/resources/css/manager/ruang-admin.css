@@ -766,7 +766,8 @@ a:focus {
 }
 
 .sidebar .sidebar-brand .sidebar-brand-icon img {
-  max-height: 2.3rem
+  max-height: 3rem;
+  vertical-align: baseline;
 }
 
 .sidebar hr.sidebar-divider {

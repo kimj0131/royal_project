@@ -13,7 +13,7 @@
 
 <!-- IMG -->
 <%-- <c:url value="/resources/image/manager/logo/logo2.png" var="logoIMG" /> --%>
-<c:url value="/resources/image/layout/logo.png" var="logoIMG" />
+<c:url value="/resources/image/manager/logo/logo.png" var="logoIMG" />
 
 <!-- Icons -->
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />

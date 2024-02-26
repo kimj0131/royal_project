@@ -2,7 +2,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%> <%@ taglib prefix="c"
 uri="http://java.sun.com/jsp/jstl/core"%>
 <c:url value="/resources/css/manager/login_view.css" var="loginCSS" />
-<c:url value="/resources/image/layout/logo.png" var="logoIMG" />
+<c:url value="/resources/image/manager/logo/logo.png" var="logoIMG" />
 <c:url value="/resources/js/manager/login_view.js" var="loginJS" />
 
 <% 
