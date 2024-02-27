@@ -10,7 +10,7 @@
 * 사용자(user, manager)들이 사용하기 쉽게 설계 및 제작하는 것을 목표로한다.
 
 # 라이브러리
-> * 스프링
+> * Spring Legacy
 > * mybatis
 > * Oracle Database
 
