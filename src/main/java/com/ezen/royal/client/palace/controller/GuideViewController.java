@@ -33,7 +33,7 @@ public class GuideViewController {
 	
 	@GetMapping("/roadmap") // 오시는길
 	public String roadmap(HttpServletRequest request, Model model) {
-		String apiKey = env.getProperty("kakao.appkey");
+		String apiKey = env.getProperty("kakao.javascript.appkey");
 		String palace = request.getParameter("palace");
 	
 		model.addAttribute("apiKey", apiKey); // 카카오지도 appkey
