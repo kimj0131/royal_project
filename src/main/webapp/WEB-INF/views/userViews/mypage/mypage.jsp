@@ -96,7 +96,7 @@
 
 							<!-- 제목만 눌렀을때 내용열리는 script와 눌렀을떄 내용 열리는 script 포함 -->
 							<div>${qna.qna_title}</div>
-							<div class="qna-title" onclick="toggleContent(${status.index})">
+							<div class="qna-title">
 								<span class="clickable-text">${qna.qna_content}</span> <span
 									class="material-symbols-outlined"
 									id="arrow-icon-${status.index}"> arrow_drop_down </span>

@@ -21,13 +21,11 @@ $('.deleteBtn').each(function () {
         }
     });
     
-    $('.qna-result').addClass('hidden');
-
-    // FAQ 항목을 클릭했을 때 결과를 토글
-    $('.qna-title').click(function () {
-        var index = $(this).data('index');
+       $('.qna-title').click(function() {
+        var index = $(this).index('.qna-title');
         $('#qna-result-' + index).toggle();
         $('#arrow-icon-' + index).toggleClass('arrow_up');
+        $('#arrow-icon-' + index).text($('#arrow-icon-' + index).text() == 'arrow_drop_down' ? 'arrow_drop_up' : 'arrow_drop_down');
     });
 
     $(document).on('click', ".deleteBtn", function () {
