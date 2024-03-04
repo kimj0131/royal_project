@@ -1,6 +1,6 @@
 서울 고궁안내 프로젝트
 =================
-## [Project site (서울 고궁 안내)](http://34.82.1.145:9000/royal/main/) <br>
+## [Project site (서울 고궁 안내)](http://34.82.1.145:9000/royal/main/home) <br>
 ## [Project site (관리자 페이지)](http://34.82.1.145:9000/royal/manage/login) <br>
 ## [발표 PPT (미리캔버스)](https://www.miricanvas.com/v/12xga76) <br>
 
