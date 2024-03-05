@@ -2,7 +2,7 @@
 =================
 ## [Project site (서울 고궁 안내)](http://34.82.1.145:9000/royal/main/home) <br>
 ## [Project site (관리자 페이지)](http://34.82.1.145:9000/royal/manage/login) <br>
-## [발표 PPT (미리캔버스)](https://www.miricanvas.com/v/12xga76) <br>
+## [Project PPT (미리캔버스)](https://www.miricanvas.com/v/12xvjyp) <br>
 
 # 개요
 * 우리나라의 대표적인 관광지인 조선의 4대 궁궐 과 종묘를 소개하는 페이지를 제작한다.
